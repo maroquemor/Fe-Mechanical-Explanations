@@ -4,3 +4,5 @@
 /preguntas/pregunta-4.html /Question_4.html 301
 /preguntas/pregunta-5.html /Question_5.html 301
 /preguntas/pregunta-6.html /Question_6.html 301
+/preguntas/pregunta-7.html /Question_7.html 301
+/preguntas/pregunta-8.html /Question_8.html 301
