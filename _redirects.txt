@@ -1,0 +1,6 @@
+/preguntas/pregunta-1.html /Question_1.html 301
+/preguntas/pregunta-2.html /Question_2.html 301
+/preguntas/pregunta-3.html /Question_3.html 301
+/preguntas/pregunta-4.html /Question_4.html 301
+/preguntas/pregunta-5.html /Question_5.html 301
+/preguntas/pregunta-6.html /Question_6.html 301

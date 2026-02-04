@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 8 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .data-visualization {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .data-points-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .data-point {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            position: relative;
+        }
+        
+        .data-value {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        
+        .mean-line {
+            height: 5px;
+            background-color: #2ecc71;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .mean-label {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2ecc71;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .deviation-line {
+            position: absolute;
+            height: 2px;
+            background-color: #e74c3c;
+            transform-origin: left center;
+        }
+        
+        .deviation-label {
+            position: absolute;
+            font-size: 12px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .comparison-box {
+            background-color: #fff8e1;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #f39c12;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+        
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .comparison-box {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 8 del FE Mechanical</h1>
+            <p class="subtitle">Cálculo de la Desviación Estándar Poblacional para un Conjunto de Datos</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>8. A series of measurements gave values of 11, 11, 11, 11, 12, 13, 13, 14, for which the arithmetic mean is 12. The population standard deviation is most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. 1.42 &nbsp; B. 1.25 &nbsp; C. 1.19 &nbsp; D. 1.12</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Entender los datos y el objetivo</h3>
+                </div>
+                <p>Tenemos el siguiente conjunto de datos de 8 mediciones:</p>
+                <div class="formula">
+                    11, 11, 11, 11, 12, 13, 13, 14
+                </div>
+                <p>La media aritmética (μ) ya nos la dan: μ = 12</p>
+                <p>Nos piden calcular la <strong>desviación estándar poblacional (σ)</strong>, no la muestral.</p>
+                
+                <div class="data-visualization">
+                    <h4>Visualización de los Datos</h4>
+                    <div class="data-points-container">
+                        <div class="data-point" style="background-color: #3498db;">
+                            <div>11</div>
+                        </div>
+                        <div class="data-point" style="background-color: #3498db;">
+                            <div>11</div>
+                        </div>
+                        <div class="data-point" style="background-color: #3498db;">
+                            <div>11</div>
+                        </div>
+                        <div class="data-point" style="background-color: #3498db;">
+                            <div>11</div>
+                        </div>
+                        <div class="data-point" style="background-color: #9b59b6;">
+                            <div>12</div>
+                        </div>
+                        <div class="data-point" style="background-color: #e74c3c;">
+                            <div>13</div>
+                        </div>
+                        <div class="data-point" style="background-color: #e74c3c;">
+                            <div>13</div>
+                        </div>
+                        <div class="data-point" style="background-color: #2ecc71;">
+                            <div>14</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mean-line">
+                        <div class="mean-label">Media μ = 12</div>
+                    </div>
+                    
+                    <p style="color: #7f8c8d;">
+                        <span style="color: #3498db; font-weight: bold;">Valor 11 (4 veces)</span> &nbsp;|&nbsp;
+                        <span style="color: #9b59b6; font-weight: bold;">Valor 12 (1 vez)</span> &nbsp;|&nbsp;
+                        <span style="color: #e74c3c; font-weight: bold;">Valor 13 (2 veces)</span> &nbsp;|&nbsp;
+                        <span style="color: #2ecc71; font-weight: bold;">Valor 14 (1 vez)</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Recordar la fórmula de desviación estándar poblacional</h3>
+                </div>
+                <p>Para una población completa (no una muestra), la desviación estándar σ se calcula como:</p>
+                <div class="formula">
+                    σ = √[ Σ(xᵢ - μ)² / N ]
+                </div>
+                <p>Donde:</p>
+                <ul class="concept-list">
+                    <li>xᵢ = cada valor individual</li>
+                    <li>μ = media poblacional (12 en este caso)</li>
+                    <li>N = número total de valores (8 en este caso)</li>
+                    <li>Σ = suma de todos los valores</li>
+                </ul>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Importante: Poblacional vs. Muestral</div>
+                    <p><strong>Desviación estándar poblacional (σ):</strong> Usa N en el denominador</p>
+                    <p><strong>Desviación estándar muestral (s):</strong> Usa (N-1) en el denominador</p>
+                    <p>En este problema específicamente se pide "population standard deviation", por lo tanto usamos N = 8.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Calcular las desviaciones de cada valor respecto a la media</h3>
+                </div>
+                <p>Para cada valor, calculamos (xᵢ - μ) y luego (xᵢ - μ)²:</p>
+                
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>Valor (xᵢ)</th>
+                            <th>Frecuencia</th>
+                            <th>xᵢ - μ</th>
+                            <th>(xᵢ - μ)²</th>
+                            <th>Frecuencia × (xᵢ - μ)²</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11</td>
+                            <td>4</td>
+                            <td>11 - 12 = -1</td>
+                            <td>(-1)² = 1</td>
+                            <td>4 × 1 = 4</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>1</td>
+                            <td>12 - 12 = 0</td>
+                            <td>0² = 0</td>
+                            <td>1 × 0 = 0</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>2</td>
+                            <td>13 - 12 = 1</td>
+                            <td>1² = 1</td>
+                            <td>2 × 1 = 2</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>1</td>
+                            <td>14 - 12 = 2</td>
+                            <td>2² = 4</td>
+                            <td>1 × 4 = 4</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="text-align: right; font-weight: bold;">SUMA TOTAL</td>
+                            <td class="highlight-cell">10</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="calculation-steps">
+                    <p><strong>Verificación de cálculos:</strong></p>
+                    <p>Suma de (xᵢ - μ)² ponderada por frecuencia:</p>
+                    <p>Para 11: 4 valores × 1 = 4</p>
+                    <p>Para 12: 1 valor × 0 = 0</p>
+                    <p>Para 13: 2 valores × 1 = 2</p>
+                    <p>Para 14: 1 valor × 4 = 4</p>
+                    <p class="step-result">Total: 4 + 0 + 2 + 4 = 10</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Calcular la varianza poblacional</h3>
+                </div>
+                <p>La varianza poblacional (σ²) es el promedio de las desviaciones al cuadrado:</p>
+                <div class="formula">
+                    σ² = Σ(xᵢ - μ)² / N = 10 / 8 = 1.25
+                </div>
+                
+                <div class="data-visualization">
+                    <h4>Interpretación de la Varianza</h4>
+                    <p>La varianza σ² = 1.25 representa el "promedio del cuadrado de las distancias" de cada punto a la media.</p>
+                    <p>Unidades: Si los datos originales están en minutos, la varianza está en minutos².</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Calcular la desviación estándar poblacional</h3>
+                </div>
+                <p>La desviación estándar es la raíz cuadrada de la varianza:</p>
+                <div class="formula">
+                    σ = √(σ²) = √(1.25)
+                </div>
+                <p>Calculamos:</p>
+                <div class="formula">
+                    σ = √1.25 ≈ 1.118033989 ≈ 1.12
+                </div>
+                
+                <div class="calculation-steps">
+                    <p><strong>Cálculo detallado:</strong></p>
+                    <p>1.25 = 125/100 = 5/4</p>
+                    <p>√(5/4) = √5 / √4 = √5 / 2</p>
+                    <p>√5 ≈ 2.23607</p>
+                    <p>σ ≈ 2.23607 / 2 = 1.118035 ≈ 1.12</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">6</div>
+                    <h3>Verificar las opciones dadas</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Valor</th>
+                            <th>¿Correcta?</th>
+                            <th>Explicación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>1.42</td>
+                            <td>No</td>
+                            <td>Sería √2 ≈ 1.414, no corresponde a nuestros cálculos</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>1.25</td>
+                            <td>No</td>
+                            <td>Es la varianza (σ²), no la desviación estándar (σ)</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>1.19</td>
+                            <td>No</td>
+                            <td>Podría ser resultado de usar N-1 en lugar de N</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>1.12</td>
+                            <td><strong>SÍ</strong></td>
+                            <td>Corresponde a √1.25 ≈ 1.118 ≈ 1.12</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="comparison-box">
+                    <h4>Nota importante sobre el uso de N vs. N-1</h4>
+                    <p><strong>Si usáramos la fórmula muestral (con N-1):</strong></p>
+                    <p>s² = Σ(xᵢ - μ)² / (N-1) = 10 / 7 ≈ 1.4286</p>
+                    <p>s = √1.4286 ≈ 1.195</p>
+                    <p>Esto se acerca a la opción C (1.19), pero NO es lo que pide el problema.</p>
+                    <p><strong>El problema específicamente dice "population standard deviation", por lo tanto usamos N, no N-1.</strong></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">1.12 (Opción D)</div>
+            <p>La desviación estándar poblacional es aproximadamente 1.12</p>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Desviación Estándar Poblacional (σ):</strong> Medida de dispersión que indica cuánto se alejan los valores individuales de la media poblacional. Se calcula como la raíz cuadrada de la varianza poblacional.</li>
+                <li><strong>Varianza Poblacional (σ²):</strong> Promedio de las diferencias al cuadrado entre cada valor y la media. σ² = Σ(xᵢ - μ)² / N.</li>
+                <li><strong>Media Aritmética (μ):</strong> Promedio de todos los valores. μ = Σxᵢ / N.</li>
+                <li><strong>Diferencia entre Poblacional y Muestral:</strong>
+                    <ul>
+                        <li><strong>Población:</strong> Conjunto completo de datos. Usamos N en el denominador.</li>
+                        <li><strong>Muestra:</strong> Subconjunto de la población. Usamos (N-1) en el denominador (corrección de Bessel).</li>
+                    </ul>
+                </li>
+                <li><strong>Dispersión de Datos:</strong> La desviación estándar cuantifica la variabilidad o dispersión de un conjunto de datos.</li>
+                <li><strong>Unidades:</strong> La desviación estándar tiene las mismas unidades que los datos originales, mientras que la varianza tiene unidades al cuadrado.</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Control de Calidad:</strong> La desviación estándar se usa para monitorear la variabilidad en procesos de manufactura.</li>
+                <li><strong>Tolerancias de Fabricación:</strong> Establecer límites de aceptación basados en la variabilidad natural del proceso.</li>
+                <li><strong>Análisis de Mediciones Experimentales:</strong> Evaluar la precisión y repetibilidad de mediciones en laboratorios.</li>
+                <li><strong>Diseño de Experimentos:</strong> Determinar si las diferencias entre grupos son estadísticamente significativas.</li>
+                <li><strong>Confiabilidad de Componentes:</strong> Analizar la variabilidad en propiedades de materiales o tiempos de falla.</li>
+                <li><strong>Procesos de Producción:</strong> Monitorear y controlar la consistencia en producción en serie.</li>
+                <li><strong>Ergonomía y Diseño:</strong> Analizar variabilidad en medidas antropométricas para diseño de productos.</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">7</div>
+                <h3>Métodos alternativos de cálculo</h3>
+            </div>
+            <p><strong>Método 1: Fórmula computacional (menos propensa a errores de redondeo)</strong></p>
+            <div class="formula">
+                σ = √[ (Σxᵢ²)/N - μ² ]
+            </div>
+            <p>Calculamos Σxᵢ²:</p>
+            <ul class="concept-list">
+                <li>4 × 11² = 4 × 121 = 484</li>
+                <li>1 × 12² = 1 × 144 = 144</li>
+                <li>2 × 13² = 2 × 169 = 338</li>
+                <li>1 × 14² = 1 × 196 = 196</li>
+                <li>Total: 484 + 144 + 338 + 196 = 1162</li>
+            </ul>
+            <div class="formula">
+                σ = √[1162/8 - 12²] = √[145.25 - 144] = √1.25 = 1.118 ≈ 1.12
+            </div>
+            
+            <p><strong>Método 2: Uso de calculadora/software</strong></p>
+            <p>En calculadoras científicas o Excel:</p>
+            <div class="formula">
+                Excel: =STDEV.P(11,11,11,11,12,13,13,14) = 1.118<br>
+                Para muestra: =STDEV.S(11,11,11,11,12,13,13,14) = 1.195
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">8</div>
+                <h3>Interpretación práctica del resultado</h3>
+            </div>
+            <p>Una desviación estándar de 1.12 significa que:</p>
+            <ul class="concept-list">
+                <li>Aproximadamente el 68% de las mediciones estarán entre μ - σ y μ + σ: entre 10.88 y 13.12</li>
+                <li>Aproximadamente el 95% de las mediciones estarán entre μ - 2σ y μ + 2σ: entre 9.76 y 14.24</li>
+                <li>Aproximadamente el 99.7% de las mediciones estarán entre μ - 3σ y μ + 3σ: entre 8.64 y 15.36</li>
+            </ul>
+            
+            <div class="data-visualization">
+                <h4>Distribución de los Datos</h4>
+                <p>Para nuestro conjunto específico:</p>
+                <ul class="concept-list">
+                    <li>Valores dentro de μ ± σ (10.88 a 13.12): 11, 11, 11, 11, 12, 13, 13 → 7 de 8 valores (87.5%)</li>
+                    <li>Valores dentro de μ ± 2σ (9.76 a 14.24): Todos los 8 valores (100%)</li>
+                    <li>El valor 14 está a (14-12)/1.12 = 1.79σ de la media</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Probability and Statistics, específicamente a Measures of Central Tendencies and Dispersions, donde se encuentran las fórmulas para media, varianza y desviación estándar.</p>
+            <p>Las fórmulas para desviación estándar poblacional y muestral aparecen en la página de referencia.</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar elementos importantes
+            const importantElements = document.querySelectorAll('.formula, .calculation-steps, .comparison-box');
+            importantElements.forEach(element => {
+                element.setAttribute('data-print', 'important');
+            });
+        });
+        
+        // Función para imprimir
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

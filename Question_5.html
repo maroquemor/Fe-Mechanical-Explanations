@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 5 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .vector-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .coordinate-system {
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+            background-color: #f8f9fa;
+        }
+        
+        .axis {
+            position: absolute;
+            background-color: #333;
+        }
+        
+        .x-axis {
+            width: 80%;
+            height: 2px;
+            bottom: 40%;
+            left: 10%;
+        }
+        
+        .y-axis {
+            width: 2px;
+            height: 80%;
+            left: 50%;
+            top: 10%;
+        }
+        
+        .z-axis {
+            width: 2px;
+            height: 80%;
+            left: 30%;
+            top: 10%;
+            transform: rotate(45deg);
+            transform-origin: top left;
+        }
+        
+        .axis-label {
+            position: absolute;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .x-label {
+            right: 8%;
+            bottom: 38%;
+        }
+        
+        .y-label {
+            top: 8%;
+            left: 52%;
+        }
+        
+        .z-label {
+            top: 8%;
+            left: 28%;
+            transform: rotate(-45deg);
+            transform-origin: center;
+        }
+        
+        .vector {
+            position: absolute;
+            background-color: transparent;
+        }
+        
+        .vector-line {
+            position: absolute;
+            height: 3px;
+            transform-origin: left center;
+        }
+        
+        .vector-arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        
+        .vector-a {
+            color: #e74c3c;
+        }
+        
+        .vector-b {
+            color: #3498db;
+        }
+        
+        .vector-c {
+            color: #2ecc71;
+        }
+        
+        .vector-label {
+            position: absolute;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .plane {
+            position: absolute;
+            background-color: rgba(52, 152, 219, 0.1);
+            border: 1px dashed #3498db;
+        }
+        
+        .normal-vector {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 15px solid #2ecc71;
+            transform-origin: center bottom;
+        }
+        
+        .determinant-box {
+            background-color: #fff8e1;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #f39c12;
+        }
+        
+        .determinant-matrix {
+            font-family: 'Times New Roman', serif;
+            font-size: 18px;
+            margin: 10px 0;
+            display: inline-block;
+            border-collapse: collapse;
+        }
+        
+        .determinant-matrix td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .comparison-table th {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .method-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+        
+        .method-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .determinant-box {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .method-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .unit-vector-box {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .vector-components {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .vector-component {
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 150px;
+        }
+        
+        .component-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .i { color: #e74c3c; }
+        .j { color: #3498db; }
+        .k { color: #2ecc71; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 5 del FE Mechanical</h1>
+            <p class="subtitle">Cálculo de un vector unitario perpendicular a un plano definido por dos vectores</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>5. Which of the following is a unit vector perpendicular to the plane determined by the vectors A = 2i + 4j and B = i + j - k?</strong></p>
+                <div class="formula">
+                    <p>Opciones:</p>
+                    <p>A. -2i + j - k</p>
+                    <p>B. (1/√5)(i + 2j)</p>
+                    <p>C. (1/√6)(-2i + j - k)</p>
+                    <p>D. (1/√6)(-2i - j - k)</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Entender el problema</h3>
+                </div>
+                <p>Nos piden encontrar un <strong>vector unitario</strong> (vector de magnitud 1) que sea <strong>perpendicular</strong> al plano determinado por dos vectores dados:</p>
+                <div class="formula">
+                    A = 2i + 4j + 0k<br>
+                    B = 1i + 1j - 1k
+                </div>
+                <p>En notación de componentes:</p>
+                <div class="vector-components">
+                    <div class="vector-component">
+                        <div class="component-title">Vector A</div>
+                        <div>A<sub>x</sub> = <span class="i">2</span></div>
+                        <div>A<sub>y</sub> = <span class="j">4</span></div>
+                        <div>A<sub>z</sub> = <span class="k">0</span></div>
+                    </div>
+                    <div class="vector-component">
+                        <div class="component-title">Vector B</div>
+                        <div>B<sub>x</sub> = <span class="i">1</span></div>
+                        <div>B<sub>y</sub> = <span class="j">1</span></div>
+                        <div>B<sub>z</sub> = <span class="k">-1</span></div>
+                    </div>
+                </div>
+                <p>Un vector perpendicular a ambos A y B es su <strong>producto cruz (producto vectorial)</strong>. Luego, normalizamos ese vector para obtener un vector unitario.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Calcular el producto cruz A × B</h3>
+                </div>
+                <p>El producto cruz de dos vectores A = (A<sub>x</sub>, A<sub>y</sub>, A<sub>z</sub>) y B = (B<sub>x</sub>, B<sub>y</sub>, B<sub>z</sub>) es:</p>
+                <div class="formula">
+                    A × B = (A<sub>y</sub>B<sub>z</sub> - A<sub>z</sub>B<sub>y</sub>)i - (A<sub>x</sub>B<sub>z</sub> - A<sub>z</sub>B<sub>x</sub>)j + (A<sub>x</sub>B<sub>y</sub> - A<sub>y</sub>B<sub>x</sub>)k
+                </div>
+                <p>O usando notación de determinante:</p>
+                <div class="determinant-box">
+                    <div class="method-title">Cálculo por determinante:</div>
+                    <table class="determinant-matrix">
+                        <tr>
+                            <td>i</td>
+                            <td>j</td>
+                            <td>k</td>
+                        </tr>
+                        <tr>
+                            <td>A<sub>x</sub> = 2</td>
+                            <td>A<sub>y</sub> = 4</td>
+                            <td>A<sub>z</sub> = 0</td>
+                        </tr>
+                        <tr>
+                            <td>B<sub>x</sub> = 1</td>
+                            <td>B<sub>y</sub> = 1</td>
+                            <td>B<sub>z</sub> = -1</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>Calculamos cada componente:</p>
+                <div class="formula">
+                    Componente i: A<sub>y</sub>B<sub>z</sub> - A<sub>z</sub>B<sub>y</sub> = (4)(-1) - (0)(1) = -4 - 0 = -4
+                </div>
+                <div class="formula">
+                    Componente j: -(A<sub>x</sub>B<sub>z</sub> - A<sub>z</sub>B<sub>x</sub>) = -[(2)(-1) - (0)(1)] = -[-2 - 0] = -(-2) = 2
+                </div>
+                <div class="formula">
+                    Componente k: A<sub>x</sub>B<sub>y</sub> - A<sub>y</sub>B<sub>x</sub> = (2)(1) - (4)(1) = 2 - 4 = -2
+                </div>
+                <p>Por lo tanto:</p>
+                <div class="formula">
+                    A × B = -4i + 2j - 2k
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Calcular la magnitud del vector producto cruz</h3>
+                </div>
+                <p>Para normalizar el vector, necesitamos su magnitud:</p>
+                <div class="formula">
+                    |A × B| = √[(-4)² + (2)² + (-2)²] = √[16 + 4 + 4] = √24 = √(4×6) = 2√6
+                </div>
+                <p>Verificación de cálculo:</p>
+                <ul class="concept-list">
+                    <li>(-4)² = 16</li>
+                    <li>(2)² = 4</li>
+                    <li>(-2)² = 4</li>
+                    <li>Suma: 16 + 4 + 4 = 24</li>
+                    <li>√24 = √(4×6) = 2√6 ≈ 4.899</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Normalizar el vector para obtener un vector unitario</h3>
+                </div>
+                <p>Un vector unitario en la dirección de A × B se obtiene dividiendo cada componente por la magnitud:</p>
+                <div class="formula">
+                    u = (A × B) / |A × B| = (-4i + 2j - 2k) / (2√6)
+                </div>
+                <p>Simplificamos factorizando 2 en el numerador:</p>
+                <div class="formula">
+                    u = [2(-2i + j - k)] / (2√6) = (-2i + j - k) / √6
+                </div>
+                <p>Verificamos que es unitario calculando su magnitud:</p>
+                <div class="formula">
+                    |u| = √[(-2/√6)² + (1/√6)² + (-1/√6)²] = √[(4/6) + (1/6) + (1/6)] = √(6/6) = √1 = 1
+                </div>
+                <div class="unit-vector-box">
+                    <p><strong>Vector unitario resultante:</strong> u = (1/√6)(-2i + j - k)</p>
+                </div>
+            </div>
+            
+            <div class="vector-container">
+                <h3>Visualización de Vectores y Plano</h3>
+                <p>Los vectores A (rojo) y B (azul) definen un plano. Su producto cruz C (verde) es perpendicular a ambos.</p>
+                <div class="coordinate-system">
+                    <!-- Ejes -->
+                    <div class="axis x-axis"></div>
+                    <div class="axis y-axis"></div>
+                    <div class="axis z-axis"></div>
+                    
+                    <!-- Etiquetas de ejes -->
+                    <div class="axis-label x-label">x (i)</div>
+                    <div class="axis-label y-label">y (j)</div>
+                    <div class="axis-label z-label">z (k)</div>
+                    
+                    <!-- Plano definido por A y B -->
+                    <div class="plane" style="
+                        left: 30%;
+                        top: 30%;
+                        width: 40%;
+                        height: 30%;
+                        transform: rotateX(30deg) rotateY(30deg);
+                    "></div>
+                    
+                    <!-- Vector A -->
+                    <div class="vector vector-a" style="left: 30%; top: 60%;">
+                        <div class="vector-line" style="
+                            width: 100px;
+                            background-color: #e74c3c;
+                            transform: rotate(0deg);
+                        "></div>
+                        <div class="vector-arrow" style="
+                            border-width: 0 8px 15px 8px;
+                            border-color: transparent transparent #e74c3c transparent;
+                            left: 128px;
+                            top: -6px;
+                        "></div>
+                        <div class="vector-label" style="left: 110px; top: -25px;">A</div>
+                    </div>
+                    
+                    <!-- Vector B -->
+                    <div class="vector vector-b" style="left: 30%; top: 60%;">
+                        <div class="vector-line" style="
+                            width: 70px;
+                            background-color: #3498db;
+                            transform: rotate(-45deg);
+                        "></div>
+                        <div class="vector-arrow" style="
+                            border-width: 0 8px 15px 8px;
+                            border-color: transparent transparent #3498db transparent;
+                            left: 68px;
+                            top: 55px;
+                            transform: rotate(-45deg);
+                        "></div>
+                        <div class="vector-label" style="left: 50px; top: 70px;">B</div>
+                    </div>
+                    
+                    <!-- Vector normal C = A × B -->
+                    <div class="normal-vector" style="
+                        left: 45%;
+                        top: 45%;
+                        transform: rotateX(30deg) rotateY(30deg) rotateZ(45deg);
+                    "></div>
+                    <div class="vector-label" style="left: 48%; top: 30%; color: #2ecc71; font-weight: bold;">C = A × B</div>
+                </div>
+                <p style="margin-top: 15px; color: #7f8c8d;">
+                    <span style="color: #e74c3c; font-weight: bold;">Vector A:</span> 2i + 4j &nbsp;|&nbsp;
+                    <span style="color: #3498db; font-weight: bold;">Vector B:</span> i + j - k &nbsp;|&nbsp;
+                    <span style="color: #2ecc71; font-weight: bold;">Vector normal C:</span> -4i + 2j - 2k
+                </p>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Verificar las opciones dadas</h3>
+                </div>
+                <p>Comparamos nuestra solución con las opciones:</p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Vector</th>
+                            <th>¿Perpendicular al plano?</th>
+                            <th>¿Vector unitario? (|v|=1)</th>
+                            <th>Comentario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>-2i + j - k</td>
+                            <td>Sí (paralelo a A×B)</td>
+                            <td>No (|v|=√6≈2.45)</td>
+                            <td>Es paralelo al producto cruz pero no está normalizado</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>(1/√5)(i + 2j)</td>
+                            <td>No</td>
+                            <td>Sí</td>
+                            <td>No es perpendicular: (i+2j)·A = 1×2+2×4=10≠0</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>(1/√6)(-2i + j - k)</td>
+                            <td>Sí</td>
+                            <td>Sí</td>
+                            <td>Coincide exactamente con nuestro cálculo ✓</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>(1/√6)(-2i - j - k)</td>
+                            <td>No</td>
+                            <td>Sí</td>
+                            <td>El signo de j es incorrecto (-j en lugar de +j)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Conclusión:</strong> Solo la opción C es un vector unitario perpendicular al plano definido por A y B.</p>
+            </div>
+        </div>
+        
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">(1/√6)(-2i + j - k) (Opción C)</div>
+            <p>El vector unitario perpendicular al plano determinado por A = 2i + 4j y B = i + j - k</p>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Producto Cruz (Producto Vectorial):</strong> Operación entre dos vectores en el espacio tridimensional que produce un vector perpendicular a ambos. Si A y B son vectores, entonces A × B es perpendicular a A y a B.</li>
+                <li><strong>Vector Unitario:</strong> Vector de magnitud 1. Se obtiene dividiendo un vector por su magnitud: û = v/|v|.</li>
+                <li><strong>Normalización:</strong> Proceso de convertir un vector en un vector unitario manteniendo su dirección.</li>
+                <li><strong>Magnitud de un Vector:</strong> |v| = √(vₓ² + vᵧ² + v₂²). Representa la longitud del vector.</li>
+                <li><strong>Plano Definido por Dos Vectores:</strong> Dos vectores no paralelos en el espacio tridimensional definen un plano único. Cualquier vector perpendicular a ambos será perpendicular al plano.</li>
+                <li><strong>Notación i, j, k:</strong> Vectores unitarios en las direcciones x, y, z respectivamente.</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Torque (Momento de Fuerza):</strong> τ = r × F, donde r es el vector posición y F es la fuerza. El torque es perpendicular al plano que contiene r y F.</li>
+                <li><strong>Velocidad Angular:</strong> En rotación, la velocidad angular ω es perpendicular al plano de rotación.</li>
+                <li><strong>Área de Paralelogramos:</strong> El área del paralelogramo formado por dos vectores A y B es |A × B|.</li>
+                <li><strong>Normal a Superficies:</strong> En análisis de esfuerzos y diseño de superficies, se usan vectores normales para definir orientaciones.</li>
+                <li><strong>Análisis Estructural:</strong> Determinación de fuerzas normales a planos en estructuras tridimensionales.</li>
+                <li><strong>Dinámica de Cuerpos Rígidos:</strong> El momento angular L = r × p es perpendicular al plano que contiene la posición y el momento lineal.</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">6</div>
+                <h3>Verificación mediante producto punto</h3>
+            </div>
+            <p>Podemos verificar que nuestro vector unitario es realmente perpendicular a A y B calculando el producto punto:</p>
+            <p><strong>Producto punto con A:</strong></p>
+            <div class="formula">
+                u · A = (-2/√6)(2) + (1/√6)(4) + (-1/√6)(0) = (-4/√6) + (4/√6) + 0 = 0
+            </div>
+            <p><strong>Producto punto con B:</strong></p>
+            <div class="formula">
+                u · B = (-2/√6)(1) + (1/√6)(1) + (-1/√6)(-1) = (-2/√6) + (1/√6) + (1/√6) = 0
+            </div>
+            <p>Como u · A = 0 y u · B = 0, el vector u es perpendicular a ambos A y B, y por lo tanto perpendicular al plano que definen.</p>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">7</div>
+                <h3>Propiedades importantes del producto cruz</h3>
+            </div>
+            <div class="method-box">
+                <div class="method-title">Propiedades del Producto Cruz:</div>
+                <ul class="concept-list">
+                    <li><strong>Anticonmutatividad:</strong> A × B = - (B × A)</li>
+                    <li><strong>Distributividad:</strong> A × (B + C) = A × B + A × C</li>
+                    <li><strong>Asociatividad con escalares:</strong> (cA) × B = c(A × B) = A × (cB)</li>
+                    <li><strong>Producto cruz de vectores paralelos:</strong> Si A es paralelo a B, entonces A × B = 0</li>
+                    <li><strong>Magnitud:</strong> |A × B| = |A||B|sinθ, donde θ es el ángulo entre A y B</li>
+                    <li><strong>Dirección:</strong> A × B es perpendicular a ambos A y B, determinado por la regla de la mano derecha</li>
+                </ul>
+            </div>
+            <p>En nuestro problema: |A| = √(2²+4²+0²) = √20 = 2√5 ≈ 4.47, |B| = √(1²+1²+(-1)²) = √3 ≈ 1.73</p>
+            <p>El ángulo θ entre A y B se puede encontrar usando: sinθ = |A×B|/(|A||B|) = (2√6)/(2√5×√3) = √6/√15 = √(2/5) ≈ 0.632</p>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Mathematics, específicamente a Linear Algebra y Vector Analysis, donde se encuentran las fórmulas para el producto cruz y vectores unitarios.</p>
+            <p>La fórmula del producto cruz aparece en la página de referencia como: A × B = (A<sub>y</sub>B<sub>z</sub> - A<sub>z</sub>B<sub>y</sub>)i - (A<sub>x</sub>B<sub>z</sub> - A<sub>z</sub>B<sub>x</sub>)j + (A<sub>x</sub>B<sub>y</sub> - A<sub>y</sub>B<sub>x</sub>)k</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar fórmulas importantes
+            const formulas = document.querySelectorAll('.formula, .determinant-box, .unit-vector-box');
+            formulas.forEach(formula => {
+                formula.setAttribute('data-print', 'important');
+            });
+        });
+        
+        // Función para imprimir
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
