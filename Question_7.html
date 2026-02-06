@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explicación Detallada Pregunta 7 - FE Mechanical</title>
+    <title>Explicación Detallada Pregunta 6 - FE Mechanical</title>
     <style>
         * {
             box-sizing: border-box;
@@ -115,19 +115,7 @@
             font-weight: bold;
         }
         
-        .formula {
-            font-family: 'Times New Roman', serif;
-            font-size: 20px;
-            text-align: center;
-            margin: 20px 0;
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            overflow-x: auto;
-        }
-        
-        .distribution-container {
+        .flowchart-container {
             background-color: white;
             border-radius: 8px;
             padding: 20px;
@@ -136,114 +124,116 @@
             text-align: center;
         }
         
-        .distribution-graph {
-            width: 700px;
-            height: 400px;
+        .flowchart {
+            width: 600px;
+            height: 500px;
             margin: 0 auto;
             position: relative;
         }
         
-        .distribution-curve {
+        .flowchart-element {
             position: absolute;
-            bottom: 50px;
-            left: 50px;
-            width: 600px;
-            height: 250px;
-        }
-        
-        .normal-curve {
-            fill: rgba(52, 152, 219, 0.3);
-            stroke: #3498db;
-            stroke-width: 3;
-        }
-        
-        .mean-line {
-            stroke: #2ecc71;
-            stroke-width: 2;
-            stroke-dasharray: 5,5;
-        }
-        
-        .value-line {
-            stroke: #e74c3c;
-            stroke-width: 2;
-        }
-        
-        .shaded-area {
-            fill: rgba(231, 76, 60, 0.3);
-        }
-        
-        .axis {
-            stroke: #333;
-            stroke-width: 2;
-        }
-        
-        .axis-label {
-            font-size: 14px;
-            fill: #333;
-            font-weight: bold;
-        }
-        
-        .distribution-label {
-            font-size: 12px;
-            fill: #7f8c8d;
-        }
-        
-        .value-label {
-            font-size: 14px;
-            font-weight: bold;
-        }
-        
-        .mean-label {
-            fill: #2ecc71;
-        }
-        
-        .x-value-label {
-            fill: #e74c3c;
-        }
-        
-        .probability-box {
-            background-color: #f9ebea;
+            border: 2px solid;
             border-radius: 5px;
-            padding: 15px;
-            margin: 15px 0;
-            border-left: 3px solid #e74c3c;
+            padding: 10px;
+            text-align: center;
+            min-width: 120px;
+            background-color: white;
+            font-weight: bold;
         }
         
-        .z-table-excerpt {
+        .flowchart-arrow {
+            position: absolute;
+            height: 2px;
+            background-color: #333;
+            transform-origin: left center;
+        }
+        
+        .flowchart-arrow-head {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        
+        .start-end {
+            border-color: #2ecc71;
+            background-color: rgba(46, 204, 113, 0.1);
+        }
+        
+        .process {
+            border-color: #3498db;
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        .decision {
+            border-color: #e74c3c;
+            background-color: rgba(231, 76, 60, 0.1);
+            border-radius: 50% !important;
+            width: 120px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .data-table th, .data-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .data-table th {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .trace-table {
             background-color: #fff8e1;
             border-radius: 5px;
             padding: 15px;
             margin: 15px 0;
             border-left: 3px solid #f39c12;
+        }
+        
+        .code-box {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
             font-family: 'Courier New', monospace;
+            overflow-x: auto;
         }
         
-        .z-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 10px 0;
+        .code-line {
+            margin: 5px 0;
         }
         
-        .z-table th, .z-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-            font-size: 14px;
+        .code-comment {
+            color: #7f8c8d;
         }
         
-        .z-table th {
-            background-color: #3498db;
-            color: white;
+        .code-keyword {
+            color: #3498db;
         }
         
-        .z-table tr:nth-child(even) {
-            background-color: #f8f9fa;
+        .code-variable {
+            color: #e74c3c;
         }
         
-        .highlighted-cell {
-            background-color: #2ecc71 !important;
-            color: white !important;
-            font-weight: bold;
+        .code-number {
+            color: #2ecc71;
         }
         
         .answer-box {
@@ -297,51 +287,44 @@
             border-top: 1px solid #ddd;
         }
         
-        .empirical-rule {
-            background-color: #e8f6f3;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 15px 0;
-            border-left: 3px solid #1abc9c;
-        }
-        
-        .empirical-rule-graphic {
+        .algorithm-steps {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 15px 0;
-            height: 100px;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
         }
         
-        .empirical-segment {
+        .algorithm-step {
             flex: 1;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            position: relative;
+            min-width: 200px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
-        .segment-1 {
-            background-color: #3498db;
+        .algorithm-step-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid;
         }
         
-        .segment-2 {
-            background-color: #2ecc71;
+        .step-1 .algorithm-step-title {
+            border-color: #3498db;
         }
         
-        .segment-3 {
-            background-color: #e74c3c;
+        .step-2 .algorithm-step-title {
+            border-color: #9b59b6;
         }
         
-        .segment-4 {
-            background-color: #9b59b6;
+        .step-3 .algorithm-step-title {
+            border-color: #e74c3c;
         }
         
-        .segment-5 {
-            background-color: #34495e;
+        .step-4 .algorithm-step-title {
+            border-color: #2ecc71;
         }
         
         @media print {
@@ -373,20 +356,15 @@
                 color-adjust: exact;
             }
             
-            .probability-box {
-                background-color: #f9ebea !important;
-                -webkit-print-color-adjust: exact;
-                color-adjust: exact;
-            }
-            
-            .z-table-excerpt {
+            .trace-table {
                 background-color: #fff8e1 !important;
                 -webkit-print-color-adjust: exact;
                 color-adjust: exact;
             }
             
-            .empirical-rule {
-                background-color: #e8f6f3 !important;
+            .code-box {
+                background-color: #2c3e50 !important;
+                color: #ecf0f1 !important;
                 -webkit-print-color-adjust: exact;
                 color-adjust: exact;
             }
@@ -395,9 +373,24 @@
                 display: none;
             }
             
-            .highlighted-cell {
-                background-color: #2ecc71 !important;
-                color: white !important;
+            .flowchart-element {
+                border: 1px solid #333;
+            }
+            
+            .start-end {
+                background-color: rgba(46, 204, 113, 0.1) !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .process {
+                background-color: rgba(52, 152, 219, 0.1) !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .decision {
+                background-color: rgba(231, 76, 60, 0.1) !important;
                 -webkit-print-color-adjust: exact;
                 color-adjust: exact;
             }
@@ -427,29 +420,28 @@
             margin-top: 30px;
         }
         
-        .rule-of-thumb {
-            background-color: #fef9e7;
+        .variable-trace {
+            background-color: #e8f6f3;
             border-radius: 5px;
             padding: 15px;
             margin: 15px 0;
-            border-left: 3px solid #f1c40f;
-            font-style: italic;
+            border-left: 3px solid #1abc9c;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Explicación Profunda - Pregunta 7 del FE Mechanical</h1>
-            <p class="subtitle">Probabilidad en una Distribución Normal - Duración de Llamadas Telefónicas</p>
+            <h1>Explicación Profunda - Pregunta 6 del FE Mechanical</h1>
+            <p class="subtitle">Análisis de Flujograma (Flowchart) para determinar el valor final de una variable</p>
         </header>
         
         <div class="question-section">
             <h2 class="question-title">Pregunta Original</h2>
             <div class="question-text">
-                <p><strong>7. Suppose the lengths of telephone calls form a normal distribution with a mean length of 8.0 min and a standard deviation of 2.5 min. The probability that a telephone call selected at random will last more than 15.5 min is most nearly:</strong></p>
+                <p><strong>6. The flowchart for a computer program contains the following segment. What is the value of VAR at the conclusion of this routine?</strong></p>
                 <div class="formula">
-                    <p>Opciones: A. 0.0013 &nbsp; B. 0.0026 &nbsp; C. 0.2600 &nbsp; D. 0.9987</p>
+                    <p>Opciones: A. 0 &nbsp; B. 2 &nbsp; C. 4 &nbsp; D. 6</p>
                 </div>
             </div>
         </div>
@@ -460,341 +452,395 @@
             <div class="step">
                 <div class="step-title">
                     <div class="step-number">1</div>
-                    <h3>Entender la distribución normal</h3>
+                    <h3>Reconstrucción del flujograma</h3>
                 </div>
-                <p>Tenemos una distribución normal (campana de Gauss) con:</p>
-                <div class="formula">
-                    Media (μ) = 8.0 minutos<br>
-                    Desviación estándar (σ) = 2.5 minutos
-                </div>
-                <p>La función de densidad de probabilidad normal está dada por:</p>
-                <div class="formula">
-                    f(x) = (1/(σ√(2π))) × e^(-½((x-μ)/σ)²)
-                </div>
-                <p>Queremos encontrar P(X > 15.5), donde X es la duración de una llamada telefónica.</p>
-                
-                <div class="empirical-rule">
-                    <h4>Regla Empírica (68-95-99.7):</h4>
-                    <p>Para una distribución normal:</p>
-                    <div class="empirical-rule-graphic">
-                        <div class="empirical-segment segment-1">μ-3σ</div>
-                        <div class="empirical-segment segment-2">μ-2σ</div>
-                        <div class="empirical-segment segment-3">μ-σ</div>
-                        <div class="empirical-segment segment-4">μ</div>
-                        <div class="empirical-segment segment-5">μ+σ</div>
-                    </div>
-                    <ul class="concept-list">
-                        <li>68% de los datos están dentro de μ ± σ (entre 5.5 y 10.5 min)</li>
-                        <li>95% de los datos están dentro de μ ± 2σ (entre 3.0 y 13.0 min)</li>
-                        <li>99.7% de los datos están dentro de μ ± 3σ (entre 0.5 y 15.5 min)</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-title">
-                    <div class="step-number">2</div>
-                    <h3>Calcular la puntuación Z (Z-score)</h3>
-                </div>
-                <p>Para estandarizar y usar la tabla de distribución normal estándar, calculamos:</p>
-                <div class="formula">
-                    Z = (X - μ) / σ
-                </div>
-                <p>Donde:</p>
-                <ul class="concept-list">
-                    <li>X = 15.5 (valor que nos interesa)</li>
-                    <li>μ = 8.0</li>
-                    <li>σ = 2.5</li>
-                </ul>
-                <p>Sustituyendo:</p>
-                <div class="formula">
-                    Z = (15.5 - 8.0) / 2.5 = 7.5 / 2.5 = 3.0
-                </div>
-                <p>Esto significa que 15.5 minutos está a 3 desviaciones estándar por encima de la media.</p>
-                
-                <div class="rule-of-thumb">
-                    <p><strong>Nota:</strong> Un Z-score de 3.0 indica un valor extremadamente alto en una distribución normal. Según la regla empírica, solo el 0.15% de los datos están más allá de 3σ de la media en cada cola.</p>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-title">
-                    <div class="step-number">3</div>
-                    <h3>Interpretación gráfica</h3>
-                </div>
-                <div class="distribution-container">
-                    <h3>Distribución Normal de Duración de Llamadas</h3>
-                    <div class="distribution-graph">
-                        <svg class="distribution-curve" viewBox="0 0 600 300">
-                            <!-- Eje X -->
-                            <line class="axis" x1="0" y1="250" x2="600" y2="250"/>
-                            
-                            <!-- Curva normal -->
-                            <path class="normal-curve" d="M 0,250 Q 150,50 300,50 Q 450,50 600,250"/>
-                            
-                            <!-- Línea de la media -->
-                            <line class="mean-line" x1="300" y1="50" x2="300" y2="250"/>
-                            
-                            <!-- Línea del valor X=15.5 -->
-                            <line class="value-line" x1="510" y1="50" x2="510" y2="250"/>
-                            
-                            <!-- Área sombreada (cola derecha) -->
-                            <path class="shaded-area" d="M 510,250 Q 510,250 600,250 L 600,250 Q 450,50 300,50 L 510,50 Q 510,50 510,250"/>
-                            
-                            <!-- Etiquetas del eje X -->
-                            <text class="axis-label" x="0" y="270">0</text>
-                            <text class="axis-label" x="100" y="270">μ-3σ</text>
-                            <text class="axis-label" x="200" y="270">μ-2σ</text>
-                            <text class="axis-label" x="300" y="270">μ=8.0</text>
-                            <text class="axis-label" x="400" y="270">μ+σ</text>
-                            <text class="axis-label" x="500" y="270">X=15.5</text>
-                            <text class="axis-label" x="600" y="270">20</text>
-                            
-                            <!-- Etiquetas de valores -->
-                            <text class="value-label mean-label" x="290" y="40">μ=8.0</text>
-                            <text class="value-label x-value-label" x="500" y="40">X=15.5</text>
-                            <text class="value-label x-value-label" x="500" y="265">Z=3.0</text>
-                            
-                            <!-- Área de probabilidad -->
-                            <text class="distribution-label" x="550" y="150" style="font-size: 14px; fill: #e74c3c;">P(X>15.5)</text>
-                            <text class="distribution-label" x="550" y="170" style="font-size: 14px; fill: #e74c3c;">≈ 0.0013</text>
-                        </svg>
+                <p>Basado en la solución proporcionada en el examen, el flujograma realiza las siguientes operaciones:</p>
+                <div class="flowchart-container">
+                    <h3>Diagrama de Flujo (Flowchart)</h3>
+                    <div class="flowchart">
+                        <!-- Elementos del flujograma -->
+                        <div class="flowchart-element start-end" style="top: 50px; left: 250px;">
+                            INICIO<br>VAR = 0
+                        </div>
+                        
+                        <div class="flowchart-element process" style="top: 150px; left: 250px;">
+                            VAR = VAR + 2
+                        </div>
+                        
+                        <div class="flowchart-element decision" style="top: 250px; left: 250px;">
+                            VAR > 4?
+                        </div>
+                        
+                        <div class="flowchart-element process" style="top: 350px; left: 100px;">
+                            Continuar
+                        </div>
+                        
+                        <div class="flowchart-element start-end" style="top: 350px; left: 400px;">
+                            FIN<br>Retornar VAR
+                        </div>
+                        
+                        <!-- Flechas -->
+                        <div class="flowchart-arrow" style="top: 100px; left: 310px; width: 2px; height: 40px; transform: rotate(90deg);"></div>
+                        
+                        <div class="flowchart-arrow" style="top: 190px; left: 310px; width: 2px; height: 50px; transform: rotate(90deg);"></div>
+                        
+                        <div class="flowchart-arrow" style="top: 290px; left: 310px; width: 2px; height: 50px; transform: rotate(90deg);"></div>
+                        
+                        <div class="flowchart-arrow" style="top: 290px; left: 310px; width: 120px; height: 2px; transform: rotate(0deg);"></div>
+                        
+                        <div class="flowchart-arrow" style="top: 290px; left: 250px; width: 120px; height: 2px; transform: rotate(180deg);"></div>
+                        
+                        <!-- Cabezas de flecha -->
+                        <div class="flowchart-arrow-head" style="top: 137px; left: 308px; border-width: 0 5px 8px 5px; border-color: transparent transparent #333 transparent;"></div>
+                        
+                        <div class="flowchart-arrow-head" style="top: 237px; left: 308px; border-width: 0 5px 8px 5px; border-color: transparent transparent #333 transparent;"></div>
+                        
+                        <div class="flowchart-arrow-head" style="top: 289px; left: 428px; border-width: 5px 0 5px 8px; border-color: transparent transparent transparent #333;"></div>
+                        
+                        <div class="flowchart-arrow-head" style="top: 289px; left: 172px; border-width: 5px 8px 5px 0; border-color: transparent #333 transparent transparent;"></div>
+                        
+                        <!-- Etiquetas de decisión -->
+                        <div style="position: absolute; top: 285px; left: 380px; color: #2ecc71; font-weight: bold;">SÍ</div>
+                        <div style="position: absolute; top: 285px; left: 180px; color: #e74c3c; font-weight: bold;">NO</div>
                     </div>
                     <p style="margin-top: 15px; color: #7f8c8d;">
-                        <span style="color: #3498db; font-weight: bold;">Curva azul:</span> Distribución normal &nbsp;|&nbsp;
-                        <span style="color: #2ecc71; font-weight: bold;">Línea verde:</span> Media μ=8.0 &nbsp;|&nbsp;
-                        <span style="color: #e74c3c; font-weight: bold;">Área roja:</span> Probabilidad P(X>15.5)
+                        <span style="color: #2ecc71; font-weight: bold;">Verde:</span> Inicio/Fin &nbsp;|&nbsp;
+                        <span style="color: #3498db; font-weight: bold;">Azul:</span> Procesos &nbsp;|&nbsp;
+                        <span style="color: #e74c3c; font-weight: bold;">Rojo:</span> Decisión
                     </p>
                 </div>
             </div>
             
             <div class="step">
                 <div class="step-title">
-                    <div class="step-number">4</div>
-                    <h3>Usar la tabla de distribución normal estándar</h3>
+                    <div class="step-number">2</div>
+                    <h3>Traza de ejecución paso a paso</h3>
                 </div>
-                <p>La tabla Z nos da P(Z ≤ z) - la probabilidad acumulada hasta un valor Z.</p>
-                <p>Para Z = 3.0, buscamos en la tabla:</p>
+                <p>Siguiendo el flujograma, ejecutamos el algoritmo paso a paso:</p>
                 
-                <div class="z-table-excerpt">
-                    <h4>Extracto de Tabla Z (Distribución Normal Estándar)</h4>
-                    <table class="z-table">
+                <div class="trace-table">
+                    <h4>Tabla de Traza (Trace Table)</h4>
+                    <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Z</th>
-                                <th>0.00</th>
-                                <th>0.01</th>
-                                <th>0.02</th>
-                                <th>0.03</th>
-                                <th>0.04</th>
-                                <th>0.05</th>
-                                <th>0.06</th>
-                                <th>0.07</th>
-                                <th>0.08</th>
-                                <th>0.09</th>
+                                <th>Paso</th>
+                                <th>Operación</th>
+                                <th>Valor de VAR</th>
+                                <th>Condición VAR > 4</th>
+                                <th>Acción</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>2.8</td>
-                                <td>0.9974</td>
-                                <td>0.9975</td>
-                                <td>0.9976</td>
-                                <td>0.9977</td>
-                                <td>0.9977</td>
-                                <td>0.9978</td>
-                                <td>0.9979</td>
-                                <td>0.9979</td>
-                                <td>0.9980</td>
-                                <td>0.9981</td>
+                                <td>1</td>
+                                <td>Inicialización</td>
+                                <td>0</td>
+                                <td>No aplica</td>
+                                <td>Comienza el algoritmo</td>
                             </tr>
                             <tr>
-                                <td>2.9</td>
-                                <td>0.9981</td>
-                                <td>0.9982</td>
-                                <td>0.9982</td>
-                                <td>0.9983</td>
-                                <td>0.9984</td>
-                                <td>0.9984</td>
-                                <td>0.9985</td>
-                                <td>0.9985</td>
-                                <td>0.9986</td>
-                                <td>0.9986</td>
+                                <td>2</td>
+                                <td>VAR = VAR + 2</td>
+                                <td>0 + 2 = 2</td>
+                                <td>2 > 4? Falso</td>
+                                <td>Continúa el ciclo</td>
                             </tr>
                             <tr>
-                                <td>3.0</td>
-                                <td class="highlighted-cell">0.9987</td>
-                                <td>0.9987</td>
-                                <td>0.9987</td>
-                                <td>0.9988</td>
-                                <td>0.9988</td>
-                                <td>0.9989</td>
-                                <td>0.9989</td>
-                                <td>0.9989</td>
-                                <td>0.9990</td>
-                                <td>0.9990</td>
+                                <td>3</td>
+                                <td>VAR = VAR + 2</td>
+                                <td>2 + 2 = 4</td>
+                                <td>4 > 4? Falso (es igual, no mayor)</td>
+                                <td>Continúa el ciclo</td>
                             </tr>
                             <tr>
-                                <td>3.1</td>
-                                <td>0.9990</td>
-                                <td>0.9991</td>
-                                <td>0.9991</td>
-                                <td>0.9991</td>
-                                <td>0.9992</td>
-                                <td>0.9992</td>
-                                <td>0.9992</td>
-                                <td>0.9992</td>
-                                <td>0.9993</td>
-                                <td>0.9993</td>
+                                <td>4</td>
+                                <td>VAR = VAR + 2</td>
+                                <td>4 + 2 = 6</td>
+                                <td>6 > 4? Verdadero</td>
+                                <td>Sale del ciclo, termina</td>
                             </tr>
                         </tbody>
                     </table>
-                    <p>Para Z = 3.00, P(Z ≤ 3.00) = 0.9987</p>
                 </div>
                 
-                <p>Esto significa que la probabilidad de que una llamada dure 15.5 minutos o menos es 0.9987.</p>
-            </div>
-            
-            <div class="step">
-                <div class="step-title">
-                    <div class="step-number">5</div>
-                    <h3>Calcular la probabilidad complementaria</h3>
-                </div>
-                <p>Queremos P(X > 15.5), que es el complemento de P(X ≤ 15.5):</p>
-                <div class="formula">
-                    P(X > 15.5) = 1 - P(X ≤ 15.5)
-                </div>
-                <p>Dado que P(X ≤ 15.5) = P(Z ≤ 3.0) = 0.9987, entonces:</p>
-                <div class="formula">
-                    P(X > 15.5) = 1 - 0.9987 = 0.0013
-                </div>
-                
-                <div class="probability-box">
-                    <h4>Interpretación de la probabilidad:</h4>
-                    <p>La probabilidad de que una llamada telefónica dure más de 15.5 minutos es 0.0013, lo que equivale a:</p>
-                    <ul class="concept-list">
-                        <li>0.13% (porcentaje)</li>
-                        <li>1.3 por cada 1000 llamadas</li>
-                        <li>13 por cada 10,000 llamadas</li>
-                        <li>Aproximadamente 1 llamada de cada 769 llamadas</li>
-                    </ul>
+                <div class="variable-trace">
+                    <h4>Resumen de cambios en VAR:</h4>
+                    <p><strong>Inicio:</strong> VAR = 0</p>
+                    <p><strong>Primera iteración:</strong> VAR = 0 + 2 = 2</p>
+                    <p><strong>Segunda iteración:</strong> VAR = 2 + 2 = 4</p>
+                    <p><strong>Tercera iteración:</strong> VAR = 4 + 2 = 6</p>
+                    <p><strong>Condición:</strong> VAR > 4 es VERDADERO (6 > 4) → Sale del ciclo</p>
                 </div>
             </div>
             
             <div class="step">
                 <div class="step-title">
-                    <div class="step-number">6</div>
-                    <h3>Verificar las opciones dadas</h3>
+                    <div class="step-number">3</div>
+                    <h3>Representación en pseudocódigo</h3>
                 </div>
-                <table class="z-table">
-                    <thead>
-                        <tr>
-                            <th>Opción</th>
-                            <th>Valor</th>
-                            <th>¿Correcta?</th>
-                            <th>Explicación</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>A</td>
-                            <td>0.0013</td>
-                            <td><strong>SÍ</strong></td>
-                            <td>Es el resultado de nuestro cálculo: P(X>15.5)=0.0013</td>
-                        </tr>
-                        <tr>
-                            <td>B</td>
-                            <td>0.0026</td>
-                            <td>No</td>
-                            <td>Sería el valor para ambas colas más allá de ±3σ (0.0013×2=0.0026)</td>
-                        </tr>
-                        <tr>
-                            <td>C</td>
-                            <td>0.2600</td>
-                            <td>No</td>
-                            <td>Es aproximadamente la probabilidad en una cola para Z=0.5, no para Z=3.0</td>
-                        </tr>
-                        <tr>
-                            <td>D</td>
-                            <td>0.9987</td>
-                            <td>No</td>
-                            <td>Es P(X≤15.5), no P(X>15.5)</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p><strong>Conclusión:</strong> Solo la opción A corresponde a P(X>15.5)=0.0013.</p>
+                <p>El flujograma puede traducirse al siguiente pseudocódigo:</p>
+                <div class="code-box">
+                    <div class="code-line"><span class="code-keyword">INICIO</span></div>
+                    <div class="code-line"><span class="code-variable">VAR</span> = <span class="code-number">0</span></div>
+                    <div class="code-line"></div>
+                    <div class="code-line"><span class="code-keyword">REPETIR</span></div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-variable">VAR</span> = <span class="code-variable">VAR</span> + <span class="code-number">2</span></div>
+                    <div class="code-line"><span class="code-keyword">HASTA QUE</span> <span class="code-variable">VAR</span> > <span class="code-number">4</span></div>
+                    <div class="code-line"></div>
+                    <div class="code-line"><span class="code-keyword">RETORNAR</span> <span class="code-variable">VAR</span></div>
+                    <div class="code-line"><span class="code-keyword">FIN</span></div>
+                </div>
+                
+                <p>O en notación de bucle while:</p>
+                <div class="code-box">
+                    <div class="code-line"><span class="code-keyword">VAR</span> = <span class="code-number">0</span></div>
+                    <div class="code-line"></div>
+                    <div class="code-line"><span class="code-keyword">MIENTRAS</span> <span class="code-variable">VAR</span> ≤ <span class="code-number">4</span> <span class="code-keyword">HACER</span></div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-variable">VAR</span> = <span class="code-variable">VAR</span> + <span class="code-number">2</span></div>
+                    <div class="code-line"><span class="code-keyword">FIN MIENTRAS</span></div>
+                    <div class="code-line"></div>
+                    <div class="code-line"><span class="code-comment">// Al salir, VAR = 6</span></div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Análisis del bucle</h3>
+                </div>
+                <p>El algoritmo implementa un bucle que:</p>
+                <ol class="concept-list">
+                    <li><strong>Inicializa VAR en 0</strong></li>
+                    <li><strong>Suma 2 a VAR en cada iteración</strong></li>
+                    <li><strong>Verifica si VAR > 4</strong></li>
+                    <li><strong>Si la condición es falsa, repite; si es verdadera, termina</strong></li>
+                </ol>
+                
+                <p>Analizamos las iteraciones:</p>
+                <div class="algorithm-steps">
+                    <div class="algorithm-step step-1">
+                        <div class="algorithm-step-title">Iteración 1</div>
+                        <p><strong>Antes:</strong> VAR = 0</p>
+                        <p><strong>Operación:</strong> VAR = 0 + 2 = 2</p>
+                        <p><strong>Condición:</strong> 2 > 4? <span style="color: #e74c3c;">FALSO</span></p>
+                        <p><strong>Resultado:</strong> Continúa</p>
+                    </div>
+                    
+                    <div class="algorithm-step step-2">
+                        <div class="algorithm-step-title">Iteración 2</div>
+                        <p><strong>Antes:</strong> VAR = 2</p>
+                        <p><strong>Operación:</strong> VAR = 2 + 2 = 4</p>
+                        <p><strong>Condición:</strong> 4 > 4? <span style="color: #e74c3c;">FALSO</span> (igual, no mayor)</p>
+                        <p><strong>Resultado:</strong> Continúa</p>
+                    </div>
+                    
+                    <div class="algorithm-step step-3">
+                        <div class="algorithm-step-title">Iteración 3</div>
+                        <p><strong>Antes:</strong> VAR = 4</p>
+                        <p><strong>Operación:</strong> VAR = 4 + 2 = 6</p>
+                        <p><strong>Condición:</strong> 6 > 4? <span style="color: #2ecc71;">VERDADERO</span></p>
+                        <p><strong>Resultado:</strong> Termina</p>
+                    </div>
+                    
+                    <div class="algorithm-step step-4">
+                        <div class="algorithm-step-title">Resultado Final</div>
+                        <p><strong>VAR final:</strong> 6</p>
+                        <p><strong>Iteraciones:</strong> 3</p>
+                        <p><strong>Salida:</strong> Por condición verdadera</p>
+                        <p><strong>Tipo de bucle:</strong> Post-condición (ejecuta al menos una vez)</p>
+                    </div>
+                </div>
             </div>
         </div>
         
         <div class="answer-box">
             <div class="answer-title">Respuesta Correcta</div>
-            <div class="answer-text">0.0013 (Opción A)</div>
-            <p>La probabilidad de que una llamada telefónica dure más de 15.5 minutos es 0.0013</p>
+            <div class="answer-text">6 (Opción D)</div>
+            <p>El valor de VAR al concluir la rutina es 6</p>
         </div>
         
         <div class="concept-section">
             <h2 class="concept-title">Conceptos Clave Involucrados</h2>
             <ul class="concept-list">
-                <li><strong>Distribución Normal (Gaussiana):</strong> Distribución de probabilidad continua en forma de campana, simétrica alrededor de la media.</li>
-                <li><strong>Media (μ):</strong> Valor central de la distribución, punto más alto de la curva.</li>
-                <li><strong>Desviación Estándar (σ):</strong> Medida de dispersión que indica cuánto se alejan los valores de la media.</li>
-                <li><strong>Puntuación Z (Z-score):</strong> Número de desviaciones estándar que un valor está por encima o por debajo de la media.</li>
-                <li><strong>Distribución Normal Estándar:</strong> Distribución normal con μ=0 y σ=1, usada como referencia.</li>
-                <li><strong>Tabla Z:</strong> Tabla que proporciona probabilidades acumuladas para la distribución normal estándar.</li>
-                <li><strong>Probabilidad Complementaria:</strong> Si P(A) es la probabilidad de un evento, entonces 1-P(A) es la probabilidad de que no ocurra.</li>
-                <li><strong>Regla Empírica (68-95-99.7):</strong> Para distribuciones normales:
+                <li><strong>Diagramas de Flujo (Flowcharts):</strong> Representación gráfica de algoritmos que usa símbolos estandarizados para mostrar el flujo de ejecución.</li>
+                <li><strong>Símbolos de Flujograma:</strong>
                     <ul>
-                        <li>68% de datos están dentro de μ ± σ</li>
-                        <li>95% de datos están dentro de μ ± 2σ</li>
-                        <li>99.7% de datos están dentro de μ ± 3σ</li>
+                        <li><strong>Óvalo:</strong> Inicio/Fin del programa</li>
+                        <li><strong>Rectángulo:</strong> Proceso u operación</li>
+                        <li><strong>Rombo:</strong> Decisión o condición</li>
+                        <li><strong>Flechas:</strong> Dirección del flujo</li>
                     </ul>
                 </li>
+                <li><strong>Bucles (Loops):</strong> Estructuras de control que repiten un bloque de instrucciones mientras se cumple una condición.</li>
+                <li><strong>Condiciones Lógicas:</strong> Expresiones que evalúan a verdadero o falso, como "VAR > 4".</li>
+                <li><strong>Variables y Asignación:</strong> VAR = VAR + 2 es una operación de asignación que actualiza el valor de VAR.</li>
+                <li><strong>Traza de Ejecución (Trace):</strong> Seguimiento paso a paso de los valores de las variables durante la ejecución de un algoritmo.</li>
+                <li><strong>Pseudocódigo:</strong> Descripción textual de alto nivel de un algoritmo, independiente del lenguaje de programación.</li>
             </ul>
             
             <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
             <ul class="concept-list">
-                <li><strong>Control de Calidad:</strong> La distribución normal se usa para analizar variaciones en procesos de manufactura.</li>
-                <li><strong>Tolerancias de Fabricación:</strong> Determinación de probabilidades de que piezas estén dentro de especificaciones.</li>
-                <li><strong>Análisis de Confiabilidad:</strong> Modelado de tiempos de falla de componentes mecánicos.</li>
-                <li><strong>Ergonomía y Diseño:</strong> Distribución de medidas antropométricas para diseño de espacios y herramientas.</li>
-                <li><strong>Análisis de Esfuerzos:</strong> Distribución de tensiones en materiales bajo cargas variables.</li>
-                <li><strong>Vida Útil de Componentes:</strong> Predicción de probabilidades de falla en intervalos de tiempo específicos.</li>
-                <li><strong>Procesos Aleatorios:</strong> Modelado de vibraciones, ruido y otras variables aleatorias en sistemas mecánicos.</li>
+                <li><strong>Programación de Controladores:</strong> Los flujogramas se usan para diseñar la lógica de control en sistemas automatizados y PLCs.</li>
+                <li><strong>Simulación de Procesos:</strong> Modelado de flujos de trabajo en procesos de manufactura y producción.</li>
+                <li><strong>Análisis de Sistemas:</strong> Diagramación de procesos en sistemas mecánicos complejos.</li>
+                <li><strong>Diseño de Algoritmos:</strong> Desarrollo de soluciones computacionales para problemas de ingeniería (análisis de tensiones, dinámica de fluidos, etc.).</li>
+                <li><strong>Documentación de Procedimientos:</strong> Flujogramas para procedimientos de mantenimiento, operación y seguridad.</li>
+                <li><strong>Sistemas Embebidos:</strong> Programación de microcontroladores en sistemas mecánicos inteligentes.</li>
             </ul>
         </div>
         
         <div class="step">
             <div class="step-title">
-                <div class="step-number">7</div>
-                <h3>Métodos alternativos de cálculo</h3>
+                <div class="step-number">5</div>
+                <h3>Análisis de patrones y variaciones</h3>
             </div>
-            <p><strong>Método 1: Uso de la regla empírica</strong></p>
-            <p>Según la regla 68-95-99.7:</p>
-            <ul class="concept-list">
-                <li>99.7% de datos están dentro de μ ± 3σ</li>
-                <li>Por lo tanto, 0.3% están fuera de μ ± 3σ</li>
-                <li>Como la distribución es simétrica, la mitad (0.15%) está en cada cola</li>
-                <li>P(X > μ+3σ) ≈ 0.0015 (muy cercano a 0.0013)</li>
-            </ul>
+            <p>Este flujograma sigue un patrón común en programación:</p>
             
-            <p><strong>Método 2: Aproximación usando fórmula para colas</strong></p>
-            <p>Para Z grande, una aproximación útil es:</p>
-            <div class="formula">
-                P(Z > z) ≈ (1/(z√(2π))) × e^(-z²/2)
+            <div class="code-box">
+                <div class="code-line"><span class="code-comment">// Patrón: Bucle con acumulador</span></div>
+                <div class="code-line"><span class="code-variable">acumulador</span> = <span class="code-number">valor_inicial</span></div>
+                <div class="code-line"><span class="code-keyword">REPETIR</span></div>
+                <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-variable">acumulador</span> = <span class="code-variable">acumulador</span> + <span class="code-variable">incremento</span></div>
+                <div class="code-line"><span class="code-keyword">HASTA QUE</span> <span class="code-variable">condición</span>(<span class="code-variable">acumulador</span>)</div>
             </div>
-            <p>Para z=3: P(Z>3) ≈ (1/(3√(2×3.1416))) × e^(-9/2) ≈ 0.00135</p>
             
-            <p><strong>Método 3: Uso de software/calculadora</strong></p>
-            <p>En calculadoras científicas o software como Excel:</p>
-            <div class="formula">
-                Excel: =1-NORM.DIST(15.5,8,2.5,TRUE) = 0.00135<br>
-                O: =NORM.S.DIST(3,FALSE) para la función de densidad
+            <p><strong>Variaciones posibles:</strong></p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Condición</th>
+                        <th>Incremento</th>
+                        <th>Valor Inicial</th>
+                        <th>Resultado Final</th>
+                        <th>Iteraciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>VAR > 4</td>
+                        <td>+2</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>VAR ≥ 4</td>
+                        <td>+2</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>VAR > 5</td>
+                        <td>+2</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>VAR > 4</td>
+                        <td>+1</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>VAR > 4</td>
+                        <td>+3</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p><strong>Observación importante:</strong> La condición "VAR > 4" (estricta) vs "VAR ≥ 4" (no estricta) produce resultados diferentes. En nuestro caso, cuando VAR = 4, la condición es falsa porque 4 no es mayor que 4.</p>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">6</div>
+                <h3>Verificación mediante prueba de escritorio</h3>
+            </div>
+            <p>Realizamos una prueba de escritorio completa:</p>
+            
+            <div class="trace-table">
+                <h4>Prueba de Escritorio (Desk Checking)</h4>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Línea</th>
+                            <th>Instrucción</th>
+                            <th>VAR</th>
+                            <th>Condición</th>
+                            <th>Comentario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>VAR = 0</td>
+                            <td>0</td>
+                            <td>-</td>
+                            <td>Inicialización</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>VAR = VAR + 2</td>
+                            <td>2</td>
+                            <td>-</td>
+                            <td>Primera iteración</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>¿VAR > 4?</td>
+                            <td>2</td>
+                            <td>Falso</td>
+                            <td>Continúa</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>VAR = VAR + 2</td>
+                            <td>4</td>
+                            <td>-</td>
+                            <td>Segunda iteración</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>¿VAR > 4?</td>
+                            <td>4</td>
+                            <td>Falso</td>
+                            <td>Continúa (4 no es > 4)</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>VAR = VAR + 2</td>
+                            <td>6</td>
+                            <td>-</td>
+                            <td>Tercera iteración</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>¿VAR > 4?</td>
+                            <td>6</td>
+                            <td>Verdadero</td>
+                            <td>Termina</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Fin</td>
+                            <td>6</td>
+                            <td>-</td>
+                            <td>Valor final = 6</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         
         <div class="reference">
-            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Probability and Statistics, específicamente a Probability Distributions (normal distribution), donde se encuentran las fórmulas para la distribución normal y la estandarización Z.</p>
-            <p>La fórmula para la puntuación Z y la tabla de distribución normal estándar aparecen en la página de referencia.</p>
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Mathematics, específicamente a Algorithm and Logic Development, donde se encuentran los conceptos de flujogramas, pseudocódigo y lógica de programación.</p>
+            <p>Los símbolos estándar de flujograma y estructuras de control se describen en la sección correspondiente del manual de referencia.</p>
         </div>
         
         <div class="button-container">
@@ -807,7 +853,7 @@
         // Agregar funcionalidad adicional para mejorar la experiencia
         document.addEventListener('DOMContentLoaded', function() {
             // Resaltar elementos importantes
-            const importantElements = document.querySelectorAll('.formula, .probability-box, .z-table-excerpt');
+            const importantElements = document.querySelectorAll('.trace-table, .code-box, .variable-trace');
             importantElements.forEach(element => {
                 element.setAttribute('data-print', 'important');
             });
