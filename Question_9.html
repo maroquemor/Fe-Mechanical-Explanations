@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 9 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .data-visualization {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .data-points-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .data-point {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            position: relative;
+        }
+        
+        .mean-line {
+            height: 5px;
+            background-color: #2ecc71;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .mean-label {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2ecc71;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+        
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .matching-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .matching-table th, .matching-table td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .matching-table th {
+            background-color: #9b59b6;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .matching-table td {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .data-value {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 9 del FE Mechanical</h1>
+            <p class="subtitle">Cálculo de Media, Mediana y Varianza para un Conjunto de Datos</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>9. Consider a set of three values: 4, 4, and 7.</strong></p>
+                <p><strong>Match each of the statistical quantities with the correct value.</strong></p>
+                <div class="formula">
+                    <p>Statistical Quantities: Mean | Variance | Median</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Entender los datos y el objetivo</h3>
+                </div>
+                <p>Tenemos el siguiente conjunto de datos de 3 valores:</p>
+                <div class="formula">
+                    4, 4, 7
+                </div>
+                <p>Necesitamos calcular tres medidas estadísticas:</p>
+                <ul class="concept-list">
+                    <li><strong>Media (Mean):</strong> El promedio de los valores</li>
+                    <li><strong>Mediana (Median):</strong> El valor central cuando los datos están ordenados</li>
+                    <li><strong>Varianza (Variance):</strong> Una medida de la dispersión de los datos</li>
+                </ul>
+                
+                <div class="data-visualization">
+                    <h4>Visualización de los Datos</h4>
+                    <div class="data-points-container">
+                        <div class="data-point" style="background-color: #3498db;">
+                            <div>4</div>
+                        </div>
+                        <div class="data-point" style="background-color: #3498db;">
+                            <div>4</div>
+                        </div>
+                        <div class="data-point" style="background-color: #e74c3c;">
+                            <div>7</div>
+                        </div>
+                    </div>
+                    
+                    <p style="color: #7f8c8d;">
+                        <span style="color: #3498db; font-weight: bold;">Valor 4 (2 veces)</span> &nbsp;|&nbsp;
+                        <span style="color: #e74c3c; font-weight: bold;">Valor 7 (1 vez)</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Calcular la Media (Mean)</h3>
+                </div>
+                <p>La media aritmética se calcula como la suma de todos los valores dividida entre el número total de valores:</p>
+                <div class="formula">
+                    μ = Σxᵢ / N
+                </div>
+                <p>Donde:</p>
+                <ul class="concept-list">
+                    <li>Σxᵢ = 4 + 4 + 7 = 15</li>
+                    <li>N = 3</li>
+                </ul>
+                <div class="formula">
+                    μ = 15 / 3 = 5
+                </div>
+                
+                <div class="calculation-steps">
+                    <p><strong>Cálculo detallado:</strong></p>
+                    <p>Suma de valores: 4 + 4 + 7 = 15</p>
+                    <p>Número de valores: N = 3</p>
+                    <p class="step-result">Media: 15 ÷ 3 = 5</p>
+                </div>
+                
+                <div class="data-visualization">
+                    <h4>Interpretación de la Media</h4>
+                    <p>La media (5) representa el "centro de gravedad" del conjunto de datos. Si todos los valores fueran iguales, cada uno sería 5.</p>
+                    <div class="mean-line">
+                        <div class="mean-label">Media μ = 5</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Calcular la Mediana (Median)</h3>
+                </div>
+                <p>La mediana es el valor central cuando los datos están ordenados de menor a mayor. Para un número impar de observaciones, es el valor en la posición (N+1)/2.</p>
+                
+                <p>Primero ordenamos los datos:</p>
+                <div class="formula">
+                    4, 4, 7
+                </div>
+                
+                <p>Para N = 3, la posición de la mediana es (3+1)/2 = 2. Es decir, el segundo valor en la lista ordenada.</p>
+                
+                <div class="formula">
+                    Mediana = 4
+                </div>
+                
+                <div class="calculation-steps">
+                    <p><strong>Cálculo detallado:</strong></p>
+                    <p>1. Ordenar datos: 4, 4, 7</p>
+                    <p>2. Número de valores: N = 3 (impar)</p>
+                    <p>3. Posición de la mediana: (3+1)/2 = 2</p>
+                    <p>4. Segundo valor en la lista ordenada: 4</p>
+                    <p class="step-result">Mediana = 4</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Calcular la Varianza (Variance)</h3>
+                </div>
+                <p>La varianza mide cuán dispersos están los datos respecto a la media. Para una población (que asumimos en este caso), la fórmula es:</p>
+                <div class="formula">
+                    σ² = Σ(xᵢ - μ)² / N
+                </div>
+                <p>Donde:</p>
+                <ul class="concept-list">
+                    <li>xᵢ = cada valor individual</li>
+                    <li>μ = media poblacional (5, como calculamos anteriormente)</li>
+                    <li>N = número total de valores (3)</li>
+                </ul>
+                
+                <p>Primero calculamos las desviaciones al cuadrado:</p>
+                
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>Valor (xᵢ)</th>
+                            <th>xᵢ - μ</th>
+                            <th>(xᵢ - μ)²</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>4</td>
+                            <td>4 - 5 = -1</td>
+                            <td>(-1)² = 1</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>4 - 5 = -1</td>
+                            <td>(-1)² = 1</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>7 - 5 = 2</td>
+                            <td>2² = 4</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: right; font-weight: bold;">SUMA TOTAL</td>
+                            <td class="highlight-cell">6</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p>Ahora calculamos la varianza:</p>
+                <div class="formula">
+                    σ² = 6 / 3 = 2
+                </div>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Nota sobre Varianza Poblacional vs. Muestral</div>
+                    <p><strong>Varianza poblacional (σ²):</strong> Usa N en el denominador (como en este problema).</p>
+                    <p><strong>Varianza muestral (s²):</strong> Usa (N-1) en el denominador (corrección de Bessel).</p>
+                    <p>En este caso, con N=3, si fuera varianza muestral sería: s² = 6 / (3-1) = 6 / 2 = 3.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Emparejar las cantidades estadísticas con los valores correctos</h3>
+                </div>
+                <p>Ahora que tenemos los cálculos:</p>
+                <ul class="concept-list">
+                    <li>Media (Mean) = 5</li>
+                    <li>Mediana (Median) = 4</li>
+                    <li>Varianza (Variance) = 2</li>
+                </ul>
+                
+                <table class="matching-table">
+                    <thead>
+                        <tr>
+                            <th>Cantidad Estadística</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mean</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Variance</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Median</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="comparison-box">
+                    <h4>Verificación de los resultados</h4>
+                    <p><strong>Propiedades interesantes de este conjunto de datos:</strong></p>
+                    <ul class="concept-list">
+                        <li>La media (5) es mayor que la mediana (4), lo que indica una ligera asimetría a la derecha (sesgo positivo).</li>
+                        <li>La varianza (2) es relativamente pequeña, indicando que los datos no están muy dispersos.</li>
+                        <li>La moda (valor más frecuente) también es 4, que coincide con la mediana.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">Mean = 5, Variance = 2, Median = 4</div>
+            <p>Las cantidades estadísticas se emparejan con los valores como se muestra arriba.</p>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Media Aritmética (Mean):</strong> Medida de tendencia central que representa el promedio de un conjunto de datos. Se calcula como la suma de todos los valores dividida entre el número total de valores.</li>
+                <li><strong>Mediana (Median):</strong> Medida de tendencia central que representa el valor central cuando los datos están ordenados. Para un número impar de observaciones, es el valor en la posición (N+1)/2. Para un número par, es el promedio de los dos valores centrales.</li>
+                <li><strong>Varianza (Variance):</strong> Medida de dispersión que indica cuánto se alejan los valores individuales de la media. Se calcula como el promedio de las diferencias al cuadrado entre cada valor y la media.</li>
+                <li><strong>Diferencia entre Varianza Poblacional y Muestral:</strong>
+                    <ul>
+                        <li><strong>Poblacional (σ²):</strong> Usa N en el denominador. Se usa cuando se tienen todos los datos de la población.</li>
+                        <li><strong>Muestral (s²):</strong> Usa (N-1) en el denominador (corrección de Bessel). Se usa cuando se tiene una muestra de una población mayor.</li>
+                    </ul>
+                </li>
+                <li><strong>Relación entre Media, Mediana y Moda:</strong>
+                    <ul>
+                        <li>En distribuciones simétricas: Media ≈ Mediana ≈ Moda</li>
+                        <li>En distribuciones con sesgo positivo (a la derecha): Media > Mediana > Moda</li>
+                        <li>En distribuciones con sesgo negativo (a la izquierda): Media < Mediana < Moda</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Control de Calidad:</strong> La media y varianza se usan para monitorear procesos de manufactura y detectar variaciones anormales.</li>
+                <li><strong>Análisis de Datos Experimentales:</strong> Estas medidas estadísticas ayudan a resumir y entender datos recopilados en pruebas de laboratorio.</li>
+                <li><strong>Diseño de Experimentos:</strong> La media y varianza son fundamentales para comparar diferentes condiciones experimentales.</li>
+                <li><strong>Tolerancias de Fabricación:</strong> La varianza ayuda a establecer límites de aceptación para dimensiones de piezas manufacturadas.</li>
+                <li><strong>Análisis de Fallas:</strong> La media y mediana pueden usarse para analizar tiempos de falla de componentes mecánicos.</li>
+                <li><strong>Ergonomía y Diseño:</strong> Estas medidas estadísticas se usan para analizar medidas antropométricas en el diseño de productos.</li>
+                <li><strong>Mantenimiento Predictivo:</strong> La media y varianza de vibraciones o temperaturas pueden indicar el estado de máquinas y equipos.</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">6</div>
+                <h3>Métodos alternativos de cálculo</h3>
+            </div>
+            
+            <p><strong>Método 1: Fórmula computacional para varianza</strong></p>
+            <div class="formula">
+                σ² = (Σxᵢ²)/N - μ²
+            </div>
+            <p>Calculamos Σxᵢ²:</p>
+            <ul class="concept-list">
+                <li>4² = 16 (dos veces) = 32</li>
+                <li>7² = 49</li>
+                <li>Total: 32 + 49 = 81</li>
+            </ul>
+            <div class="formula">
+                σ² = 81/3 - 5² = 27 - 25 = 2
+            </div>
+            <p>Este método es menos propenso a errores de redondeo cuando se calcula manualmente.</p>
+            
+            <p><strong>Método 2: Uso de calculadora/software</strong></p>
+            <p>En calculadoras científicas o Excel:</p>
+            <div class="formula">
+                Excel: =AVERAGE(4,4,7) = 5<br>
+                Excel: =MEDIAN(4,4,7) = 4<br>
+                Excel: =VAR.P(4,4,7) = 2 (poblacional)<br>
+                Excel: =VAR.S(4,4,7) = 3 (muestral)
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">7</div>
+                <h3>Interpretación práctica del resultado</h3>
+            </div>
+            <p>Para nuestro conjunto de datos (4, 4, 7):</p>
+            <ul class="concept-list">
+                <li><strong>Media (5):</strong> Si redistribuyéramos el "total" (15) equitativamente entre los 3 valores, cada uno sería 5.</li>
+                <li><strong>Mediana (4):</strong> La mitad de los valores son menores o iguales a 4, y la mitad son mayores o iguales a 4.</li>
+                <li><strong>Varianza (2):</strong> Los valores están relativamente cerca de la media. La desviación estándar (raíz cuadrada de la varianza) sería √2 ≈ 1.41.</li>
+            </ul>
+            
+            <div class="data-visualization">
+                <h4>Comparación con otros conjuntos de datos</h4>
+                <p>Considere estos tres conjuntos de datos con media = 5:</p>
+                <ul class="concept-list">
+                    <li>Conjunto A: (5, 5, 5) - Varianza = 0 (sin dispersión)</li>
+                    <li>Conjunto B: (4, 4, 7) - Varianza = 2 (nuestro conjunto)</li>
+                    <li>Conjunto C: (1, 5, 9) - Varianza = 10.67 (alta dispersión)</li>
+                </ul>
+                <p>Nuestro conjunto (4, 4, 7) tiene una dispersión moderada.</p>
+            </div>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Probability and Statistics, específicamente a Measures of Central Tendencies and Dispersions, donde se encuentran las fórmulas para media, mediana y varianza.</p>
+            <p>Las fórmulas para estas medidas estadísticas aparecen en la página de referencia y son esenciales para muchas áreas de la ingeniería.</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar elementos importantes
+            const importantElements = document.querySelectorAll('.formula, .calculation-steps, .comparison-box');
+            importantElements.forEach(element => {
+                element.setAttribute('data-print', 'important');
+            });
+        });
+        
+        // Función para imprimir
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
