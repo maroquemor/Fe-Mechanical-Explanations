@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 10 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .data-visualization {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .graph-container {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            background-color: #f8f9fa;
+        }
+        
+        .graph-axis {
+            position: absolute;
+            background-color: #333;
+        }
+        
+        .graph-x-axis {
+            width: 80%;
+            height: 2px;
+            bottom: 50px;
+            left: 10%;
+        }
+        
+        .graph-y-axis {
+            width: 2px;
+            height: 80%;
+            bottom: 50px;
+            left: 10%;
+        }
+        
+        .graph-point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #3498db;
+            transform: translate(-50%, 50%);
+        }
+        
+        .graph-label {
+            position: absolute;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+        
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .confidence-interval {
+            background-color: #e8f4fc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #3498db;
+        }
+        
+        .sampling-distribution {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .confidence-interval {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .sampling-distribution {
+                background-color: #f9ebea !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .visualization-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .sample-size-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin: 10px;
+        }
+        
+        .interval-bar {
+            height: 30px;
+            background-color: #3498db;
+            margin: 10px 0;
+            position: relative;
+            border-radius: 5px;
+        }
+        
+        .interval-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .center-line {
+            position: absolute;
+            width: 2px;
+            height: 40px;
+            background-color: #2ecc71;
+            top: -5px;
+            left: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 10 del FE Mechanical</h1>
+            <p class="subtitle">Efecto del Tamaño de Muestra en la Precisión de la Estimación de la Media Poblacional</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>10. You wish to estimate the mean M of a population from a sample of size n drawn from the population. For the sample, the mean is x̄ and the standard deviation is s. The probable accuracy of the estimate improves with an increase in:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. M &nbsp; B. n &nbsp; C. s &nbsp; D. M + s</p>
+                </div>
+                <p><em>Nota: En el enunciado original se usa "x" para la media muestral, pero usaremos "x̄" para mayor claridad.</em></p>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Entender el contexto del problema</h3>
+                </div>
+                <p>Estamos en el contexto de <strong>inferencia estadística</strong>:</p>
+                <ul class="concept-list">
+                    <li>Tenemos una <strong>población</strong> con una media desconocida M (parámetro poblacional).</li>
+                    <li>Tomamos una <strong>muestra</strong> de tamaño n de esta población.</li>
+                    <li>Calculamos la <strong>media muestral x̄</strong> y la <strong>desviación estándar muestral s</strong>.</li>
+                    <li>Usamos x̄ para <strong>estimar</strong> el valor desconocido M.</li>
+                </ul>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Definiciones clave</div>
+                    <p><strong>M (parámetro poblacional):</strong> Media verdadera de toda la población (desconocida, queremos estimarla).</p>
+                    <p><strong>x̄ (estadístico muestral):</strong> Media calculada a partir de la muestra (nuestro estimador de M).</p>
+                    <p><strong>s (estadístico muestral):</strong> Desviación estándar calculada a partir de la muestra.</p>
+                    <p><strong>n (tamaño de muestra):</strong> Número de observaciones en nuestra muestra.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Comprender qué significa "precisión de la estimación"</h3>
+                </div>
+                <p>En estadística inferencial, la <strong>precisión</strong> de un estimador se refiere a cuán cercano está el estimador (x̄) al parámetro verdadero (M). Una mayor precisión significa menos error de estimación.</p>
+                
+                <p>La precisión se relaciona directamente con el <strong>error estándar de la media</strong>:</p>
+                <div class="formula">
+                    Error estándar de x̄ = σ/√n
+                </div>
+                <p>Donde σ es la desviación estándar poblacional. Como generalmente no conocemos σ, usamos s como estimador:</p>
+                <div class="formula">
+                    Error estándar estimado de x̄ = s/√n
+                </div>
+                
+                <div class="sampling-distribution">
+                    <h4>Distribución de muestreo de x̄</h4>
+                    <p>Según el <strong>Teorema del Límite Central</strong>, si n es suficientemente grande, la distribución de x̄ es aproximadamente normal con:</p>
+                    <ul class="concept-list">
+                        <li>Media = M (la media poblacional)</li>
+                        <li>Desviación estándar = σ/√n (error estándar)</li>
+                    </ul>
+                    <p>La <strong>variabilidad</strong> de x̄ alrededor de M disminuye a medida que n aumenta.</p>
+                </div>
+                
+                <div class="data-visualization">
+                    <h4>Visualización del efecto de n en la distribución de x̄</h4>
+                    <p>Para una población con M = 100, σ = 15:</p>
+                    <div class="visualization-container">
+                        <div class="sample-size-box" style="background-color: #3498db;">
+                            <div>n = 10</div>
+                            <div class="data-value">SE = 15/√10 ≈ 4.74</div>
+                        </div>
+                        <div class="sample-size-box" style="background-color: #2ecc71;">
+                            <div>n = 30</div>
+                            <div class="data-value">SE = 15/√30 ≈ 2.74</div>
+                        </div>
+                        <div class="sample-size-box" style="background-color: #9b59b6;">
+                            <div>n = 100</div>
+                            <div class="data-value">SE = 15/√100 = 1.50</div>
+                        </div>
+                    </div>
+                    <p>El error estándar (SE) disminuye a medida que n aumenta, lo que significa que x̄ estará más concentrado alrededor de M.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Analizar el efecto de cada opción en la precisión</h3>
+                </div>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Variable</th>
+                            <th>¿Afecta la precisión?</th>
+                            <th>Explicación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>M (media poblacional)</td>
+                            <td><strong>NO</strong></td>
+                            <td>M es un valor fijo (aunque desconocido). Cambiar M no afecta la precisión de nuestra estimación, solo cambia el valor que estamos tratando de estimar.</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>n (tamaño de muestra)</td>
+                            <td><strong>SÍ</strong></td>
+                            <td>Aumentar n reduce el error estándar (s/√n), lo que hace que x̄ sea un estimador más preciso de M. Esto es un principio fundamental de la teoría de muestreo.</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>s (desviación estándar muestral)</td>
+                            <td><strong>NO</strong> (en realidad empeora)</td>
+                            <td>Aumentar s indica mayor variabilidad en los datos, lo que generalmente aumenta el error estándar (s/√n) y disminuye la precisión, no la mejora.</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>M + s</td>
+                            <td><strong>NO</strong></td>
+                            <td>Esta es una combinación ad hoc sin significado estadístico en este contexto. No tiene relación con la precisión del estimador.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="confidence-interval">
+                    <h4>Relación con intervalos de confianza</h4>
+                    <p>La precisión también se puede entender a través de <strong>intervalos de confianza</strong> para M:</p>
+                    <div class="formula">
+                        IC para M = x̄ ± t<sub>(α/2, n-1)</sub> × (s/√n)
+                    </div>
+                    <p>Donde t<sub>(α/2, n-1)</sub> es el valor crítico de la distribución t de Student.</p>
+                    <p>El <strong>ancho del intervalo de confianza</strong> es:</p>
+                    <div class="formula">
+                        Ancho = 2 × t<sub>(α/2, n-1)</sub> × (s/√n)
+                    </div>
+                    <p>Al aumentar n, ocurren dos cosas:</p>
+                    <ol class="concept-list">
+                        <li>s/√n disminuye (error estándar más pequeño)</li>
+                        <li>t<sub>(α/2, n-1)</sub> disminuye (aprox. a z para n grande)</li>
+                    </ol>
+                    <p>Ambos efectos reducen el ancho del intervalo, lo que significa mayor precisión.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Visualizar el efecto del tamaño de muestra en intervalos de confianza</h3>
+                </div>
+                
+                <div class="data-visualization">
+                    <h4>Intervalos de confianza del 95% para diferentes tamaños de muestra</h4>
+                    <p>Supongamos: x̄ = 100, s = 15, M verdadera = 102 (desconocida en la práctica)</p>
+                    
+                    <div style="margin: 20px 0;">
+                        <div style="position: relative; height: 150px; border-left: 2px solid #333; margin-left: 50px;">
+                            <!-- Línea vertical para la media poblacional -->
+                            <div style="position: absolute; left: 50%; top: 0; width: 2px; height: 100%; background-color: #2ecc71; transform: translateX(-50%);">
+                                <div style="position: absolute; top: -25px; left: -15px; font-weight: bold; color: #2ecc71;">M = 102</div>
+                            </div>
+                            
+                            <!-- Intervalo para n=10 -->
+                            <div class="interval-bar" style="width: 60%; margin-left: 20%; background-color: rgba(52, 152, 219, 0.7); top: 20px;">
+                                <div class="interval-label">n=10: 100 ± 10.4</div>
+                                <div class="center-line" style="left: 50%;"></div>
+                            </div>
+                            
+                            <!-- Intervalo para n=30 -->
+                            <div class="interval-bar" style="width: 40%; margin-left: 30%; background-color: rgba(46, 204, 113, 0.7); top: 60px;">
+                                <div class="interval-label">n=30: 100 ± 5.6</div>
+                                <div class="center-line" style="left: 50%;"></div>
+                            </div>
+                            
+                            <!-- Intervalo para n=100 -->
+                            <div class="interval-bar" style="width: 25%; margin-left: 37.5%; background-color: rgba(155, 89, 182, 0.7); top: 100px;">
+                                <div class="interval-label">n=100: 100 ± 3.0</div>
+                                <div class="center-line" style="left: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Interpretación:</strong> A medida que n aumenta, los intervalos de confianza se vuelven más estrechos (más precisos). Con n=10, el intervalo es amplio y podría no capturar M. Con n=100, el intervalo es estrecho y es más probable que capture M.</p>
+                </div>
+                
+                <div class="calculation-steps">
+                    <p><strong>Cálculos detallados de los intervalos:</strong></p>
+                    <p>Valores críticos t para 95% de confianza:</p>
+                    <ul class="concept-list">
+                        <li>n=10, gl=9: t=2.262 → Ancho = 2 × 2.262 × (15/√10) ≈ 2 × 2.262 × 4.74 ≈ 21.4 → ±10.7</li>
+                        <li>n=30, gl=29: t=2.045 → Ancho = 2 × 2.045 × (15/√30) ≈ 2 × 2.045 × 2.74 ≈ 11.2 → ±5.6</li>
+                        <li>n=100, gl=99: t≈1.984 → Ancho = 2 × 1.984 × (15/√100) = 2 × 1.984 × 1.5 ≈ 5.95 → ±3.0</li>
+                    </ul>
+                    <p class="step-result">¡El ancho del intervalo disminuye significativamente a medida que n aumenta!</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Respuesta correcta y justificación</h3>
+                </div>
+                
+                <div class="answer-box">
+                    <div class="answer-title">Respuesta Correcta</div>
+                    <div class="answer-text">Opción B: n (tamaño de muestra)</div>
+                    <p>La precisión de la estimación de la media poblacional M mejora con un aumento en el tamaño de muestra n.</p>
+                </div>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Justificación matemática</div>
+                    <p>El error estándar de la media muestral x̄ es:</p>
+                    <div class="formula">
+                        SE = s/√n
+                    </div>
+                    <p>Como n aparece en el denominador dentro de una raíz cuadrada, a medida que n aumenta:</p>
+                    <ul class="concept-list">
+                        <li>√n aumenta</li>
+                        <li>s/√n disminuye</li>
+                        <li>La variabilidad de x̄ alrededor de M disminuye</li>
+                        <li>La precisión de x̄ como estimador de M aumenta</li>
+                    </ul>
+                    <p>Esta relación es fundamental en el diseño de experimentos y estudios estadísticos.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Inferencia Estadística:</strong> Proceso de usar estadísticos muestrales (como x̄ y s) para hacer inferencias sobre parámetros poblacionales (como M).</li>
+                <li><strong>Estimación Puntual:</strong> Usar un único valor (x̄) para estimar un parámetro poblacional (M).</li>
+                <li><strong>Error Estándar:</strong> Desviación estándar de un estimador. Para la media muestral, SE = σ/√n ≈ s/√n.</li>
+                <li><strong>Teorema del Límite Central:</strong> Establece que, para muestras suficientemente grandes, la distribución de x̄ es aproximadamente normal sin importar la forma de la distribución poblacional.</li>
+                <li><strong>Ley de los Grandes Números:</strong> A medida que n aumenta, x̄ converge al valor verdadero M.</li>
+                <li><strong>Precisión vs. Exactitud:</strong>
+                    <ul>
+                        <li><strong>Precisión:</strong> Refleja la variabilidad o consistencia de las estimaciones.</li>
+                        <li><strong>Exactitud:</strong> Refleja cuán cercana está la estimación al valor verdadero.</li>
+                        <li>Aumentar n mejora la precisión (reduce la variabilidad), pero no necesariamente la exactitud (para eso se necesita un estimador no sesgado).</li>
+                    </ul>
+                </li>
+                <li><strong>Intervalos de Confianza:</strong> Rango de valores que probablemente contenga el parámetro poblacional con un nivel de confianza específico.</li>
+                <li><strong>Distribución t de Student:</strong> Usada cuando la desviación estándar poblacional σ es desconocida y se estima con s.</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Control de Calidad:</strong> Determinar el tamaño de muestra necesario para monitorear procesos de manufactura con una precisión deseada.</li>
+                <li><strong>Pruebas de Materiales:</strong> Estimar propiedades de materiales (resistencia, dureza) con suficiente precisión usando un número apropiado de especímenes.</li>
+                <li><strong>Diseño de Experimentos:</strong> Determinar el número de réplicas necesario para detectar diferencias significativas entre tratamientos.</li>
+                <li><strong>Validación de Simulaciones:</strong> Estimar el número necesario de corridas de simulación para obtener resultados confiables.</li>
+                <li><strong>Estudios de Confiabilidad:</strong> Estimar tiempos medios entre fallas (MTBF) con precisión adecuada.</li>
+                <li><strong>Mediciones Experimentales:</strong> Determinar cuántas mediciones repetidas se necesitan para estimar una cantidad física con error aceptable.</li>
+                <li><strong>Análisis de Tolerancias:</strong> Estimar dimensiones medias de componentes manufacturados para verificar cumplimiento de especificaciones.</li>
+                <li><strong>Ergonomía:</strong> Estimar medidas antropométricas promedio para diseño de productos con muestras representativas.</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">6</div>
+                <h3>Consideraciones prácticas en la selección del tamaño de muestra</h3>
+            </div>
+            
+            <p>En la práctica, la selección de n involucra un equilibrio entre:</p>
+            <ul class="concept-list">
+                <li><strong>Precisión deseada:</strong> Error máximo aceptable en la estimación.</li>
+                <li><strong>Costo:</strong> Cada observación adicional tiene un costo asociado (tiempo, dinero, recursos).</li>
+                <li><strong>Variabilidad poblacional (σ):</strong> Poblaciones más variables requieren muestras más grandes para alcanzar la misma precisión.</li>
+                <li><strong>Nivel de confianza:</strong> Mayores niveles de confianza requieren muestras más grandes.</li>
+            </ul>
+            
+            <div class="formula-box">
+                <div class="formula-title">Fórmula para determinar n</div>
+                <p>Para estimar una media con margen de error E y nivel de confianza (1-α):</p>
+                <div class="formula">
+                    n = (z<sub>α/2</sub> × σ / E)²
+                </div>
+                <p>Donde z<sub>α/2</sub> es el valor crítico de la distribución normal estándar.</p>
+                <p><strong>Ejemplo:</strong> Si σ = 15, queremos E = 3 con 95% de confianza (z=1.96):</p>
+                <div class="formula">
+                    n = (1.96 × 15 / 3)² = (9.8)² ≈ 96.04 → 97 muestras
+                </div>
+                <p>Nota: Cuando σ es desconocida, se usa un valor preliminar o se itera.</p>
+            </div>
+            
+            <div class="data-visualization">
+                <h4>Relación entre n, σ y precisión</h4>
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>σ (variabilidad)</th>
+                            <th>n (tamaño muestra)</th>
+                            <th>Error estándar (σ/√n)</th>
+                            <th>Interpretación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td>25</td>
+                            <td>2.0</td>
+                            <td>Precisión moderada</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>100</td>
+                            <td>1.0</td>
+                            <td>Buena precisión</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>25</td>
+                            <td>4.0</td>
+                            <td>Baja precisión</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>100</td>
+                            <td>2.0</td>
+                            <td>Precisión moderada</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Conclusión:</strong> Para mantener la misma precisión, si σ se duplica, n debe cuadruplicarse.</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">7</div>
+                <h3>Errores comunes y conceptos erróneos</h3>
+            </div>
+            
+            <div class="comparison-box" style="background-color: #f9ebea; border-left-color: #e74c3c;">
+                <h4>Conceptos erróneos a evitar</h4>
+                <p><strong>1. "Muestra más grande siempre es mejor":</strong> Si bien aumentar n mejora la precisión, hay rendimientos decrecientes. Duplicar n de 50 a 100 reduce el error estándar en √2 ≈ 1.41, pero de 100 a 200 solo lo reduce en √1.5 ≈ 1.22.</p>
+                <p><strong>2. "La media muestral x̄ se vuelve más exacta":</strong> Aumentar n mejora la precisión (consistencia), pero no corrige el sesgo. Un estimador sesgado puede ser preciso pero no exacto.</p>
+                <p><strong>3. "s es un indicador de precisión":</strong> s mide la variabilidad de los datos individuales, no de la estimación. Un s grande generalmente indica menor precisión, no mayor.</p>
+                <p><strong>4. "M afecta la precisión":</strong> El valor de M no afecta cuán bien podemos estimarlo, solo qué valor estamos estimando.</p>
+            </div>
+            
+            <div class="calculation-steps">
+                <p><strong>Ejemplo numérico:</strong> Comparación de precisión para diferentes n</p>
+                <p>Supongamos s = 10 constante:</p>
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>n</th>
+                            <th>√n</th>
+                            <th>s/√n</th>
+                            <th>Reducción relativa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td>3.16</td>
+                            <td>3.16</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>4.47</td>
+                            <td>2.24</td>
+                            <td>29% menos</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>6.32</td>
+                            <td>1.58</td>
+                            <td>50% menos (vs. n=10)</td>
+                        </tr>
+                        <tr>
+                            <td>80</td>
+                            <td>8.94</td>
+                            <td>1.12</td>
+                            <td>65% menos (vs. n=10)</td>
+                        </tr>
+                        <tr>
+                            <td>160</td>
+                            <td>12.65</td>
+                            <td>0.79</td>
+                            <td>75% menos (vs. n=10)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="step-result">¡Los mayores aumentos de precisión ocurren al pasar de muestras pequeñas a moderadas!</p>
+            </div>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Probability and Statistics, específicamente a Measures of Central Tendencies and Dispersions y Estimation.</p>
+            <p>Los conceptos de error estándar, intervalos de confianza y efecto del tamaño de muestra son fundamentales en estadística inferencial y aparecen en múltiples secciones del manual de referencia.</p>
+            <p><strong>Relación con otras preguntas del FE:</strong> Este concepto es crucial para preguntas sobre diseño experimental, control de calidad y análisis de datos en ingeniería.</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar elementos importantes
+            const importantElements = document.querySelectorAll('.formula, .calculation-steps, .comparison-box');
+            importantElements.forEach(element => {
+                element.setAttribute('data-print', 'important');
+            });
+        });
+        
+        // Función para imprimir
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

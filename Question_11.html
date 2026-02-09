@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 11 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .correct-option {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .incorrect-option {
+            background-color: #e74c3c !important;
+            color: white !important;
+        }
+        
+        .ethical-principle {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .principle-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .scenario-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+        
+        .scenario-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .canon-box {
+            background-color: #e8f4fc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #3498db;
+        }
+        
+        .canon-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .violation-example {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .violation-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .ethical-principle {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .correct-option {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .incorrect-option {
+                background-color: #e74c3c !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .quote-box {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #9b59b6;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 11 del FE Mechanical</h1>
+            <p class="subtitle">Ética Profesional: Reglas de Conducta Profesional para Ingenieros</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>11. According to the Model Rules, Section 240.15, Rules of Professional Conduct, licensed professional engineers are obligated to:</strong></p>
+                <div class="formula">
+                    <p>Opciones:<br>
+                    A. ensure that design documents and surveys are reviewed by a panel of licensed engineers prior to affixing a seal of approval<br>
+                    B. express public opinions under the direction of an employer or client regardless of knowledge of subject matter<br>
+                    C. practice by performing services only in the areas of their competence and in accordance with the current standards of technical competence<br>
+                    D. offer, give, or solicit services directly or indirectly in order to secure work or other valuable or political considerations</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Entender el contexto: NCEES Model Rules</h3>
+                </div>
+                <p>El NCEES (National Council of Examiners for Engineering and Surveying) establece las <strong>Model Rules</strong> que sirven como guía para las juntas de licenciamiento estatales. La <strong>Sección 240.15</strong> se refiere específicamente a las Reglas de Conducta Profesional.</p>
+                
+                <div class="quote-box">
+                    <p>"Los ingenieros profesionales deben realizar servicios solo en las áreas de su competencia."</p>
+                    <p style="text-align: right; margin-top: 10px;">- NCEES Model Rules, Sección 240.15</p>
+                </div>
+                
+                <p>Estas reglas están diseñadas para proteger la salud, seguridad y bienestar del público, que es la <strong>responsabilidad primordial</strong> de todo ingeniero profesional.</p>
+                
+                <div class="ethical-principle">
+                    <div class="principle-title">Fundamento Ético Básico</div>
+                    <p>La licencia de ingeniería no es solo un privilegio profesional, sino una <strong>responsabilidad pública</strong>. El sello de un ingeniero profesional certifica que el trabajo cumple con los estándares de seguridad y competencia técnica.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Analizar cada opción según las Reglas de Conducta Profesional</h3>
+                </div>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>¿Correcta?</th>
+                            <th>Explicación Detallada</th>
+                            <th>Referencia a las Reglas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="incorrect-option">
+                            <td><strong>A.</strong> Ensure that design documents and surveys are reviewed by a panel of licensed engineers prior to affixing a seal of approval</td>
+                            <td>NO</td>
+                            <td>No se requiere una revisión por un panel de ingenieros antes de sellar. El ingeniero individual es responsable de su trabajo y puede sellar documentos basándose en su propio juicio profesional, siempre que esté calificado en esa área.</td>
+                            <td>Las reglas establecen responsabilidad individual, no requieren paneles de revisión.</td>
+                        </tr>
+                        <tr class="incorrect-option">
+                            <td><strong>B.</strong> Express public opinions under the direction of an employer or client regardless of knowledge of subject matter</td>
+                            <td>NO</td>
+                            <td>Los ingenieros deben basar sus opiniones en hechos y conocimiento. No pueden dar opiniones sobre temas fuera de su competencia, incluso si su empleador o cliente lo solicita. Esto violaría el deber de competencia y honestidad.</td>
+                            <td>Sección 240.15(b): "Los ingenieros emitirán declaraciones públicas solo de manera objetiva y veraz."</td>
+                        </tr>
+                        <tr class="correct-option">
+                            <td><strong>C.</strong> Practice by performing services only in the areas of their competence and in accordance with the current standards of technical competence</td>
+                            <td><strong>SÍ</strong></td>
+                            <td>Esta es la declaración correcta. Los ingenieros deben limitar su práctica a áreas donde están calificados por educación o experiencia, y deben mantenerse actualizados en los estándares técnicos.</td>
+                            <td>Sección 240.15(a): "Los ingenieros emprenderán asignaciones solo cuando estén calificados por educación o experiencia en los campos técnicos específicos involucrados."</td>
+                        </tr>
+                        <tr class="incorrect-option">
+                            <td><strong>D.</strong> Offer, give, or solicit services directly or indirectly in order to secure work or other valuable or political considerations</td>
+                            <td>NO</td>
+                            <td>Esta conducta está <strong>prohibida</strong> por las reglas de ética. Constituye soborno o conflicto de interés, lo que compromete el juicio profesional y la objetividad.</td>
+                            <td>Sección 240.15(f): "Los ingenieros no ofrecerán, darán, solicitarán ni recibirán, directa o indirectamente, cualquier contribución..."</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="canon-box">
+                    <div class="canon-title">Canon Fundamental de Ética en Ingeniería</div>
+                    <p><strong>"Los ingenieros realizarán servicios solo en las áreas de su competencia."</strong></p>
+                    <p>Este principio es uno de los <strong>canones fundamentales</strong> de la ética en ingeniería porque:</p>
+                    <ul class="concept-list">
+                        <li>Protege al público de diseños o decisiones inadecuadas</li>
+                        <li>Mantiene la integridad de la profesión</li>
+                        <li>Evita errores costosos o peligrosos</li>
+                        <li>Promueve la excelencia técnica continua</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Examinar la Sección 240.15 del NCEES Model Rules</h3>
+                </div>
+                <p>La <strong>Sección 240.15</strong> contiene las Reglas de Conducta Profesional que todos los ingenieros licenciados deben seguir. Los puntos más relevantes incluyen:</p>
+                
+                <div class="calculation-steps">
+                    <p><strong>Extractos clave de la Sección 240.15:</strong></p>
+                    <p><strong>(a)</strong> "Los ingenieros emprenderán asignaciones solo cuando estén calificados por educación o experiencia en los campos técnicos específicos de ingeniería involucrados."</p>
+                    <p><strong>(b)</strong> "Los ingenieros emitirán declaraciones públicas solo de manera objetiva y veraz."</p>
+                    <p><strong>(c)</strong> "Los ingenieros actuarán para cada empleador o cliente como agentes o fideicomisarios fieles..."</p>
+                    <p><strong>(f)</strong> "Los ingenieros no ofrecerán, darán, solicitarán ni recibirán, directa o indirectamente, cualquier contribución, o incurrirán en cualquier acto para influir indebidamente en la adjudicación de un contrato."</p>
+                </div>
+                
+                <div class="scenario-box">
+                    <div class="scenario-title">Ejemplo Práctico de Aplicación</div>
+                    <p><strong>Escenario:</strong> Un ingeniero civil con 10 años de experiencia en diseño de puentes es contratado para diseñar un sistema de tratamiento de aguas residuales.</p>
+                    <p><strong>Acción Ética Correcta:</strong> El ingeniero debe <strong>rechazar el proyecto</strong> o asociarse con un ingeniero ambiental calificado, ya que el tratamiento de aguas residuales está fuera de su área de competencia primaria.</p>
+                    <p><strong>Consecuencias de Violación:</strong> Si acepta y diseña un sistema inadecuado, podría causar contaminación ambiental, poner en riesgo la salud pública y enfrentar acciones disciplinarias contra su licencia.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>¿Por qué las otras opciones son incorrectas?</h3>
+                </div>
+                
+                <div class="violation-example">
+                    <div class="violation-title">Opción A: Revisión por Panel</div>
+                    <p><strong>Error:</strong> Implica que el ingeniero individual no puede tomar responsabilidad completa de su trabajo.</p>
+                    <p><strong>Realidad:</strong> Cada ingeniero es responsable individualmente del trabajo que sella. Puede consultar a otros expertos si lo considera necesario, pero no está obligado por las reglas a tener un panel de revisión.</p>
+                    <p><strong>Consecuencia si fuera verdad:</strong> Aumentaría innecesariamente la burocracia y el costo de los proyectos sin mejorar necesariamente la seguridad.</p>
+                </div>
+                
+                <div class="violation-example">
+                    <div class="violation-title">Opción B: Opiniones Públicas bajo Dirección</div>
+                    <p><strong>Error:</strong> Sugiere que los ingenieros deben actuar como portavoces sin criterio propio.</p>
+                    <p><strong>Realidad:</strong> Los ingenieros deben basar sus opiniones públicas en conocimiento técnico y hechos. No pueden dar opiniones sobre temas que no comprenden, incluso si su empleador lo solicita.</p>
+                    <p><strong>Ejemplo de Violación:</strong> Un ingeniero mecánico dando opiniones sobre seguridad estructural de edificios sin tener competencia en ingeniería estructural.</p>
+                </div>
+                
+                <div class="violation-example">
+                    <div class="violation-title">Opción D: Ofrecer o Dar Consideraciones</div>
+                    <p><strong>Error:</strong> Describe conductas claramente prohibidas (soborno, conflicto de interés).</p>
+                    <p><strong>Realidad:</strong> Estas acciones son violaciones graves de la ética profesional que pueden resultar en la revocación de la licencia y acciones legales.</p>
+                    <p><strong>Ejemplo de Violación:</strong> Ofrecer regalos costosos a un funcionario público para obtener un contrato de ingeniería.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Respuesta correcta y justificación completa</h3>
+                </div>
+                
+                <div class="answer-box">
+                    <div class="answer-title">Respuesta Correcta</div>
+                    <div class="answer-text">Opción C: Practice by performing services only in the areas of their competence and in accordance with the current standards of technical competence</div>
+                    <p>Esta opción refleja exactamente el requisito ético fundamental establecido en la Sección 240.15(a) de las NCEES Model Rules.</p>
+                </div>
+                
+                <div class="ethical-principle">
+                    <div class="principle-title">Importancia en la Práctica de Ingeniería</div>
+                    <p>Este principio es <strong>crítico</strong> porque:</p>
+                    <ol class="concept-list">
+                        <li><strong>Protección del Público:</strong> Evita que ingenieros realicen trabajos para los que no están calificados, previniendo fallas estructurales, accidentes y otros riesgos.</li>
+                        <li><strong>Integridad Profesional:</strong> Mantiene los estándares de excelencia en la profesión de ingeniería.</li>
+                        <li><strong>Responsabilidad Legal:</strong> Los ingenieros pueden ser legalmente responsables por daños resultantes de trabajar fuera de su competencia.</li>
+                        <li><strong>Desarrollo Profesional Continuo:</strong> Fomenta que los ingenieros se mantengan actualizados en sus áreas de especialización.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave de Ética en Ingeniería</h2>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Fundamentos de la Ética Profesional en Ingeniería</h3>
+            <ul class="concept-list">
+                <li><strong>Primacía de la Salud, Seguridad y Bienestar Público:</strong> La responsabilidad primordial del ingeniero es proteger al público. Todas las demás consideraciones son secundarias.</li>
+                <li><strong>Competencia Técnica:</strong> Los ingenieros deben realizar trabajos solo en áreas donde están calificados por educación, entrenamiento o experiencia.</li>
+                <li><strong>Honestidad e Integridad:</strong> Los ingenieros deben ser honestos e imparciales, y servir fielmente a sus empleadores, clientes y al público.</li>
+                <li><strong>Responsabilidad Profesional:</strong> Cada ingeniero es responsable individualmente del trabajo que realiza o supervisa.</li>
+                <li><strong>Conflicto de Interés:</strong> Los ingenieros deben evitar conflictos de interés reales o percibidos, y divulgar aquellos que no puedan evitarse.</li>
+                <li><strong>Desarrollo Profesional Continuo:</strong> Los ingenieros deben mantenerse actualizados en sus campos mediante educación continua.</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Estructura de las NCEES Model Rules</h3>
+            <ul class="concept-list">
+                <li><strong>Sección 240.1 - 240.10:</strong> Requisitos de Licenciamiento</li>
+                <li><strong>Sección 240.11 - 240.14:</strong> Estándares de Práctica</li>
+                <li><strong>Sección 240.15:</strong> Reglas de Conducta Profesional (la más importante para preguntas de ética)</li>
+                <li><strong>Sección 240.16 - 240.20:</strong> Procedimientos Disciplinarios</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de Equipos Mecánicos:</strong> Solo ingenieros con competencia específica en el tipo de equipo deben realizar diseños que afecten la seguridad pública.</li>
+                <li><strong>Sistemas de Presión:</strong> Diseño de recipientes a presión, calderas y sistemas neumáticos/hidráulicos requiere especialización específica.</li>
+                <li><strong>Análisis de Fallas:</strong> La determinación de causas de falla en componentes mecánicos debe ser realizada por expertos en el tipo específico de componente.</li>
+                <li><strong>Automatización y Control:</strong> Sistemas de control automatizados que afectan seguridad requieren competencia en ingeniería de control.</li>
+                <li><strong>Robótica Industrial:</strong> Diseño e implementación de sistemas robóticos requiere conocimientos especializados en robótica y seguridad.</li>
+                <li><strong>Energía y Sustentabilidad:</strong> Sistemas de energía renovable y eficiencia energética requieren competencia en termodinámica y sistemas de energía.</li>
+                <li><strong>Ingeniería Biomédica:</strong> Equipos médicos y dispositivos de asistencia requieren conocimiento tanto de ingeniería mecánica como de aplicaciones médicas.</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">6</div>
+                <h3>Casos de Estudio y Ejemplos Prácticos</h3>
+            </div>
+            
+            <div class="scenario-box">
+                <div class="scenario-title">Caso de Estudio 1: Colapso del Pasarela del Hotel Hyatt (1981)</div>
+                <p><strong>Hechos:</strong> El colapso de las pasarelas en el Hotel Hyatt Regency en Kansas City mató a 114 personas e hirió a más de 200.</p>
+                <p><strong>Problema Ético:</strong> Cambios en el diseño estructural fueron aprobados sin el análisis adecuado por un ingeniero estructural competente.</p>
+                <p><strong>Lección:</strong> La responsabilidad profesional no puede delegarse sin supervisión adecuada. Los ingenieros deben asegurar que las modificaciones de diseño sean revisadas por personal competente.</p>
+            </div>
+            
+            <div class="scenario-box">
+                <div class="scenario-title">Caso de Estudio 2: Desastre del Transbordador Espacial Challenger (1986)</div>
+                <p><strong>Hechos:</strong> El transbordador espacial Challenger explotó 73 segundos después del despegue, matando a los 7 astronautas a bordo.</p>
+                <p><strong>Problema Ético:</strong> Los ingenieros de Morton Thiokol habían expresado preocupaciones sobre los anillos O a bajas temperaturas, pero la gerencia anuló sus recomendaciones.</p>
+                <p><strong>Lección:</strong> Los ingenieros tienen la obligación ética de insistir en preocupaciones de seguridad, incluso frente a presión organizacional o de plazo.</p>
+            </div>
+            
+            <div class="scenario-box">
+                <div class="scenario-title">Ejemplo de Aplicación Diaria</div>
+                <p><strong>Situación:</strong> Un ingeniero mecánico con experiencia en diseño de máquinas herramienta es contactado para diseñar un sistema de ventilación para un túnel.</p>
+                <p><strong>Decisión Ética Correcta:</strong> El ingeniero debe:</p>
+                <ol class="concept-list">
+                    <li>Reconocer que la ventilación de túneles está fuera de su área principal de competencia.</li>
+                    <li>Recomendar al cliente contratar a un ingeniero especializado en sistemas de ventilación o ingeniería de túneles.</li>
+                    <li>Si decide aceptar el proyecto, debe asociarse con un experto o adquirir la competencia necesaria antes de proceder.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">7</div>
+                <h3>Consecuencias de Violar las Reglas de Conducta Profesional</h3>
+            </div>
+            
+            <div class="calculation-steps">
+                <p><strong>Acciones Disciplinarias Posibles:</strong></p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Violación</th>
+                            <th>Consecuencias Típicas</th>
+                            <th>Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Trabajar fuera del área de competencia</td>
+                            <td>Ammonestación, suspensión de licencia, educación correctiva obligatoria</td>
+                            <td>Ingeniero civil diseñando sistemas eléctricos sin competencia</td>
+                        </tr>
+                        <tr>
+                            <td>Falta de honestidad en representaciones</td>
+                            <td>Revocación de licencia, multas, posible acción legal</td>
+                            <td>Falsificar resultados de pruebas o calificaciones</td>
+                        </tr>
+                        <tr>
+                            <td>Conflicto de interés no declarado</td>
+                            <td>Suspensión, multas, restitución</td>
+                            <td>Recomendar productos de una compañía en la que se tiene interés financiero</td>
+                        </tr>
+                        <tr>
+                            <td>Negligencia que causa daño</td>
+                            <td>Revocación de licencia, responsabilidad civil, posible acción penal</td>
+                            <td>Diseño deficiente que causa lesiones o muerte</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="ethical-principle">
+                <div class="principle-title">Responsabilidad Legal vs. Ética</div>
+                <p><strong>Responsabilidad Ética:</strong> Obligación moral de actuar en beneficio del público y mantener los estándares profesionales.</p>
+                <p><strong>Responsabilidad Legal:</strong> Obligación bajo la ley, que puede incluir responsabilidad civil por daños o acción penal por negligencia grave.</p>
+                <p><strong>Conexión:</strong> Las violaciones éticas a menudo llevan a responsabilidad legal, especialmente cuando resultan en daños al público.</p>
+            </div>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Ethics and Professional Practice, específicamente a los códigos de ética como las NCEES Model Rules.</p>
+            <p>Las Reglas de Conducta Profesional del NCEES son un componente crítico del examen FE y la práctica profesional. Todos los ingenieros licenciados deben conocer y adherirse a estas reglas.</p>
+            <p><strong>Para más información:</strong> Consulta la versión completa de las NCEES Model Rules en el sitio web de NCEES o en el FE Reference Handbook.</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar elementos importantes
+            const importantElements = document.querySelectorAll('.formula, .ethical-principle, .scenario-box');
+            importantElements.forEach(element => {
+                element.setAttribute('data-print', 'important');
+            });
+        });
+        
+        // Función para imprimir
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
