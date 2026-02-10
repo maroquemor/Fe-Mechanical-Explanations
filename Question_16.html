@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 16 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .data-box {
+            background-color: #fff8e1;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #f39c12;
+        }
+        
+        .data-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+        
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .factor-table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: white;
+        }
+        
+        .factor-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        
+        .factor-table th, .factor-table td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            text-align: center;
+            min-width: 60px;
+        }
+        
+        .factor-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        
+        .factor-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .highlight-column {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .cash-flow-diagram {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        
+        .time-point {
+            position: relative;
+            text-align: center;
+            width: 40px;
+        }
+        
+        .time-marker {
+            width: 10px;
+            height: 10px;
+            background-color: #3498db;
+            border-radius: 50%;
+            margin: 0 auto 8px;
+        }
+        
+        .time-label {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 12px;
+        }
+        
+        .cash-flow {
+            color: #e74c3c;
+            font-weight: bold;
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .factor-explanation {
+            background-color: #f4ecf7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #9b59b6;
+        }
+        
+        .factor-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .data-box {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .highlight-column {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .calculation-steps {
+                background-color: #f9ebea !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .factor-explanation {
+                background-color: #f4ecf7 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .note-box {
+            background-color: #ebf5fb;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+        
+        .visual-aid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .visual-item {
+            text-align: center;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            min-width: 200px;
+        }
+        
+        .visual-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 16 del FE Mechanical</h1>
+            <p class="subtitle">Selección del Factor Correcto para Análisis de Valor Presente de Series Uniformes</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>16. Economic analysis will be used to compute an equivalent value today for an estimated constant monthly expense that is projected to occur each month over the next three years. Select the column in the factor table that contains the value that could be used for the analysis.</strong></p>
+                <div class="formula">
+                    <p>Factor Table - i = 2.00%</p>
+                </div>
+                <p>Se proporciona una tabla de factores de interés con múltiples columnas. La pregunta requiere seleccionar la columna correcta que contiene el valor para calcular el valor presente de gastos mensuales constantes durante 3 años.</p>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Entender el problema y los datos</h3>
+                </div>
+                
+                <div class="data-box">
+                    <div class="data-title">Elementos clave del problema:</div>
+                    <ul class="concept-list">
+                        <li><strong>Gasto mensual constante:</strong> Cantidad igual cada mes</li>
+                        <li><strong>Duración:</strong> 3 años (36 meses)</li>
+                        <li><strong>Tasa de interés:</strong> 2.00% (por período, que en este caso es mensual)</li>
+                        <li><strong>Objetivo:</strong> Calcular el valor presente (valor equivalente hoy)</li>
+                        <li><strong>Tipo de problema:</strong> Valor presente de una serie uniforme (anualidad)</li>
+                    </ul>
+                </div>
+                
+                <p>El problema implica convertir una serie de pagos mensuales iguales en un valor presente único. Esto es un cálculo estándar de ingeniería económica conocido como <strong>valor presente de una anualidad</strong>.</p>
+                
+                <div class="cash-flow-diagram">
+                    <h4>Diagrama de Flujo de Efectivo</h4>
+                    <div class="timeline">
+                        <div class="time-point">
+                            <div class="time-marker"></div>
+                            <div class="time-label">Hoy</div>
+                            <div class="cash-flow">P = ?</div>
+                        </div>
+                        <div class="time-point">
+                            <div class="time-marker"></div>
+                            <div class="time-label">Mes 1</div>
+                            <div class="cash-flow">A</div>
+                        </div>
+                        <div class="time-point">
+                            <div class="time-marker"></div>
+                            <div class="time-label">Mes 2</div>
+                            <div class="cash-flow">A</div>
+                        </div>
+                        <div class="time-point">
+                            <div class="time-marker"></div>
+                            <div class="time-label">Mes 3</div>
+                            <div class="cash-flow">A</div>
+                        </div>
+                        <div class="time-point">
+                            <div style="font-size: 20px;">...</div>
+                            <div class="time-label"></div>
+                        </div>
+                        <div class="time-point">
+                            <div class="time-marker"></div>
+                            <div class="time-label">Mes 36</div>
+                            <div class="cash-flow">A</div>
+                        </div>
+                    </div>
+                    <p style="color: #7f8c8d; margin-top: 20px;">
+                        <span style="color: #3498db; font-weight: bold;">P = Valor presente (lo que buscamos)</span> &nbsp;|&nbsp;
+                        <span style="color: #e74c3c; font-weight: bold;">A = Gasto mensual constante</span>
+                    </p>
+                </div>
+                
+                <div class="note-box">
+                    <strong>Nota sobre la tasa de interés:</strong> La tabla está etiquetada como "Factor Table - i = 2.00%". Dado que los gastos son mensuales y la tabla muestra valores para diferentes períodos (n), debemos asumir que la tasa del 2% es por período, y que un período corresponde a un mes en este contexto.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Identificar el factor de ingeniería económica necesario</h3>
+                </div>
+                
+                <p>Para encontrar el valor presente (P) de una serie uniforme (A) durante n períodos a una tasa de interés i, usamos la fórmula:</p>
+                
+                <div class="formula">
+                    P = A × (P/A, i, n)
+                </div>
+                
+                <p>Donde (P/A, i, n) es el <strong>factor de valor presente de una serie uniforme</strong>, también conocido como factor de valor presente de una anualidad.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Fórmula del factor (P/A, i, n)</div>
+                    <div class="formula">
+                        (P/A, i, n) = [(1 + i)<sup>n</sup> - 1] / [i(1 + i)<sup>n</sup>]
+                    </div>
+                    <p>Para i = 2.00% = 0.02 y n = 36 meses:</p>
+                    <div class="formula">
+                        (P/A, 2%, 36) = [(1.02)<sup>36</sup> - 1] / [0.02 × (1.02)<sup>36</sup>]
+                    </div>
+                </div>
+                
+                <p>Este factor nos permite calcular directamente el valor presente total de 36 pagos mensuales iguales.</p>
+                
+                <div class="visual-aid">
+                    <div class="visual-item">
+                        <div class="visual-icon">P/A</div>
+                        <h4>Factor P/A</h4>
+                        <p>Convierte una serie uniforme (A) a su valor presente (P)</p>
+                        <p><strong>Fórmula:</strong> P = A × (P/A,i,n)</p>
+                    </div>
+                    <div class="visual-item">
+                        <div class="visual-icon">A/P</div>
+                        <h4>Factor A/P</h4>
+                        <p>Convierte un valor presente (P) a una serie uniforme (A)</p>
+                        <p><strong>Fórmula:</strong> A = P × (A/P,i,n)</p>
+                    </div>
+                    <div class="visual-item">
+                        <div class="visual-icon">P/F</div>
+                        <h4>Factor P/F</h4>
+                        <p>Convierte un valor futuro (F) a su valor presente (P)</p>
+                        <p><strong>Fórmula:</strong> P = F × (P/F,i,n)</p>
+                    </div>
+                </div>
+                
+                <div class="note-box">
+                    <strong>Relación importante:</strong> (P/A,i,n) y (A/P,i,n) son recíprocos. Es decir, (A/P,i,n) = 1 / (P/A,i,n). En la tabla, estos factores aparecen en columnas separadas.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Analizar la tabla de factores proporcionada</h3>
+                </div>
+                
+                <p>La tabla de factores tiene las siguientes columnas:</p>
+                
+                <div class="factor-table-container">
+                    <table class="factor-table">
+                        <thead>
+                            <tr>
+                                <th>n</th>
+                                <th>P/F</th>
+                                <th class="highlight-column">P/A</th>
+                                <th>P/G</th>
+                                <th>F/P</th>
+                                <th>F/A</th>
+                                <th>A/P</th>
+                                <th>A/F</th>
+                                <th>A/G</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>0.9804</td>
+                                <td class="highlight-column">0.9804</td>
+                                <td>0.0000</td>
+                                <td>1.0200</td>
+                                <td>1.0000</td>
+                                <td>1.02000</td>
+                                <td>1.00000</td>
+                                <td>0.0000</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>0.9612</td>
+                                <td class="highlight-column">1.9416</td>
+                                <td>0.9612</td>
+                                <td>1.0404</td>
+                                <td>2.0200</td>
+                                <td>0.51500</td>
+                                <td>0.49500</td>
+                                <td>0.4950</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>0.9423</td>
+                                <td class="highlight-column">2.8839</td>
+                                <td>2.8458</td>
+                                <td>1.0612</td>
+                                <td>3.0604</td>
+                                <td>0.34680</td>
+                                <td>0.32680</td>
+                                <td>0.9868</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>0.9238</td>
+                                <td class="highlight-column">3.8077</td>
+                                <td>5.6173</td>
+                                <td>1.0824</td>
+                                <td>4.1216</td>
+                                <td>0.26260</td>
+                                <td>0.24261</td>
+                                <td>1.4752</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>0.9057</td>
+                                <td class="highlight-column">4.7135</td>
+                                <td>9.2403</td>
+                                <td>1.1041</td>
+                                <td>5.2040</td>
+                                <td>0.21220</td>
+                                <td>0.19221</td>
+                                <td>1.9604</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>0.8203</td>
+                                <td class="highlight-column">8.9826</td>
+                                <td>38.9551</td>
+                                <td>1.2190</td>
+                                <td>10.9497</td>
+                                <td>0.11130</td>
+                                <td>0.09134</td>
+                                <td>4.3367</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>0.6730</td>
+                                <td class="highlight-column">16.3514</td>
+                                <td>144.6003</td>
+                                <td>1.4859</td>
+                                <td>24.2974</td>
+                                <td>0.06120</td>
+                                <td>0.04128</td>
+                                <td>8.8433</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>0.5521</td>
+                                <td class="highlight-column">22.3965</td>
+                                <td>291.7164</td>
+                                <td>1.8114</td>
+                                <td>40.5681</td>
+                                <td>0.04460</td>
+                                <td>0.02461</td>
+                                <td>13.0251</td>
+                            </tr>
+                            <tr>
+                                <td class="highlight-cell">36</td>
+                                <td>0.4902</td>
+                                <td class="highlight-column highlight-cell">25.4886*</td>
+                                <td>395.1712*</td>
+                                <td>2.0399</td>
+                                <td>51.9945*</td>
+                                <td>0.03923*</td>
+                                <td>0.01923*</td>
+                                <td>15.5076*</td>
+                            </tr>
+                            <tr>
+                                <td>40</td>
+                                <td>0.4529</td>
+                                <td class="highlight-column">27.3555</td>
+                                <td>461.9931</td>
+                                <td>2.2080</td>
+                                <td>60.4020</td>
+                                <td>0.03656</td>
+                                <td>0.01656</td>
+                                <td>16.8885</td>
+                            </tr>
+                            <tr>
+                                <td>50</td>
+                                <td>0.3715</td>
+                                <td class="highlight-column">31.4236</td>
+                                <td>642.3606</td>
+                                <td>2.6916</td>
+                                <td>84.5794</td>
+                                <td>0.03182</td>
+                                <td>0.01182</td>
+                                <td>20.4420</td>
+                            </tr>
+                            <tr>
+                                <td>60</td>
+                                <td>0.3048</td>
+                                <td class="highlight-column">34.7609</td>
+                                <td>823.6975</td>
+                                <td>3.2810</td>
+                                <td>114.0515</td>
+                                <td>0.02877</td>
+                                <td>0.00877</td>
+                                <td>23.6961</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td>0.1380</td>
+                                <td class="highlight-column">43.0984</td>
+                                <td>1,464.7527</td>
+                                <td>7.2446</td>
+                                <td>312.2323</td>
+                                <td>0.02320</td>
+                                <td>0.00323</td>
+                                <td>33.9863</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="text-align: center; font-size: 12px; color: #7f8c8d; margin-top: 10px;">* Valores estimados para n=36 (no mostrados en la tabla original pero calculados para esta explicación)</p>
+                </div>
+                
+                <div class="factor-explanation">
+                    <div class="factor-title">Explicación de las columnas de la tabla:</div>
+                    <ul class="concept-list">
+                        <li><strong>P/F:</strong> Factor de valor presente dado un valor futuro</li>
+                        <li><strong class="highlight-column">P/A:</strong> Factor de valor presente dado una serie uniforme (el que necesitamos)</li>
+                        <li><strong>P/G:</strong> Factor de valor presente dado un gradiente aritmético</li>
+                        <li><strong>F/P:</strong> Factor de valor futuro dado un valor presente</li>
+                        <li><strong>F/A:</strong> Factor de valor futuro dado una serie uniforme</li>
+                        <li><strong>A/P:</strong> Factor de serie uniforme dado un valor presente</li>
+                        <li><strong>A/F:</strong> Factor de serie uniforme dado un valor futuro</li>
+                        <li><strong>A/G:</strong> Factor de serie uniforme dado un gradiente aritmético</li>
+                    </ul>
+                </div>
+                
+                <p>Para nuestro problema, necesitamos la columna <strong class="highlight-column">P/A</strong> porque estamos convirtiendo una serie uniforme de gastos mensuales (A) a un valor presente (P).</p>
+                
+                <div class="note-box">
+                    <strong>Nota sobre n=36:</strong> En la tabla original del examen, no se muestra explícitamente n=36. Sin embargo, podemos interpolar entre los valores de n=30 y n=40, o entender que necesitamos buscar en la columna P/A para el valor de n=36. La pregunta simplemente pide seleccionar la columna correcta, no el valor específico.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Verificación del valor específico para n=36</h3>
+                </div>
+                
+                <p>Aunque la pregunta solo pide seleccionar la columna, es útil verificar el valor específico para n=36:</p>
+                
+                <div class="calculation-steps">
+                    <p><strong>Cálculo de (P/A, 2%, 36):</strong></p>
+                    <p>(1 + i)<sup>n</sup> = (1.02)<sup>36</sup> = 2.039887</p>
+                    <p>(P/A, 2%, 36) = [(1.02)<sup>36</sup> - 1] / [0.02 × (1.02)<sup>36</sup>]</p>
+                    <p>(P/A, 2%, 36) = (2.039887 - 1) / (0.02 × 2.039887)</p>
+                    <p>(P/A, 2%, 36) = 1.039887 / 0.04079774</p>
+                    <p class="step-result">(P/A, 2%, 36) = 25.4886</p>
+                </div>
+                
+                <p>Este valor de 25.4886 significa que el valor presente de 36 pagos mensuales de $1 cada uno, al 2% de interés mensual, es $25.49.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Ejemplo numérico:</div>
+                    <p>Si el gasto mensual constante es A = $100, entonces:</p>
+                    <div class="formula">
+                        P = A × (P/A, 2%, 36) = 100 × 25.4886 = $2,548.86
+                    </div>
+                    <p>Esto significa que $100 mensuales durante 3 años al 2% mensual equivalen a $2,548.86 hoy.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>¿Por qué no otras columnas?</h3>
+                </div>
+                
+                <p>Analicemos por qué otras columnas no son correctas:</p>
+                
+                <div class="factor-explanation">
+                    <div class="factor-title">Análisis de columnas incorrectas:</div>
+                    <ul class="concept-list">
+                        <li><strong>P/F:</strong> Este factor convierte un valor futuro único a valor presente, no una serie de pagos.</li>
+                        <li><strong>P/G:</strong> Este factor es para series con gradiente (pagos que aumentan o disminuyen en cantidad constante), no para pagos constantes.</li>
+                        <li><strong>F/P:</strong> Este factor convierte valor presente a valor futuro, lo opuesto a lo que necesitamos.</li>
+                        <li><strong>F/A:</strong> Este factor convierte una serie uniforme a valor futuro, no a valor presente.</li>
+                        <li><strong>A/P:</strong> Este factor hace la conversión inversa (de valor presente a serie uniforme).</li>
+                        <li><strong>A/F:</strong> Este factor convierte valor futuro a serie uniforme.</li>
+                        <li><strong>A/G:</strong> Este factor convierte un gradiente a serie uniforme.</li>
+                    </ul>
+                </div>
+                
+                <div class="note-box">
+                    <strong>Comprobación de entendimiento:</strong> Si tuviéramos que usar el factor A/P, estaríamos calculando el pago mensual equivalente dado un valor presente, que es el problema inverso al que se plantea. La pregunta pide "compute an equivalent value today" (calcular un valor equivalente hoy), lo que claramente indica que buscamos un valor presente (P), no un pago periódico (A).
+                </div>
+            </div>
+        </div>
+        
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">Columna P/A</div>
+            <p>La columna P/A contiene el factor para calcular el valor presente de una serie uniforme de pagos.</p>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Valor Presente (P):</strong> Valor equivalente hoy de uno o más flujos de efectivo futuros, descontados a una tasa de interés apropiada.</li>
+                <li><strong>Serie Uniforme (A):</strong> Serie de flujos de efectivo iguales que ocurren en intervalos regulares durante un período específico.</li>
+                <li><strong>Factor (P/A,i,n):</strong> Factor de valor presente de una anualidad. Convierte una serie uniforme de n pagos a su valor presente equivalente a una tasa de interés i por período.</li>
+                <li><strong>Tasa de Interés por Período (i):</strong> La tasa de interés aplicable a cada período de capitalización. Debe coincidir con el período de los flujos de efectivo.</li>
+                <li><strong>Número de Períodos (n):</strong> Número total de períodos de capitalización o número de pagos en la serie.</li>
+                <li><strong>Equivalencia Económica:</strong> Concepto fundamental que establece que diferentes patrones de flujos de efectivo pueden tener el mismo valor económico cuando se considera el valor del dinero en el tiempo.</li>
+                <li><strong>Tablas de Factores de Interés:</strong> Herramientas que proporcionan valores precalculados de factores de ingeniería económica para diferentes combinaciones de i y n.</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Análisis de Costo del Ciclo de Vida:</strong> Evaluar el costo total de propiedad de equipos, incluyendo costos iniciales, operativos y de mantenimiento.</li>
+                <li><strong>Evaluación de Alternativas:</strong> Comparar diferentes diseños o soluciones técnicas con diferentes patrones de costos a lo largo del tiempo.</li>
+                <li><strong>Presupuestación de Proyectos:</strong> Determinar el financiamiento necesario para proyectos con gastos recurrentes.</li>
+                <li><strong>Análisis de Arrendamiento vs. Compra:</strong> Comparar el costo presente de arrendar equipo versus comprarlo.</li>
+                <li><strong>Planificación de Mantenimiento:</strong> Evaluar el valor presente de costos de mantenimiento periódico para diferentes estrategias.</li>
+                <li><strong>Análisis de Inversión en Energía:</strong> Evaluar el valor presente de ahorros de energía de equipos eficientes versus su mayor costo inicial.</li>
+                <li><strong>Gestión de Activos:</strong> Tomar decisiones sobre reparación, reemplazo o modernización de equipos basándose en análisis de valor presente.</li>
+            </ul>
+            
+            <div class="formula-box">
+                <div class="formula-title">Fórmulas importantes relacionadas:</div>
+                <div class="formula">
+                    (P/A,i,n) = [(1 + i)<sup>n</sup> - 1] / [i(1 + i)<sup>n</sup>]
+                </div>
+                <div class="formula">
+                    (A/P,i,n) = [i(1 + i)<sup>n</sup>] / [(1 + i)<sup>n</sup> - 1] = 1 / (P/A,i,n)
+                </div>
+                <div class="formula">
+                    (F/A,i,n) = [(1 + i)<sup>n</sup> - 1] / i
+                </div>
+                <p>Estas fórmulas son fundamentales para la conversión entre diferentes tipos de flujos de efectivo en el tiempo.</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">6</div>
+                <h3>Escenarios de variación y consideraciones prácticas</h3>
+            </div>
+            
+            <div class="factor-explanation">
+                <div class="factor-title">Escenario 1: Tasa de interés anual vs. mensual</div>
+                <p>Si la tasa de interés dada fuera anual (8% anual) en lugar de mensual (2% mensual), necesitaríamos:</p>
+                <ul class="concept-list">
+                    <li>Convertir la tasa anual a tasa mensual: i<sub>mensual</sub> = (1 + 0.08)<sup>1/12</sup> - 1 ≈ 0.6434% mensual</li>
+                    <li>Usar esta tasa para encontrar (P/A, 0.6434%, 36)</li>
+                    <li>O usar factores para tasa anual con n en años y A como gasto anual</li>
+                </ul>
+                <p>En este problema, dado que la tabla especifica i = 2.00% y los gastos son mensuales, asumimos que el 2% es por período mensual.</p>
+            </div>
+            
+            <div class="factor-explanation">
+                <div class="factor-title">Escenario 2: Gastos que comienzan inmediatamente</div>
+                <p>Si el primer gasto ocurre hoy (anualidad vencida), necesitaríamos un factor diferente:</p>
+                <ul class="concept-list">
+                    <li>Para anualidad vencida: P = A + A(P/A,i,n-1)</li>
+                    <li>O P = A(P/A,i,n)(1+i)</li>
+                </ul>
+                <p>En este problema, los gastos son "projected to occur each month over the next three years", lo que generalmente implica que el primer pago ocurre al final del primer mes (anualidad ordinaria).</p>
+            </div>
+            
+            <div class="factor-explanation">
+                <div class="factor-title">Escenario 3: Períodos diferentes</div>
+                <p>Si los gastos fueran trimestrales en lugar de mensuales:</p>
+                <ul class="concept-list">
+                    <li>n = 3 años × 4 trimestres/año = 12 trimestres</li>
+                    <li>Necesitaríamos la tasa de interés por trimestre</li>
+                    <li>Buscaríamos (P/A, i<sub>trimestral</sub>, 12)</li>
+                </ul>
+                <p>La clave es siempre asegurar que el período de la tasa de interés coincida con el período de los flujos de efectivo.</p>
+            </div>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Engineering Economics, específicamente a Time Value of Money y Uniform Series Cash Flows. Las fórmulas para (P/A,i,n) y otros factores de interés aparecen en el manual de referencia del examen FE.</p>
+            <p>En el examen FE real, es importante saber localizar rápidamente los factores correctos en las tablas proporcionadas o usar las fórmulas directamente con la calculadora permitida.</p>
+            <p><strong>Ubicación en el FE Reference Handbook:</strong> Engineering Economics → Time Value of Money → Discrete Compounding Factors.</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar elementos importantes
+            const importantElements = document.querySelectorAll('.formula, .calculation-steps, .factor-explanation');
+            importantElements.forEach(element => {
+                element.setAttribute('data-print', 'important');
+            });
+        });
+        
+        // Función para imprimir
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

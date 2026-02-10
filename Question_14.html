@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 14 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .statement-box {
+            background-color: #fff8e1;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #f39c12;
+        }
+        
+        .statement-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .correct-answer {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .incorrect-answer {
+            background-color: #e74c3c !important;
+            color: white !important;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .scenario-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+        
+        .scenario-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .statement-box {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .scenario-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .correct-answer {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .incorrect-answer {
+                background-color: #e74c3c !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .ethical-principle {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .principle-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .legal-reference {
+            background-color: #f4ecf7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #9b59b6;
+        }
+        
+        .highlight {
+            background-color: #fffacd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .multiple-select-note {
+            background-color: #ebf5fb;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 14 del FE Mechanical</h1>
+            <p class="subtitle">Ética y Responsabilidad Profesional en Proyectos de Ingeniería</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>14. An engineering firm has overall design responsibility for a large multifaceted construction project. The state in which the work is being conducted requires civil, structural, environmental, electrical, and mechanical engineering plans to be prepared and stamped by a professional engineer. Which of the following statements are true?</strong></p>
+                <p>Select all that apply.</p>
+                <ol type="A">
+                    <li>Responsibility for the coordination of the entire project can be accepted by the firm's senior engineer, who is responsible for signing and sealing all the submitted plans.</li>
+                    <li>Responsibility for coordination of the entire project can be accepted by the firm's senior engineer if each technical submittal is signed and sealed by the qualified engineer assigned to that segment.</li>
+                    <li>The foremost responsibility of the professional engineer is to safeguard the health, safety, and welfare of the public when performing services for clients and employers.</li>
+                    <li>The technical competence of the professional engineers on the project is not as important as their responsibility to disclose to their employers or clients all known or potential conflicts of interest or other circumstances that could influence or appear to influence their judgment or the quality of their professional service or engagement.</li>
+                    <li>Licensing laws and rules governing engineering professional practice may vary in each of the jurisdictions in which a licensee practices.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Entender el contexto de la pregunta</h3>
+                </div>
+                <p>Esta pregunta evalúa el conocimiento de los principios éticos y las responsabilidades legales de los ingenieros profesionales en proyectos complejos. Es una pregunta de <span class="highlight">selección múltiple con múltiples respuestas correctas</span>, lo que requiere evaluar cada afirmación individualmente.</p>
+                
+                <div class="scenario-box">
+                    <div class="scenario-title">Escenario del Problema</div>
+                    <p>Una firma de ingeniería tiene la responsabilidad general del diseño para un proyecto de construcción grande y multifacético. El estado donde se realiza el trabajo requiere que los planos de ingeniería civil, estructural, ambiental, eléctrica y mecánica sean preparados y sellados por un ingeniero profesional.</p>
+                </div>
+                
+                <div class="multiple-select-note">
+                    <strong>Nota:</strong> Esta es una pregunta de "seleccionar todas las que correspondan". En el examen FE computarizado, deberás marcar todas las opciones que sean verdaderas.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Analizar la Opción A</h3>
+                </div>
+                <p><strong>Afirmación A:</strong> "Responsibility for the coordination of the entire project can be accepted by the firm's senior engineer, who is responsible for signing and sealing all the submitted plans."</p>
+                
+                <div class="ethical-principle">
+                    <div class="principle-title">Principio Ético Relevante:</div>
+                    <p>Según las <em>Reglas de Conducta Profesional del NCEES</em> (Sección B.1), los ingenieros solo pueden sellar planos y documentos que hayan preparado personalmente o bajo su supervisión directa, y en los cuales tengan competencia profesional.</p>
+                </div>
+                
+                <p><strong>Análisis:</strong> Un solo ingeniero no puede asumir responsabilidad por áreas en las que no tiene competencia. Cada disciplina especializada (civil, estructural, ambiental, etc.) requiere que un ingeniero calificado en esa área específica prepare y selle los documentos correspondientes.</p>
+                
+                <div class="legal-reference">
+                    <div class="principle-title">Referencia Legal:</div>
+                    <p>La mayoría de las leyes de licenciatura estatales prohíben que un ingeniero selle documentos fuera de su área de competencia. Esto protegería al público de errores que podrían ocurrir cuando un ingeniero trabaja fuera de su especialización.</p>
+                </div>
+                
+                <p><strong>Conclusión:</strong> La Opción A es <strong>FALSA</strong>.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Analizar la Opción B</h3>
+                </div>
+                <p><strong>Afirmación B:</strong> "Responsibility for coordination of the entire project can be accepted by the firm's senior engineer if each technical submittal is signed and sealed by the qualified engineer assigned to that segment."</p>
+                
+                <div class="ethical-principle">
+                    <div class="principle-title">Principio Ético Relevante:</div>
+                    <p>Las <em>Reglas de Conducta Profesional</em> permiten que un ingeniero coordine un proyecto completo, siempre que cada segmento técnico sea preparado, firmado y sellado por un ingeniero calificado en esa disciplina específica.</p>
+                </div>
+                
+                <p><strong>Análisis:</strong> Esta afirmación refleja la práctica profesional estándar. Un ingeniero principal puede coordinar y supervisar un proyecto multifacético, pero cada componente especializado debe ser certificado por un experto en ese campo. Esto asegura que el trabajo sea realizado por profesionales competentes en cada área.</p>
+                
+                <p><strong>Conclusión:</strong> La Opción B es <strong>VERDADERA</strong>.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Analizar la Opción C</h3>
+                </div>
+                <p><strong>Afirmación C:</strong> "The foremost responsibility of the professional engineer is to safeguard the health, safety, and welfare of the public when performing services for clients and employers."</p>
+                
+                <div class="ethical-principle">
+                    <div class="principle-title">Principio Ético Fundamental:</div>
+                    <p>Este es el principio cardinal de la ética de la ingeniería, establecido en el <em>Preámbulo de las Reglas de Conducta Profesional del NCEES</em> y en la mayoría de los códigos de ética de sociedades profesionales.</p>
+                </div>
+                
+                <p><strong>Análisis:</strong> La protección de la salud, seguridad y bienestar del público es la responsabilidad primordial de todo ingeniero profesional, por encima de las lealtades a clientes, empleadores o intereses personales. Este principio fundamental guía todas las demás responsabilidades éticas.</p>
+                
+                <p><strong>Conclusión:</strong> La Opción C es <strong>VERDADERA</strong>.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Analizar la Opción D</h3>
+                </div>
+                <p><strong>Afirmación D:</strong> "The technical competence of the professional engineers on the project is not as important as their responsibility to disclose to their employers or clients all known or potential conflicts of interest or other circumstances that could influence or appear to influence their judgment or the quality of their professional service or engagement."</p>
+                
+                <div class="ethical-principle">
+                    <div class="principle-title">Principio Ético Relevante:</div>
+                    <p>Las <em>Reglas de Conducta Profesional</em> requieren tanto competencia técnica como divulgación de conflictos de interés. Ambos son principios igualmente importantes.</p>
+                </div>
+                
+                <p><strong>Análisis:</strong> Esta afirmación establece una jerarquía incorrecta. La competencia técnica es igualmente importante que la divulgación de conflictos de interés. Un ingeniero debe tener competencia en su área de práctica (Sección B.1 de las Reglas) Y también debe divulgar conflictos de interés (Sección C.2 de las Reglas). Ninguno es "menos importante" que el otro.</p>
+                
+                <p><strong>Conclusión:</strong> La Opción D es <strong>FALSA</strong>.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">6</div>
+                    <h3>Analizar la Opción E</h3>
+                </div>
+                <p><strong>Afirmación E:</strong> "Licensing laws and rules governing engineering professional practice may vary in each of the jurisdictions in which a licensee practices."</p>
+                
+                <div class="ethical-principle">
+                    <div class="principle-title">Principio Ético Relevante:</div>
+                    <p>Según las <em>Reglas de Conducta Profesional</em> (Sección E.1), los ingenieros deben cumplir con las leyes y reglas de licenciatura en cada jurisdicción donde practiquen.</p>
+                </div>
+                
+                <p><strong>Análisis:</strong> Las leyes de ingeniería varían entre estados, territorios y países. Un ingeniero profesional tiene la responsabilidad de conocer y cumplir con los requisitos específicos de cada jurisdicción donde ejerza. Esto incluye diferencias en requisitos de educación, experiencia, exámenes, renovación de licencias y prácticas profesionales.</p>
+                
+                <p><strong>Conclusión:</strong> La Opción E es <strong>VERDADERA</strong>.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">7</div>
+                    <h3>Resumen de Evaluación</h3>
+                </div>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Verdadero/Falso</th>
+                            <th>Explicación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="incorrect-answer">
+                            <td>A</td>
+                            <td>FALSA</td>
+                            <td>Un solo ingeniero no puede sellar todos los planos de un proyecto multifacético; cada disciplina requiere un experto calificado en esa área.</td>
+                        </tr>
+                        <tr class="correct-answer">
+                            <td>B</td>
+                            <td>VERDADERA</td>
+                            <td>Un ingeniero puede coordinar el proyecto completo si cada segmento técnico es firmado y sellado por un ingeniero calificado en esa disciplina.</td>
+                        </tr>
+                        <tr class="correct-answer">
+                            <td>C</td>
+                            <td>VERDADERA</td>
+                            <td>La protección de la salud, seguridad y bienestar del público es la responsabilidad primordial de todo ingeniero profesional.</td>
+                        </tr>
+                        <tr class="incorrect-answer">
+                            <td>D</td>
+                            <td>FALSA</td>
+                            <td>La competencia técnica y la divulgación de conflictos de interés son igualmente importantes; no hay jerarquía entre estos principios.</td>
+                        </tr>
+                        <tr class="correct-answer">
+                            <td>E</td>
+                            <td>VERDADERA</td>
+                            <td>Las leyes de licenciatura y las reglas que gobiernan la práctica profesional varían entre jurisdicciones.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="statement-box">
+                    <div class="statement-title">Respuesta Final:</div>
+                    <p>Las opciones <strong>B, C y E</strong> son verdaderas. En el examen FE, deberías seleccionar estas tres opciones.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">B, C, E</div>
+            <p>Las afirmaciones B, C y E son verdaderas según las Reglas de Conducta Profesional del NCEES.</p>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Responsabilidad Primordial del Ingeniero:</strong> La protección de la salud, seguridad y bienestar del público es la responsabilidad más importante de un ingeniero profesional, por encima de todas las demás consideraciones.</li>
+                <li><strong>Competencia Técnica:</strong> Los ingenieros solo pueden aceptar asignaciones en áreas donde están calificados por educación o experiencia. No pueden sellar documentos fuera de su área de competencia.</li>
+                <li><strong>Coordinación de Proyectos Multidisciplinarios:</strong> Un ingeniero puede coordinar un proyecto completo que involucre múltiples disciplinas, siempre que cada componente técnico sea preparado y certificado por un ingeniero calificado en esa disciplina específica.</li>
+                <li><strong>Divulgación de Conflictos de Interés:</strong> Los ingenieros deben revelar a sus clientes o empleadores cualquier conflicto de interés real o potencial que pueda influir en su juicio profesional.</li>
+                <li><strong>Variación Jurisdiccional:</strong> Las leyes y reglas que gobiernan la práctica de la ingeniería varían entre estados, territorios y países. Los ingenieros son responsables de conocer y cumplir con los requisitos de cada jurisdicción donde practiquen.</li>
+                <li><strong>Sellado de Planos y Documentos:</strong> Solo el ingeniero que preparó o supervisó directamente la preparación de los documentos puede firmarlos y sellarlos. El sellado indica responsabilidad profesional.</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en la Práctica Profesional</h3>
+            <ul class="concept-list">
+                <li><strong>Gestión de Proyectos Complejos:</strong> En proyectos de construcción grandes, es común tener un ingeniero principal que coordine el trabajo, con ingenieros especialistas responsables de cada disciplina.</li>
+                <li><strong>Equipos Multidisciplinarios:</strong> Los proyectos modernos a menudo requieren colaboración entre ingenieros civiles, estructurales, mecánicos, eléctricos y ambientales, cada uno aportando experiencia específica.</li>
+                <li><strong>Cumplimiento Legal:</strong> Los ingenieros deben verificar los requisitos específicos de licenciatura en cada estado donde trabajen, ya que estos pueden diferir significativamente.</li>
+                <li><strong>Decisiones Éticas:</strong> Cuando surgen conflictos entre las demandas del cliente y la seguridad pública, el ingeniero debe priorizar la protección del público, incluso si esto significa recomendar soluciones más costosas o retrasar el proyecto.</li>
+                <li><strong>Documentación Profesional:</strong> El sellado de planos no es solo un requisito burocrático, sino una declaración legal de que el trabajo cumple con los estándares profesionales y los códigos aplicables.</li>
+                <li><strong>Educación Continua:</strong> Mantener la competencia técnica requiere educación continua, especialmente en campos que evolucionan rápidamente como la ingeniería ambiental y eléctrica.</li>
+            </ul>
+            
+            <div class="legal-reference">
+                <div class="principle-title">Referencia al NCEES Model Rules:</div>
+                <p><strong>Sección B.1:</strong> "Los licenciatarios emprenderán asignaciones solo cuando estén calificados por educación o experiencia en los campos técnicos específicos de ingeniería involucrados."</p>
+                <p><strong>Sección B.3:</strong> "Los licenciatarios pueden aceptar asignaciones y asumir la responsabilidad de la coordinación de un proyecto completo, siempre que cada segmento técnico sea firmado y sellado solo por el licenciatario responsable de la preparación de ese segmento técnico."</p>
+                <p><strong>Sección C.1:</strong> "Mantener la salud, seguridad y bienestar del público será primordial en el desempeño de sus deberes profesionales."</p>
+                <p><strong>Sección C.2:</strong> "Los licenciatarios revelarán todos los conflictos de interés conocidos o potenciales a sus empleadores o clientes."</p>
+                <p><strong>Sección E.1:</strong> "Los licenciatarios cumplirán con las leyes y reglas de licenciatura que gobiernan su práctica profesional en cada jurisdicción en la que practiquen."</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">8</div>
+                <h3>Escenarios Prácticos de Aplicación</h3>
+            </div>
+            
+            <div class="scenario-box">
+                <div class="scenario-title">Escenario 1: Proyecto de Hospital</div>
+                <p>Una firma de ingeniería es contratada para diseñar un nuevo hospital. El proyecto requiere:</p>
+                <ul class="concept-list">
+                    <li>Ingeniería civil para cimentaciones y estructuras</li>
+                    <li>Ingeniería eléctrica para sistemas de potencia y emergencia</li>
+                    <li>Ingeniería mecánica para HVAC y fontanería</li>
+                    <li>Ingeniería ambiental para manejo de desechos médicos</li>
+                </ul>
+                <p><strong>Aplicación:</strong> La firma puede asignar un ingeniero principal para coordinar el proyecto, pero cada conjunto de planos debe ser sellado por un ingeniero especializado en esa disciplina. Un ingeniero civil no puede sellar los planos eléctricos, y viceversa.</p>
+            </div>
+            
+            <div class="scenario-box">
+                <div class="scenario-title">Escenario 2: Conflicto de Interés</div>
+                <p>Un ingeniero estructural es contratado para evaluar la seguridad de un edificio. Descubre que el constructor es su cuñado.</p>
+                <p><strong>Aplicación:</strong> El ingeniero debe revelar esta relación familiar al cliente. Aunque sea técnicamente competente, la apariencia de parcialidad podría comprometer su juicio profesional. La divulgación es esencial, pero no reemplaza la necesidad de competencia técnica.</p>
+            </div>
+            
+            <div class="scenario-box">
+                <div class="scenario-title">Escenario 3: Práctica Multiestatal</div>
+                <p>Una firma de ingeniería con sede en Texas es contratada para un proyecto en California y otro en Nueva York.</p>
+                <p><strong>Aplicación:</strong> Los ingenieros que trabajen en estos proyectos deben verificar los requisitos específicos de licenciatura de cada estado. California podría tener requisitos de educación continua diferentes a los de Texas, y Nueva York podría tener reglas específicas sobre sellado de documentos electrónicos.</p>
+            </div>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Ethics and Professional Practice, específicamente a los Codes of Ethics (NCEES Model Rules) y Professional and Technical Societies. Los principios éticos fundamentales discutidos aquí son parte integral del examen FE y de la práctica profesional de la ingeniería.</p>
+            <p>Es esencial que los candidatos al examen FE estén familiarizados con las Reglas de Conducta Profesional del NCEES, ya que aproximadamente 4-6 preguntas del examen cubren ética y práctica profesional.</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar elementos importantes
+            const importantElements = document.querySelectorAll('.ethical-principle, .legal-reference, .scenario-box');
+            importantElements.forEach(element => {
+                element.setAttribute('data-print', 'important');
+            });
+        });
+        
+        // Función para imprimir
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

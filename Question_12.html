@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 12 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .correct-option {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .incorrect-option {
+            background-color: #e74c3c !important;
+            color: white !important;
+        }
+        
+        .ip-visualization {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+        
+        .ip-type {
+            width: 200px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            text-align: center;
+            border-top: 5px solid #ddd;
+        }
+        
+        .ip-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .ip-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .protection-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+        
+        .protection-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .case-study {
+            background-color: #e8f4fc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #3498db;
+        }
+        
+        .case-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .duration-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .duration-table th, .duration-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .duration-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .correct-option {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .incorrect-option {
+                background-color: #e74c3c !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .automotive-example {
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .car-design {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 12 del FE Mechanical</h1>
+            <p class="subtitle">Protección de Propiedad Intelectual para Diseños Industriales en Ingeniería</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>12. As the designer of a distinctively shaped automobile body style, you may protect your intellectual property with a:</strong></p>
+                <div class="formula">
+                    <p>Opciones:<br>
+                    A. trademark<br>
+                    B. patent<br>
+                    C. copyright<br>
+                    D. industrial design right</p>
+                </div>
+                <div class="automotive-example">
+                    <div class="car-design">🚗</div>
+                    <p>Diseño distintivo de carrocería de automóvil</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Entender el contexto: Protección de Propiedad Intelectual</h3>
+                </div>
+                <p>La propiedad intelectual se refiere a creaciones de la mente que tienen valor comercial y pueden protegerse legalmente. Para ingenieros y diseñadores, es crucial entender qué tipo de protección aplicar a diferentes tipos de creaciones.</p>
+                
+                <div class="protection-box">
+                    <div class="protection-title">Los 4 tipos principales de propiedad intelectual</div>
+                    <p>1. <strong>Patentes:</strong> Protegen invenciones y procesos técnicos</p>
+                    <p>2. <strong>Derechos de autor (Copyright):</strong> Protegen obras creativas y artísticas</p>
+                    <p>3. <strong>Marcas registradas (Trademarks):</strong> Protegen símbolos, nombres y lemas comerciales</p>
+                    <p>4. <strong>Diseños industriales (Industrial Design Rights):</strong> Protegen la apariencia visual de productos</p>
+                </div>
+                
+                <p>La pregunta específicamente se refiere a un "<strong>diseño distintivo de carrocería de automóvil</strong>", que es un aspecto visual y estético del producto.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Analizar cada opción en el contexto del diseño automotriz</h3>
+                </div>
+                
+                <div class="ip-visualization">
+                    <div class="ip-type" style="border-top-color: #e74c3c;">
+                        <div class="ip-icon">™</div>
+                        <div class="ip-title">Trademark</div>
+                        <p>Protege nombres, logos, eslóganes. Ej: el logo de Ford.</p>
+                    </div>
+                    
+                    <div class="ip-type" style="border-top-color: #3498db;">
+                        <div class="ip-icon">⚙️</div>
+                        <div class="ip-title">Patent</div>
+                        <p>Protege invenciones funcionales. Ej: un nuevo motor híbrido.</p>
+                    </div>
+                    
+                    <div class="ip-type" style="border-top-color: #9b59b6;">
+                        <div class="ip-icon">©</div>
+                        <div class="ip-title">Copyright</div>
+                        <p>Protege obras creativas. Ej: manuales, software, publicidad.</p>
+                    </div>
+                    
+                    <div class="ip-type" style="border-top-color: #2ecc71;">
+                        <div class="ip-icon">🎨</div>
+                        <div class="ip-title">Industrial Design Right</div>
+                        <p>Protege apariencia visual. Ej: forma del auto, líneas, contornos.</p>
+                    </div>
+                </div>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>¿Protege la forma de la carrocería?</th>
+                            <th>Explicación</th>
+                            <th>Ejemplos en automóviles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="incorrect-option">
+                            <td><strong>A. Trademark</strong></td>
+                            <td>NO</td>
+                            <td>Las marcas registradas protegen identificadores comerciales como nombres, logos y eslóganes, no la forma tridimensional de un producto.</td>
+                            <td>El logo de Mercedes-Benz, el nombre "Mustang", el eslogan "The Ultimate Driving Machine"</td>
+                        </tr>
+                        <tr class="incorrect-option">
+                            <td><strong>B. Patent</strong></td>
+                            <td>NO (en este contexto)</td>
+                            <td>Las patentes protegen invenciones funcionales, no aspectos puramente estéticos. Una patente de diseño podría aplicarse, pero generalmente se usa para características funcionales, no para la forma general de la carrocería.</td>
+                            <td>Sistema de dirección, motor, sistema de frenos, características de seguridad</td>
+                        </tr>
+                        <tr class="incorrect-option">
+                            <td><strong>C. Copyright</strong></td>
+                            <td>NO (generalmente)</td>
+                            <td>Los derechos de autor protegen obras creativas expresadas en forma tangible (libros, música, software). Los diseños industriales generalmente no están cubiertos por copyright, aunque algunos elementos gráficos podrían estarlo.</td>
+                            <td>Manuales del propietario, software del sistema de infoentretenimiento, anuncios publicitarios</td>
+                        </tr>
+                        <tr class="correct-option">
+                            <td><strong>D. Industrial Design Right</strong></td>
+                            <td><strong>SÍ</strong></td>
+                            <td>Los derechos de diseño industrial protegen específicamente la apariencia visual de un producto, incluyendo su forma, configuración, patrón y ornamentación. Esta es la protección adecuada para un diseño distintivo de carrocería.</td>
+                            <td>Forma del Volkswagen Beetle, líneas del Ferrari, perfil del Porsche 911</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Comprender qué es un "Derecho de Diseño Industrial"</h3>
+                </div>
+                
+                <div class="case-study">
+                    <div class="case-title">Definición según la Organización Mundial de la Propiedad Intelectual (OMPI)</div>
+                    <p>"Un diseño industrial constituye el aspecto ornamental o estético de un artículo. El diseño puede consistir en características tridimensionales, como la forma o superficie de un artículo, o de características bidimensionales, como patrones, líneas o color."</p>
+                    <p>Los derechos de diseño industrial protegen contra la copia o imitación no autorizada del diseño.</p>
+                </div>
+                
+                <div class="calculation-steps">
+                    <p><strong>Características clave de los derechos de diseño industrial:</strong></p>
+                    <ol class="concept-list">
+                        <li><strong>Protegen la apariencia, no la función:</strong> Solo la forma estética, no cómo funciona el producto.</li>
+                        <li><strong>Debe ser nuevo y tener carácter individual:</strong> Debe diferir significativamente de diseños existentes.</li>
+                        <li><strong>Protección limitada en el tiempo:</strong> Generalmente de 10 a 25 años, dependiendo de la jurisdicción.</li>
+                        <li><strong>Registro necesario:</strong> Generalmente requiere registro formal para obtener protección completa.</li>
+                        <li><strong>Derechos territoriales:</strong> La protección es válida solo en el país o región donde se registra.</li>
+                    </ol>
+                </div>
+                
+                <div class="protection-box">
+                    <div class="protection-title">Ejemplo histórico: Volkswagen Beetle</div>
+                    <p>La forma distintiva del Volkswagen Beetle original estaba protegida por derechos de diseño industrial. Su forma redondeada y características únicas eran reconocibles y estaban legalmente protegidas contra copias.</p>
+                    <p>Esta protección impedía que otros fabricantes produjeran autos con una apariencia sustancialmente similar sin permiso.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>¿Por qué las otras opciones no son correctas?</h3>
+                </div>
+                
+                <div class="case-study" style="background-color: #f9ebea; border-left-color: #e74c3c;">
+                    <div class="case-title">Opción A: Trademark (Marca Registrada)</div>
+                    <p><strong>Problema:</strong> Las marcas registradas protegen identificadores de origen comercial, no características de diseño.</p>
+                    <p><strong>Límites:</strong> En algunos casos, una forma distintiva puede convertirse en una "marca comercial tridimensional" (como la botella de Coca-Cola), pero esto es excepcional y requiere que el público asocie la forma específicamente con un fabricante.</p>
+                    <p><strong>Conclusión:</strong> Para una nueva carrocería de automóvil, sería extremadamente difícil y poco práctico buscar protección como marca registrada.</p>
+                </div>
+                
+                <div class="case-study" style="background-color: #f9ebea; border-left-color: #e74c3c;">
+                    <div class="case-title">Opción B: Patent (Patente)</div>
+                    <p><strong>Problema:</strong> Las patentes protegen invenciones técnicas y funcionales.</p>
+                    <p><strong>Matiz importante:</strong> Existen "patentes de diseño" en algunos sistemas legales (especialmente en EE.UU.), que protegen el aspecto ornamental de un artículo. Sin embargo:</p>
+                    <ul class="concept-list">
+                        <li>En terminología internacional, esto generalmente se considera un derecho de diseño industrial.</li>
+                        <li>En el contexto del examen FE, "patent" se refiere a patentes de utilidad, no de diseño.</li>
+                        <li>La opción D (industrial design right) es el término correcto y más específico.</li>
+                    </ul>
+                </div>
+                
+                <div class="case-study" style="background-color: #f9ebea; border-left-color: #e74c3c;">
+                    <div class="case-title">Opción C: Copyright (Derechos de Autor)</div>
+                    <p><strong>Problema:</strong> Los derechos de autor generalmente no protegen diseños industriales aplicados a productos funcionales.</p>
+                    <p><strong>Excepción limitada:</strong> Algunos elementos separables (como gráficos en la carrocería) podrían estar protegidos por copyright, pero no la forma tridimensional del automóvil en sí.</p>
+                    <p><strong>Enfoque incorrecto:</strong> Buscar protección de copyright para un diseño de automóvil sería inadecuado y probablemente ineficaz en la mayoría de jurisdicciones.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Respuesta correcta y justificación completa</h3>
+                </div>
+                
+                <div class="answer-box">
+                    <div class="answer-title">Respuesta Correcta</div>
+                    <div class="answer-text">Opción D: Industrial Design Right</div>
+                    <p>Los derechos de diseño industrial protegen específicamente la apariencia visual distintiva de productos como carrocerías de automóviles.</p>
+                </div>
+                
+                <div class="protection-box">
+                    <div class="protection-title">Justificación según el NCEES FE Reference Handbook</div>
+                    <p>En la sección de "Ethics and Professional Practice", específicamente en "Intellectual Property", se menciona:</p>
+                    <ul class="concept-list">
+                        <li><strong>Industrial design rights:</strong> Protegen el aspecto visual de productos industriales.</li>
+                        <li><strong>Distinción clara:</strong> Formas, colores y características visuales están protegidas por derechos de diseño industrial.</li>
+                        <li><strong>Aplicación en ingeniería:</strong> Diseños de productos, envases, interfaces de usuario y, en este caso, carrocerías de automóviles.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave de Propiedad Intelectual</h2>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Los 4 tipos principales de protección de PI</h3>
+            <ul class="concept-list">
+                <li><strong>Patentes (Patents):</strong>
+                    <ul>
+                        <li><strong>Protegen:</strong> Invenciones, procesos, composiciones de materia, máquinas</li>
+                        <li><strong>Requisitos:</strong> Novedad, utilidad, no obviedad</li>
+                        <li><strong>Duración:</strong> 20 años desde la presentación (generalmente)</li>
+                        <li><strong>Ejemplo en automóviles:</strong> Sistema de frenos antibloqueo, motor híbrido</li>
+                    </ul>
+                </li>
+                <li><strong>Derechos de autor (Copyright):</strong>
+                    <ul>
+                        <li><strong>Protegen:</strong> Obras creativas originales fijadas en medio tangible</li>
+                        <li><strong>Requisitos:</strong> Originalidad, creatividad mínima</li>
+                        <li><strong>Duración:</strong> Vida del autor + 70 años (varía por país)</li>
+                        <li><strong>Ejemplo en automóviles:</strong> Manuales, software, anuncios publicitarios</li>
+                    </ul>
+                </li>
+                <li><strong>Marcas registradas (Trademarks):</strong>
+                    <ul>
+                        <li><strong>Protegen:</strong> Identificadores de origen comercial</li>
+                        <li><strong>Requisitos:</strong> Uso en comercio, distintividad</li>
+                        <li><strong>Duración:</strong> Indefinida con uso continuo y renovaciones</li>
+                        <li><strong>Ejemplo en automóviles:</strong> Logotipos, nombres de modelos, eslóganes</li>
+                    </ul>
+                </li>
+                <li><strong>Diseños industriales (Industrial Design Rights):</strong>
+                    <ul>
+                        <li><strong>Protegen:</strong> Apariencia visual de productos</li>
+                        <li><strong>Requisitos:</strong> Novedad, carácter individual</li>
+                        <li><strong>Duración:</strong> 10-25 años dependiendo de la jurisdicción</li>
+                        <li><strong>Ejemplo en automóviles:</strong> Forma de la carrocería, diseño de luces, parrilla</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Duración de protección comparativa</h3>
+            <table class="duration-table">
+                <thead>
+                    <tr>
+                        <th>Tipo de PI</th>
+                        <th>Duración típica</th>
+                        <th>Renovable</th>
+                        <th>Requisito de registro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Patentes</td>
+                        <td>20 años</td>
+                        <td>No</td>
+                        <td>Sí (examen riguroso)</td>
+                    </tr>
+                    <tr>
+                        <td>Copyright</td>
+                        <td>Vida + 70 años</td>
+                        <td>No</td>
+                        <td>No (protección automática)</td>
+                    </tr>
+                    <tr>
+                        <td>Trademarks</td>
+                        <td>Indefinida</td>
+                        <td>Sí (cada 10 años)</td>
+                        <td>Sí (para protección completa)</td>
+                    </tr>
+                    <tr>
+                        <td>Diseños industriales</td>
+                        <td>10-25 años</td>
+                        <td>Variable</td>
+                        <td>Sí (en la mayoría de sistemas)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de productos:</strong> Protección de la apariencia de productos de consumo, herramientas, equipos.</li>
+                <li><strong>Automotriz:</strong> Carrocerías, diseño de interiores, componentes estéticos.</li>
+                <li><strong>Aeronáutica:</strong> Formas de fuselajes, diseño de cabinas, elementos exteriores.</li>
+                <li><strong>Electrodomésticos:</strong> Diseño de lavadoras, refrigeradores, hornos microondas.</li>
+                <li><strong>Dispositivos médicos:</strong> Apariencia de equipos médicos, prótesis estéticas.</li>
+                <li><strong>Envases y embalajes:</strong> Diseño de contenedores, botellas, cajas.</li>
+                <li><strong>Interfaces de usuario:</strong> Diseño de paneles de control, interfaces físicas.</li>
+                <li><strong>Muebles y equipamiento:</strong> Diseño de sillas ergonómicas, mesas, estaciones de trabajo.</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">6</div>
+                <h3>Casos de estudio famosos en la industria automotriz</h3>
+            </div>
+            
+            <div class="case-study">
+                <div class="case-title">Caso 1: Fiat vs. Great Wall Motors (China, 2008)</div>
+                <p><strong>Problema:</strong> El Great Wall Peri tenía un diseño notablemente similar al Fiat Panda.</p>
+                <p><strong>Protección aplicada:</strong> Fiat utilizó derechos de diseño industrial para argumentar que Great Wall había copiado el diseño de su Panda.</p>
+                <p><strong>Resultado:</strong> Los tribunales italianos fallaron a favor de Fiat, prohibiendo la venta del Great Wall Peri en Italia.</p>
+                <p><strong>Lección:</strong> Los derechos de diseño industrial son cruciales para proteger inversiones en diseño y evitar copias.</p>
+            </div>
+            
+            <div class="case-study">
+                <div class="case-title">Caso 2: BMW vs. Zhongtian (China, 2000s)</div>
+                <p><strong>Problema:</strong> El Zhongtian UFO era una copia casi exacta del BMW X5.</p>
+                <p><strong>Protección aplicada:</strong> BMW utilizó derechos de diseño industrial para proteger la forma distintiva de su SUV.</p>
+                <p><strong>Resultado:</strong> BMW ganó el caso, estableciendo un precedente importante para protección de diseños en China.</p>
+                <p><strong>Lección:</strong> El registro internacional de diseños es importante para empresas globales.</p>
+            </div>
+            
+            <div class="case-study">
+                <div class="case-title">Caso 3: Rolls-Royce vs. Otros fabricantes (protección continua)</div>
+                <p><strong>Característica distintiva:</strong> La parrilla del radiador y el ornamento "Spirit of Ecstasy".</p>
+                <p><strong>Protección aplicada:</strong> Combinación de derechos de diseño industrial (forma de la parrilla) y marca registrada (el ornamento).</p>
+                <p><strong>Lección:</strong> A menudo se usan múltiples formas de protección para diferentes aspectos de un diseño.</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">7</div>
+                <h3>Consideraciones prácticas para ingenieros</h3>
+            </div>
+            
+            <div class="protection-box">
+                <div class="protection-title">Estrategias de protección para diseñadores de productos</div>
+                <ol class="concept-list">
+                    <li><strong>Identificar qué aspecto proteger:</strong>
+                        <ul>
+                            <li><strong>Funcionalidad:</strong> Usar patentes</li>
+                            <li><strong>Apariencia:</strong> Usar derechos de diseño industrial</li>
+                            <li><strong>Identificadores:</strong> Usar marcas registradas</li>
+                            <li><strong>Documentación:</strong> Usar derechos de autor</li>
+                        </ul>
+                    </li>
+                    <li><strong>Registro oportuno:</strong> Los derechos de diseño industrial generalmente requieren registro antes de la divulgación pública.</li>
+                    <li><strong>Ámbito geográfico:</strong> Considerar en qué países/mercados se necesita protección.</li>
+                    <li><strong>Documentación de desarrollo:</strong> Mantener registros detallados del proceso de diseño como evidencia de originalidad.</li>
+                    <li><strong>Vigilancia:</strong> Monitorear el mercado para detectar posibles infracciones.</li>
+                </ol>
+            </div>
+            
+            <div class="calculation-steps">
+                <p><strong>Costos típicos de protección (aproximados):</strong></p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Tipo de protección</th>
+                            <th>Costo inicial (USD)</th>
+                            <th>Costo mantenimiento (anual)</th>
+                            <th>Tiempo procesamiento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Diseño industrial (un país)</td>
+                            <td>$1,000 - $3,000</td>
+                            <td>$100 - $500</td>
+                            <td>6-12 meses</td>
+                        </tr>
+                        <tr>
+                            <td>Patente de utilidad (un país)</td>
+                            <td>$5,000 - $15,000</td>
+                            <td>$500 - $2,000</td>
+                            <td>2-5 años</td>
+                        </tr>
+                        <tr>
+                            <td>Marca registrada (un país)</td>
+                            <td>$500 - $2,000</td>
+                            <td>$200 - $500</td>
+                            <td>9-18 meses</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em>Nota: Los costos varían significativamente según el país y la complejidad.</em></p>
+            </div>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Ethics and Professional Practice, específicamente a Intellectual Property (copyright, trade secrets, patents, trademarks).</p>
+            <p>La distinción entre diferentes tipos de propiedad intelectual es un tema importante en el examen FE y en la práctica profesional de ingeniería.</p>
+            <p><strong>Para ingenieros mecánicos:</strong> Entender estos conceptos es crucial al desarrollar nuevos productos, ya que afecta la estrategia comercial, la protección de inversiones en I+D y la defensa contra competidores.</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar elementos importantes
+            const importantElements = document.querySelectorAll('.formula, .protection-box, .case-study');
+            importantElements.forEach(element => {
+                element.setAttribute('data-print', 'important');
+            });
+        });
+        
+        // Función para imprimir
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 13 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .correct-option {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .incorrect-option {
+            background-color: #e74c3c !important;
+            color: white !important;
+        }
+        
+        .ethical-scenario {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .scenario-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .rule-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+        
+        .rule-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .competence-evaluation {
+            background-color: #e8f4fc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #3498db;
+        }
+        
+        .evaluation-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .ethical-scenario {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .correct-option {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .incorrect-option {
+                background-color: #e74c3c !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .timeline-visualization {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 25px 0;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        .timeline-point {
+            width: 80px;
+            text-align: center;
+        }
+        
+        .point-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #3498db;
+            margin: 0 auto 10px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .transportation-visual {
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .transport-icon {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 13 del FE Mechanical</h1>
+            <p class="subtitle">Ética Profesional: Competencia y Aceptación de Asignaciones en Ingeniería</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>13. A professional engineer was originally licensed 30 years ago and is still currently licensed. The engineer's employer asks the engineer to evaluate a newly developed computerized control system for public transportation. The employer requires that a currently licensed engineer evaluate the system. The engineer may accept the assignment under which conditions?</strong></p>
+                
+                <div class="transportation-visual">
+                    <div class="transport-icon">🚆</div>
+                    <p>Sistema computarizado de control para transporte público</p>
+                </div>
+                
+                <div class="formula">
+                    <p>Opciones:<br>
+                    A. The engineer is competent in modern control systems.<br>
+                    B. The engineer supervises two recent graduates who have passed the FE exam.<br>
+                    C. The engineer studied transportation systems in college.<br>
+                    D. The engineer has regularly attended meetings of a professional engineering society.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Entender el contexto del problema</h3>
+                </div>
+                <p>Tenemos un escenario donde un ingeniero profesional:</p>
+                <ul class="concept-list">
+                    <li>Fue licenciado hace 30 años</li>
+                    <li>Sigue teniendo licencia vigente</li>
+                    <li>Su empleador le pide evaluar un <strong>sistema computarizado de control nuevo</strong> para transporte público</li>
+                    <li>El empleador requiere que un ingeniero licenciado evalúe el sistema</li>
+                    <li>La pregunta es: ¿Bajo qué condiciones puede el ingeniero aceptar esta asignación?</li>
+                </ul>
+                
+                <div class="ethical-scenario">
+                    <div class="scenario-title">Elementos clave del escenario</div>
+                    <p><strong>1. Tecnología nueva:</strong> El sistema es "nuevamente desarrollado" y "computarizado", lo que implica tecnología moderna que puede diferir significativamente de los sistemas de hace 30 años.</p>
+                    <p><strong>2. Seguridad pública:</strong> El sistema es para transporte público, por lo que la seguridad de los pasajeros está en juego.</p>
+                    <p><strong>3. Licencia vigente:</strong> El ingeniero tiene licencia vigente, pero esto solo certifica que cumplió con los requisitos de licenciamiento originales, no necesariamente su competencia actual en tecnologías modernas.</p>
+                </div>
+                
+                <div class="timeline-visualization">
+                    <div class="timeline-point">
+                        <div class="point-circle">30</div>
+                        <div>Años desde la licencia original</div>
+                    </div>
+                    <div style="flex-grow: 1; border-bottom: 2px dashed #3498db;"></div>
+                    <div class="timeline-point">
+                        <div class="point-circle" style="background-color: #2ecc71;">AHORA</div>
+                        <div>Sistema computarizado nuevo</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Analizar cada opción según las Reglas de Conducta Profesional</h3>
+                </div>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>¿Permite aceptar la asignación?</th>
+                            <th>Explicación detallada</th>
+                            <th>Base en las Reglas de Conducta Profesional</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="correct-option">
+                            <td><strong>A.</strong> The engineer is competent in modern control systems.</td>
+                            <td><strong>SÍ</strong></td>
+                            <td>Esta es la única condición que garantiza que el ingeniero tiene el conocimiento y habilidades actuales necesarios para evaluar el sistema. La competencia es el requisito fundamental para aceptar cualquier asignación de ingeniería.</td>
+                            <td>NCEES Model Rules Sección 240.15(a): "Los ingenieros emprenderán asignaciones solo cuando estén calificados por educación o experiencia en los campos técnicos específicos de ingeniería involucrados."</td>
+                        </tr>
+                        <tr class="incorrect-option">
+                            <td><strong>B.</strong> The engineer supervises two recent graduates who have passed the FE exam.</td>
+                            <td>NO</td>
+                            <td>Supervisar a otros no transfiere competencia. El ingeniero sigue siendo responsable personalmente por su trabajo, independientemente de a quién supervise. Los recién graduados que pasaron el FE exam no tienen licencia profesional completa y pueden no tener experiencia en sistemas de control modernos.</td>
+                            <td>La supervisión no sustituye la competencia personal. La responsabilidad profesional es individual e intransferible.</td>
+                        </tr>
+                        <tr class="incorrect-option">
+                            <td><strong>C.</strong> The engineer studied transportation systems in college.</td>
+                            <td>NO</td>
+                            <td>Estudiar algo en la universidad hace 30 años no garantiza competencia actual en sistemas computarizados modernos. La tecnología ha evolucionado significativamente, y el conocimiento universitario antiguo puede estar obsoleto para sistemas de control contemporáneos.</td>
+                            <td>La educación pasada sin experiencia o educación continua reciente no constituye competencia actual. El aprendizaje debe ser continuo en ingeniería.</td>
+                        </tr>
+                        <tr class="incorrect-option">
+                            <td><strong>D.</strong> The engineer has regularly attended meetings of a professional engineering society.</td>
+                            <td>NO</td>
+                            <td>Asistir a reuniones puede mostrar interés profesional y exposición a temas actuales, pero no garantiza competencia. No es equivalente a tener conocimientos y habilidades demostrables en sistemas de control modernos.</td>
+                            <td>La participación profesional es valiosa para el desarrollo continuo, pero no sustituye la competencia verificable mediante educación, experiencia o capacitación específica.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="rule-box">
+                    <div class="rule-title">Regla Fundamental de Competencia Profesional</div>
+                    <p><strong>"Los ingenieros realizarán servicios solo en las áreas de su competencia."</strong></p>
+                    <p>Esta regla es absoluta y no tiene excepciones. Un ingeniero <strong>debe</strong> tener competencia actual en el área específica del trabajo antes de aceptar una asignación, especialmente cuando la seguridad pública está involucrada.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Examinar la Sección 240.15 del NCEES Model Rules</h3>
+                </div>
+                
+                <div class="competence-evaluation">
+                    <div class="evaluation-title">Análisis de la Regla 240.15(a)</div>
+                    <p>La regla específica establece:</p>
+                    <div class="formula">
+                        "Los ingenieros emprenderán asignaciones solo cuando estén calificados por educación o experiencia en los campos técnicos específicos de ingeniería involucrados."
+                    </div>
+                    <p><strong>Aplicación a este caso:</strong></p>
+                    <ol class="concept-list">
+                        <li><strong>Campo técnico específico:</strong> Sistemas computarizados de control para transporte público.</li>
+                        <li><strong>Calificación requerida:</strong> Educación o experiencia <strong>actual</strong> en ese campo específico.</li>
+                        <li><strong>No es suficiente:</strong> Licencia general, experiencia en otras áreas, supervisión de otros, educación antigua no actualizada.</li>
+                        <li><strong>Responsabilidad personal:</strong> El ingeniero es personalmente responsable de determinar si está calificado antes de aceptar el trabajo.</li>
+                    </ol>
+                </div>
+                
+                <div class="ethical-scenario">
+                    <div class="scenario-title">¿Qué constituye "competencia" en este contexto?</div>
+                    <p>Para evaluar un sistema computarizado de control nuevo, el ingeniero necesitaría:</p>
+                    <ul class="concept-list">
+                        <li><strong>Conocimiento actual de sistemas de control:</strong> Teoría de control moderna, sistemas digitales, algoritmos de control.</li>
+                        <li><strong>Experiencia con sistemas computarizados:</strong> Programación, interfaces hardware-software, sistemas en tiempo real.</li>
+                        <li><strong>Conocimiento específico del dominio:</strong> Sistemas de transporte público, requisitos de seguridad, regulaciones aplicables.</li>
+                        <li><strong>Capacidad de evaluar nuevos desarrollos:</strong> Habilidades para analizar diseños nuevos, identificar riesgos, validar rendimiento.</li>
+                    </ul>
+                    <p>La mera posesión de una licencia de ingeniería no garantiza ninguna de estas competencias específicas.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>¿Por qué las otras opciones son incorrectas?</h3>
+                </div>
+                
+                <div class="competence-evaluation" style="background-color: #f9ebea; border-left-color: #e74c3c;">
+                    <div class="evaluation-title">Opción B: Supervisión de recién graduados</div>
+                    <p><strong>Problema ético:</strong> Delegar trabajo a subordinados no califica al supervisor para realizar trabajo fuera de su competencia.</p>
+                    <p><strong>Responsabilidad no delegable:</strong> El ingeniero principal sigue siendo responsable ética y legalmente por el trabajo, incluso si lo delega.</p>
+                    <p><strong>Ejemplo de violación:</strong> Un ingeniero civil que supervisa a ingenieros eléctricos no puede por ello firmar diseños eléctricos si no tiene competencia en ingeniería eléctrica.</p>
+                </div>
+                
+                <div class="competence-evaluation" style="background-color: #f9ebea; border-left-color: #e74c3c;">
+                    <div class="evaluation-title">Opción C: Estudios universitarios antiguos</div>
+                    <p><strong>Problema técnico:</strong> Los sistemas de control de hace 30 años eran predominantemente analógicos, mientras que los sistemas modernos son digitales y computarizados.</p>
+                    <p><strong>Evolución tecnológica:</strong> Un curso de sistemas de transporte de hace 30 años probablemente no cubría:
+                        <ul class="concept-list">
+                            <li>Controladores lógicos programables (PLCs)</li>
+                            <li>Sistemas de control distribuido</li>
+                            <li>Comunicaciones digitales en tiempo real</li>
+                            <li>Ciberseguridad en sistemas de control</li>
+                            <li>Algoritmos de control avanzados (PID adaptativo, control predictivo)</li>
+                        </ul>
+                    </p>
+                    <p><strong>Conocimiento obsoleto:</strong> En ingeniería, el conocimiento tiene fecha de caducidad, especialmente en áreas tecnológicas.</p>
+                </div>
+                
+                <div class="competence-evaluation" style="background-color: #f9ebea; border-left-color: #e74c3c;">
+                    <div class="evaluation-title">Opción D: Asistencia a reuniones profesionales</div>
+                    <p><strong>Problema de validación:</strong> La asistencia a reuniones muestra interés profesional, pero no valida competencia.</p>
+                    <p><strong>Diferencia entre exposición y competencia:</strong>
+                        <ul class="concept-list">
+                            <li><strong>Exposición:</strong> Escuchar sobre temas en reuniones</li>
+                            <li><strong>Competencia:</strong> Tener conocimientos y habilidades demostrables para aplicar esos temas</li>
+                        </ul>
+                    </p>
+                    <p><strong>Analogía:</strong> Asistir a conferencias médicas no califica a alguien para realizar cirugías. De manera similar, asistir a reuniones de ingeniería no califica para realizar trabajos de ingeniería especializados.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Respuesta correcta y justificación completa</h3>
+                </div>
+                
+                <div class="answer-box">
+                    <div class="answer-title">Respuesta Correcta</div>
+                    <div class="answer-text">Opción A: The engineer is competent in modern control systems.</div>
+                    <p>Un ingeniero solo puede aceptar una asignación si tiene competencia actual en el área específica del trabajo.</p>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-title">Proceso ético de decisión para el ingeniero</div>
+                    <p>Antes de aceptar la asignación, el ingeniero debería:</p>
+                    <ol class="concept-list">
+                        <li><strong>Auto-evaluar su competencia:</strong> ¿Tengo conocimiento actual y experiencia en sistemas computarizados de control?</li>
+                        <li><strong>Identificar brechas de conocimiento:</strong> Si hay deficiencias, ¿puedo adquirir la competencia necesaria antes de comenzar el trabajo?</li>
+                        <li><strong>Considerar alternativas:</strong> Si no soy competente, ¿puedo asociarme con un experto o recomendar a alguien más calificado?</li>
+                        <li><strong>Rechazar si es necesario:</strong> Si no puedo adquirir la competencia necesaria, debo rechazar la asignación, independientemente de la presión del empleador.</li>
+                    </ol>
+                    <p><strong>La seguridad pública es la prioridad máxima:</strong> Evaluar incorrectamente un sistema de transporte público podría resultar en accidentes, lesiones o pérdida de vidas.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave de Ética en Ingeniería</h2>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Principios Fundamentales de Competencia Profesional</h3>
+            <ul class="concept-list">
+                <li><strong>Competencia antes de la aceptación:</strong> Los ingenieros deben evaluar su competencia antes de aceptar cualquier asignación, no durante o después.</li>
+                <li><strong>Educación continua obligatoria:</strong> En muchas jurisdicciones, los ingenieros licenciados deben completar horas de educación continua para mantener sus licencias, reconociendo que el conocimiento se vuelve obsoleto.</li>
+                <li><strong>Especialización vs. generalización:</strong> La ingeniería moderna es altamente especializada. Ser competente en un área no implica competencia en áreas relacionadas.</li>
+                <li><strong>Responsabilidad personal e intransferible:</strong> La responsabilidad por el trabajo de ingeniería no puede delegarse a subordinados, consultores o supervisados.</li>
+                <li><strong>Honestidad en la autoevaluación:</strong> Los ingenieros deben ser honestos consigo mismos al evaluar sus capacidades, incluso si esto significa rechazar trabajos deseables o lucrativos.</li>
+                <li><strong>Derecho y deber de decir "no":</strong> Los ingenieros tienen tanto el derecho como la obligación ética de rechazar trabajos para los que no están calificados.</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50">Evolución Tecnológica y Obsolescencia del Conocimiento</h3>
+            <div class="timeline-visualization">
+                <div class="timeline-point">
+                    <div class="point-circle">Hace 30 años</div>
+                    <div>Sistemas analógicos<br>Control manual<br>Documentación en papel</div>
+                </div>
+                <div style="flex-grow: 1; border-bottom: 2px dashed #3498db;"></div>
+                <div class="timeline-point">
+                    <div class="point-circle" style="background-color: #9b59b6;">Actual</div>
+                    <div>Sistemas digitales<br>Control computarizado<br>Software complejo<br>Ciberseguridad</div>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Consecuencias de Violar las Reglas de Competencia</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Tipo de violación</th>
+                        <th>Consecuencias profesionales</th>
+                        <th>Consecuencias legales</th>
+                        <th>Riesgos para la seguridad pública</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Aceptar trabajo fuera de competencia</td>
+                        <td>Suspensión o revocación de licencia, daño a reputación profesional</td>
+                        <td>Responsabilidad civil por daños, posible acción penal por negligencia</td>
+                        <td>Diseños inseguros, fallas del sistema, accidentes</td>
+                    </tr>
+                    <tr>
+                        <td>Delegar responsabilidad sin supervisión adecuada</td>
+                        <td>Acciones disciplinarias, pérdida de privilegios de supervisión</td>
+                        <td>Responsabilidad por errores de subordinados</td>
+                        <td>Errores no detectados, falta de control de calidad</td>
+                    </tr>
+                    <tr>
+                        <td>Confiar en conocimiento obsoleto</td>
+                        <td>Pérdida de credibilidad, obsolescencia profesional</td>
+                        <td>Responsabilidad por no cumplir con estándares actuales</td>
+                        <td>Sistemas inadecuados, falta de cumplimiento con códigos actuales</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Sistemas de control industrial:</strong> Ingenieros mecánicos que trabajan con automatización deben mantener competencia en PLCs, SCADA, y sistemas de control modernos.</li>
+                <li><strong>Diseño asistido por computadora (CAD):</strong> Competencia en software CAD 3D actual, no versiones antiguas o métodos manuales.</li>
+                <li><strong>Análisis por elementos finitos (FEA):</strong> Conocimiento actual de software y metodologías de FEA, no técnicas analíticas obsoletas.</li>
+                <li><strong>Robótica y automatización:</strong> Mantenerse actualizado en programación de robots, visión artificial, sistemas de control en tiempo real.</li>
+                <li><strong>Ingeniería de materiales:</strong> Conocimiento de materiales compuestos, aleaciones avanzadas, procesos de manufactura aditiva.</li>
+                <li><strong>Sistemas de energía:</strong> Competencia en energías renovables, eficiencia energética, sistemas híbridos.</li>
+                <li><strong>Vehículos autónomos:</strong> Para ingenieros que trabajan en automoción, conocimiento de sistemas de sensores, fusión de datos, algoritmos de control.</li>
+                <li><strong>Ciberseguridad industrial:</strong> Entendimiento de vulnerabilidades en sistemas mecánicos conectados a redes.</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">6</div>
+                <h3>Casos de estudio relacionados</h3>
+            </div>
+            
+            <div class="ethical-scenario">
+                <div class="scenario-title">Caso: Colapso del Paso Elevado de la I-35W (Minneapolis, 2007)</div>
+                <p><strong>Hechos:</strong> El colapso del puente I-35W sobre el río Mississippi mató a 13 personas e hirió a 145.</p>
+                <p><strong>Competencia relevante:</strong> La investigación reveló que los ingenieros involucrados pueden no haber tenido competencia adecuada en evaluación de fatiga de estructuras de acero.</p>
+                <p><strong>Lección:</strong> Los ingenieros estructurales deben tener competencia específica en análisis de fatiga cuando evalúan puentes envejecidos, no solo conocimiento general de ingeniería estructural.</p>
+            </div>
+            
+            <div class="ethical-scenario">
+                <div class="scenario-title">Caso: Accidente del Tren de la Línea A de Metro de Ciudad de México (2021)</div>
+                <p><strong>Hechos:</strong> El descarrilamiento de un tren sobrepasó causó 26 muertos y decenas de heridos.</p>
+                <p><strong>Competencia relevante:</strong> Las investigaciones señalaron posibles deficiencias en la evaluación de sistemas de control y señalización.</p>
+                <p><strong>Lección:</strong> La evaluación de sistemas de transporte público modernos requiere competencia específica en sistemas computarizados de control, no solo experiencia general en ingeniería de transporte.</p>
+            </div>
+            
+            <div class="ethical-scenario">
+                <div class="scenario-title">Caso de práctica general: Transición de sistemas analógicos a digitales</div>
+                <p><strong>Escenario común:</strong> Un ingeniero con 30 años de experiencia en sistemas de control de procesos industriales, pero cuya experiencia es principalmente en sistemas analógicos antiguos.</p>
+                <p><strong>Desafío ético:</strong> Cuando la planta actualiza a sistemas digitales, el ingeniero debe:
+                    <ol class="concept-list">
+                        <li>Reconocer que su experiencia en sistemas analógicos no lo califica automáticamente para sistemas digitales.</li>
+                        <li>Adquirir competencia a través de capacitación específica en sistemas digitales antes de trabajar en ellos.</li>
+                        <li>Si no puede adquirir la competencia necesaria, debe dejar el trabajo a ingenieros con la competencia adecuada.</li>
+                    </ol>
+                </p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">7</div>
+                <h3>Cómo mantener la competencia profesional</h3>
+            </div>
+            
+            <div class="rule-box">
+                <div class="rule-title">Estrategias para ingenieros con experiencia</div>
+                <ol class="concept-list">
+                    <li><strong>Educación continua formal:</strong> Cursos, certificaciones, programas de posgrado en áreas de rápida evolución.</li>
+                    <li><strong>Auto-estudio estructurado:</strong> Lectura de literatura técnica actual, tutoriales en línea, experimentación con software nuevo.</li>
+                    <li><strong>Participación en proyectos de actualización:</strong> Trabajar en proyectos de modernización bajo la supervisión de expertos.</li>
+                    <li><strong>Mentoría inversa:</strong> Aprender de ingenieros más jóvenes que tienen conocimiento de tecnologías más recientes.</li>
+                    <li><strong>Rotación de asignaciones:</strong> Buscar experiencias que expongan a nuevas tecnologías y metodologías.</li>
+                    <li><strong>Evaluación periódica de competencias:</strong> Realizar auto-evaluaciones honestas y buscar retroalimentación de colegas.</li>
+                </ol>
+            </div>
+            
+            <div class="competence-evaluation">
+                <div class="evaluation-title">Cuándo decir "sí" y cuándo decir "no"</div>
+                <p><strong>Aceptar la asignación (decir SÍ) cuando:</strong></p>
+                <ul class="concept-list">
+                    <li>Tienes educación o experiencia actual en el área específica</li>
+                    <li>Puedes adquirir la competencia necesaria antes de comenzar el trabajo</li>
+                    <li>Puedes asociarte con un experto que complemente tus habilidades</li>
+                    <li>El alcance del trabajo está dentro de tus capacidades verificables</li>
+                </ul>
+                <p><strong>Rechazar la asignación (decir NO) cuando:</strong></p>
+                <ul class="concept-list">
+                    <li>No tienes la competencia necesaria</li>
+                    <li>No puedes adquirir la competencia en el tiempo disponible</li>
+                    <li>La seguridad pública estaría comprometida</li>
+                    <li>Estarías violando códigos de ética o regulaciones</li>
+                </ul>
+                <p><strong>Alternativa ética:</strong> En lugar de simplemente rechazar, puedes recomendar a un colega competente o proponer un equipo que incluya a los expertos necesarios.</p>
+            </div>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Ethics and Professional Practice, específicamente a los códigos de ética y las reglas de conducta profesional del NCEES.</p>
+            <p>La Sección 240.15 de las NCEES Model Rules es particularmente relevante, especialmente la regla 240.15(a) sobre competencia profesional.</p>
+            <p><strong>Para ingenieros mecánicos:</strong> Este principio es especialmente importante en áreas de rápida evolución tecnológica como automatización, robótica, sistemas de control y manufactura avanzada, donde el conocimiento puede volverse obsoleto en pocos años.</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar elementos importantes
+            const importantElements = document.querySelectorAll('.formula, .rule-box, .ethical-scenario');
+            importantElements.forEach(element => {
+                element.setAttribute('data-print', 'important');
+            });
+        });
+        
+        // Función para imprimir
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
