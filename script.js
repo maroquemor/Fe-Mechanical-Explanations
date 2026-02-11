@@ -38,12 +38,12 @@ function generateQuestions() {
         let pageLink = '';
         let pageExists = false;
         
-        if (i <= 6) {
-            // Para las primeras 6 preguntas, usar archivos en raíz
+        if (i <= 10) {
+            // Para las primeras 10 preguntas, usar archivos en raíz
             pageLink = `Question_${i}.html`;
             pageExists = true;
         } else {
-            // Para preguntas 7-100, usar archivos en carpeta preguntas/
+            // Para preguntas 11-100, usar archivos en carpeta preguntas/
             pageLink = `preguntas/pregunta-${i}.html`;
             pageExists = true; // Asumir que serán generadas
         }
