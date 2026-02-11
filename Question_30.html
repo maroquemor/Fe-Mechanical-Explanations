@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 30 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .diagram-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .fbd-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+        
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 30 del FE Mechanical</h1>
+            <p class="subtitle">Coeficiente de Fricción Estática en un Plano Inclinado</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>30. The ramp in the figure is rotated until the angle (α) is at 37 degrees, and then the block begins to slide. The coefficient of static friction is most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. 0.602 &nbsp; B. 0.625 &nbsp; C. 0.754 &nbsp; D. 0.798</p>
+                    <p>Respuesta correcta según el PDF: <strong>C (0.754)</strong></p>
+                </div>
+            </div>
+            
+            <div class="diagram-section">
+                <div class="fbd-container">
+                    <svg width="300" height="200" viewBox="0 0 300 200">
+                        <!-- Plano inclinado -->
+                        <polygon points="50,150 250,150 70,50" fill="#f0f0f0" stroke="#2c3e50" stroke-width="2"/>
+                        <!-- Bloque -->
+                        <rect x="130" y="100" width="40" height="30" fill="#e74c3c" opacity="0.8" stroke="#2c3e50" stroke-width="2"/>
+                        <!-- Ángulo -->
+                        <text x="60" y="130" font-size="14">α = 37°</text>
+                        <!-- Fuerzas (opcional) -->
+                        <line x1="150" y1="115" x2="150" y2="70" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5,3"/>
+                        <polygon points="145,75 150,65 155,75" fill="#2c3e50"/>
+                        <text x="160" y="60" font-size="12">N</text>
+                        <line x1="150" y1="115" x2="90" y2="155" stroke="#e74c3c" stroke-width="2"/>
+                        <polygon points="95,150 85,155 95,160" fill="#e74c3c"/>
+                        <text x="60" y="170" font-size="12">mg senα</text>
+                        <line x1="150" y1="115" x2="180" y2="135" stroke="#3498db" stroke-width="2"/>
+                        <polygon points="175,130 185,135 175,140" fill="#3498db"/>
+                        <text x="190" y="140" font-size="12">f</text>
+                    </svg>
+                    <p style="margin-top: 10px; font-size: 14px; color: #555;">
+                        Diagrama de cuerpo libre: La fricción estática máxima se alcanza cuando α = 37°.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Identificar las fuerzas en el plano inclinado</h3>
+                </div>
+                <p>Un bloque de peso \(W = mg\) descansa sobre un plano inclinado un ángulo \(\alpha\). Las fuerzas que actúan son:</p>
+                <ul class="concept-list">
+                    <li><strong>Peso (\(mg\)):</strong> vertical hacia abajo.</li>
+                    <li><strong>Fuerza normal (\(N\)):</strong> perpendicular al plano, hacia arriba.</li>
+                    <li><strong>Fuerza de fricción (\(f\)):</strong> paralela al plano, oponiéndose al movimiento inminente.</li>
+                </ul>
+                <p>Descomponemos el peso en dos componentes:</p>
+                <div class="formula">
+                    \(mg \sin \alpha\) &nbsp; (paralela al plano, tendencia a deslizar)<br>
+                    \(mg \cos \alpha\) &nbsp; (perpendicular al plano, equilibrada por N)
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Aplicar las ecuaciones de equilibrio (inminencia de movimiento)</h3>
+                </div>
+                <p>En el instante en que el bloque está a punto de deslizar, la fricción estática alcanza su valor máximo:</p>
+                <div class="formula">
+                    \(f_{\text{máx}} = \mu_s \cdot N\)
+                </div>
+                <p>Las ecuaciones de equilibrio son:</p>
+                <div class="formula">
+                    \(\Sigma F_{\parallel} = 0 \quad \Rightarrow \quad mg \sin \alpha - f_{\text{máx}} = 0\)<br>
+                    \(\Sigma F_{\perp} = 0 \quad \Rightarrow \quad N - mg \cos \alpha = 0\)
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Combinar las ecuaciones</h3>
+                </div>
+                <p>De las ecuaciones anteriores:</p>
+                <div class="formula">
+                    \(mg \sin \alpha = \mu_s N = \mu_s (mg \cos \alpha)\)
+                </div>
+                <p>Cancelando \(mg\) (masa) de ambos lados, obtenemos la relación fundamental para el ángulo de reposo:</p>
+                <div class="formula">
+                    \(\mu_s = \tan \alpha\)
+                </div>
+                <div class="formula-box">
+                    <div class="formula-title">✅ Relación clave</div>
+                    <p>Cuando el deslizamiento es inminente, el coeficiente de fricción estática es igual a la tangente del ángulo de inclinación.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Sustituir el valor del ángulo</h3>
+                </div>
+                <p>El ángulo dado es \(\alpha = 37^\circ\). Calculamos la tangente:</p>
+                <div class="calculation-steps">
+                    <p>\(\tan 37^\circ = \frac{\sin 37^\circ}{\cos 37^\circ}\)</p>
+                    <p>Valores conocidos: \(\sin 37^\circ \approx 0.6018\), \(\cos 37^\circ \approx 0.7986\)</p>
+                    <p>\(\tan 37^\circ = \frac{0.6018}{0.7986} \approx 0.7536\)</p>
+                    <p class="step-result">\(\mu_s \approx 0.754\)</p>
+                </div>
+                <div class="formula">
+                    \(\mu_s = \tan 37^\circ \approx 0.754\)
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Comparación con las opciones</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Valor</th>
+                            <th>¿Correcta?</th>
+                            <th>Observación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>A</td><td>0.602</td><td>No</td><td>Podría ser \(\sin 37^\circ\)</td></tr>
+                        <tr><td>B</td><td>0.625</td><td>No</td><td>Valor sin relación directa</td></tr>
+                        <tr><td>C</td><td>0.754</td><td><strong>Sí</strong></td><td>\(\tan 37^\circ\)</td></tr>
+                        <tr><td>D</td><td>0.798</td><td>No</td><td>Podría ser \(\cos 37^\circ\)</td></tr>
+                    </tbody>
+                </table>
+                <div class="formula-box" style="background-color: #fce8e8; border-left-color: #e74c3c;">
+                    <p><strong>Error común:</strong> Confundir \(\tan \alpha\) con \(\sin \alpha\) o \(\cos \alpha\). Recordar que en el plano inclinado con deslizamiento inminente, \(\mu_s = \tan \alpha\).</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">0.754 (Opción C)</div>
+            <p>El coeficiente de fricción estática es igual a la tangente de 37°.</p>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Fricción estática:</strong> Fuerza que se opone al inicio del movimiento. Su valor máximo es \(\mu_s N\).</li>
+                <li><strong>Ángulo de reposo:</strong> Ángulo máximo que un plano inclinado puede tener sin que un bloque deslice. Cumple \(\mu_s = \tan \theta\).</li>
+                <li><strong>Diagrama de cuerpo libre:</strong> Herramienta fundamental para aislar un cuerpo y representar todas las fuerzas.</li>
+                <li><strong>Descomposición de fuerzas:</strong> Separar el peso en componentes paralela y perpendicular al plano.</li>
+                <li><strong>Equilibrio:</strong> Condición de suma de fuerzas igual a cero en la dirección paralela y perpendicular.</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de rampas y transportadores:</strong> Determinar el ángulo máximo para evitar deslizamiento de materiales.</li>
+                <li><strong>Sistemas de frenos y embragues:</strong> El coeficiente de fricción determina la capacidad de transmisión de par.</li>
+                <li><strong>Estabilidad de taludes:</strong> En mecánica de suelos, el ángulo de reposo define la pendiente segura.</li>
+                <li><strong>Robótica:</strong> Control de agarre de pinzas sobre objetos inclinados.</li>
+                <li><strong>Vehículos en pendientes:</strong> Cálculo de la pendiente máxima que puede superarse sin deslizar.</li>
+            </ul>
+            
+            <div class="formula-box">
+                <div class="formula-title">📌 Fórmulas útiles</div>
+                <p>Fricción estática máxima: \(f_s^{\max} = \mu_s N\)</p>
+                <p>Ángulo de reposo: \(\mu_s = \tan \theta\)</p>
+                <p>Fricción cinética: \(f_k = \mu_k N\) (una vez que el movimiento comienza)</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">6</div>
+                <h3>Demostración alternativa con valores exactos</h3>
+            </div>
+            <p>Para un ángulo de 37°, los valores trigonométricos pueden expresarse en forma fraccionaria en algunos casos (triángulo 3-4-5):</p>
+            <div class="formula">
+                \(\sin 37° \approx \frac{3}{5} = 0.6\), \(\cos 37° \approx \frac{4}{5} = 0.8\)
+            </div>
+            <div class="formula">
+                \(\tan 37° = \frac{3/5}{4/5} = \frac{3}{4} = 0.75\)
+            </div>
+            <p>El valor 0.75 es una aproximación común; el valor más preciso es 0.7536, que redondeado es 0.754.</p>
+            <p><strong>Conclusión:</strong> La respuesta es claramente 0.754.</p>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de <em>Statics</em>, específicamente a <em>Friction</em>. La relación \(\mu_s = \tan \theta\) para el deslizamiento inminente en un plano inclinado es una de las aplicaciones más directas de la fricción seca. Se encuentra en la subsección "Static Friction".</p>
+            <p><em>NCEES FE Reference Handbook, sección "Statics", subsección "Friction".</em></p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+    
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

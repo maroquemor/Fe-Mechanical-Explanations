@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 34 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .diagram-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .diagram-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 34 del FE Mechanical</h1>
+            <p class="subtitle">Principio de Trabajo y Energía - Bloque en Plano Inclinado Liso</p>
+        </header>
+
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>34. The 2‑kg block shown in the figure is accelerated from rest by force F along the smooth incline for 5 m until it clears the top of the ramp at a speed of 8 m/s. The value of F (N) is most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. 11.8 &nbsp; B. 19.6 &nbsp; C. 24.6 &nbsp; D. 69.4</p>
+                </div>
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50;">Respuesta correcta según el PDF: <span style="background-color: #2ecc71; color: white; padding: 3px 10px; border-radius: 5px;">C (24.6 N)</span></p>
+            </div>
+
+            <!-- Diagrama del sistema: plano inclinado, bloque, fuerza F, dimensiones -->
+            <div class="diagram-section">
+                <div class="diagram-container">
+                    <svg width="450" height="250" viewBox="0 0 450 250" style="max-width:100%; height:auto;">
+                        <!-- Línea del plano inclinado -->
+                        <line x1="50" y1="200" x2="350" y2="50" stroke="#2c3e50" stroke-width="3" />
+                        <!-- Base horizontal -->
+                        <line x1="50" y1="200" x2="400" y2="200" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5,3" />
+                        <!-- Bloque (posición inicial) -->
+                        <rect x="120" y="150" width="40" height="30" transform="rotate(-30,140,165)" fill="#e74c3c" opacity="0.8" stroke="#2c3e50" stroke-width="2" />
+                        <text x="150" y="120" font-size="12" fill="#2c3e50">2 kg</text>
+                        <!-- Fuerza F paralela al plano -->
+                        <line x1="140" y1="165" x2="200" y2="100" stroke="#e67e22" stroke-width="3" />
+                        <polygon points="200,100 192,97 192,103" fill="#e67e22" />
+                        <text x="210" y="90" font-size="14" fill="#e67e22">F</text>
+                        <!-- Acotación de la longitud del plano -->
+                        <line x1="50" y1="200" x2="350" y2="50" stroke="#3498db" stroke-width="1.5" stroke-dasharray="2,2" />
+                        <text x="180" y="140" font-size="12" fill="#3498db">d = 5 m</text>
+                        <!-- Altura vertical -->
+                        <line x1="350" y1="50" x2="350" y2="200" stroke="#9b59b6" stroke-width="1.5" stroke-dasharray="2,2" />
+                        <text x="360" y="120" font-size="12" fill="#9b59b6">h = 3 m</text>
+                        <!-- Ángulo theta (opcional) -->
+                        <text x="80" y="180" font-size="12" fill="#2c3e50">θ</text>
+                        <!-- Posición final (transparente) -->
+                        <rect x="310" y="60" width="40" height="30" transform="rotate(-30,330,75)" fill="none" stroke="#7f8c8d" stroke-width="2" stroke-dasharray="4" />
+                        <text x="360" y="50" font-size="12" fill="#7f8c8d">v = 8 m/s</text>
+                    </svg>
+                    <p style="margin-top: 10px; font-size: 14px; color: #555;">
+                        Plano inclinado liso, θ = arcsin(3/5) ≈ 36.87°. Bloque de 2 kg parte del reposo y recorre 5 m hasta la cima, alcanzando 8 m/s. Fuerza F constante y paralela al plano.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Principio de trabajo y energía</h3>
+                </div>
+                <p>Como el plano es <strong>liso</strong> (sin fricción), las únicas fuerzas que realizan trabajo sobre el bloque son la fuerza aplicada <em>F</em> (constante y paralela al desplazamiento) y la componente del peso. La fuerza normal no trabaja por ser perpendicular al movimiento.</p>
+                <p>El <strong>principio de trabajo y energía</strong> establece que el trabajo neto realizado sobre una partícula es igual a su cambio de energía cinética:</p>
+                <div class="formula">
+                    \( W_{\text{neto}} = \Delta K = \frac{1}{2} m v_2^2 - \frac{1}{2} m v_1^2 \)
+                </div>
+                <p>Podemos extenderlo incluyendo la energía potencial cuando hay fuerzas conservativas. Una forma práctica es:</p>
+                <div class="formula">
+                    \( W_{\text{no conservativas}} = \Delta K + \Delta U \)
+                </div>
+                <p>Aquí, la única fuerza no conservativa es <strong>F</strong> (aplicada externamente). El peso es conservativo y su trabajo se expresa como \(-\Delta U\). Por tanto:</p>
+                <div class="formula">
+                    \( W_F = \Delta K + \Delta U \)
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Identificar los datos y la geometría</h3>
+                </div>
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Símbolo</th>
+                            <th>Valor</th>
+                            <th>Unidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Masa del bloque</td><td>\(m\)</td><td>2</td><td>kg</td></tr>
+                        <tr><td>Velocidad inicial</td><td>\(v_1\)</td><td>0</td><td>m/s</td></tr>
+                        <tr><td>Velocidad final</td><td>\(v_2\)</td><td>8</td><td>m/s</td></tr>
+                        <tr><td>Desplazamiento sobre el plano</td><td>\(d\)</td><td>5</td><td>m</td></tr>
+                        <tr><td>Altura ganada</td><td>\(h\)</td><td>3</td><td>m</td></tr>
+                        <tr><td>Aceleración gravitacional</td><td>\(g\)</td><td>9.81</td><td>m/s²</td></tr>
+                    </tbody>
+                </table>
+                <div class="formula-box">
+                    <div class="formula-title">🔍 Relación geométrica</div>
+                    <p>La altura se obtiene de la longitud del plano y el ángulo: \(h = d \cdot \sin\theta\).<br>
+                    Dado que \(d = 5\,\text{m}\) y \(h = 3\,\text{m}\) (del diagrama), se tiene \(\sin\theta = 3/5 = 0.6\), \(\cos\theta = 4/5 = 0.8\).</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Trabajo realizado por la fuerza F</h3>
+                </div>
+                <p>La fuerza \(F\) es constante y actúa en la misma dirección del movimiento (paralela al plano inclinado). El trabajo realizado por una fuerza constante paralela al desplazamiento es:</p>
+                <div class="formula">
+                    \( W_F = F \cdot d \)
+                </div>
+                <p>con \(d = 5\,\text{m}\). El signo es positivo porque la fuerza y el desplazamiento tienen el mismo sentido.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Cambio de energía cinética</h3>
+                </div>
+                <div class="calculation-steps">
+                    <p>\(\Delta K = \frac{1}{2} m v_2^2 - \frac{1}{2} m v_1^2\)</p>
+                    <p>\(\Delta K = \frac{1}{2} \cdot 2 \cdot (8)^2 - 0\)</p>
+                    <p>\(\Delta K = 1 \cdot 64 = 64\ \text{J}\)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Cambio de energía potencial gravitatoria</h3>
+                </div>
+                <p>Tomamos como referencia de energía potencial la base del plano (punto inicial). Al ascender una altura \(h = 3\,\text{m}\):</p>
+                <div class="calculation-steps">
+                    <p>\(\Delta U = m g h = 2 \cdot 9.81 \cdot 3\)</p>
+                    <p>\(\Delta U = 58.86\ \text{J}\)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">6</div>
+                    <h3>Ecuación de trabajo y energía</h3>
+                </div>
+                <div class="formula">
+                    \( W_F = \Delta K + \Delta U \)
+                </div>
+                <div class="formula">
+                    \( F \cdot d = \frac{1}{2} m v_2^2 + m g h \)
+                </div>
+                <div class="calculation-steps">
+                    <p>Sustituimos valores:</p>
+                    <p>\( F \cdot 5 = 64 + 58.86 \)</p>
+                    <p>\( F \cdot 5 = 122.86 \)</p>
+                    <p class="step-result">\( F = \dfrac{122.86}{5} = 24.572\ \text{N} \)</p>
+                    <p>Redondeando a la décima más cercana: <strong>24.6 N</strong>.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">7</div>
+                    <h3>Comparación con las opciones</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Valor (N)</th>
+                            <th>¿Correcta?</th>
+                            <th>Posible error</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>11.8</td>
+                            <td>No</td>
+                            <td>Podría ser solo el trabajo contra la gravedad (\(mgh/d = 58.86/5 \approx 11.8\)) ignorando la energía cinética.</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>19.6</td>
+                            <td>No</td>
+                            <td>Valor de \(mg\) (2·9.8) sin relación directa.</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td><strong>24.6</strong></td>
+                            <td><strong>Sí</strong></td>
+                            <td>Resultado exacto del cálculo.</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>69.4</td>
+                            <td>No</td>
+                            <td>Usar \(F = (0.5·2·64 + 2·9.81·5)/?\) o confundir \(d\) con \(h\).</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formula-box" style="background-color: #fce8e8; border-left-color: #e74c3c;">
+                    <p><strong>Error común:</strong> Olvidar que la energía cinética final también debe ser proporcionada por la fuerza F. Algunos calculan sólo el trabajo necesario para vencer la gravedad.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">24.6 N (Opción C)</div>
+            <p>La fuerza constante F necesaria es 24.6 N, paralela al plano inclinado.</p>
+        </div>
+
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Principio de trabajo y energía:</strong> El trabajo neto realizado sobre una partícula es igual a su cambio de energía cinética. En presencia de fuerzas conservativas, el trabajo de las fuerzas no conservativas es igual al cambio de energía mecánica total (cinética + potencial).</li>
+                <li><strong>Energía cinética:</strong> \(K = \frac{1}{2}mv^2\).</li>
+                <li><strong>Energía potencial gravitatoria:</strong> \(U = mgh\) (referencia arbitraria).</li>
+                <li><strong>Trabajo de una fuerza constante:</strong> \(W = F \cdot d \cdot \cos\theta\), donde \(\theta\) es el ángulo entre la fuerza y el desplazamiento. Aquí \(\theta = 0°\).</li>
+                <li><strong>Plano inclinado liso:</strong> No hay fricción, por lo que la única fuerza que trabaja además del peso es la aplicada.</li>
+                <li><strong>Geometría del triángulo 3-4-5:</strong> La relación seno = 3/5, coseno = 4/5 es útil para cálculos rápidos.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de rampas y transportadores inclinados:</strong> Cálculo de la fuerza necesaria para mover cargas.</li>
+                <li><strong>Sistemas de elevación por tornillo o neumáticos:</strong> Determinación de la fuerza requerida en actuadores lineales.</li>
+                <li><strong>Análisis energético en máquinas:</strong> Balance de energía en componentes móviles.</li>
+                <li><strong>Robótica:</strong> Cálculo de pares en articulaciones para vencer gravedad y acelerar.</li>
+                <li><strong>Vehículos en pendientes:</strong> Potencia necesaria para mantener velocidad constante o acelerar.</li>
+            </ul>
+            <div class="formula-box">
+                <div class="formula-title">📌 Fórmula directa para este problema</div>
+                <div class="formula">\(F = \dfrac{\frac{1}{2} m v^2 + m g h}{d}\)</div>
+                <p>Donde \(d\) es la distancia recorrida sobre el plano y \(h\) la altura ganada.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">8</div>
+                <h3>Verificación con trigonometría (opcional)</h3>
+            </div>
+            <p>También se puede resolver usando dinámica (segunda ley de Newton) y cinemática. La aceleración se obtiene de \(v^2 = 2 a d\):</p>
+            <div class="formula">
+                \(a = \frac{v^2}{2d} = \frac{64}{10} = 6.4\ \text{m/s}^2\)
+            </div>
+            <p>La componente del peso paralela al plano es \(mg\sin\theta = 2\cdot9.81\cdot0.6 = 11.772\ \text{N}\).</p>
+            <p>La segunda ley da: \(F - mg\sin\theta = m a \Rightarrow F = m a + mg\sin\theta = 2\cdot6.4 + 11.772 = 12.8 + 11.772 = 24.572\ \text{N}\).</p>
+            <p>Mismo resultado, confirmando el enfoque de trabajo y energía.</p>
+        </div>
+
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta corresponde a la sección de <em>Dynamics, Kinematics, and Vibrations</em>, subsección <em>Work-Energy of Particles</em>. El principio de trabajo y energía se formula como \(T_1 + U_1 + W_{1→2} = T_2 + U_2\). El manual también incluye la energía potencial gravitatoria y el trabajo de fuerzas constantes. Se recomienda revisar los ejemplos de planos inclinados en la sección de Dinámica.</p>
+            <p><em>NCEES FE Reference Handbook, sección "Dynamics", subsección "Work-energy of particles".</em></p>
+        </div>
+
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

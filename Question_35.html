@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 35 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .diagram-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .diagram-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 35 del FE Mechanical</h1>
+            <p class="subtitle">Cinemática de Cuerpos Rígidos – Velocidad del Pistón en un Motor de Combustión</p>
+        </header>
+
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>35. The piston and cylinder of an internal combustion engine are shown in the following figure. If ω = 377 rad/s, the piston speed (mm/s) when θ = 90° is most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. 0 &nbsp; B. 10,500 &nbsp; C. 18,850 &nbsp; D. 24,300</p>
+                </div>
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50;">Respuesta correcta según el PDF: <span style="background-color: #2ecc71; color: white; padding: 3px 10px; border-radius: 5px;">C (18,850 mm/s)</span></p>
+            </div>
+
+            <!-- Diagrama del mecanismo biela-manivela en θ=90° -->
+            <div class="diagram-section">
+                <div class="diagram-container">
+                    <svg width="500" height="280" viewBox="0 0 500 280" style="max-width:100%; height:auto;">
+                        <!-- Círculo de rotación de la manivela (trayectoria del punto C) -->
+                        <circle cx="120" cy="140" r="50" fill="none" stroke="#bdc3c7" stroke-width="1.5" stroke-dasharray="4" />
+                        <!-- Centro del cigüeñal O -->
+                        <circle cx="120" cy="140" r="5" fill="#2c3e50" />
+                        <text x="130" y="125" font-size="12">O</text>
+                        <!-- Manivela OC (crank) en θ = 90° (vertical hacia arriba) -->
+                        <line x1="120" y1="140" x2="120" y2="90" stroke="#e74c3c" stroke-width="3" />
+                        <circle cx="120" cy="90" r="5" fill="#e74c3c" />
+                        <text x="100" y="75" font-size="12">C</text>
+                        <!-- Biela CP (connecting rod) -->
+                        <line x1="120" y1="90" x2="300" y2="90" stroke="#3498db" stroke-width="3" />
+                        <circle cx="300" cy="90" r="5" fill="#3498db" />
+                        <text x="310" y="75" font-size="12">P (pistón)</text>
+                        <!-- Cilindro (líneas verticales) -->
+                        <line x1="300" y1="70" x2="300" y2="120" stroke="#2c3e50" stroke-width="2" />
+                        <line x1="350" y1="70" x2="350" y2="120" stroke="#2c3e50" stroke-width="2" />
+                        <line x1="300" y1="70" x2="350" y2="70" stroke="#2c3e50" stroke-width="2" />
+                        <line x1="300" y1="120" x2="350" y2="120" stroke="#2c3e50" stroke-width="2" />
+                        <text x="325" y="140" font-size="12">cilindro</text>
+                        <!-- Vector velocidad en C -->
+                        <line x1="120" y1="90" x2="70" y2="90" stroke="#e67e22" stroke-width="2.5" />
+                        <polygon points="70,90 80,85 80,95" fill="#e67e22" />
+                        <text x="40" y="80" font-size="12" fill="#e67e22">v<sub>C</sub> = 18,850 mm/s</text>
+                        <!-- Vector velocidad en P -->
+                        <line x1="300" y1="90" x2="250" y2="90" stroke="#e67e22" stroke-width="2.5" />
+                        <polygon points="250,90 260,85 260,95" fill="#e67e22" />
+                        <text x="190" y="70" font-size="12" fill="#e67e22">v<sub>P</sub> = v<sub>C</sub></text>
+                        <!-- Nota sobre ω_PC = 0 -->
+                        <text x="150" y="170" font-size="14" fill="#9b59b6">ω<sub>PC</sub> = 0 (instantáneamente)</text>
+                        <!-- Acotación del radio de manivela -->
+                        <line x1="120" y1="140" x2="120" y2="90" stroke="#2c3e50" stroke-width="1" stroke-dasharray="2" />
+                        <text x="140" y="115" font-size="12">r = 50 mm</text>
+                    </svg>
+                    <p style="margin-top: 10px; font-size: 14px; color: #555;">
+                        Configuración del mecanismo manivela-biela-pistón cuando θ = 90°. La manivela OC (roja) gira con ω = 377 rad/s. La biela CP (azul) conecta el punto C (muñequilla) con el pistón P. En esta posición, la biela está horizontal y su velocidad angular es cero.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Comprender el mecanismo biela-manivela</h3>
+                </div>
+                <p>El sistema consta de tres componentes principales:</p>
+                <ul class="concept-list">
+                    <li><strong>Manivela (crank) OC:</strong> Gira con velocidad angular constante ω alrededor del punto fijo O. Su longitud (radio) es de 50 mm (dato implícito del problema).</li>
+                    <li><strong>Biela (connecting rod) CP:</strong> Conecta el punto C (muñequilla) con el pistón P. Su longitud no es necesaria para el cálculo en esta posición particular.</li>
+                    <li><strong>Pistón P:</strong> Se mueve con movimiento rectilíneo alternativo dentro del cilindro (horizontal).</li>
+                </ul>
+                <p>Se pide la velocidad del pistón (módulo) cuando la manivela forma 90° con la horizontal (θ = 90°).</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Identificar los datos proporcionados</h3>
+                </div>
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Símbolo</th>
+                            <th>Valor</th>
+                            <th>Unidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Velocidad angular de la manivela</td><td>ω</td><td>377</td><td>rad/s</td></tr>
+                        <tr><td>Radio de la manivela (longitud OC)</td><td>r</td><td>50</td><td>mm</td></tr>
+                        <tr><td>Ángulo de la manivela</td><td>θ</td><td>90°</td><td>grados</td></tr>
+                    </tbody>
+                </table>
+                <div class="formula-box">
+                    <div class="formula-title">🔍 Nota</div>
+                    <p>El radio de la manivela no está explícitamente escrito en el enunciado, pero se deduce de la solución: \( v_C = r \cdot \omega = 50 \times 377 = 18,850\ \text{mm/s} \). Por lo tanto, \( r = 50\ \text{mm} \).</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Velocidad del punto C (muñequilla)</h3>
+                </div>
+                <p>El punto C describe una trayectoria circular con centro en O. Su velocidad lineal es tangente a la circunferencia y su magnitud se calcula como:</p>
+                <div class="formula">
+                    \( v_C = r \cdot \omega \)
+                </div>
+                <div class="calculation-steps">
+                    <p>\( v_C = 50\ \text{mm} \times 377\ \text{rad/s} \)</p>
+                    <p class="step-result">\( v_C = 18,850\ \text{mm/s} \)</p>
+                </div>
+                <p>En la posición θ = 90°, el punto C se encuentra directamente arriba de O, y su velocidad es horizontal hacia la izquierda (como se muestra en el diagrama).</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Análisis de velocidades en la biela CP (método del centro instantáneo)</h3>
+                </div>
+                <p>La biela CP es un cuerpo rígido que experimenta movimiento plano general. Conocemos la velocidad del punto C (\(v_C\)) y la dirección de la velocidad del punto P (horizontal, a lo largo del cilindro). Para hallar \(v_P\), podemos utilizar el concepto de <strong>centro instantáneo de rotación</strong> (CIR).</p>
+                <div class="formula-box">
+                    <div class="formula-title">📌 Centro instantáneo de rotación</div>
+                    <p>El CIR es el punto del cuerpo (o de su extensión) que tiene velocidad nula en ese instante. Se localiza en la intersección de las rectas perpendiculares a las velocidades de dos puntos cualesquiera del cuerpo.</p>
+                </div>
+                <ul class="concept-list">
+                    <li>En el punto C, la velocidad \(v_C\) es horizontal (izquierda). La perpendicular a esta velocidad es una recta <strong>vertical</strong>.</li>
+                    <li>En el punto P, la velocidad \(v_P\) es horizontal (también izquierda). La perpendicular a esta velocidad es otra recta <strong>vertical</strong>.</li>
+                </ul>
+                <p>Ambas perpendiculares son líneas verticales paralelas; nunca se intersectan en un punto finito. Esto indica que el centro instantáneo se encuentra en el <strong>infinito</strong>, y la velocidad angular de la biela es cero en ese instante.</p>
+                <div class="formula">
+                    \( \omega_{PC} = 0 \)
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Relación de velocidades en la biela</h3>
+                </div>
+                <p>Para un cuerpo rígido en movimiento plano, la velocidad de cualquier punto se relaciona con la velocidad del punto de referencia mediante:</p>
+                <div class="formula">
+                    \( \vec{v}_P = \vec{v}_C + \vec{\omega}_{PC} \times \vec{r}_{P/C} \)
+                </div>
+                <p>Dado que \(\vec{\omega}_{PC} = 0\), el término del producto cruz se anula y obtenemos:</p>
+                <div class="formula">
+                    \( \vec{v}_P = \vec{v}_C \)
+                </div>
+                <p>Es decir, en esta posición particular, <strong>todos los puntos de la biela tienen la misma velocidad</strong>. Por lo tanto:</p>
+                <div class="calculation-steps">
+                    <p class="step-result">\( v_P = v_C = 18,850\ \text{mm/s} \)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">6</div>
+                    <h3>Comparación con las opciones</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Valor (mm/s)</th>
+                            <th>¿Correcta?</th>
+                            <th>Explicación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>0</td>
+                            <td>No</td>
+                            <td>Correspondería a un punto muerto superior o inferior (θ = 0° o 180°), no a θ = 90°.</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>10,500</td>
+                            <td>No</td>
+                            <td>Podría obtenerse con un radio de manivela diferente o usando cos θ en lugar de la velocidad lineal.</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td><strong>18,850</strong></td>
+                            <td><strong>Sí</strong></td>
+                            <td>Coincide con \(v_C = r\omega\) para r = 50 mm, ω = 377 rad/s.</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>24,300</td>
+                            <td>No</td>
+                            <td>Podría ser el resultado de usar una longitud de biela o un ángulo incorrecto.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formula-box" style="background-color: #fce8e8; border-left-color: #e74c3c;">
+                    <p><strong>Error común:</strong> Suponer que la velocidad del pistón es la componente horizontal de la velocidad de C (\(v_C \cos\theta\)) cuando θ=90°. Esto daría cero, pero en realidad en esa posición la biela está horizontal y transmite toda la velocidad.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">18,850 mm/s (Opción C)</div>
+            <p>La velocidad del pistón es igual a la velocidad del punto C (muñequilla) en esta posición.</p>
+        </div>
+
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Cinemática de cuerpos rígidos:</strong> Estudio del movimiento (posición, velocidad, aceleración) sin considerar las fuerzas que lo producen.</li>
+                <li><strong>Velocidad angular y lineal:</strong> Para un punto en rotación pura alrededor de un eje fijo, \(v = r \cdot \omega\).</li>
+                <li><strong>Movimiento plano general:</strong> Combinación de traslación y rotación. Se puede analizar mediante el centro instantáneo de rotación (CIR).</li>
+                <li><strong>Centro instantáneo de rotación:</strong> Punto con velocidad nula en el instante considerado. Cuando las direcciones de velocidad de dos puntos son paralelas, el CIR está en el infinito y la velocidad angular es cero.</li>
+                <li><strong>Mecanismo biela-manivela:</strong> Transforma movimiento circular en rectilíneo alternativo. La velocidad del pistón varía con el ángulo de la manivela.</li>
+                <li><strong>Condición especial θ = 90°:</strong> La biela se vuelve horizontal, su velocidad angular se anula y todos sus puntos tienen la misma velocidad horizontal.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de motores de combustión interna:</strong> Cálculo de velocidades y aceleraciones del pistón para determinar fuerzas de inercia y balanceo.</li>
+                <li><strong>Compresores y bombas alternativas:</strong> Análisis cinemático para selección de componentes y materiales.</li>
+                <li><strong>Mecanismos en máquinas herramienta:</strong> Cigüeñales, prensas, sistemas de alimentación.</li>
+                <li><strong>Robótica:</strong> Análisis de velocidades en eslabones de manipuladores.</li>
+                <li><strong>Análisis de vibraciones:</strong> Las velocidades y aceleraciones del pistón generan fuerzas desbalanceadas que deben ser controladas.</li>
+            </ul>
+            <div class="formula-box">
+                <div class="formula-title">📌 Fórmula general para la velocidad del pistón</div>
+                <p>\( v_P = r\omega \left( \sin\theta + \frac{r}{2l}\sin 2\theta + \cdots \right) \)</p>
+                <p>Para \(\theta = 90°\), \(v_P = r\omega\) (independiente de la longitud de la biela). Esto confirma nuestro resultado.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">7</div>
+                <h3>Verificación adicional con el método de proyección</h3>
+            </div>
+            <p>También se puede deducir derivando la relación geométrica. Sea \(x_P\) la posición del pistón medida desde O. Para un mecanismo manivela-biela con radio \(r\) y longitud de biela \(l\):</p>
+            <div class="formula">
+                \( x_P = r\cos\theta + \sqrt{l^2 - (r\sin\theta)^2} \)
+            </div>
+            <p>Derivando respecto al tiempo y evaluando en \(\theta = 90°\) (\(\sin\theta=1\), \(\cos\theta=0\)):</p>
+            <div class="formula">
+                \( v_P = \frac{dx_P}{dt} = -r\omega\sin\theta - \frac{r^2\omega\sin\theta\cos\theta}{\sqrt{l^2 - (r\sin\theta)^2}} \)
+            </div>
+            <p>Con \(\sin\theta=1\), \(\cos\theta=0\):</p>
+            <div class="formula">
+                \( v_P = -r\omega (1) - 0 = -r\omega \)
+            </div>
+            <p>La magnitud es \(r\omega = 18,850\ \text{mm/s}\), consistente con el método del centro instantáneo.</p>
+        </div>
+
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta corresponde a la sección de <em>Dynamics, Kinematics, and Vibrations</em>, subsección <em>Kinematics of Rigid Bodies</em> y <em>Kinematics of Mechanisms</em>. El concepto de centro instantáneo de rotación y la ecuación \(\vec{v}_P = \vec{v}_C + \vec{\omega} \times \vec{r}_{P/C}\) son fundamentales. El manual incluye ejemplos de mecanismos biela-manivela y métodos gráficos de análisis de velocidades.</p>
+            <p><em>NCEES FE Reference Handbook, sección "Dynamics", subsecciones "Kinematics of rigid bodies" y "Kinematics of mechanisms".</em></p>
+        </div>
+
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
