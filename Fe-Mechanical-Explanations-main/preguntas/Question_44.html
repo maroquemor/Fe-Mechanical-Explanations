@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 44 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .diagram-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .diagram-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 44 del FE Mechanical</h1>
+            <p class="subtitle">Diseño del vástago de un pistón – Cálculo del área transversal</p>
+        </header>
+
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>44. The piston of a steam engine shown is 50 cm in diameter, and the maximum steam gauge pressure is 1.4 MPa. If the design stress for the piston rod is 68 MPa, its cross-sectional area (m²) should be most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. 40.4×10⁻⁴ &nbsp; B. 98.8×10⁻⁴ &nbsp; C. 228.0×10⁻⁴ &nbsp; D. 323.0×10⁻⁴</p>
+                </div>
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50;">Respuesta correcta según el PDF: <span style="background-color: #2ecc71; color: white; padding: 3px 10px; border-radius: 5px;">A (40.4×10⁻⁴ m²)</span></p>
+            </div>
+
+            <!-- Diagrama esquemático del pistón y vástago -->
+            <div class="diagram-section">
+                <div class="diagram-container">
+                    <svg width="500" height="200" viewBox="0 0 500 200" style="max-width:100%; height:auto;">
+                        <!-- Cilindro (contorno) -->
+                        <rect x="50" y="70" width="300" height="60" rx="10" fill="none" stroke="#2c3e50" stroke-width="2" />
+                        <!-- Pistón -->
+                        <rect x="100" y="70" width="40" height="60" fill="#b0c4de" stroke="#2c3e50" stroke-width="2" />
+                        <text x="110" y="100" font-size="12">pistón</text>
+                        <!-- Vástago -->
+                        <rect x="140" y="90" width="100" height="20" fill="#95a5a6" stroke="#2c3e50" stroke-width="2" />
+                        <text x="180" y="80" font-size="12">vástago</text>
+                        <!-- Área del vástago (sección transversal) -->
+                        <circle cx="260" cy="100" r="10" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4" />
+                        <text x="280" y="90" font-size="12" fill="#e74c3c">A<sub>rod</sub> = ?</text>
+                        <!-- Presión en el cilindro -->
+                        <line x1="200" y1="70" x2="200" y2="40" stroke="#e67e22" stroke-width="2" />
+                        <polygon points="200,40 195,50 205,50" fill="#e67e22" />
+                        <text x="210" y="30" fill="#e67e22" font-size="12">P = 1.4 MPa</text>
+                        <!-- Diámetro del pistón -->
+                        <line x1="100" y1="140" x2="140" y2="140" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="4" />
+                        <text x="110" y="160" font-size="12">d = 50 cm</text>
+                        <!-- Fuerza sobre el vástago -->
+                        <line x1="240" y1="100" x2="280" y2="100" stroke="#9b59b6" stroke-width="2" />
+                        <polygon points="280,100 270,95 270,105" fill="#9b59b6" />
+                        <text x="290" y="90" fill="#9b59b6" font-size="12">F</text>
+                    </svg>
+                    <p style="margin-top: 10px; font-size: 14px; color: #555;">
+                        El vapor a presión actúa sobre el pistón, generando una fuerza que debe ser resistida por el vástago. 
+                        El diseño por esfuerzo determina el área mínima del vástago.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Identificar los datos y realizar conversiones de unidades</h3>
+                </div>
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Símbolo</th>
+                            <th>Valor dado</th>
+                            <th>Conversión a SI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Diámetro del pistón</td><td>d</td><td>50 cm</td><td>0.50 m</td></tr>
+                        <tr><td>Presión manométrica (gauge)</td><td>P</td><td>1.4 MPa</td><td>1.4 × 10⁶ Pa</td></tr>
+                        <tr><td>Esfuerzo de diseño (vástago)</td><td>σ_diseño</td><td>68 MPa</td><td>68 × 10⁶ Pa</td></tr>
+                    </tbody>
+                </table>
+                <div class="formula-box">
+                    <div class="formula-title">📌 Nota</div>
+                    <p>La presión es <strong>manométrica (gauge)</strong>; se asume que la presión en el otro lado del pistón es atmosférica, por lo que la fuerza neta es simplemente \(P \cdot A_{\text{piston}}\).</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Calcular la fuerza ejercida por el vapor sobre el pistón</h3>
+                </div>
+                <p>El área del pistón (supuesta circular) es:</p>
+                <div class="formula">
+                    \(A_{\text{pistón}} = \dfrac{\pi d^2}{4}\)
+                </div>
+                <div class="calculation-steps">
+                    <p>\(A_{\text{pistón}} = \dfrac{\pi (0.50)^2}{4} = \dfrac{\pi \times 0.25}{4} = \dfrac{\pi}{16} \approx 0.19635\ \text{m}^2\)</p>
+                </div>
+                <p>La fuerza se obtiene multiplicando la presión por el área:</p>
+                <div class="formula">
+                    \(F = P \cdot A_{\text{pistón}}\)
+                </div>
+                <div class="calculation-steps">
+                    <p>\(F = (1.4 \times 10^6) \times 0.19635 \approx 274\,890\ \text{N}\)</p>
+                    <p class="step-result">\(F \approx 2.749 \times 10^5\ \text{N}\)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Relacionar la fuerza con el esfuerzo en el vástago</h3>
+                </div>
+                <p>El vástago está sometido a una carga axial de tracción. El esfuerzo normal se define como:</p>
+                <div class="formula">
+                    \(\sigma = \dfrac{F}{A_{\text{rod}}}\)
+                </div>
+                <p>Para que el diseño sea seguro, el esfuerzo no debe superar el esfuerzo admisible (diseño):</p>
+                <div class="formula">
+                    \(\sigma \le \sigma_{\text{diseño}}\)
+                </div>
+                <p>En el límite, igualamos y despejamos el área mínima:</p>
+                <div class="formula">
+                    \(A_{\text{rod}} = \dfrac{F}{\sigma_{\text{diseño}}}\)
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Calcular el área transversal del vástago</h3>
+                </div>
+                <div class="calculation-steps">
+                    <p>\(A_{\text{rod}} = \dfrac{274\,890}{68 \times 10^6}\)</p>
+                    <p>\(A_{\text{rod}} = \dfrac{2.7489 \times 10^5}{6.8 \times 10^7} = 4.0425 \times 10^{-3}\ \text{m}^2\)</p>
+                    <p>Expresado en la forma solicitada (×10⁻⁴):</p>
+                    <p class="step-result">\(A_{\text{rod}} = 40.425 \times 10^{-4}\ \text{m}^2 \approx 40.4 \times 10^{-4}\ \text{m}^2\)</p>
+                </div>
+                <p>Usando valores más exactos (π/16 ≈ 0.1963495, multiplicado por 1.4e6 = 274889.3, dividido por 68e6 = 0.00404249) se confirma el resultado.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Comparación con las opciones</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Área (×10⁻⁴ m²)</th>
+                            <th>¿Correcta?</th>
+                            <th>Explicación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td><strong>40.4</strong></td>
+                            <td><strong>Sí</strong></td>
+                            <td>Resultado exacto del cálculo.</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>98.8</td>
+                            <td>No</td>
+                            <td>Posible error: usar diámetro = 50 mm (0.05 m) en lugar de 50 cm.</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>228.0</td>
+                            <td>No</td>
+                            <td>Usar presión en kPa sin convertir (1.4 kPa) o área del pistón mal calculada.</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>323.0</td>
+                            <td>No</td>
+                            <td>Olvidar convertir cm a m (usar d = 50 → d² = 2500, área = 1963.5, etc.).</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formula-box" style="background-color: #fce8e8; border-left-color: #e74c3c;">
+                    <p><strong>Error común:</strong> No convertir el diámetro de centímetros a metros (1 cm = 0.01 m). Si se usa d = 50 cm = 50 × 0.01 = 0.5 m. Si se omite la conversión, se obtiene un área 10 000 veces mayor y la respuesta se desplaza a opciones como 323×10⁻⁴.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">40.4 × 10⁻⁴ m² (Opción A)</div>
+            <p>El área transversal mínima del vástago del pistón es 40.4 × 10⁻⁴ m².</p>
+        </div>
+
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Presión:</strong> Fuerza por unidad de área. La presión manométrica (gauge) es la presión relativa a la atmosférica. Fuerza = Presión × Área (sobre la que actúa perpendicularmente).</li>
+                <li><strong>Esfuerzo normal (σ):</strong> Fuerza interna por unidad de área en una sección transversal. Para una barra a tracción/compresión, σ = F/A.</li>
+                <li><strong>Esfuerzo admisible / de diseño:</strong> Valor límite de esfuerzo que el material puede soportar con un factor de seguridad implícito. El área se dimensiona para que σ ≤ σ_adm.</li>
+                <li><strong>Conversión de unidades:</strong> Fundamental en problemas de ingeniería. 1 cm = 0.01 m, 1 MPa = 10⁶ Pa, 1 mm² = 10⁻⁶ m².</li>
+                <li><strong>Área de un círculo:</strong> A = πd²/4.</li>
+                <li><strong>Diseño de componentes mecánicos:</strong> El área de elementos sometidos a carga axial se determina a partir de la carga y el esfuerzo admisible.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de cilindros neumáticos e hidráulicos:</strong> El vástago debe resistir la fuerza generada por la presión del fluido.</li>
+                <li><strong>Prensas, martinetes, gatos hidráulicos:</strong> Dimensionamiento de vástagos y émbolos.</li>
+                <li><strong>Motores de combustión interna y máquinas de vapor:</strong> Bielas y vástagos de válvulas.</li>
+                <li><strong>Sistemas de suspensión y amortiguadores:</strong> Vástagos de pistones sometidos a cargas axiales.</li>
+                <li><strong>Selección de materiales:</strong> El esfuerzo de diseño depende del material (acero, aluminio, titanio) y de las condiciones de operación (fatiga, temperatura).</li>
+            </ul>
+            <div class="formula-box">
+                <div class="formula-title">📌 Fórmulas esenciales</div>
+                <div class="formula">\(F = P \cdot A_{\text{pistón}}\)</div>
+                <div class="formula">\(A_{\text{pistón}} = \dfrac{\pi d^2}{4}\)</div>
+                <div class="formula">\(A_{\text{rod}} = \dfrac{F}{\sigma_{\text{diseño}}}\)</div>
+            </div>
+        </div>
+
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta corresponde a la sección de <em>Mechanics of Materials</em>, subsección <em>Uniaxial Loading and Deformation</em>. La relación \(\sigma = P/A\) y el dimensionamiento por esfuerzo admisible son conceptos fundamentales. También se relaciona con <em>Fluid Mechanics</em> en el cálculo de fuerzas hidrostáticas sobre superficies planas.</p>
+            <p><em>NCEES FE Reference Handbook, sección "Mechanics of Materials", subsección "Uniaxial Loading and Deformation"; sección "Fluid Mechanics", subsección "Fluid Statics".</em></p>
+        </div>
+
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

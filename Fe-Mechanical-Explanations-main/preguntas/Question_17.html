@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 17 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .data-box {
+            background-color: #fff8e1;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #f39c12;
+        }
+        
+        .data-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+        
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .factor-table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: white;
+        }
+        
+        .factor-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        
+        .factor-table th, .factor-table td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            text-align: center;
+            min-width: 60px;
+        }
+        
+        .factor-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        
+        .factor-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .highlight-column {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .cash-flow-diagram {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        
+        .time-point {
+            position: relative;
+            text-align: center;
+            width: 40px;
+        }
+        
+        .time-marker {
+            width: 10px;
+            height: 10px;
+            background-color: #3498db;
+            border-radius: 50%;
+            margin: 0 auto 8px;
+        }
+        
+        .time-label {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 12px;
+        }
+        
+        .cash-flow {
+            color: #2ecc71;
+            font-weight: bold;
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+        }
+        
+        .future-value {
+            color: #9b59b6;
+            font-weight: bold;
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .factor-explanation {
+            background-color: #f4ecf7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #9b59b6;
+        }
+        
+        .factor-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .data-box {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .highlight-column {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .calculation-steps {
+                background-color: #f9ebea !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .factor-explanation {
+                background-color: #f4ecf7 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .note-box {
+            background-color: #ebf5fb;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+        
+        .visual-aid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .visual-item {
+            text-align: center;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            min-width: 200px;
+        }
+        
+        .visual-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+        
+        .option-analysis {
+            background-color: #fff0f0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .option-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 17 del FE Mechanical</h1>
+            <p class="subtitle">Cálculo del Depósito Anual para Acumular un Fondo Objetivo</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>17. A business owner wants to build a reserve fund. To have $50,000 in the fund at the end of 10 years, the amount the owner will need to invest annually, assuming an annual return of 5%, is most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. $951 &nbsp; B. $1,535 &nbsp; C. $2,500 &nbsp; D. $3,975</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Entender el problema y los datos</h3>
+                </div>
+                
+                <div class="data-box">
+                    <div class="data-title">Datos proporcionados:</div>
+                    <ul class="concept-list">
+                        <li><strong>Valor futuro objetivo (F):</strong> $50,000</li>
+                        <li><strong>Plazo (n):</strong> 10 años</li>
+                        <li><strong>Tasa de interés (i):</strong> 5% anual</li>
+                        <li><strong>Frecuencia de inversión:</strong> Anual</li>
+                        <li><strong>Objetivo:</strong> Calcular el depósito anual (A) necesario</li>
+                    </ul>
+                </div>
+                
+                <p>Este es un problema clásico de <strong>fondo de amortización (sinking fund)</strong>, donde queremos determinar el depósito anual constante necesario para acumular un monto específico al final de un período determinado, considerando que los depósitos ganan interés.</p>
+                
+                <div class="cash-flow-diagram">
+                    <h4>Diagrama de Flujo de Efectivo</h4>
+                    <div class="timeline">
+                        <div class="time-point">
+                            <div class="time-marker"></div>
+                            <div class="time-label">Año 0</div>
+                        </div>
+                        <div class="time-point">
+                            <div class="time-marker"></div>
+                            <div class="time-label">Año 1</div>
+                            <div class="cash-flow">A</div>
+                        </div>
+                        <div class="time-point">
+                            <div class="time-marker"></div>
+                            <div class="time-label">Año 2</div>
+                            <div class="cash-flow">A</div>
+                        </div>
+                        <div class="time-point">
+                            <div class="time-marker"></div>
+                            <div class="time-label">Año 3</div>
+                            <div class="cash-flow">A</div>
+                        </div>
+                        <div class="time-point">
+                            <div style="font-size: 20px;">...</div>
+                            <div class="time-label"></div>
+                        </div>
+                        <div class="time-point">
+                            <div class="time-marker"></div>
+                            <div class="time-label">Año 9</div>
+                            <div class="cash-flow">A</div>
+                        </div>
+                        <div class="time-point">
+                            <div class="time-marker"></div>
+                            <div class="time-label">Año 10</div>
+                            <div class="cash-flow">A</div>
+                            <div class="future-value">F = $50,000</div>
+                        </div>
+                    </div>
+                    <p style="color: #7f8c8d; margin-top: 20px;">
+                        <span style="color: #2ecc71; font-weight: bold;">A = Depósito anual (lo que buscamos)</span> &nbsp;|&nbsp;
+                        <span style="color: #9b59b6; font-weight: bold;">F = Valor futuro objetivo ($50,000)</span>
+                    </p>
+                </div>
+                
+                <div class="note-box">
+                    <strong>Nota:</strong> Este es un problema de <strong>serie uniforme a valor futuro</strong>. Los depósitos se realizan al final de cada año (anualidad ordinaria), y el valor futuro se acumula al final del año 10, incluyendo todos los depósitos más el interés ganado.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Identificar la fórmula y factor de ingeniería económica</h3>
+                </div>
+                
+                <p>Para encontrar el depósito anual (A) necesario para acumular un valor futuro (F) en n períodos a una tasa de interés i, usamos la fórmula:</p>
+                
+                <div class="formula">
+                    A = F × (A/F, i, n)
+                </div>
+                
+                <p>Donde (A/F, i, n) es el <strong>factor de fondo de amortización</strong> (sinking fund factor), que convierte un valor futuro a una serie uniforme.</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Fórmula del factor (A/F, i, n)</div>
+                    <div class="formula">
+                        (A/F, i, n) = i / [(1 + i)<sup>n</sup> - 1]
+                    </div>
+                    <p>Para i = 5% = 0.05 y n = 10 años:</p>
+                    <div class="formula">
+                        (A/F, 5%, 10) = 0.05 / [(1.05)<sup>10</sup> - 1]
+                    </div>
+                </div>
+                
+                <p>Este factor nos permite calcular directamente el depósito anual necesario para alcanzar el objetivo futuro.</p>
+                
+                <div class="visual-aid">
+                    <div class="visual-item">
+                        <div class="visual-icon">A/F</div>
+                        <h4>Factor A/F</h4>
+                        <p>Convierte un valor futuro (F) a una serie uniforme (A)</p>
+                        <p><strong>Fórmula:</strong> A = F × (A/F,i,n)</p>
+                    </div>
+                    <div class="visual-item">
+                        <div class="visual-icon">F/A</div>
+                        <h4>Factor F/A</h4>
+                        <p>Convierte una serie uniforme (A) a un valor futuro (F)</p>
+                        <p><strong>Fórmula:</strong> F = A × (F/A,i,n)</p>
+                    </div>
+                    <div class="visual-item">
+                        <div class="visual-icon">A/P</div>
+                        <h4>Factor A/P</h4>
+                        <p>Convierte un valor presente (P) a una serie uniforme (A)</p>
+                        <p><strong>Fórmula:</strong> A = P × (A/P,i,n)</p>
+                    </div>
+                </div>
+                
+                <div class="note-box">
+                    <strong>Relación importante:</strong> El factor (A/F,i,n) es el recíproco del factor (F/A,i,n) solo si consideramos que (F/A,i,n) = [(1+i)^n - 1]/i. Por lo tanto, (A/F,i,n) = 1/(F/A,i,n).
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Método 1: Usar tablas de factores de interés</h3>
+                </div>
+                
+                <p>Para i = 5% y n = 10 años, buscamos en las tablas de factores de interés el valor de (A/F, 5%, 10):</p>
+                
+                <div class="factor-table-container">
+                    <table class="factor-table">
+                        <thead>
+                            <tr>
+                                <th>n</th>
+                                <th>P/F</th>
+                                <th>P/A</th>
+                                <th>P/G</th>
+                                <th>F/P</th>
+                                <th>F/A</th>
+                                <th>A/P</th>
+                                <th class="highlight-column">A/F</th>
+                                <th>A/G</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>0.9524</td>
+                                <td>0.9524</td>
+                                <td>0.0000</td>
+                                <td>1.0500</td>
+                                <td>1.0000</td>
+                                <td>1.05000</td>
+                                <td class="highlight-column">1.00000</td>
+                                <td>0.0000</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>0.9070</td>
+                                <td>1.8594</td>
+                                <td>0.9070</td>
+                                <td>1.1025</td>
+                                <td>2.0500</td>
+                                <td>0.53780</td>
+                                <td class="highlight-column">0.48780</td>
+                                <td>0.4878</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>0.8638</td>
+                                <td>2.7232</td>
+                                <td>2.6347</td>
+                                <td>1.1576</td>
+                                <td>3.1525</td>
+                                <td>0.36721</td>
+                                <td class="highlight-column">0.31721</td>
+                                <td>0.9675</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>0.8227</td>
+                                <td>3.5459</td>
+                                <td>5.1028</td>
+                                <td>1.2155</td>
+                                <td>4.3101</td>
+                                <td>0.28201</td>
+                                <td class="highlight-column">0.23201</td>
+                                <td>1.4391</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>0.7835</td>
+                                <td>4.3295</td>
+                                <td>8.2369</td>
+                                <td>1.2763</td>
+                                <td>5.5256</td>
+                                <td>0.23097</td>
+                                <td class="highlight-column">0.18097</td>
+                                <td>1.9025</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>0.7462</td>
+                                <td>5.0757</td>
+                                <td>11.9680</td>
+                                <td>1.3401</td>
+                                <td>6.8019</td>
+                                <td>0.19702</td>
+                                <td class="highlight-column">0.14702</td>
+                                <td>2.3579</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>0.7107</td>
+                                <td>5.7864</td>
+                                <td>16.2321</td>
+                                <td>1.4071</td>
+                                <td>8.1420</td>
+                                <td>0.17282</td>
+                                <td class="highlight-column">0.12282</td>
+                                <td>2.8052</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>0.6768</td>
+                                <td>6.4632</td>
+                                <td>20.9700</td>
+                                <td>1.4775</td>
+                                <td>9.5491</td>
+                                <td>0.15472</td>
+                                <td class="highlight-column">0.10472</td>
+                                <td>3.2445</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>0.6446</td>
+                                <td>7.1078</td>
+                                <td>26.1268</td>
+                                <td>1.5513</td>
+                                <td>11.0266</td>
+                                <td>0.14069</td>
+                                <td class="highlight-column">0.09069</td>
+                                <td>3.6758</td>
+                            </tr>
+                            <tr>
+                                <td class="highlight-cell">10</td>
+                                <td>0.6139</td>
+                                <td>7.7217</td>
+                                <td>31.6520</td>
+                                <td>1.6289</td>
+                                <td>12.5779</td>
+                                <td>0.12950</td>
+                                <td class="highlight-column highlight-cell">0.07950</td>
+                                <td>4.0991</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>0.4810</td>
+                                <td>10.3797</td>
+                                <td>63.7889</td>
+                                <td>2.0789</td>
+                                <td>21.5786</td>
+                                <td>0.09634</td>
+                                <td class="highlight-column">0.04634</td>
+                                <td>6.1473</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>0.3769</td>
+                                <td>12.4622</td>
+                                <td>102.1569</td>
+                                <td>2.6533</td>
+                                <td>33.0660</td>
+                                <td>0.08024</td>
+                                <td class="highlight-column">0.03024</td>
+                                <td>8.1949</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p>De la tabla, para n=10 e i=5%:</p>
+                <ul class="concept-list">
+                    <li>(A/F, 5%, 10) = 0.07950</li>
+                </ul>
+                
+                <div class="calculation-steps">
+                    <p><strong>Cálculo del depósito anual:</strong></p>
+                    <p>A = F × (A/F, i, n)</p>
+                    <p>A = $50,000 × 0.07950</p>
+                    <p class="step-result">A = $3,975 por año</p>
+                </div>
+                
+                <div class="note-box">
+                    <strong>Nota:</strong> En el examen FE, normalmente se proporciona una tabla de factores de interés o se puede usar la calculadora NCEES para calcular estos factores. Es importante saber localizar rápidamente el factor (A/F,i,n) en las tablas.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Método 2: Cálculo manual del factor</h3>
+                </div>
+                
+                <p>Verificamos el factor calculándolo manualmente:</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Cálculo de (A/F, 5%, 10)</div>
+                    <div class="formula">
+                        (A/F, i, n) = i / [(1 + i)<sup>n</sup> - 1]
+                    </div>
+                    <p>(1 + i)<sup>n</sup> = (1.05)<sup>10</sup></p>
+                    <p>1.05<sup>10</sup> = 1.628894626777441 (usando calculadora)</p>
+                    <p>(1.05)<sup>10</sup> - 1 = 1.628894626777441 - 1 = 0.628894626777441</p>
+                    <p>(A/F, 5%, 10) = 0.05 / 0.628894626777441</p>
+                    <p class="step-result">(A/F, 5%, 10) = 0.0795047 ≈ 0.07950 ✓</p>
+                </div>
+                
+                <div class="calculation-steps">
+                    <p><strong>Verificación con cálculo del valor futuro:</strong></p>
+                    <p>Si depositamos $3,975 cada año durante 10 años al 5% anual, ¿cuánto acumularemos?</p>
+                    <p>Usamos el factor (F/A, 5%, 10) de la tabla: 12.5779</p>
+                    <p>F = A × (F/A, 5%, 10) = $3,975 × 12.5779</p>
+                    <p>F = $49,997.15 ≈ $50,000 ✓</p>
+                    <p>La pequeña diferencia se debe al redondeo del factor.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Método alternativo: Usar la fórmula del valor futuro de una anualidad</h3>
+                </div>
+                
+                <p>Podemos abordar el problema desde la perspectiva de la fórmula del valor futuro de una anualidad:</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Fórmula del valor futuro de una serie uniforme</div>
+                    <div class="formula">
+                        F = A × [(1 + i)<sup>n</sup> - 1] / i
+                    </div>
+                    <p>Reorganizando para encontrar A:</p>
+                    <div class="formula">
+                        A = F × i / [(1 + i)<sup>n</sup> - 1]
+                    </div>
+                    <p>Que es exactamente la misma fórmula que (A/F, i, n).</p>
+                </div>
+                
+                <div class="calculation-steps">
+                    <p><strong>Cálculo directo:</strong></p>
+                    <p>A = $50,000 × 0.05 / [(1.05)<sup>10</sup> - 1]</p>
+                    <p>A = $50,000 × 0.05 / 0.628894626777441</p>
+                    <p>A = $50,000 × 0.0795047</p>
+                    <p class="step-result">A = $3,975.24 por año</p>
+                </div>
+                
+                <div class="note-box">
+                    <strong>Confirmación:</strong> Los tres métodos producen el mismo resultado: aproximadamente $3,975 por año.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">6</div>
+                    <h3>Análisis de las opciones incorrectas</h3>
+                </div>
+                
+                <div class="option-analysis">
+                    <div class="option-title">¿Por qué las otras opciones son incorrectas?</div>
+                    <ul class="concept-list">
+                        <li><strong>Opción A ($951):</strong> Este valor es demasiado bajo. Si depositáramos $951 anuales durante 10 años al 5%, acumularíamos solo $951 × 12.5779 = $11,962, muy por debajo de $50,000.</li>
+                        <li><strong>Opción B ($1,535):</strong> También es insuficiente. $1,535 × 12.5779 = $19,307, menos de la mitad del objetivo.</li>
+                        <li><strong>Opción C ($2,500):</strong> Aún insuficiente. $2,500 × 12.5779 = $31,445, aproximadamente el 63% del objetivo.</li>
+                        <li><strong>Opción D ($3,975):</strong> Correcta. $3,975 × 12.5779 = $49,997 ≈ $50,000.</li>
+                    </ul>
+                </div>
+                
+                <div class="factor-explanation">
+                    <div class="factor-title">Errores comunes que llevan a opciones incorrectas:</div>
+                    <ul class="concept-list">
+                        <li><strong>Usar el factor incorrecto:</strong> Confundir (A/F,i,n) con (A/P,i,n). (A/P,5%,10) = 0.12950, lo que daría A = $50,000 × 0.12950 = $6,475 (no es una opción).</li>
+                        <li><strong>Olvidar el interés compuesto:</strong> Dividir $50,000 entre 10 años = $5,000 por año, ignorando por completo el interés ganado.</li>
+                        <li><strong>Error en el cálculo del factor:</strong> Usar n=10 pero i diferente, o calcular mal (1+i)^n.</li>
+                        <li><strong>Confundir valor presente con valor futuro:</strong> Calcular el depósito para un valor presente de $50,000 en lugar de un valor futuro.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">$3,975 (Opción D)</div>
+            <p>El dueño del negocio necesita invertir aproximadamente $3,975 anualmente para acumular $50,000 en 10 años al 5% de interés anual.</p>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Fondo de Amortización (Sinking Fund):</strong> Fondo establecido para acumular una cantidad específica en un momento futuro mediante depósitos periódicos constantes que ganan interés.</li>
+                <li><strong>Factor (A/F,i,n):</strong> Factor de fondo de amortización que convierte un valor futuro (F) a una serie uniforme (A).</li>
+                <li><strong>Valor Futuro de una Anualidad:</strong> Valor acumulado al final de un período de una serie de pagos iguales realizados a intervalos regulares, con interés compuesto.</li>
+                <li><strong>Interés Compuesto:</strong> Interés calculado sobre el principal inicial y también sobre el interés acumulado de períodos anteriores.</li>
+                <li><strong>Serie Uniforme (Anualidad):</strong> Serie de flujos de efectivo iguales que ocurren en intervalos regulares.</li>
+                <li><strong>Tasa de Interés Efectiva:</strong> Tasa de interés real ganada o pagada en un período, considerando la capitalización.</li>
+                <li><strong>Equivalencia Económica:</strong> Concepto de que diferentes patrones de flujo de efectivo pueden tener el mismo valor económico en un momento específico, considerando el valor del dinero en el tiempo.</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica y Negocios</h3>
+            <ul class="concept-list">
+                <li><strong>Fondos de Reemplazo de Equipos:</strong> Establecer reservas para reemplazar maquinaria al final de su vida útil.</li>
+                <li><strong>Planificación de Jubilación:</strong> Calcular contribuciones anuales a planes de pensiones o 401(k).</li>
+                <li><strong>Fondos para Proyectos Futuros:</strong> Acumular capital para futuras expansiones o inversiones en equipos.</li>
+                <li><strong>Reservas para Mantenimiento Mayor:</strong> Crear fondos para reparaciones importantes programadas.</li>
+                <li><strong>Financiamiento de Garantías:</strong> Establecer reservas para cubrir garantías de productos.</li>
+                <li><strong>Presupuestación de Capital:</strong> Planificar la acumulación de fondos para grandes compras de capital.</li>
+                <li><strong>Gestión de Deuda:</strong> Calcular pagos necesarios para fondos de amortización de deuda.</li>
+            </ul>
+            
+            <div class="formula-box">
+                <div class="formula-title">Fórmulas importantes relacionadas:</div>
+                <div class="formula">
+                    A = F × (A/F,i,n) = F × [i / ((1+i)<sup>n</sup> - 1)]
+                </div>
+                <div class="formula">
+                    F = A × (F/A,i,n) = A × [((1+i)<sup>n</sup> - 1) / i]
+                </div>
+                <div class="formula">
+                    (A/F,i,n) = 1 / (F/A,i,n)
+                </div>
+                <p>Estas fórmulas son fundamentales para la planificación financiera y el análisis de inversiones.</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">7</div>
+                <h3>Variaciones y escenarios adicionales</h3>
+            </div>
+            
+            <div class="factor-explanation">
+                <div class="factor-title">Escenario 1: Depósitos al inicio del año (anualidad anticipada)</div>
+                <p>Si los depósitos se realizaran al inicio de cada año:</p>
+                <ul class="concept-list">
+                    <li>F = A × (F/A,i,n) × (1+i)</li>
+                    <li>A = F / [(F/A,i,n) × (1+i)]</li>
+                    <li>Para este problema: A = $50,000 / [12.5779 × 1.05]</li>
+                    <li>A = $50,000 / 13.2068 = $3,786 por año</li>
+                </ul>
+                <p>Los depósitos al inicio del año requieren menos dinero anual porque cada depósito gana interés por un año adicional.</p>
+            </div>
+            
+            <div class="factor-explanation">
+                <div class="factor-title">Escenario 2: Diferente frecuencia de capitalización</div>
+                <p>Si el interés se capitalizara mensualmente en lugar de anualmente:</p>
+                <ul class="concept-list">
+                    <li>i<sub>mensual</sub> = 5%/12 = 0.4167% mensual</li>
+                    <li>n = 10 años × 12 meses = 120 meses</li>
+                    <li>(F/A,0.4167%,120) = [(1.004167)<sup>120</sup> - 1] / 0.004167</li>
+                    <li>A<sub>mensual</sub> = $50,000 / (F/A,0.4167%,120) ≈ $50,000 / 155.29 = $322 mensual</li>
+                    <li>Equivalente anual: $322 × 12 = $3,864</li>
+                </ul>
+                <p>La capitalización más frecuente reduce el depósito anual necesario debido a que el interés se gana más frecuentemente.</p>
+            </div>
+            
+            <div class="factor-explanation">
+                <div class="factor-title">Escenario 3: Objetivo ajustado por inflación</div>
+                <p>Si queremos $50,000 en dólares de hoy (considerando inflación del 2% anual):</p>
+                <ul class="concept-list">
+                    <li>F<sub>real</sub> = $50,000 × (1.02)<sup>10</sup> = $50,000 × 1.21899 = $60,950</li>
+                    <li>A = $60,950 × (A/F,5%,10) = $60,950 × 0.07950 = $4,845 anual</li>
+                </ul>
+                <p>La inflación aumenta significativamente el depósito anual necesario para alcanzar un objetivo en términos de poder adquisitivo real.</p>
+            </div>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Engineering Economics, específicamente a Time Value of Money y Uniform Series Cash Flows. Las fórmulas para (A/F,i,n) y (F/A,i,n) aparecen en el manual de referencia del examen FE.</p>
+            <p>En el examen FE real, es importante saber localizar rápidamente los factores correctos en las tablas proporcionadas o usar las fórmulas directamente con la calculadora permitida.</p>
+            <p><strong>Ubicación en el FE Reference Handbook:</strong> Engineering Economics → Time Value of Money → Discrete Compounding Factors → Uniform Series (A/F and F/A factors).</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar elementos importantes
+            const importantElements = document.querySelectorAll('.formula, .calculation-steps, .factor-explanation');
+            importantElements.forEach(element => {
+                element.setAttribute('data-print', 'important');
+            });
+        });
+        
+        // Función para imprimir
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

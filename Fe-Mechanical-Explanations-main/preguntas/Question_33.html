@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 33 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .diagram-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .fbd-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 33 del FE Mechanical</h1>
+            <p class="subtitle">Dinámica de dos bloques con fricción: aceleración de un bloque arrastrado</p>
+        </header>
+
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>33. Two blocks, A and B, are arranged so that A rests on top of B and is attached to a vertical wall by an inextensible string. A force of 30 N is applied to Block B, which is sufficient to make it slide to the left. If μK = 0.2 between A and B, and if μK = 0.4 between B and the bottom surface, the acceleration of B (m/s²) is most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. 5.2 &nbsp; B. 7.2 &nbsp; C. 9.1 &nbsp; D. 15.0</p>
+                </div>
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50;">Respuesta correcta según el PDF: <span style="background-color: #2ecc71; color: white; padding: 3px 10px; border-radius: 5px;">A (5.2 m/s²)</span></p>
+            </div>
+
+            <!-- Diagrama del sistema -->
+            <div class="diagram-section">
+                <div class="fbd-container">
+                    <svg width="480" height="280" viewBox="0 0 480 280" style="max-width:100%; height:auto;">
+                        <!-- Pared vertical -->
+                        <rect x="40" y="40" width="10" height="200" fill="#95a5a6" stroke="#2c3e50" stroke-width="2" />
+                        <!-- Bloque A sobre bloque B -->
+                        <rect x="120" y="140" width="60" height="30" fill="#e74c3c" opacity="0.8" stroke="#2c3e50" stroke-width="2" />
+                        <text x="140" y="125" font-size="12" fill="#2c3e50">A (2 kg)</text>
+                        <rect x="120" y="170" width="120" height="30" fill="#3498db" opacity="0.8" stroke="#2c3e50" stroke-width="2" />
+                        <text x="160" y="195" font-size="12" fill="#2c3e50">B (2 kg)</text>
+                        <!-- Cuerda inextensible -->
+                        <line x1="80" y1="155" x2="118" y2="155" stroke="#2c3e50" stroke-width="2" />
+                        <polygon points="118,155 114,151 114,159" fill="#2c3e50" />
+                        <!-- Fuerza aplicada a B hacia la izquierda -->
+                        <line x1="240" y1="185" x2="280" y2="185" stroke="#e67e22" stroke-width="3" />
+                        <polygon points="240,185 250,180 250,190" fill="#e67e22" />
+                        <text x="260" y="170" font-size="14" fill="#e67e22">F = 30 N</text>
+                        <!-- Superficie inferior (suelo) -->
+                        <line x1="40" y1="200" x2="400" y2="200" stroke="#2c3e50" stroke-width="2" />
+                        <!-- Fricción en la interfaz A-B -->
+                        <text x="60" y="110" font-size="12" fill="#e74c3c">μ = 0.2</text>
+                        <!-- Fricción en la base -->
+                        <text x="60" y="220" font-size="12" fill="#3498db">μ = 0.4</text>
+                        <!-- Tensión en la cuerda (opcional) -->
+                        <text x="60" y="140" font-size="12" fill="#2c3e50">T</text>
+                    </svg>
+                    <p style="margin-top: 10px; font-size: 14px; color: #555;">
+                        Configuración: bloque A sobre B, A atado a la pared, fuerza F aplicada a B hacia la izquierda.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Identificar los datos y las masas</h3>
+                </div>
+                <p>De la solución del examen, se deduce que las masas son:</p>
+                <ul class="concept-list">
+                    <li><strong>Masa de A:</strong> \( m_A = 2\ \text{kg} \)</li>
+                    <li><strong>Masa de B:</strong> \( m_B = 2\ \text{kg} \)</li>
+                </ul>
+                <p>Coeficientes de fricción cinética:</p>
+                <ul class="concept-list">
+                    <li>Entre A y B: \( \mu_{AB} = 0.2 \)</li>
+                    <li>Entre B y la superficie: \( \mu_{B,suelo} = 0.4 \)</li>
+                </ul>
+                <p>Fuerza aplicada a B: \( F = 30\ \text{N} \) hacia la izquierda.</p>
+                <p>Aceleración de la gravedad: \( g = 9.81\ \text{m/s}^2 \).</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Diagramas de cuerpo libre y fuerzas normales</h3>
+                </div>
+                <p><strong>Bloque A:</strong> Está unido a la pared mediante una cuerda inextensible, por lo que <strong>no se mueve horizontalmente</strong>. La cuerda ejerce una tensión T que equilibra la fuerza de fricción ejercida por B sobre A. Verticalmente, el peso de A es equilibrado por la normal que B ejerce sobre A.</p>
+                <div class="formula">
+                    \( N_{AB} = m_A \cdot g = 2 \times 9.81 = 19.62\ \text{N} \)
+                </div>
+                <p><strong>Bloque B:</strong> Sobre él actúan:</p>
+                <ul class="concept-list">
+                    <li>Fuerza aplicada \( F = 30\ \text{N} \) ← (izquierda).</li>
+                    <li>Fricción de A sobre B: se opone al movimiento relativo. Como B se desliza hacia la izquierda, A tiende a quedarse (está fijo), entonces la fricción en la cara superior de B actúa hacia la <strong>derecha</strong>.</li>
+                    <li>Fricción del suelo sobre B: también se opone al movimiento, actúa hacia la <strong>derecha</strong>.</li>
+                    <li>Peso de B y normal del suelo: la normal del suelo debe soportar el peso de B más el peso de A (ya que A está sobre B).</li>
+                </ul>
+                <div class="formula">
+                    \( N_{suelo} = (m_A + m_B) \cdot g = 4 \times 9.81 = 39.24\ \text{N} \)
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Calcular las fuerzas de fricción</h3>
+                </div>
+                <p>Fricción cinética: \( f = \mu_k \cdot N \).</p>
+                <div class="calculation-steps">
+                    <p><strong>Fricción entre A y B (sobre B):</strong></p>
+                    <p>\( f_{AB} = \mu_{AB} \cdot N_{AB} = 0.2 \times 19.62 = 3.924\ \text{N} \) (← hacia la derecha en B)</p>
+                    <p><strong>Fricción entre B y el suelo:</strong></p>
+                    <p>\( f_{suelo} = \mu_{B,suelo} \cdot N_{suelo} = 0.4 \times 39.24 = 15.696\ \text{N} \) (← hacia la derecha en B)</p>
+                    <p class="step-result">Estas dos fuerzas se oponen al movimiento de B.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Aplicar la segunda ley de Newton al bloque B (eje horizontal)</h3>
+                </div>
+                <p>Tomamos como sentido positivo hacia la <strong>izquierda</strong> (dirección de la fuerza aplicada).</p>
+                <div class="formula">
+                    \( \sum F_x = m_B \cdot a \)
+                </div>
+                <div class="formula">
+                    \( F - f_{AB} - f_{suelo} = m_B \cdot a \)
+                </div>
+                <div class="calculation-steps">
+                    <p>Sustituimos valores:</p>
+                    <p>\( 30 - 3.924 - 15.696 = 2 \cdot a \)</p>
+                    <p>\( 30 - 19.62 = 2a \)</p>
+                    <p>\( 10.38 = 2a \)</p>
+                    <p class="step-result">\( a = \dfrac{10.38}{2} = 5.19\ \text{m/s}^2 \)</p>
+                </div>
+                <p>Redondeando a una cifra decimal: \( a \approx 5.2\ \text{m/s}^2 \).</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Comparación con las opciones</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Valor (m/s²)</th>
+                            <th>¿Correcta?</th>
+                            <th>Explicación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td><strong>5.2</strong></td>
+                            <td><strong>SÍ</strong></td>
+                            <td>Resultado exacto del cálculo.</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>7.2</td>
+                            <td>No</td>
+                            <td>Posiblemente usar μ = 0.3 o error en la fuerza neta.</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>9.1</td>
+                            <td>No</td>
+                            <td>Podría obtenerse si se ignora la fricción superior o se usa g=10.</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>15.0</td>
+                            <td>No</td>
+                            <td>F/m = 30/2 = 15, sin considerar fricción alguna.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formula-box" style="background-color: #fce8e8; border-left-color: #e74c3c;">
+                    <p><strong>Error frecuente:</strong> Usar solo la masa de B en la normal del suelo (olvidar que A también descansa sobre B) o suponer que la fricción entre A y B es cero cuando ya hay deslizamiento.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">5.2 m/s² (Opción A)</div>
+            <p>La aceleración del bloque B es 5.2 m/s² hacia la izquierda.</p>
+        </div>
+
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Fricción cinética:</strong> Fuerza que se opone al deslizamiento entre dos superficies en movimiento relativo. \( f_k = \mu_k N \).</li>
+                <li><strong>Fuerza normal:</strong> Reacción perpendicular a la superficie de contacto. Depende de las fuerzas verticales.</li>
+                <li><strong>Segunda ley de Newton:</strong> \( \sum F = m a \). Se aplica por separado a cada cuerpo o al sistema.</li>
+                <li><strong>Diagrama de cuerpo libre (DCL):</strong> Herramienta fundamental para identificar todas las fuerzas que actúan sobre un cuerpo.</li>
+                <li><strong>Cuerda inextensible:</strong> Impide el movimiento relativo en la dirección de la cuerda; en este caso mantiene a A fijo horizontalmente.</li>
+                <li><strong>Movimiento relativo:</strong> La dirección de la fricción se opone al deslizamiento entre las superficies.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de frenos y embragues:</strong> Cálculo de fuerzas de fricción y torques.</li>
+                <li><strong>Transporte de materiales:</strong> Bandas transportadoras, deslizamiento de cargas.</li>
+                <li><strong>Análisis de maquinaria:</strong> Deslizamiento entre componentes, cojinetes, guías.</li>
+                <li><strong>Sistemas de seguridad:</strong> Cálculo de distancias de frenado, fuerzas de agarre.</li>
+                <li><strong>Robótica:</strong> Fricción en actuadores lineales y pinzas.</li>
+            </ul>
+            <div class="formula-box">
+                <div class="formula-title">📌 Procedimiento general para problemas de dos bloques con fricción</div>
+                <p>1. Dibujar DCL para cada bloque.<br>
+                   2. Calcular las fuerzas normales (vertical).<br>
+                   3. Calcular las fuerzas de fricción (cinética o estática).<br>
+                   4. Aplicar ΣF = m·a en la dirección de interés.<br>
+                   5. Resolver para la aceleración o fuerzas desconocidas.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">6</div>
+                <h3>Verificación con valores exactos y redondeo</h3>
+            </div>
+            <p>Usando \( g = 9.81\ \text{m/s}^2 \):</p>
+            <div class="formula">
+                \( a = \dfrac{F - \mu_{AB}\,m_A g - \mu_{suelo}\,(m_A+m_B)g}{m_B} \)
+            </div>
+            <div class="formula">
+                \( a = \dfrac{30 - 0.2\cdot2\cdot9.81 - 0.4\cdot4\cdot9.81}{2} = \dfrac{30 - 3.924 - 15.696}{2} = \dfrac{10.38}{2} = 5.19\ \text{m/s}^2 \)
+            </div>
+            <p>Si se usara \( g = 9.8 \):</p>
+            <div class="formula">
+                \( N_{AB} = 19.6,\ f_{AB}=3.92;\ N_{suelo}=39.2,\ f_{suelo}=15.68;\ a = (30-3.92-15.68)/2 = 10.4/2 = 5.2 \)
+            </div>
+            <p>Coincide perfectamente con la opción A.</p>
+        </div>
+
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta corresponde a la sección de <em>Dynamics</em>, subsecciones <em>Kinetic Friction</em> y <em>Newton's second law for particles</em>. La solución utiliza los conceptos de fricción cinética y la ecuación de movimiento. Las fórmulas para fricción y la segunda ley se encuentran en las secciones de Dinámica del manual.</p>
+            <p><em>NCEES FE Reference Handbook, sección "Dynamics, Kinematics, and Vibrations", subsecciones "Kinetic friction" y "Newton's second law for particles".</em></p>
+        </div>
+
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

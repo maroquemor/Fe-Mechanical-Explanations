@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 1 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .visualization {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .sphere-diagram {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+            background: radial-gradient(circle at 50% 50%, #e8f4fc, #3498db);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+        }
+        
+        .center-point {
+            width: 10px;
+            height: 10px;
+            background-color: #e74c3c;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .radius-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 140px;
+            height: 2px;
+            background-color: #e74c3c;
+            transform-origin: left center;
+            transform: rotate(45deg);
+        }
+        
+        .radius-label {
+            position: absolute;
+            top: 40%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .coordinates {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #2c3e50;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 1 del FE Mechanical</h1>
+            <p class="subtitle">Ecuación de una esfera en el espacio tridimensional</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>1. The equation of a sphere with center at (0, 1, -2) and a radius of 9 is:</strong></p>
+                <div class="formula">
+                    <p>Opciones disponibles en el examen original (identificadas como A, B, C, D)</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Recordar la ecuación general de una esfera</h3>
+                </div>
+                <p>En geometría analítica tridimensional, la ecuación estándar de una esfera con centro en el punto (h, k, l) y radio r es:</p>
+                <div class="formula">
+                    (x - h)² + (y - k)² + (z - l)² = r²
+                </div>
+                <p>Donde:</p>
+                <ul class="concept-list">
+                    <li><strong>(h, k, l)</strong> son las coordenadas del centro de la esfera</li>
+                    <li><strong>r</strong> es el radio de la esfera</li>
+                    <li><strong>(x, y, z)</strong> son las coordenadas de cualquier punto sobre la superficie de la esfera</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Identificar los parámetros dados</h3>
+                </div>
+                <p>Del enunciado de la pregunta:</p>
+                <ul class="concept-list">
+                    <li><strong>Centro:</strong> (0, 1, -2) → Por lo tanto: h = 0, k = 1, l = -2</li>
+                    <li><strong>Radio:</strong> 9 → Por lo tanto: r = 9</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Sustituir los valores en la ecuación general</h3>
+                </div>
+                <p>Sustituimos h = 0, k = 1, l = -2, y r = 9 en la ecuación general:</p>
+                <div class="formula">
+                    (x - 0)² + (y - 1)² + (z - (-2))² = 9²
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Simplificar la ecuación</h3>
+                </div>
+                <p>Realizamos las simplificaciones algebraicas:</p>
+                <div class="formula">
+                    (x - 0)² = x²
+                </div>
+                <div class="formula">
+                    (y - 1)² permanece igual
+                </div>
+                <div class="formula">
+                    (z - (-2))² = (z + 2)²
+                </div>
+                <div class="formula">
+                    9² = 81
+                </div>
+                <p>Por lo tanto, la ecuación simplificada es:</p>
+                <div class="formula">
+                    x² + (y - 1)² + (z + 2)² = 81
+                </div>
+            </div>
+            
+            <div class="visualization">
+                <h3>Visualización de la Esfera</h3>
+                <p>Centro en (0, 1, -2) y radio = 9 unidades</p>
+                <div class="sphere-diagram">
+                    <div class="center-point"></div>
+                    <div class="radius-line"></div>
+                    <div class="radius-label">r = 9</div>
+                    <div class="coordinates">Centro: (0, 1, -2)</div>
+                </div>
+                <p style="margin-top: 15px; color: #7f8c8d;">Nota: Esta es una representación bidimensional de una esfera tridimensional.</p>
+            </div>
+        </div>
+        
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">x² + (y - 1)² + (z + 2)² = 81</div>
+            <p>En el examen original, esta es la Opción A</p>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Geometría Analítica Tridimensional:</strong> Rama de las matemáticas que estudia las figuras geométricas en el espacio tridimensional usando coordenadas y ecuaciones.</li>
+                <li><strong>Ecuación de una Esfera:</strong> La ecuación (x-h)²+(y-k)²+(z-l)²=r² representa todos los puntos en el espacio 3D que están a una distancia constante r del punto (h,k,l).</li>
+                <li><strong>Distancia Euclidiana:</strong> La fórmula se deriva de la fórmula de distancia entre dos puntos en el espacio 3D: d = √[(x₂-x₁)² + (y₂-y₁)² + (z₂-z₁)²].</li>
+                <li><strong>Coordenadas Cartesianas:</strong> Sistema de coordenadas que utiliza tres ejes perpendiculares (x, y, z) para especificar la posición de un punto en el espacio.</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de Componentes Esféricos:</strong> Cojinetes de bolas, válvulas esféricas, domos estructurales.</li>
+                <li><strong>Análisis de Tensiones:</strong> En recipientes a presión esféricos, donde la tensión se distribuye uniformemente.</li>
+                <li><strong>Gráficos por Computadora y CAD:</strong> Modelado de superficies curvas y sólidos en diseño asistido por computadora.</li>
+                <li><strong>Robótica y Cinemática:</strong> Análisis de rangos de movimiento y espacios de trabajo para articulaciones esféricas.</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">5</div>
+                <h3>Verificación de la Solución</h3>
+            </div>
+            <p>Para verificar que nuestra ecuación es correcta, podemos:</p>
+            <ol class="concept-list">
+                <li>Tomar el centro (0, 1, -2) y verificar que satisface la ecuación:
+                    <div class="formula">
+                        0² + (1-1)² + (-2+2)² = 0 + 0 + 0 = 0 ≠ 81
+                    </div>
+                    <p>¡Espera! El centro NO debería satisfacer la ecuación porque está en el interior, no en la superficie. El centro satisface la ecuación cuando r=0.</p>
+                </li>
+                <li>Tomar un punto sobre la superficie, por ejemplo, (0, 1, 7) [9 unidades arriba del centro]:
+                    <div class="formula">
+                        0² + (1-1)² + (7+2)² = 0 + 0 + 9² = 81 ✓
+                    </div>
+                </li>
+                <li>Verificar que cualquier punto a 9 unidades del centro satisface la ecuación.</li>
+            </ol>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Mathematics, específicamente a Analytic Geometry, donde se encuentra la ecuación estándar de una esfera.</p>
+            <p>La fórmula aparece en la página de referencia como: (x - h)² + (y - k)² + (z - m)² = r²</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia de impresión
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar fórmulas importantes
+            const formulas = document.querySelectorAll('.formula');
+            formulas.forEach(formula => {
+                formula.setAttribute('data-print', 'important');
+            });
+            
+            // Asegurar que las imágenes se impriman correctamente
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.setAttribute('onload', 'this.style.opacity = 1');
+            });
+        });
+    </script>
+</body>
+</html>

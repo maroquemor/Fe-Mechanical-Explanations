@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 46 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .diagram-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .diagram-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 46 del FE Mechanical</h1>
+            <p class="subtitle">Torsión en ejes de madera – Resistencia al corte paralelo a la fibra</p>
+        </header>
+
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>46. A shaft of wood is to be used in a certain process. If the allowable shearing stress parallel to the grain of the wood is 840 kN/m², the torque (N·m) transmitted by a 200‑mm‑diameter shaft with the grain parallel to the neutral axis is most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. 500 &nbsp; B. 1,200 &nbsp; C. 1,320 &nbsp; D. 1,500</p>
+                </div>
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50;">Respuesta correcta según el PDF: <span style="background-color: #2ecc71; color: white; padding: 3px 10px; border-radius: 5px;">C (1,320 N·m)</span></p>
+            </div>
+
+            <!-- Diagrama del eje de madera con indicación de la fibra y torsión -->
+            <div class="diagram-section">
+                <div class="diagram-container">
+                    <svg width="500" height="240" viewBox="0 0 500 240" style="max-width:100%; height:auto;">
+                        <!-- Cilindro (eje) con textura de vetas de madera -->
+                        <rect x="80" y="90" width="340" height="60" rx="15" fill="#D2B48C" stroke="#8B5A2B" stroke-width="2" />
+                        <!-- Líneas de la fibra (grain) paralelas al eje (horizontal) -->
+                        <line x1="100" y1="105" x2="400" y2="105" stroke="#8B4513" stroke-width="1.5" stroke-dasharray="8 4" />
+                        <line x1="100" y1="120" x2="400" y2="120" stroke="#8B4513" stroke-width="1.5" stroke-dasharray="8 4" />
+                        <line x1="100" y1="135" x2="400" y2="135" stroke="#8B4513" stroke-width="1.5" stroke-dasharray="8 4" />
+                        <!-- Texto indicativo -->
+                        <text x="180" y="70" font-size="14" fill="#2c3e50">Veta paralela al eje</text>
+                        <text x="180" y="180" font-size="14" fill="#2c3e50">Diámetro d = 200 mm</text>
+                        <!-- Torques aplicados -->
+                        <line x1="60" y1="120" x2="80" y2="120" stroke="#e74c3c" stroke-width="3" />
+                        <polygon points="60,120 70,115 70,125" fill="#e74c3c" />
+                        <text x="20" y="100" fill="#e74c3c" font-size="14">T</text>
+                        <line x1="420" y1="120" x2="440" y2="120" stroke="#e74c3c" stroke-width="3" />
+                        <polygon points="440,120 430,115 430,125" fill="#e74c3c" />
+                        <text x="450" y="100" fill="#e74c3c" font-size="14">T</text>
+                        <!-- Sección transversal circular (vista lateral) -->
+                        <circle cx="120" cy="120" r="30" fill="none" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5 3" />
+                        <text x="160" y="120" font-size="12" fill="#2c3e50">d = 200 mm</text>
+                        <!-- Flecha indicando esfuerzo cortante máximo en la periferia -->
+                        <line x1="150" y1="90" x2="170" y2="70" stroke="#9b59b6" stroke-width="2" />
+                        <polygon points="170,70 163,74 165,66" fill="#9b59b6" />
+                        <text x="180" y="50" font-size="12" fill="#9b59b6">τ<sub>max</sub></text>
+                    </svg>
+                    <p style="margin-top: 10px; font-size: 14px; color: #555;">
+                        Eje macizo de madera de diámetro 200 mm. Las fibras (grano) están orientadas paralelas al eje longitudinal. 
+                        La falla ocurre por cortante paralelo a la fibra; el esfuerzo cortante máximo debido a torsión se presenta en la superficie exterior.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Recordar la fórmula de torsión para ejes circulares macizos</h3>
+                </div>
+                <p>Para un eje de sección circular sometido a un torque \(T\), la distribución de esfuerzos cortantes es lineal con el radio. El <strong>esfuerzo cortante máximo</strong> ocurre en la superficie externa y se calcula mediante la fórmula de torsión:</p>
+                <div class="formula">
+                    \(\tau_{\text{máx}} = \dfrac{T \cdot r}{J}\)
+                </div>
+                <p>donde:</p>
+                <ul class="concept-list">
+                    <li>\(r = d/2\) = radio exterior,</li>
+                    <li>\(J\) = momento polar de inercia de la sección.</li>
+                </ul>
+                <p>Para un círculo macizo: \(J = \dfrac{\pi d^4}{32}\).</p>
+                <p>Sustituyendo \(r = d/2\) y \(J\) en la expresión, se obtiene la forma compacta:</p>
+                <div class="formula">
+                    \(\tau_{\text{máx}} = \dfrac{16\,T}{\pi d^3}\)
+                </div>
+                <div class="formula-box">
+                    <div class="formula-title">📌 Fórmula clave</div>
+                    <div class="formula">\(T = \dfrac{\pi d^3 \,\tau_{\text{adm}}}{16}\)</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Identificar los datos y convertir unidades</h3>
+                </div>
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Símbolo</th>
+                            <th>Valor dado</th>
+                            <th>Conversión a SI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Diámetro del eje</td><td>\(d\)</td><td>200 mm</td><td>0.200 m</td></tr>
+                        <tr><td>Esfuerzo cortante admisible (paralelo a la fibra)</td><td>\(\tau_{\text{adm}}\)</td><td>840 kN/m²</td><td>840 × 10³ Pa = 8.40 × 10⁵ Pa</td></tr>
+                    </tbody>
+                </table>
+                <div class="formula-box">
+                    <div class="formula-title">⚠️ Importante</div>
+                    <p>Las unidades deben ser consistentes: usar <strong>metros</strong> para el diámetro y <strong>Pascales</strong> (N/m²) para el esfuerzo. El torque resultante estará en N·m.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Aplicar la fórmula y calcular el torque</h3>
+                </div>
+                <div class="formula">
+                    \(T = \dfrac{\pi \, d^3 \, \tau_{\text{adm}}}{16}\)
+                </div>
+                <div class="calculation-steps">
+                    <p>\(d = 0.200\ \text{m} \quad \Rightarrow \quad d^3 = 0.00800\ \text{m}^3\)</p>
+                    <p>\(\pi \times d^3 = \pi \times 0.00800 = 0.0251327\ \text{m}^3\)</p>
+                    <p>\(\pi d^3 \times \tau_{\text{adm}} = 0.0251327 \times 840\,000 = 21\,111.5\ \text{N·m}\)</p>
+                    <p>\(T = \dfrac{21\,111.5}{16} = 1\,319.47\ \text{N·m}\)</p>
+                    <p class="step-result">\(T \approx 1\,320\ \text{N·m}\)</p>
+                </div>
+                <p>Redondeando a tres cifras significativas: <strong>1320 N·m</strong>.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Verificación mediante la fórmula completa (opcional)</h3>
+                </div>
+                <p>Usando la expresión con \(J\) y \(r\):</p>
+                <div class="formula">
+                    \(J = \dfrac{\pi d^4}{32} = \dfrac{\pi (0.200)^4}{32} = \dfrac{\pi \times 0.0016}{32} = \dfrac{0.00502655}{32} = 1.5708 \times 10^{-4}\ \text{m}^4\)
+                </div>
+                <div class="formula">
+                    \(\tau = \dfrac{T \cdot r}{J} \quad \Rightarrow \quad T = \dfrac{\tau \cdot J}{r} = \dfrac{840\,000 \times 1.5708\times10^{-4}}{0.100} = 1\,319.5\ \text{N·m}\)
+                </div>
+                <p>Se obtiene el mismo valor, confirmando el resultado.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Comparación con las opciones</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Torque (N·m)</th>
+                            <th>¿Correcta?</th>
+                            <th>Posible origen del error</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>500</td>
+                            <td>No</td>
+                            <td>Usar τ = 840 × 10³ Pa con d = 200 mm = 0.2 m pero olvidar elevar al cubo (π·0.2·840e3/16 ≈ 32 986, no 500).</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>1,200</td>
+                            <td>No</td>
+                            <td>Emplear τ en kPa (840) sin convertir a Pa: π·0.008·840/16 = 1.319, cercano pero con error de factor 1000.</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td><strong>1,320</strong></td>
+                            <td><strong>Sí</strong></td>
+                            <td>Cálculo exacto con unidades correctas.</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>1,500</td>
+                            <td>No</td>
+                            <td>Posible error: usar d³ = 0.008, τ = 840 × 10³, π = 3.14 → 3.14·0.008·840e3 = 21 100, dividido 14 en lugar de 16 → ~1507.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formula-box" style="background-color: #fce8e8; border-left-color: #e74c3c;">
+                    <p><strong>Error común:</strong> No convertir el esfuerzo de kN/m² a Pa (multiplicar por 10³). Usar τ = 840 directamente produce T ≈ 1.32 N·m (absurdo). También olvidar convertir el diámetro a metros (200 mm = 0.2 m) resulta en T = π·200³·840/16 (en N·mm) que daría 1 319 000 N·mm = 1319 N·m (¡el mismo número!), pero si se olvida convertir a N·m se obtendría 1 319 000 N·mm y no se reconocería la equivalencia. Es crucial mantener la coherencia.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">1,320 N·m (Opción C)</div>
+            <p>El torque máximo que puede transmitir el eje de madera es aproximadamente 1320 N·m.</p>
+        </div>
+
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Torsión en ejes circulares:</strong> El esfuerzo cortante varía linealmente desde cero en el centro hasta un máximo en la periferia: \(\tau = T r / J\).</li>
+                <li><strong>Momento polar de inercia (J):</strong> Para sección circular maciza: \(J = \pi d^4 / 32\).</li>
+                <li><strong>Fórmula simplificada:</strong> \(\tau_{\text{máx}} = 16T / \pi d^3\) o \(T = \pi d^3 \tau_{\text{adm}} / 16\).</li>
+                <li><strong>Esfuerzo admisible:</strong> Valor máximo de esfuerzo que el material puede soportar de manera segura. En este caso, el modo de falla es el <strong>cortante paralelo a la fibra</strong> de la madera.</li>
+                <li><strong>Anisotropía de la madera:</strong> La resistencia al corte depende de la orientación del grano; el plano de falla más débil es paralelo a las fibras.</li>
+                <li><strong>Conversión de unidades:</strong> 1 kN/m² = 10³ Pa, 1 mm = 10⁻³ m, 1 N·m = 1000 N·mm.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Elementos de madera estructural:</strong> Vigas, columnas, y ejes en maquinaria ligera o histórica (poleas, ruedas de agua).</li>
+                <li><strong>Diseño de ejes en materiales ortótropos:</strong> Compuestos de fibra de carbono, madera laminada, donde la resistencia al corte depende de la orientación.</li>
+                <li><strong>Cálculo de la capacidad de carga torsional:</strong> Permite determinar el torque seguro para evitar fallas por deslizamiento de las fibras.</li>
+                <li><strong>Ingeniería de productos forestales:</strong> Selección de especies madereras según su resistencia al corte paralelo.</li>
+            </ul>
+            <div class="formula-box">
+                <div class="formula-title">📌 Fórmula directa (con unidades mixtas)</div>
+                <p>Si el diámetro está en <strong>mm</strong> y τ en <strong>MPa</strong> (N/mm²): \(T (\text{N·mm}) = \dfrac{\pi d^3 \tau}{16}\). Para obtener N·m, dividir entre 1000.</p>
+                <p>Con d = 200 mm, τ = 0.840 MPa (840 kN/m² = 0.84 N/mm²): T = π·200³·0.84/16 = π·8e6·0.84/16 = 1 319 469 N·mm ≈ 1 319 N·m.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">6</div>
+                <h3>Nota sobre la dirección del esfuerzo cortante</h3>
+            </div>
+            <p>En un eje sometido a torsión, el esfuerzo cortante máximo actúa en planos perpendiculares al eje (secciones transversales) y también en planos longitudinales (debido a la complementariedad del cortante). Para madera con grano paralelo al eje, el esfuerzo cortante longitudinal (paralelo a las fibras) es igual en magnitud al esfuerzo en la sección transversal. Por lo tanto, el criterio de falla se aplica directamente sobre el τ<sub>máx</sub> calculado con la fórmula de torsión.</p>
+        </div>
+
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta corresponde a la sección de <em>Mechanics of Materials</em>, subsección <em>Torsion</em>. Allí se encuentran las fórmulas para esfuerzo cortante en ejes circulares, el momento polar de inercia y ejemplos de aplicación. También se puede consultar la sección de <em>Material Properties/Processing</em> para propiedades de la madera (aunque no es necesario en este cálculo).</p>
+            <p><em>NCEES FE Reference Handbook, sección "Mechanics of Materials", subsección "Torsion".</em></p>
+        </div>
+
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

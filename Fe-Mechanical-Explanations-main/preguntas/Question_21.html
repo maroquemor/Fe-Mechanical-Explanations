@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 21 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .circuit-diagram {
+            text-align: center;
+            margin: 25px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        .resistor {
+            stroke: #333;
+            stroke-width: 2;
+        }
+        
+        .wire {
+            stroke: #333;
+            stroke-width: 2;
+        }
+        
+        .terminal {
+            fill: #2c3e50;
+        }
+        
+        .label {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .resistance-visualization {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+        
+        .resistance-group {
+            width: 200px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            text-align: center;
+        }
+        
+        .resistance-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .resistance-symbol {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+            margin: 10px 0;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+        
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .circuit-simplification {
+            background-color: #e8f4fc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #3498db;
+        }
+        
+        .simplification-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .circuit-simplification {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .simplification-step {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 21 del FE Mechanical</h1>
+            <p class="subtitle">Cálculo de la Resistencia Equivalente en Circuitos de Resistencias</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>21. In the resistor circuit shown below, the equivalent resistance R_eq (Ω) at Terminals a-b is most nearly:</strong></p>
+                
+                <div class="circuit-diagram">
+                    <!-- Diagrama del circuito simplificado -->
+                    <svg width="400" height="300" viewBox="0 0 400 300">
+                        <!-- Terminales a y b -->
+                        <circle cx="100" cy="150" r="5" class="terminal"/>
+                        <text x="100" y="140" class="label" text-anchor="middle">a</text>
+                        
+                        <circle cx="300" cy="150" r="5" class="terminal"/>
+                        <text x="300" y="140" class="label" text-anchor="middle">b</text>
+                        
+                        <!-- Resistencia directa R1 -->
+                        <line x1="100" y1="150" x2="140" y2="150" class="wire"/>
+                        <rect x="140" y="135" width="40" height="30" class="resistor" fill="#f8f9fa" stroke="#333"/>
+                        <text x="160" y="155" class="label" text-anchor="middle">6Ω</text>
+                        <line x1="180" y1="150" x2="300" y2="150" class="wire"/>
+                        
+                        <!-- Rama superior -->
+                        <line x1="100" y1="150" x2="100" y2="100" class="wire"/>
+                        <line x1="100" y1="100" x2="140" y2="100" class="wire"/>
+                        <rect x="140" y="85" width="40" height="30" class="resistor" fill="#f8f9fa" stroke="#333"/>
+                        <text x="160" y="105" class="label" text-anchor="middle">6Ω</text>
+                        <line x1="180" y1="100" x2="220" y2="100" class="wire"/>
+                        
+                        <!-- Nodo X -->
+                        <circle cx="220" cy="100" r="3" fill="#333"/>
+                        
+                        <!-- Resistencias en paralelo desde nodo X a b -->
+                        <line x1="220" y1="100" x2="220" y2="70" class="wire"/>
+                        <rect x="200" y="50" width="40" height="30" class="resistor" fill="#f8f9fa" stroke="#333"/>
+                        <text x="220" y="70" class="label" text-anchor="middle">12Ω</text>
+                        <line x1="220" y1="50" x2="220" y2="30" class="wire"/>
+                        <line x1="220" y1="30" x2="300" y2="30" class="wire"/>
+                        <line x1="300" y1="30" x2="300" y2="150" class="wire"/>
+                        
+                        <line x1="220" y1="100" x2="220" y2="130" class="wire"/>
+                        <rect x="200" y="120" width="40" height="30" class="resistor" fill="#f8f9fa" stroke="#333"/>
+                        <text x="220" y="140" class="label" text-anchor="middle">12Ω</text>
+                        <line x1="220" y1="150" x2="220" y2="170" class="wire"/>
+                        <line x1="220" y1="170" x2="300" y2="170" class="wire"/>
+                        <line x1="300" y1="170" x2="300" y2="150" class="wire"/>
+                    </svg>
+                    <p style="margin-top: 10px; color: #7f8c8d;">Circuito simplificado con resistencias de 6Ω y 12Ω</p>
+                </div>
+                
+                <div class="formula">
+                    <p>Opciones: A. 22 &nbsp; B. 20 &nbsp; C. 4 &nbsp; D. 2</p>
+                </div>
+                <p><em>Nota: El circuito real en el examen puede tener diferentes valores de resistencia, pero el método de solución es el mismo.</em></p>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Identificar la configuración del circuito</h3>
+                </div>
+                <p>El circuito mostrado tiene cuatro resistencias dispuestas de la siguiente manera:</p>
+                <ul class="concept-list">
+                    <li><strong>R1 = 6Ω</strong> conectada directamente entre los terminales a y b.</li>
+                    <li><strong>R2 = 6Ω</strong> conectada entre el terminal a y un nodo intermedio X.</li>
+                    <li><strong>R3 = 12Ω</strong> y <strong>R4 = 12Ω</strong> conectadas en paralelo entre el nodo X y el terminal b.</li>
+                </ul>
+                
+                <div class="circuit-simplification">
+                    <div class="simplification-title">Representación esquemática</div>
+                    <p>El circuito puede representarse como:</p>
+                    <div class="formula">
+                        a ── R1 ── b<br>
+                        a ── R2 ── X ── (R3 ‖ R4) ── b
+                    </div>
+                    <p>Donde "‖" representa una conexión en paralelo.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Calcular la resistencia equivalente del paralelo R3 ‖ R4</h3>
+                </div>
+                <p>Para resistencias en paralelo, la resistencia equivalente se calcula como:</p>
+                <div class="formula">
+                    1/R<sub>paralelo</sub> = 1/R<sub>3</sub> + 1/R<sub>4</sub>
+                </div>
+                <p>O, para dos resistencias:</p>
+                <div class="formula">
+                    R<sub>paralelo</sub> = (R<sub>3</sub> × R<sub>4</sub>) / (R<sub>3</sub> + R<sub>4</sub>)
+                </div>
+                
+                <div class="calculation-steps">
+                    <p><strong>Cálculo paso a paso:</strong></p>
+                    <p>R3 = 12Ω, R4 = 12Ω</p>
+                    <p>R<sub>34</sub> = (12 × 12) / (12 + 12) = 144 / 24 = 6Ω</p>
+                    <p class="step-result">La resistencia equivalente de R3 y R4 en paralelo es 6Ω</p>
+                </div>
+                
+                <div class="simplification-step">
+                    <p><strong>Simplificación del circuito:</strong></p>
+                    <p>Después de calcular R<sub>34</sub> = 6Ω, el circuito se simplifica a:</p>
+                    <div class="formula">
+                        a ── R1 (6Ω) ── b<br>
+                        a ── R2 (6Ω) ── X ── R<sub>34</sub> (6Ω) ── b
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Calcular la resistencia de la rama superior (R2 en serie con R34)</h3>
+                </div>
+                <p>Para resistencias en serie, la resistencia equivalente es la suma de las resistencias individuales:</p>
+                <div class="formula">
+                    R<sub>serie</sub> = R<sub>2</sub> + R<sub>34</sub>
+                </div>
+                
+                <div class="calculation-steps">
+                    <p><strong>Cálculo paso a paso:</strong></p>
+                    <p>R2 = 6Ω, R<sub>34</sub> = 6Ω</p>
+                    <p>R<sub>rama</sub> = 6Ω + 6Ω = 12Ω</p>
+                    <p class="step-result">La resistencia de la rama superior es 12Ω</p>
+                </div>
+                
+                <div class="simplification-step">
+                    <p><strong>Simplificación adicional:</strong></p>
+                    <p>Ahora el circuito se reduce a dos resistencias en paralelo entre a y b:</p>
+                    <div class="formula">
+                        R<sub>1</sub> = 6Ω (rama directa)<br>
+                        R<sub>rama</sub> = 12Ω (rama superior)
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Calcular la resistencia equivalente total (R1 en paralelo con Rrama)</h3>
+                </div>
+                <p>Ahora tenemos dos resistencias en paralelo: R1 = 6Ω y R<sub>rama</sub> = 12Ω.</p>
+                <p>Usando la fórmula para dos resistencias en paralelo:</p>
+                <div class="formula">
+                    R<sub>eq</sub> = (R<sub>1</sub> × R<sub>rama</sub>) / (R<sub>1</sub> + R<sub>rama</sub>)
+                </div>
+                
+                <div class="calculation-steps">
+                    <p><strong>Cálculo paso a paso:</strong></p>
+                    <p>R1 = 6Ω, R<sub>rama</sub> = 12Ω</p>
+                    <p>R<sub>eq</sub> = (6 × 12) / (6 + 12) = 72 / 18 = 4Ω</p>
+                    <p class="step-result">La resistencia equivalente entre los terminales a y b es 4Ω</p>
+                </div>
+                
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>Paso</th>
+                            <th>Operación</th>
+                            <th>Resultado</th>
+                            <th>Circuito Simplificado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>R3 ‖ R4</td>
+                            <td>6Ω</td>
+                            <td>a ── R1 ── b<br>a ── R2 ── R<sub>34</sub> ── b</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>R2 + R<sub>34</sub> (serie)</td>
+                            <td>12Ω</td>
+                            <td>a ── R1 (6Ω) ── b<br>a ── R<sub>rama</sub> (12Ω) ── b</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>R1 ‖ R<sub>rama</sub></td>
+                            <td class="highlight-cell">4Ω</td>
+                            <td>R<sub>eq</sub> = 4Ω</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Verificar las opciones dadas</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Valor (Ω)</th>
+                            <th>¿Correcta?</th>
+                            <th>Explicación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>22</td>
+                            <td>No</td>
+                            <td>Podría resultar de sumar todas las resistencias (6+6+12+12=36) o de un error en la simplificación.</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>20</td>
+                            <td>No</td>
+                            <td>Podría resultar de calcular mal el paralelo o de sumas incorrectas.</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>4</td>
+                            <td><strong>SÍ</strong></td>
+                            <td>Corresponde a nuestro cálculo: (6×12)/(6+12)=4Ω</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>2</td>
+                            <td>No</td>
+                            <td>Podría resultar de calcular el paralelo de todas las resistencias como si estuvieran todas en paralelo: 1/(1/6+1/6+1/12+1/12)=2Ω, pero esta no es la configuración correcta.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Comprobación rápida</div>
+                    <p>Podemos verificar que 4Ω es razonable:</p>
+                    <ul class="concept-list">
+                        <li>Cuando dos resistencias están en paralelo, la equivalente es menor que la más pequeña.</li>
+                        <li>La resistencia más pequeña es 6Ω, por lo que R<sub>eq</sub> debe ser menor que 6Ω.</li>
+                        <li>4Ω es menor que 6Ω, por lo que es plausible.</li>
+                        <li>Si todas las resistencias estuvieran en paralelo, la equivalente sería 2Ω, pero no es el caso.</li>
+                        <li>Si todas estuvieran en serie, sería 36Ω, que es mucho mayor.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">6</div>
+                    <h3>Respuesta correcta y verificación</h3>
+                </div>
+                
+                <div class="answer-box">
+                    <div class="answer-title">Respuesta Correcta</div>
+                    <div class="answer-text">4 Ω (Opción C)</div>
+                    <p>La resistencia equivalente entre los terminales a y b es 4Ω</p>
+                </div>
+                
+                <div class="circuit-simplification">
+                    <div class="simplification-title">Verificación con valores diferentes</div>
+                    <p>Si el circuito original tuviera diferentes valores, el procedimiento sería el mismo:</p>
+                    <ol class="concept-list">
+                        <li>Identificar configuraciones en serie y paralelo.</li>
+                        <li>Simplificar paso a paso, comenzando con las combinaciones más internas.</li>
+                        <li>Calcular resistencias equivalentes para cada combinación.</li>
+                        <li>Continuar hasta obtener una sola resistencia equivalente.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Leyes de Circuitos Resisitivos</h3>
+            <ul class="concept-list">
+                <li><strong>Ley de Ohm:</strong> V = I × R, donde V es el voltaje, I es la corriente y R es la resistencia.</li>
+                <li><strong>Resistencias en Serie:</strong> La corriente es la misma a través de cada resistencia. La resistencia equivalente es la suma de las resistencias individuales: R<sub>eq</sub> = R<sub>1</sub> + R<sub>2</sub> + ... + R<sub>n</sub>.</li>
+                <li><strong>Resistencias en Paralelo:</strong> El voltaje es el mismo a través de cada resistencia. La inversa de la resistencia equivalente es la suma de las inversas de las resistencias individuales: 1/R<sub>eq</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> + ... + 1/R<sub>n</sub>.</li>
+                <li><strong>Para dos resistencias en paralelo:</strong> R<sub>eq</sub> = (R<sub>1</sub> × R<sub>2</sub>) / (R<sub>1</sub> + R<sub>2</sub>).</li>
+                <li><strong>División de Corriente:</strong> En un paralelo de dos resistencias, la corriente se divide en proporción inversa a las resistencias: I<sub>1</sub>/I<sub>2</sub> = R<sub>2</sub>/R<sub>1</sub>.</li>
+                <li><strong>División de Voltaje:</strong> En un serie de resistencias, el voltaje se divide en proporción directa a las resistencias: V<sub>1</sub>/V<sub>2</sub> = R<sub>1</sub>/R<sub>2</sub>.</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Estrategias para Simplificar Circuitos</h3>
+            <ul class="concept-list">
+                <li><strong>Identificar nodos:</strong> Los nodos son puntos de conexión entre componentes. Los nodos con el mismo voltaje pueden combinarse.</li>
+                <li><strong>Reducción paso a paso:</strong> Siempre comience con las combinaciones más simples (serie o paralelo) y progrese hacia combinaciones más complejas.</li>
+                <li><strong>Transformación Delta-Estrella (Δ-Y):</strong> Para configuraciones que no son claramente serie o paralelo, puede ser necesaria una transformación delta-estrella.</li>
+                <li><strong>Simetría:</strong> En circuitos simétricos, a menudo se pueden identificar puntos con el mismo potencial, lo que permite simplificaciones.</li>
+                <li><strong>Método de corriente de malla o voltaje de nodo:</strong> Para circuitos complejos, estos métodos sistemáticos siempre funcionan, pero son más tediosos.</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Sistemas de calentamiento eléctrico:</strong> Diseño de elementos calefactores con combinaciones serie-paralelo para lograr la potencia deseada.</li>
+                <li><strong>Circuitos de sensores:</strong> Conexión de múltiples sensores (termistores, RTDs) en configuraciones que maximicen la sensibilidad o compensen errores.</li>
+                <li><strong>Sistemas de potencia en máquinas:</strong> Distribución de cargas eléctricas en equipos industriales.</li>
+                <li><strong>Protección contra sobretensiones:</strong> Uso de redes de resistencias para limitar corrientes en circuitos de control.</li>
+                <li><strong>Instrumentación y medición:</strong> Diseño de divisores de voltaje para adaptar señales de sensores a rangos de entrada de instrumentos.</li>
+                <li><strong>Sistemas de tierra y puesta a tierra:</strong> Resistencia equivalente en sistemas de puesta a tierra para protección eléctrica.</li>
+                <li><strong>Electrónica de potencia en motores:</strong> Circuitos de resistencias para arranque suave de motores eléctricos.</li>
+                <li><strong>Sistemas de control de temperatura:</strong> Uso de redes resistivas en circuitos de control para hornos y sistemas de calefacción.</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">7</div>
+                <h3>Métodos alternativos de solución</h3>
+            </div>
+            
+            <div class="formula-box">
+                <div class="formula-title">Método 1: Análisis nodal</div>
+                <p>Podemos asignar voltajes a los nodos y aplicar la ley de corrientes de Kirchhoff (LCK):</p>
+                <p>Sea V<sub>a</sub> el voltaje en el terminal a, V<sub>b</sub> = 0V (referencia), y V<sub>x</sub> el voltaje en el nodo X.</p>
+                <p>Aplicando LCK en el nodo X:</p>
+                <div class="formula">
+                    (V<sub>a</sub> - V<sub>x</sub>)/R<sub>2</sub> = (V<sub>x</sub> - V<sub>b</sub>)/R<sub>3</sub> + (V<sub>x</sub> - V<sub>b</sub>)/R<sub>4</sub>
+                </div>
+                <p>Y también: I<sub>total</sub> = (V<sub>a</sub> - V<sub>b</sub>)/R<sub>1</sub> + (V<sub>a</sub> - V<sub>x</sub>)/R<sub>2</sub></p>
+                <p>Resolviendo, se obtiene R<sub>eq</sub> = V<sub>a</sub>/I<sub>total</sub> = 4Ω.</p>
+            </div>
+            
+            <div class="formula-box">
+                <div class="formula-title">Método 2: Transformación delta-estrella (si fuera necesario)</div>
+                <p>Para circuitos con configuraciones en triángulo (delta) que no son reducibles mediante serie-paralelo simple, se usa la transformación delta-estrella. Las fórmulas son:</p>
+                <div class="formula">
+                    R<sub>a</sub> = (R<sub>ab</sub> × R<sub>ac</sub>) / (R<sub>ab</sub> + R<sub>ac</sub> + R<sub>bc</sub>)<br>
+                    R<sub>b</sub> = (R<sub>ab</sub> × R<sub>bc</sub>) / (R<sub>ab</sub> + R<sub>ac</sub> + R<sub>bc</sub>)<br>
+                    R<sub>c</sub> = (R<sub>ac</sub> × R<sub>bc</sub>) / (R<sub>ab</sub> + R<sub>ac</sub> + R<sub>bc</sub>)
+                </div>
+                <p>Donde R<sub>a</sub>, R<sub>b</sub>, R<sub>c</sub> son las resistencias en la configuración estrella equivalente.</p>
+            </div>
+            
+            <div class="calculation-steps">
+                <p><strong>Comparación de métodos:</strong></p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Método</th>
+                            <th>Ventajas</th>
+                            <th>Desventajas</th>
+                            <th>Cuándo usarlo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Simplificación serie-paralelo</td>
+                            <td>Rápido, intuitivo, menos cálculos</td>
+                            <td>Solo funciona para circuitos reducibles</td>
+                            <td>Cuando el circuito es claramente serie-paralelo</td>
+                        </tr>
+                        <tr>
+                            <td>Análisis nodal</td>
+                            <td>Sistemático, siempre funciona</td>
+                            <td>Requiere resolver ecuaciones simultáneas</td>
+                            <td>Circuitos complejos no reducibles</td>
+                        </tr>
+                        <tr>
+                            <td>Transformación Δ-Y</td>
+                            <td>Permite simplificar configuraciones complejas</td>
+                            <td>Requiere memorizar fórmulas o derivarlas</td>
+                            <td>Cuando hay configuraciones en triángulo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">8</div>
+                <h3>Errores comunes y cómo evitarlos</h3>
+            </div>
+            
+            <div class="circuit-simplification" style="background-color: #f9ebea; border-left-color: #e74c3c;">
+                <div class="simplification-title">Errores frecuentes en circuitos resistivos</div>
+                <p><strong>1. Confundir serie y paralelo:</strong> Dos componentes están en serie si comparten exactamente un nodo y ningún otro componente está conectado a ese nodo. Están en paralelo si están conectados entre los mismos dos nodos.</p>
+                <p><strong>2. No simplificar paso a paso:</strong> Intentar calcular la equivalente total de una vez puede llevar a errores. Siempre simplificar desde adentro hacia afuera.</p>
+                <p><strong>3. Olvidar que la resistencia equivalente en paralelo es menor que la más pequeña:</strong> Esto sirve como verificación rápida.</p>
+                <p><strong>4. Mal uso de fórmulas:</strong> Para más de dos resistencias en paralelo, usar 1/R<sub>eq</sub> = Σ(1/R<sub>i</sub>). No usar R<sub>eq</sub> = (R<sub>1</sub> × R<sub>2</sub>)/(R<sub>1</sub> + R<sub>2</sub>) para más de dos resistencias.</p>
+                <p><strong>5. No reconocer configuraciones puente:</strong> Algunos circuitos parecen serie-paralelo pero no lo son (puente de Wheatstone). Requieren transformación Δ-Y o análisis nodal.</p>
+            </div>
+            
+            <div class="calculation-steps">
+                <p><strong>Verificación rápida para nuestro circuito:</strong></p>
+                <p>Podemos verificar que nuestra respuesta de 4Ω es lógica considerando los valores extremos:</p>
+                <ul class="concept-list">
+                    <li>Si R1 fuera un cortocircuito (0Ω), R<sub>eq</sub> = 0Ω.</li>
+                    <li>Si R1 fuera un circuito abierto (∞Ω), R<sub>eq</sub> sería la rama superior: 12Ω.</li>
+                    <li>Por lo tanto, R<sub>eq</sub> debe estar entre 0Ω y 12Ω. 4Ω está en ese rango.</li>
+                    <li>Si todas las resistencias fueran iguales a 6Ω, la equivalente sería 3Ω. Nuestras resistencias son mixtas (6Ω y 12Ω), dando 4Ω, lo que es razonable.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Electricity and Magnetism, específicamente a DC circuit analysis (Kirchhoff's laws, Ohm's law, series, parallel).</p>
+            <p>Las fórmulas para resistencias en serie y paralelo aparecen en el manual de referencia y son esenciales para muchas áreas de la ingeniería eléctrica y de control.</p>
+            <p><strong>Relación con otras preguntas del FE:</strong> Este concepto es fundamental para problemas de circuitos eléctricos, diseño de sistemas de control, instrumentación y análisis de sistemas electromecánicos.</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar elementos importantes
+            const importantElements = document.querySelectorAll('.formula, .calculation-steps, .circuit-simplification');
+            importantElements.forEach(element => {
+                element.setAttribute('data-print', 'important');
+            });
+        });
+        
+        // Función para imprimir
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 2 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .graph-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .coordinate-plane {
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+            border-left: 2px solid #333;
+            border-bottom: 2px solid #333;
+            background-color: #f8f9fa;
+        }
+        
+        .x-axis, .y-axis {
+            position: absolute;
+            background-color: #333;
+        }
+        
+        .x-axis {
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .y-axis {
+            width: 2px;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+        
+        .curve {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            bottom: 0;
+            left: 0;
+            border-top: 3px solid #e74c3c;
+            border-right: 3px solid #e74c3c;
+            border-radius: 0 100% 0 0;
+        }
+        
+        .line {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #2ecc71;
+            top: 150px;
+            left: 0;
+        }
+        
+        .area-shaded {
+            position: absolute;
+            width: 300px;
+            height: 150px;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(52, 152, 219, 0.3);
+            border-radius: 0 100% 0 0;
+            clip-path: polygon(0% 100%, 0% 37.5%, 100% 0%, 100% 100%);
+        }
+        
+        .axis-label {
+            position: absolute;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .x-label {
+            right: -20px;
+            bottom: -30px;
+        }
+        
+        .y-label {
+            top: -30px;
+            left: -20px;
+        }
+        
+        .point {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #e74c3c;
+            border-radius: 50%;
+        }
+        
+        .point-label {
+            position: absolute;
+            font-size: 12px;
+            color: #333;
+        }
+        
+        .differential-element {
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            background-color: rgba(231, 76, 60, 0.3);
+            border: 1px solid #e74c3c;
+            left: 150px;
+            bottom: 50px;
+        }
+        
+        .differential-label {
+            position: absolute;
+            font-size: 12px;
+            color: #e74c3c;
+            left: 170px;
+            bottom: 95px;
+            font-weight: bold;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .coordinate-plane {
+                border: 1px solid #333;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .integral-steps {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #9b59b6;
+        }
+        
+        .lim {
+            font-size: 14px;
+            vertical-align: sub;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 2 del FE Mechanical</h1>
+            <p class="subtitle">Cálculo del área de una región en el primer cuadrante usando integrales definidas</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>2. What is the area of the region in the first quadrant that is bounded by the line y = 1, the curve x = y<sup>3/2</sup>, and the y-axis?</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. 2/5 &nbsp; B. 3/5 &nbsp; C. 2/3 &nbsp; D. 1</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Entender la región</h3>
+                </div>
+                <p>La región está definida por tres fronteras:</p>
+                <ul class="concept-list">
+                    <li><strong>Línea horizontal:</strong> y = 1</li>
+                    <li><strong>Curva:</strong> x = y<sup>3/2</sup></li>
+                    <li><strong>Eje y:</strong> x = 0</li>
+                </ul>
+                <p>Estamos en el <strong>primer cuadrante</strong>, donde x ≥ 0 y y ≥ 0.</p>
+                <p>La curva x = y<sup>3/2</sup> es equivalente a y = x<sup>2/3</sup>, pero es más fácil trabajar con x en función de y para esta región.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Graficar la región</h3>
+                </div>
+                <p>Para visualizar la región, graficamos:</p>
+                <div class="graph-container">
+                    <div class="coordinate-plane">
+                        <div class="x-axis"></div>
+                        <div class="y-axis"></div>
+                        <div class="curve"></div>
+                        <div class="line"></div>
+                        <div class="area-shaded"></div>
+                        
+                        <div class="axis-label x-label">x</div>
+                        <div class="axis-label y-label">y</div>
+                        
+                        <div class="point" style="left: 0px; bottom: 150px;"></div>
+                        <div class="point-label" style="left: 5px; bottom: 155px;">(0,1)</div>
+                        
+                        <div class="point" style="left: 300px; bottom: 150px;"></div>
+                        <div class="point-label" style="left: 305px; bottom: 155px;">(1,1)</div>
+                        
+                        <div class="point" style="left: 0px; bottom: 0px;"></div>
+                        <div class="point-label" style="left: 5px; bottom: 5px;">(0,0)</div>
+                        
+                        <div class="differential-element"></div>
+                        <div class="differential-label">dy</div>
+                    </div>
+                    <p style="margin-top: 15px; color: #7f8c8d;">
+                        <span style="color: #e74c3c; font-weight: bold;">Curva roja:</span> x = y<sup>3/2</sup> &nbsp;|&nbsp;
+                        <span style="color: #2ecc71; font-weight: bold;">Línea verde:</span> y = 1 &nbsp;|&nbsp;
+                        <span style="color: #3498db; font-weight: bold;">Área azul:</span> Región de interés
+                    </p>
+                </div>
+                <p><strong>Interpretación:</strong> La región es la parte sombreada en azul. Se extiende desde y = 0 hasta y = 1, y en cada valor de y, x va desde 0 (eje y) hasta la curva x = y<sup>3/2</sup>.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Configurar la integral para el área</h3>
+                </div>
+                <p>Para encontrar el área usando integración, consideramos elementos diferenciales de área.</p>
+                <p><strong>Método 1:</strong> Integrar con respecto a y (recomendado porque las fronteras están dadas en función de y)</p>
+                <p>Un elemento diferencial vertical tiene:</p>
+                <ul class="concept-list">
+                    <li><strong>Ancho:</strong> x = y<sup>3/2</sup> (desde el eje y hasta la curva)</li>
+                    <li><strong>Altura:</strong> dy (infinitesimal)</li>
+                    <li><strong>Área del elemento:</strong> dA = x dy = y<sup>3/2</sup> dy</li>
+                </ul>
+                <p>El área total es la suma (integral) de estos elementos desde y = 0 hasta y = 1:</p>
+                <div class="formula">
+                    A = ∫<sub class="lim">0</sub><sup class="lim">1</sup> y<sup>3/2</sup> dy
+                </div>
+                
+                <p><strong>Método alternativo (con respecto a x):</strong> Si integramos con respecto a x, necesitamos resolver y = x<sup>2/3</sup> y los límites serían de x = 0 a x = 1, pero es más complicado. El método con respecto a y es más directo.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Resolver la integral</h3>
+                </div>
+                <p>Para resolver ∫ y<sup>3/2</sup> dy, usamos la regla de la potencia para integración:</p>
+                <div class="formula">
+                    ∫ y<sup>n</sup> dy = y<sup>n+1</sup>/(n+1) + C, para n ≠ -1
+                </div>
+                <p>En nuestro caso, n = 3/2:</p>
+                <div class="integral-steps">
+                    <p>∫ y<sup>3/2</sup> dy = y<sup>(3/2 + 1)</sup> / (3/2 + 1) = y<sup>5/2</sup> / (5/2) = (2/5) y<sup>5/2</sup></p>
+                </div>
+                <p>Ahora evaluamos la integral definida desde 0 hasta 1:</p>
+                <div class="integral-steps">
+                    <p>A = [(2/5) y<sup>5/2</sup>]<sub>0</sub><sup>1</sup> = (2/5)(1)<sup>5/2</sup> - (2/5)(0)<sup>5/2</sup> = (2/5)(1) - 0 = 2/5</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Verificar la solución</h3>
+                </div>
+                <p><strong>Verificación dimensional:</strong> y<sup>3/2</sup> tiene dimensiones de longitud<sup>3/2</sup>, dy tiene dimensiones de longitud, por lo que el producto tiene dimensiones de longitud<sup>5/2</sup>. ¡Espera! Esto parece incorrecto...</p>
+                <p>Corrección: En la curva x = y<sup>3/2</sup>, tanto x como y tienen dimensiones de longitud. Entonces y<sup>3/2</sup> tiene dimensiones de longitud<sup>3/2</sup>, lo que no es consistente con x que tiene dimensiones de longitud. Esto sugiere que la ecuación es dimensionalmente inconsistente a menos que haya una constante con dimensiones apropiadas. Sin embargo, en problemas matemáticos puros, a menudo ignoramos dimensiones.</p>
+                <p><strong>Verificación por estimación:</strong> La región es similar a un triángulo curvo. El área máxima posible sería un rectángulo de 1×1 = 1, o un triángulo de área 0.5. Nuestro resultado 0.4 (2/5 = 0.4) está entre estos valores y parece razonable.</p>
+                <p><strong>Verificación por cálculo numérico aproximado:</strong> Podemos aproximar el área usando la regla del punto medio con unos pocos rectángulos para verificar.</p>
+            </div>
+        </div>
+        
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">2/5 (Opción A)</div>
+            <p>El área de la región es 2/5 de unidad cuadrada</p>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Cálculo Integral:</strong> Uso de integrales definidas para calcular áreas bajo curvas.</li>
+                <li><strong>Regla de la Potencia para Integración:</strong> ∫ x<sup>n</sup> dx = x<sup>n+1</sup>/(n+1) + C, para n ≠ -1.</li>
+                <li><strong>Selección de Variable de Integración:</strong> Elegir integrar con respecto a x o y puede simplificar el problema. En este caso, integrar con respecto a y es más directo porque las fronteras están dadas como funciones de y.</li>
+                <li><strong>Límites de Integración:</strong> Determinar correctamente los límites es crucial. Aquí, y varía de 0 a 1.</li>
+                <li><strong>Geometría Analítica:</strong> Interpretación gráfica de ecuaciones y desigualdades para definir regiones.</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Cálculo de Áreas y Centros de Masa:</strong> Para componentes con formas irregulares, el cálculo integral es esencial para determinar propiedades geométricas.</li>
+                <li><strong>Diseño de Perfiles Aerodinámicos:</strong> Las curvas complejas que definen perfiles de alas o álabes de turbina requieren integración para calcular áreas y momentos.</li>
+                <li><strong>Análisis de Esfuerzos:</strong> En vigas con secciones transversales variables, el área de la sección transversal puede necesitar ser calculada mediante integración.</li>
+                <li><strong>Fluidos y Transferencia de Calor:</strong> Cálculo de flujos a través de superficies curvas o áreas de transferencia de calor.</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">6</div>
+                <h3>Método Alternativo: Integración con respecto a x</h3>
+            </div>
+            <p>Para demostrar consistencia, resolvamos también integrando con respecto a x:</p>
+            <p>De x = y<sup>3/2</sup>, obtenemos y = x<sup>2/3</sup>. Los límites en x son de 0 a 1 (cuando y = 1, x = 1<sup>3/2</sup> = 1).</p>
+            <p>El área sería: A = ∫<sub>0</sub><sup>1</sup> (1 - x<sup>2/3</sup>) dx</p>
+            <p>Resolviendo: ∫<sub>0</sub><sup>1</sup> 1 dx - ∫<sub>0</sub><sup>1</sup> x<sup>2/3</sup> dx = [x]<sub>0</sub><sup>1</sup> - [x<sup>5/3</sup>/(5/3)]<sub>0</sub><sup>1</sup> = 1 - (3/5) = 2/5</p>
+            <p>¡Obtenemos el mismo resultado!</p>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Mathematics, específicamente a Calculus (integral), donde se encuentran las fórmulas para integración y cálculo de áreas.</p>
+            <p>La fórmula de integración por la regla de la potencia aparece en la página de referencia como: ∫ x<sup>n</sup> dx = x<sup>n+1</sup>/(n+1) + C</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar fórmulas importantes
+            const formulas = document.querySelectorAll('.formula, .integral-steps');
+            formulas.forEach(formula => {
+                formula.setAttribute('data-print', 'important');
+            });
+            
+            // Mejorar la visualización de la gráfica para impresión
+            const graphContainer = document.querySelector('.graph-container');
+            if (graphContainer) {
+                const printClone = graphContainer.cloneNode(true);
+                printClone.classList.add('print-version');
+                graphContainer.parentNode.insertBefore(printClone, graphContainer.nextSibling);
+            }
+        });
+        
+        // Función para imprimir
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

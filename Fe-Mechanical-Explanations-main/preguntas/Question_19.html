@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 19 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .data-box {
+            background-color: #fff8e1;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #f39c12;
+        }
+        
+        .data-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+        
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .circuit-diagram {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .power-triangle {
+            width: 300px;
+            height: 200px;
+            margin: 20px auto;
+            position: relative;
+        }
+        
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 0 solid transparent;
+            border-bottom: 200px solid #3498db;
+            position: relative;
+            opacity: 0.7;
+        }
+        
+        .triangle-label {
+            position: absolute;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .label-p {
+            top: 60px;
+            right: 40px;
+        }
+        
+        .label-q {
+            top: 150px;
+            left: 30px;
+        }
+        
+        .label-s {
+            top: 10px;
+            left: 60px;
+            transform: rotate(-60deg);
+        }
+        
+        .angle-marker {
+            position: absolute;
+            top: 170px;
+            left: 100px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #e74c3c;
+        }
+        
+        .angle-label {
+            position: absolute;
+            top: 180px;
+            left: 145px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .meter-display {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .meter {
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            margin: 10px;
+            min-width: 150px;
+        }
+        
+        .meter-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .warning-cell {
+            background-color: #e74c3c !important;
+            color: white !important;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .phase-diagram {
+            background-color: #f4ecf7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #9b59b6;
+        }
+        
+        .phase-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .data-box {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .warning-cell {
+                background-color: #e74c3c !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .calculation-steps {
+                background-color: #f9ebea !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .phase-diagram {
+                background-color: #f4ecf7 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .note-box {
+            background-color: #ebf5fb;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+        
+        .warning-box {
+            background-color: #fff0f0;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+            color: #e74c3c;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .key-point {
+            background-color: #fffacd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+            color: #2c3e50;
+            border-left: 3px solid #f39c12;
+        }
+        
+        .impedance-diagram {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .impedance-element {
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            margin: 10px;
+            min-width: 120px;
+        }
+        
+        .element-icon {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 19 del FE Mechanical</h1>
+            <p class="subtitle">Cálculo del Factor de Potencia en Circuitos de Corriente Alterna (CA)</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>19. An ammeter, a voltmeter, and a wattmeter were installed in an ac circuit and read 15 A_rms, 115 V_rms, and 1,500 W, respectively. The power factor of the circuit is most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. -0.87 &nbsp; B. -0.5 &nbsp; C. 0.5 &nbsp; D. 0.87</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Entender el problema y los datos</h3>
+                </div>
+                
+                <div class="data-box">
+                    <div class="data-title">Lecturas de los instrumentos:</div>
+                    <ul class="concept-list">
+                        <li><strong>Amperímetro (corriente):</strong> 15 A<sub>rms</sub></li>
+                        <li><strong>Voltímetro (voltaje):</strong> 115 V<sub>rms</sub></li>
+                        <li><strong>Vatímetro (potencia real):</strong> 1,500 W</li>
+                    </ul>
+                </div>
+                
+                <p>Este problema involucra el cálculo del <strong>factor de potencia (PF)</strong> en un circuito de corriente alterna (CA). El factor de potencia es una medida de cuán efectivamente la potencia eléctrica se convierte en trabajo útil.</p>
+                
+                <div class="meter-display">
+                    <div class="meter">
+                        <div class="meter-icon">A</div>
+                        <h4>Amperímetro</h4>
+                        <p>15 A<sub>rms</sub></p>
+                        <p>Corriente eficaz</p>
+                    </div>
+                    <div class="meter">
+                        <div class="meter-icon">V</div>
+                        <h4>Voltímetro</h4>
+                        <p>115 V<sub>rms</sub></p>
+                        <p>Voltaje eficaz</p>
+                    </div>
+                    <div class="meter">
+                        <div class="meter-icon">W</div>
+                        <h4>Vatímetro</h4>
+                        <p>1,500 W</p>
+                        <p>Potencia real</p>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <strong>Nota sobre valores RMS:</strong> Los valores "rms" (root mean square - valor cuadrático medio) son valores efectivos en CA. Para señales sinusoidales, V<sub>rms</sub> = V<sub>pico</sub>/√2. En mediciones de potencia, siempre usamos valores RMS.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Recordar las fórmulas de potencia en CA</h3>
+                </div>
+                
+                <p>En circuitos de CA, existen tres tipos de potencia:</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">1. Potencia Aparente (S)</div>
+                    <div class="formula">
+                        S = V<sub>rms</sub> × I<sub>rms</sub> (en volt-amperes, VA)
+                    </div>
+                    <p>Es el producto de los valores RMS de voltaje y corriente.</p>
+                </div>
+                
+                <div class="formula-box">
+                    <div class="formula-title">2. Potencia Real (P)</div>
+                    <div class="formula">
+                        P = V<sub>rms</sub> × I<sub>rms</sub> × cos(θ) (en vatios, W)
+                    </div>
+                    <p>Es la potencia que realmente realiza trabajo útil. Es medida por el vatímetro.</p>
+                </div>
+                
+                <div class="formula-box">
+                    <div class="formula-title">3. Potencia Reactiva (Q)</div>
+                    <div class="formula">
+                        Q = V<sub>rms</sub> × I<sub>rms</sub> × sin(θ) (en volt-amperes reactivos, VAR)
+                    </div>
+                    <p>Es la potencia que oscila entre la fuente y los elementos reactivos (inductores y capacitores).</p>
+                </div>
+                
+                <div class="formula-box">
+                    <div class="formula-title">4. Factor de Potencia (PF)</div>
+                    <div class="formula">
+                        PF = cos(θ) = P / S = P / (V<sub>rms</sub> × I<sub>rms</sub>)
+                    </div>
+                    <p>Donde θ es el ángulo de fase entre el voltaje y la corriente.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Calcular la potencia aparente (S)</h3>
+                </div>
+                
+                <p>Primero calculamos la potencia aparente usando los valores RMS de voltaje y corriente:</p>
+                
+                <div class="formula">
+                    S = V<sub>rms</sub> × I<sub>rms</sub>
+                </div>
+                
+                <div class="calculation-steps">
+                    <p>S = 115 V × 15 A</p>
+                    <p class="step-result">S = 1,725 VA (volt-amperes)</p>
+                </div>
+                
+                <div class="note-box">
+                    <strong>Nota:</strong> La potencia aparente se mide en volt-amperes (VA), no en vatios (W). Representa la potencia total que fluye en el circuito, incluyendo tanto la potencia real como la reactiva.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Calcular el factor de potencia (PF)</h3>
+                </div>
+                
+                <p>Ahora usamos la fórmula del factor de potencia:</p>
+                
+                <div class="formula">
+                    PF = P / S
+                </div>
+                
+                <div class="calculation-steps">
+                    <p>PF = 1,500 W / 1,725 VA</p>
+                    <p>PF = 1,500 ÷ 1,725</p>
+                    <p>PF = 0.869565... ≈ 0.87</p>
+                </div>
+                
+                <div class="note-box">
+                    <strong>Precisión del cálculo:</strong> 1,500 ÷ 1,725 = 0.869565, que redondeado a dos decimales es 0.87.
+                </div>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Interpretación física:</div>
+                    <p>Un factor de potencia de 0.87 significa que el 87% de la potencia aparente se convierte en potencia real (trabajo útil), mientras que el 13% restante es potencia reactiva que oscila entre la fuente y la carga sin realizar trabajo útil.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Determinar el signo del factor de potencia</h3>
+                </div>
+                
+                <p>El factor de potencia puede ser positivo o negativo dependiendo de si la carga es inductiva o capacitiva:</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Tipo de Carga</th>
+                            <th>Ángulo θ</th>
+                            <th>cos(θ)</th>
+                            <th>Factor de Potencia</th>
+                            <th>Comportamiento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Resistiva pura</td>
+                            <td>0°</td>
+                            <td>1.0</td>
+                            <td>1.0 (unitario)</td>
+                            <td>Voltaje y corriente en fase</td>
+                        </tr>
+                        <tr>
+                            <td>Inductiva</td>
+                            <td>0° < θ < 90°</td>
+                            <td>0 < cos(θ) < 1</td>
+                            <td>Positivo (retrasado)</td>
+                            <td>La corriente se retrasa respecto al voltaje</td>
+                        </tr>
+                        <tr>
+                            <td>Capacitiva</td>
+                            <td>-90° < θ < 0°</td>
+                            <td>0 < cos(θ) < 1</td>
+                            <td>Positivo (adelantado)</td>
+                            <td>La corriente se adelanta respecto al voltaje</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="phase-diagram">
+                    <div class="phase-title">Interpretación del signo:</div>
+                    <p>En la práctica, el factor de potencia generalmente se expresa como un valor positivo entre 0 y 1. El signo negativo en las opciones podría indicar:</p>
+                    <ul class="concept-list">
+                        <li>Un error de medición o conexión</li>
+                        <li>Una convención específica (poco común)</li>
+                        <li>Una carga generadora en lugar de consumidora</li>
+                    </ul>
+                    <p>En circuitos típicos de CA, el factor de potencia es positivo. Por lo tanto, descartamos las opciones negativas A (-0.87) y B (-0.5).</p>
+                </div>
+                
+                <div class="key-point">
+                    <strong>Conclusión:</strong> Dado que el vatímetro muestra 1,500 W (positivo), la carga está consumiendo potencia, no generándola. Por lo tanto, el factor de potencia debe ser positivo.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">6</div>
+                    <h3>Visualizar el triángulo de potencia</h3>
+                </div>
+                
+                <div class="circuit-diagram">
+                    <h4>Triángulo de Potencia</h4>
+                    <div class="power-triangle">
+                        <div class="triangle"></div>
+                        <div class="triangle-label label-p">P = 1,500 W</div>
+                        <div class="triangle-label label-q">Q = ? VAR</div>
+                        <div class="triangle-label label-s">S = 1,725 VA</div>
+                        <div class="angle-marker"></div>
+                        <div class="angle-label">θ = cos⁻¹(0.87) ≈ 29.5°</div>
+                    </div>
+                    <p>El triángulo muestra la relación entre P, Q y S. θ es el ángulo entre S y P.</p>
+                </div>
+                
+                <p>Podemos calcular la potencia reactiva (Q) usando el teorema de Pitágoras:</p>
+                
+                <div class="calculation-steps">
+                    <p>S² = P² + Q²</p>
+                    <p>Q = √(S² - P²) = √(1,725² - 1,500²)</p>
+                    <p>Q = √(2,975,625 - 2,250,000) = √(725,625)</p>
+                    <p class="step-result">Q = 851.8 VAR</p>
+                </div>
+                
+                <div class="note-box">
+                    <strong>Nota:</strong> El valor de Q (851.8 VAR) indica que hay una cantidad significativa de potencia reactiva en el circuito. Esto es típico en cargas que contienen motores (inductivos).
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">7</div>
+                    <h3>Análisis de las opciones incorrectas</h3>
+                </div>
+                
+                <div class="phase-diagram">
+                    <div class="phase-title">¿Por qué las otras opciones son incorrectas?</div>
+                    <ul class="concept-list">
+                        <li><strong>Opción A (-0.87):</strong> Tiene el valor numérico correcto pero con signo negativo. En un circuito típico que consume potencia, el factor de potencia es positivo.</li>
+                        <li><strong>Opción B (-0.5):</strong> Valor incorrecto tanto en magnitud como en signo. Sería el resultado de un cálculo erróneo.</li>
+                        <li><strong>Opción C (0.5):</strong> Valor numérico incorrecto. Representaría un factor de potencia muy bajo, típico de cargas muy reactivas.</li>
+                        <li><strong>Opción D (0.87):</strong> Correcta tanto en magnitud como en signo.</li>
+                    </ul>
+                </div>
+                
+                <div class="calculation-steps">
+                    <p><strong>Verificación rápida de valores plausibles:</strong></p>
+                    <p>Si el factor de potencia fuera 0.5: P = S × PF = 1,725 × 0.5 = 862.5 W</p>
+                    <p>Pero el vatímetro mide 1,500 W, por lo que 0.5 es incorrecto.</p>
+                </div>
+                
+                <div class="warning-box">
+                    <strong>¡Cuidado con errores comunes!</strong> Algunos estudiantes podrían:
+                    <ul class="concept-list">
+                        <li>Usar valores pico en lugar de RMS (no aplicable aquí ya que ya son RMS)</li>
+                        <li>Olvidar que el factor de potencia es adimensional (sin unidades)</li>
+                        <li>Confundir potencia aparente con potencia real</li>
+                        <li>Invertir la fórmula (S/P en lugar de P/S)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">0.87 (Opción D)</div>
+            <p>El factor de potencia del circuito es aproximadamente 0.87, lo que indica una carga predominantemente resistiva con algún componente reactivo.</p>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Factor de Potencia (PF):</strong> Relación entre la potencia real (P) y la potencia aparente (S). PF = P/S = cos(θ), donde θ es el ángulo de fase entre el voltaje y la corriente.</li>
+                <li><strong>Potencia Real (P):</strong> Potencia que realiza trabajo útil, medida en vatios (W). Es la potencia promedio transferida a la carga.</li>
+                <li><strong>Potencia Aparente (S):</strong> Producto de los valores RMS de voltaje y corriente, medida en volt-amperes (VA). Representa la potencia total que debe suministrar la fuente.</li>
+                <li><strong>Potencia Reactiva (Q):</strong> Potencia que oscila entre la fuente y los elementos reactivos (inductores y capacitores), medida en volt-amperes reactivos (VAR).</li>
+                <li><strong>Triángulo de Potencia:</strong> Representación gráfica de la relación entre P, Q y S, formando un triángulo rectángulo donde S es la hipotenusa.</li>
+                <li><strong>Valores RMS:</strong> Valores cuadráticos medios que representan el valor efectivo de una señal de CA. Para una sinusoide, V<sub>rms</sub> = V<sub>pico</sub>/√2.</li>
+                <li><strong>Cargas en CA:</strong>
+                    <ul>
+                        <li><strong>Resistivas:</strong> Voltaje y corriente en fase (PF = 1)</li>
+                        <li><strong>Inductivas:</strong> Corriente retrasada respecto al voltaje (PF entre 0 y 1)</li>
+                        <li><strong>Capacitivas:</strong> Corriente adelantada respecto al voltaje (PF entre 0 y 1)</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de Sistemas Motrices:</strong> Los motores eléctricos típicamente tienen factores de potencia entre 0.7 y 0.9, requiriendo corrección en muchos casos.</li>
+                <li><strong>Selección de Transformadores:</strong> Los transformadores se dimensionan en kVA (potencia aparente), no en kW, por lo que un bajo factor de potencia requiere transformadores más grandes.</li>
+                <li><strong>Eficiencia Energética:</strong> Mejorar el factor de potencia reduce las pérdidas en líneas de transmisión y permite un mejor uso de la capacidad del sistema.</li>
+                <li><strong>Diseño de Sistemas de Control:</strong> Los controladores para motores deben considerar el factor de potencia para una operación eficiente.</li>
+                <li><strong>Sistemas de HVAC:</strong> Los compresores y ventiladores en sistemas de calefacción, ventilación y aire acondicionado pueden tener factores de potencia bajos que requieren corrección.</li>
+                <li><strong>Generación de Energía:</strong> Las compañías eléctricas penalizan a los usuarios con bajo factor de potencia porque aumenta las pérdidas del sistema.</li>
+                <li><strong>Diseño de Máquinas-Herramienta:</strong> Los motores en máquinas herramienta deben operar con factores de potencia adecuados para minimizar costos energéticos.</li>
+            </ul>
+            
+            <div class="formula-box">
+                <div class="formula-title">Fórmulas importantes relacionadas:</div>
+                <div class="formula">
+                    PF = P / (V<sub>rms</sub> × I<sub>rms</sub>) = cos(θ)
+                </div>
+                <div class="formula">
+                    S = V<sub>rms</sub> × I<sub>rms</sub> = √(P² + Q²)
+                </div>
+                <div class="formula">
+                    P = V<sub>rms</sub> × I<sub>rms</sub> × cos(θ)
+                </div>
+                <div class="formula">
+                    Q = V<sub>rms</sub> × I<sub>rms</sub> × sin(θ)
+                </div>
+                <p>Estas fórmulas son fundamentales para el análisis de circuitos de CA y sistemas de potencia.</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">8</div>
+                <h3>Variaciones y escenarios adicionales</h3>
+            </div>
+            
+            <div class="phase-diagram">
+                <div class="phase-title">Escenario 1: Carga puramente resistiva</div>
+                <p>Si la carga fuera puramente resistiva:</p>
+                <ul class="concept-list">
+                    <li>P = V × I = 115 × 15 = 1,725 W</li>
+                    <li>PF = 1.0</li>
+                    <li>Q = 0 VAR</li>
+                </ul>
+                <p>En este caso, toda la potencia aparente sería potencia real.</p>
+            </div>
+            
+            <div class="phase-diagram">
+                <div class="phase-title">Escenario 2: Carga altamente inductiva (motor sin corrección)</div>
+                <p>Para un motor con PF = 0.6:</p>
+                <ul class="concept-list">
+                    <li>Con los mismos V e I: S = 1,725 VA (igual)</li>
+                    <li>P = S × PF = 1,725 × 0.6 = 1,035 W</li>
+                    <li>Q = √(S² - P²) = √(1,725² - 1,035²) = 1,380 VAR</li>
+                </ul>
+                <p>Se requeriría mucha más potencia reactiva para la misma corriente.</p>
+            </div>
+            
+            <div class="phase-diagram">
+                <div class="phase-title">Escenario 3: Corrección del factor de potencia</div>
+                <p>Para mejorar el PF de 0.87 a 0.95 (típico objetivo):</p>
+                <ul class="concept-list">
+                    <li>PF actual: 0.87, θ = cos⁻¹(0.87) ≈ 29.5°</li>
+                    <li>PF deseado: 0.95, θ' = cos⁻¹(0.95) ≈ 18.2°</li>
+                    <li>Potencia reactiva actual: Q = P × tan(θ) = 1,500 × tan(29.5°) = 851 VAR</li>
+                    <li>Potencia reactiva deseada: Q' = P × tan(θ') = 1,500 × tan(18.2°) = 493 VAR</li>
+                    <li>VAR a corregir: Q<sub>c</sub> = Q - Q' = 851 - 493 = 358 VAR</li>
+                    <li>Capacitancia necesaria: C = Q<sub>c</sub> / (ωV²) donde ω = 2πf</li>
+                </ul>
+                <p>Para 60 Hz y 115 V: C = 358 / (377 × 115²) ≈ 71.6 μF</p>
+            </div>
+            
+            <div class="impedance-diagram">
+                <div class="impedance-element">
+                    <div class="element-icon">R</div>
+                    <h4>Resistencia</h4>
+                    <p>R = P / I²</p>
+                    <p>R = 1,500 / 15² = 6.67 Ω</p>
+                </div>
+                <div class="impedance-element">
+                    <div class="element-icon">Z</div>
+                    <h4>Impedancia</h4>
+                    <p>Z = V / I</p>
+                    <p>Z = 115 / 15 = 7.67 Ω</p>
+                </div>
+                <div class="impedance-element">
+                    <div class="element-icon">X</div>
+                    <h4>Reactancia</h4>
+                    <p>X = √(Z² - R²)</p>
+                    <p>X = √(7.67² - 6.67²) = 3.74 Ω</p>
+                </div>
+            </div>
+            
+            <div class="note-box">
+                <strong>Interpretación de la impedancia:</strong> La carga tiene una resistencia de 6.67 Ω y una reactancia de 3.74 Ω. Dado que la potencia reactiva es positiva (851 VAR), la reactancia es inductiva (X<sub>L</sub> = 3.74 Ω). La inductancia sería L = X<sub>L</sub> / ω = 3.74 / 377 ≈ 9.9 mH (para 60 Hz).
+            </div>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Electricity and Magnetism, específicamente a AC Circuit Analysis y Power Calculations. Las fórmulas para potencia en CA aparecen en el manual de referencia del examen FE.</p>
+            <p>En el examen FE real, es importante recordar que el factor de potencia se calcula como P/(V×I) y que generalmente es un valor positivo entre 0 y 1 para cargas pasivas.</p>
+            <p><strong>Ubicación en el FE Reference Handbook:</strong> Electrical and Computer Engineering → AC Power → Power Factor.</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar elementos importantes
+            const importantElements = document.querySelectorAll('.formula, .calculation-steps, .phase-diagram');
+            importantElements.forEach(element => {
+                element.setAttribute('data-print', 'important');
+            });
+        });
+        
+        // Función para imprimir
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

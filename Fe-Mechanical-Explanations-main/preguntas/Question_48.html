@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 48 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .diagram-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .diagram-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        .stress-element {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 48 del FE Mechanical</h1>
+            <p class="subtitle">Esfuerzo Cortante Máximo en un Elemento Plano Cargado</p>
+        </header>
+
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>48. A plane member having a uniform thickness of 10 mm is loaded as shown below. The maximum shear stress (MPa) at Point O is most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. 2.5 &nbsp; B. 5.0 &nbsp; C. 7.5 &nbsp; D. 10.0</p>
+                </div>
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50;">Respuesta correcta según el PDF: <span style="background-color: #2ecc71; color: white; padding: 3px 10px; border-radius: 5px;">C (7.5 MPa)</span></p>
+            </div>
+
+            <!-- Reconstrucción del diagrama de carga -->
+            <div class="diagram-section">
+                <div class="diagram-container">
+                    <svg width="500" height="350" viewBox="0 0 500 350" style="max-width:100%; height:auto;">
+                        <!-- Placa rectangular de 100x100? Se asume área de 100 mm x 100 mm? El área resistente es 100 mm de ancho y espesor 10 mm -->
+                        <rect x="150" y="150" width="200" height="100" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2" />
+                        <!-- Líneas de dimensión -->
+                        <line x1="150" y1="260" x2="350" y2="260" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="4" />
+                        <text x="230" y="280" font-size="12">100 mm</text>
+                        <line x1="360" y1="150" x2="360" y2="250" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="4" />
+                        <text x="380" y="190" font-size="12">100 mm</text>
+                        <!-- Espesor indicado -->
+                        <text x="50" y="200" font-size="12">espesor = 10 mm (uniforme)</text>
+                        <!-- Fuerza horizontal (compresión) -->
+                        <line x1="50" y1="190" x2="140" y2="190" stroke="#e74c3c" stroke-width="3" />
+                        <polygon points="140,190 130,185 130,195" fill="#e74c3c" />
+                        <text x="60" y="170" fill="#e74c3c" font-size="14">10 kN</text>
+                        <!-- Fuerza vertical (tracción) -->
+                        <line x1="250" y1="80" x2="250" y2="140" stroke="#3498db" stroke-width="3" />
+                        <polygon points="250,80 245,90 255,90" fill="#3498db" />
+                        <text x="260" y="60" fill="#3498db" font-size="14">5 kN</text>
+                        <!-- Punto O (centro de la placa) -->
+                        <circle cx="250" cy="200" r="6" fill="#2c3e50" />
+                        <text x="260" y="190" font-size="14">O</text>
+                        <!-- Ejes de coordenadas para referencia -->
+                        <line x1="400" y1="300" x2="440" y2="300" stroke="#2c3e50" stroke-width="2" />
+                        <text x="450" y="300" font-size="12">x</text>
+                        <line x1="400" y1="300" x2="400" y2="260" stroke="#2c3e50" stroke-width="2" />
+                        <text x="390" y="250" font-size="12">y</text>
+                    </svg>
+                    <p style="margin-top: 10px; font-size: 14px; color: #555;">
+                        Miembro plano de espesor 10 mm. En el punto O actúan una fuerza horizontal de 10 kN (compresión) 
+                        y una fuerza vertical de 5 kN (tracción). Las áreas resistentes son de 100 mm × 10 mm.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Identificar las áreas donde actúan las fuerzas</h3>
+                </div>
+                <p>La placa tiene espesor uniforme de 10 mm. Para el cálculo de esfuerzos normales en el punto O, se considera el área perpendicular a cada fuerza:</p>
+                <ul class="concept-list">
+                    <li>La fuerza horizontal actúa sobre un área vertical de ancho 100 mm × espesor 10 mm.</li>
+                    <li>La fuerza vertical actúa sobre un área horizontal de ancho 100 mm × espesor 10 mm.</li>
+                </ul>
+                <div class="formula-box">
+                    <div class="formula-title">📌 Área resistente</div>
+                    <div class="formula">\(A = 100\ \text{mm} \times 10\ \text{mm} = 1000\ \text{mm}^2 = 1.0\times10^{-3}\ \text{m}^2\)</div>
+                    <p>Para trabajar en MPa, es más práctico usar N y mm: 1 MPa = 1 N/mm².</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Calcular los esfuerzos normales en las direcciones horizontal y vertical</h3>
+                </div>
+                <p><strong>Esfuerzo horizontal (σₓ):</strong> fuerza de 10 kN en compresión, negativa.</p>
+                <div class="calculation-steps">
+                    <p>\(\sigma_x = \dfrac{P_x}{A} = \dfrac{-10\,000\ \text{N}}{1000\ \text{mm}^2} = -10\ \text{N/mm}^2 = -10\ \text{MPa}\)</p>
+                </div>
+                <p><strong>Esfuerzo vertical (σᵧ):</strong> fuerza de 5 kN en tracción, positiva.</p>
+                <div class="calculation-steps">
+                    <p>\(\sigma_y = \dfrac{P_y}{A} = \dfrac{+5\,000\ \text{N}}{1000\ \text{mm}^2} = +5\ \text{N/mm}^2 = +5\ \text{MPa}\)</p>
+                </div>
+                <p>No hay fuerzas cortantes aplicadas directamente, por lo que el esfuerzo cortante en las caras del elemento es nulo: \(\tau_{xy} = 0\).</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Representar el estado de esfuerzos en el punto O</h3>
+                </div>
+                <div class="stress-element">
+                    <svg width="250" height="250" viewBox="0 0 250 250">
+                        <!-- Elemento cuadrado -->
+                        <rect x="75" y="75" width="100" height="100" fill="none" stroke="#2c3e50" stroke-width="2" />
+                        <!-- σx (compresión) flechas hacia adentro -->
+                        <line x1="25" y1="125" x2="70" y2="125" stroke="#e74c3c" stroke-width="3" />
+                        <polygon points="70,125 80,120 80,130" fill="#e74c3c" />
+                        <line x1="180" y1="125" x2="225" y2="125" stroke="#e74c3c" stroke-width="3" />
+                        <polygon points="180,125 170,120 170,130" fill="#e74c3c" />
+                        <text x="40" y="100" fill="#e74c3c" font-size="12">σₓ = 10 MPa</text>
+                        <!-- σy (tracción) flechas hacia afuera -->
+                        <line x1="125" y1="25" x2="125" y2="70" stroke="#3498db" stroke-width="3" />
+                        <polygon points="125,70 120,80 130,80" fill="#3498db" />
+                        <line x1="125" y1="180" x2="125" y2="225" stroke="#3498db" stroke-width="3" />
+                        <polygon points="125,180 120,170 130,170" fill="#3498db" />
+                        <text x="135" y="45" fill="#3498db" font-size="12">σᵧ = 5 MPa</text>
+                        <!-- Indicar τxy = 0 -->
+                        <text x="90" y="200" font-size="12" fill="#7f8c8d">τₓᵧ = 0</text>
+                    </svg>
+                </div>
+                <p style="text-align: center; font-size: 14px;">Elemento de esfuerzo en O: σₓ = –10 MPa, σᵧ = +5 MPa, τₓᵧ = 0.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Determinar los esfuerzos principales</h3>
+                </div>
+                <p>Dado que τₓᵧ = 0, los esfuerzos σₓ y σᵧ ya son esfuerzos principales (sus valores no cambian al rotar el elemento). Por lo tanto:</p>
+                <div class="formula">
+                    \(\sigma_1 = 5\ \text{MPa},\quad \sigma_2 = 0\ \text{MPa},\quad \sigma_3 = -10\ \text{MPa}\)
+                </div>
+                <p>El esfuerzo σ₂ = 0 MPa proviene de la condición de <strong>esfuerzo plano</strong> (σ₂ en el plano perpendicular al elemento, fuera del plano, es nulo).</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Calcular el esfuerzo cortante máximo</h3>
+                </div>
+                <p>Para un estado de esfuerzo tridimensional, el esfuerzo cortante máximo absoluto es el mayor de los tres valores:</p>
+                <div class="formula">
+                    \(\tau_{\max} = \max\left(\dfrac{|\sigma_1 - \sigma_2|}{2},\ \dfrac{|\sigma_2 - \sigma_3|}{2},\ \dfrac{|\sigma_1 - \sigma_3|}{2}\right)\)
+                </div>
+                <div class="calculation-steps">
+                    <p>\(\dfrac{\sigma_1 - \sigma_2}{2} = \dfrac{5 - 0}{2} = 2.5\ \text{MPa}\)</p>
+                    <p>\(\dfrac{\sigma_2 - \sigma_3}{2} = \dfrac{0 - (-10)}{2} = 5.0\ \text{MPa}\)</p>
+                    <p>\(\dfrac{\sigma_1 - \sigma_3}{2} = \dfrac{5 - (-10)}{2} = \dfrac{15}{2} = 7.5\ \text{MPa}\)</p>
+                    <p class="step-result">\(\tau_{\max} = 7.5\ \text{MPa}\)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">6</div>
+                    <h3>Comparación con las opciones</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Valor (MPa)</th>
+                            <th>¿Correcta?</th>
+                            <th>Explicación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>2.5</td>
+                            <td>No</td>
+                            <td>Es (σ₁−σ₂)/2, no el máximo absoluto.</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>5.0</td>
+                            <td>No</td>
+                            <td>Es (σ₂−σ₃)/2, pero el máximo es (σ₁−σ₃)/2.</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td><strong>7.5</strong></td>
+                            <td><strong>Sí</strong></td>
+                            <td>Corresponde a (σ₁−σ₃)/2, el esfuerzo cortante máximo absoluto.</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>10.0</td>
+                            <td>No</td>
+                            <td>Podría ser la magnitud de σₓ o σₓ−σᵧ, pero no es el cortante máximo.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formula-box" style="background-color: #fce8e8; border-left-color: #e74c3c;">
+                    <p><strong>Error común:</strong> Calcular únicamente el esfuerzo cortante máximo <em>en el plano</em> (que sería 7.5 MPa también, pero en este caso coincide con el absoluto). Sin embargo, algunos podrían olvidar que σ₂ = 0 y considerar solo σ₁ y σ₃, pero aún así el resultado es 7.5. El error más frecuente es tomar la mitad de la diferencia entre σₓ y σᵧ sin considerar que son principales: (10-5)/2 = 2.5, y elegir la opción A.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">7.5 MPa (Opción C)</div>
+            <p>El esfuerzo cortante máximo en el punto O es 7.5 MPa.</p>
+        </div>
+
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Esfuerzo normal:</strong> Fuerza por unidad de área perpendicular a la sección. σ = P/A.</li>
+                <li><strong>Esfuerzo plano (estado bidimensional):</strong> Cuando uno de los esfuerzos principales es cero (en la dirección del espesor).</li>
+                <li><strong>Esfuerzos principales:</strong> Valores extremos del esfuerzo normal en un punto, obtenidos cuando el esfuerzo cortante es cero.</li>
+                <li><strong>Esfuerzo cortante máximo absoluto:</strong> En 3D, es la mitad de la diferencia entre el esfuerzo principal máximo y el mínimo. Puede ocurrir fuera del plano original del elemento.</li>
+                <li><strong>Círculo de Mohr (aunque aquí no es necesario por τ=0):</strong> Herramienta gráfica para transformar esfuerzos y obtener valores principales y cortantes máximos.</li>
+                <li><strong>Convención de signos:</strong> Tracción positiva, compresión negativa. El esfuerzo cortante positivo tiende a rotar el elemento en sentido antihorario.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de placas y miembros planos:</strong> Evaluación de puntos críticos sometidos a cargas combinadas.</li>
+                <li><strong>Análisis de recipientes a presión:</strong> Los esfuerzos en las paredes suelen ser biaxiales, y el cortante máximo determina la falla según el criterio de Tresca.</li>
+                <li><strong>Uniones atornilladas y remachadas:</strong> Cálculo de esfuerzos cortantes en las secciones transversales.</li>
+                <li><strong>Fatiga multiaxial:</strong> El esfuerzo cortante alternante es un parámetro fundamental para predecir la vida a fatiga.</li>
+                <li><strong>Elementos de máquinas:</strong> Árboles, ejes, pasadores, etc., donde coexisten esfuerzos normales y cortantes.</li>
+            </ul>
+            <div class="formula-box">
+                <div class="formula-title">📌 Fórmulas esenciales</div>
+                <div class="formula">\(\sigma = \dfrac{P}{A}\)</div>
+                <div class="formula">\(\tau_{\max,\text{abs}} = \dfrac{\sigma_{\max} - \sigma_{\min}}{2}\)</div>
+                <p>Cuando τₓᵧ = 0, los esfuerzos normales ya son principales.</p>
+            </div>
+        </div>
+
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta corresponde a la sección de <em>Mechanics of Materials</em>, subsección <em>Mohr's Circle – Stress, 2D</em>. El manual presenta las ecuaciones para transformación de esfuerzos y el cálculo del esfuerzo cortante máximo. También se relaciona con la subsección <em>Stress and strain caused by axial loads</em>.</p>
+            <p><em>NCEES FE Reference Handbook, sección "Mechanics of Materials", subsección "Mohr's Circle – Stress, 2D" y "Stress and strain caused by axial loads".</em></p>
+        </div>
+
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

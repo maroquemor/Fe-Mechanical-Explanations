@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 47 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .stress-element {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .element-svg {
+            background-color: white;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        .mohr-circle-svg {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 47 del FE Mechanical</h1>
+            <p class="subtitle">Esfuerzo Cortante Máximo en el Plano – Círculo de Mohr</p>
+        </header>
+
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>47. The maximum in-plane shear stress (ksi) in the element shown below is most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. 10 &nbsp; B. 14.1 &nbsp; C. 44.1 &nbsp; D. 316</p>
+                </div>
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50;">Respuesta correcta según el PDF: <span style="background-color: #2ecc71; color: white; padding: 3px 10px; border-radius: 5px;">B (14.1 ksi)</span></p>
+            </div>
+
+            <!-- Representación del elemento de esfuerzo -->
+            <div class="stress-element">
+                <div class="element-svg">
+                    <svg width="300" height="300" viewBox="0 0 300 300">
+                        <!-- Cuadrado que representa el elemento -->
+                        <rect x="100" y="100" width="100" height="100" fill="none" stroke="#2c3e50" stroke-width="3" />
+                        <!-- σx (tensión normal horizontal) -->
+                        <line x1="30" y1="150" x2="90" y2="150" stroke="#e74c3c" stroke-width="3" />
+                        <polygon points="90,150 80,145 80,155" fill="#e74c3c" />
+                        <text x="40" y="130" fill="#e74c3c" font-size="14">σₓ = 40 ksi</text>
+                        <line x1="210" y1="150" x2="270" y2="150" stroke="#e74c3c" stroke-width="3" />
+                        <polygon points="210,150 220,145 220,155" fill="#e74c3c" />
+                        <!-- σy (tensión normal vertical) -->
+                        <line x1="150" y1="30" x2="150" y2="90" stroke="#3498db" stroke-width="3" />
+                        <polygon points="150,90 145,80 155,80" fill="#3498db" />
+                        <text x="160" y="50" fill="#3498db" font-size="14">σᵧ = 20 ksi</text>
+                        <line x1="150" y1="210" x2="150" y2="270" stroke="#3498db" stroke-width="3" />
+                        <polygon points="150,210 145,220 155,220" fill="#3498db" />
+                        <!-- τxy (esfuerzo cortante) positivo según convención -->
+                        <line x1="100" y1="100" x2="70" y2="70" stroke="#9b59b6" stroke-width="3" />
+                        <polygon points="70,70 75,80 65,80" fill="#9b59b6" />
+                        <line x1="200" y1="200" x2="230" y2="230" stroke="#9b59b6" stroke-width="3" />
+                        <polygon points="230,230 225,220 235,220" fill="#9b59b6" />
+                        <line x1="200" y1="100" x2="230" y2="70" stroke="#9b59b6" stroke-width="3" />
+                        <polygon points="230,70 225,80 235,80" fill="#9b59b6" />
+                        <line x1="100" y1="200" x2="70" y2="230" stroke="#9b59b6" stroke-width="3" />
+                        <polygon points="70,230 75,220 65,220" fill="#9b59b6" />
+                        <text x="40" y="220" fill="#9b59b6" font-size="14">τₓᵧ = 10 ksi</text>
+                    </svg>
+                    <p style="margin-top: 10px; font-size: 14px; color: #555;">
+                        Elemento sometido a esfuerzos: σₓ = 40 ksi, σᵧ = 20 ksi, τₓᵧ = 10 ksi (sentido positivo según convención).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Recordar el círculo de Mohr para esfuerzo plano</h3>
+                </div>
+                <p>El círculo de Mohr es una representación gráfica del estado de esfuerzos en un punto. Permite determinar:</p>
+                <ul class="concept-list">
+                    <li>Esfuerzos principales (σ₁, σ₂).</li>
+                    <li>Esfuerzo cortante máximo en el plano (τ<sub>máx</sub>).</li>
+                    <li>Esfuerzos en cualquier orientación.</li>
+                </ul>
+                <p>Las coordenadas del centro del círculo y su radio se calculan con las siguientes expresiones:</p>
+                <div class="formula">
+                    \(\sigma_{\text{prom}} = \dfrac{\sigma_x + \sigma_y}{2}\)
+                </div>
+                <div class="formula">
+                    \(R = \sqrt{\left(\dfrac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}\)
+                </div>
+                <p>El <strong>esfuerzo cortante máximo en el plano</strong> es igual al radio del círculo de Mohr: \(\tau_{\text{máx}} = R\).</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Identificar los valores dados</h3>
+                </div>
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>Esfuerzo</th>
+                            <th>Símbolo</th>
+                            <th>Valor (ksi)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Normal en dirección x</td><td>\(\sigma_x\)</td><td>40</td></tr>
+                        <tr><td>Normal en dirección y</td><td>\(\sigma_y\)</td><td>20</td></tr>
+                        <tr><td>Cortante</td><td>\(\tau_{xy}\)</td><td>10</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Calcular el esfuerzo promedio (centro del círculo)</h3>
+                </div>
+                <div class="formula">
+                    \(\sigma_{\text{prom}} = \dfrac{40 + 20}{2} = \dfrac{60}{2} = 30\ \text{ksi}\)
+                </div>
+                <p>El centro del círculo de Mohr se ubica en \((\sigma_{\text{prom}}, 0) = (30, 0)\).</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Calcular el radio del círculo</h3>
+                </div>
+                <div class="formula">
+                    \(R = \sqrt{\left(\dfrac{40 - 20}{2}\right)^2 + (10)^2}\)
+                </div>
+                <div class="calculation-steps">
+                    <p>\(\dfrac{40 - 20}{2} = \dfrac{20}{2} = 10\)</p>
+                    <p>\(10^2 = 100\)</p>
+                    <p>\((10)^2 = 100\)</p>
+                    <p>Suma = \(100 + 100 = 200\)</p>
+                    <p>\(R = \sqrt{200} = \sqrt{100 \times 2} = 10\sqrt{2} \approx 14.142\)</p>
+                    <p class="step-result">\(R \approx 14.1\ \text{ksi}\)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Esfuerzo cortante máximo en el plano</h3>
+                </div>
+                <p>El esfuerzo cortante máximo en el plano es igual al radio del círculo de Mohr. Por lo tanto:</p>
+                <div class="formula">
+                    \(\tau_{\text{máx}} = R = 14.1\ \text{ksi}\)
+                </div>
+                <p>Este valor corresponde a la <strong>opción B</strong>.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">6</div>
+                    <h3>Verificación con círculo de Mohr (gráfico)</h3>
+                </div>
+                <div class="mohr-circle-svg">
+                    <svg width="400" height="300" viewBox="0 0 400 300">
+                        <!-- Ejes coordenados: σ horizontal, τ vertical -->
+                        <line x1="50" y1="150" x2="350" y2="150" stroke="#2c3e50" stroke-width="2" />
+                        <line x1="200" y1="250" x2="200" y2="50" stroke="#2c3e50" stroke-width="2" />
+                        <text x="360" y="140" font-size="12">σ (ksi)</text>
+                        <text x="210" y="40" font-size="12">τ (ksi)</text>
+                        <!-- Centro del círculo -->
+                        <circle cx="200" cy="150" r="5" fill="#e67e22" />
+                        <text x="210" y="130" font-size="12">C (30,0)</text>
+                        <!-- Punto A (σx, τxy) = (40, 10) -->
+                        <circle cx="240" cy="140" r="5" fill="#3498db" />
+                        <text x="250" y="120" font-size="12">A (40,10)</text>
+                        <!-- Punto B (σy, -τxy) = (20, -10) -->
+                        <circle cx="160" cy="160" r="5" fill="#3498db" />
+                        <text x="120" y="180" font-size="12">B (20,-10)</text>
+                        <!-- Círculo -->
+                        <ellipse cx="200" cy="150" rx="40" ry="40" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5 3" />
+                        <!-- Radio indicado -->
+                        <line x1="200" y1="150" x2="240" y2="140" stroke="#9b59b6" stroke-width="2" />
+                        <text x="220" y="100" font-size="12" fill="#9b59b6">R ≈ 14.1</text>
+                        <!-- Línea horizontal del radio -->
+                        <line x1="200" y1="150" x2="240" y2="150" stroke="#2c3e50" stroke-width="1" stroke-dasharray="2" />
+                        <text x="220" y="170" font-size="10">Δσ/2 = 10</text>
+                        <!-- Línea vertical -->
+                        <line x1="240" y1="140" x2="240" y2="150" stroke="#2c3e50" stroke-width="1" stroke-dasharray="2" />
+                        <text x="250" y="145" font-size="10">τ = 10</text>
+                    </svg>
+                </div>
+                <p style="text-align: center; font-size: 14px; color: #555;">Círculo de Mohr: centro (30,0), radio √(10²+10²) = 14.1 ksi.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">7</div>
+                    <h3>Comparación con las opciones</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Valor (ksi)</th>
+                            <th>¿Correcta?</th>
+                            <th>Explicación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>10</td>
+                            <td>No</td>
+                            <td>Es el valor de τₓᵧ o de (σₓ-σᵧ)/2 por separado, no la combinación cuadrática.</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td><strong>14.1</strong></td>
+                            <td><strong>Sí</strong></td>
+                            <td>Coincide con √((40-20)/2)²+10² = √200 = 14.14 ≈ 14.1.</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>44.1</td>
+                            <td>No</td>
+                            <td>Podría ser la suma σₓ+τₓᵧ (40+10=50) o algo similar, no tiene relación.</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>316</td>
+                            <td>No</td>
+                            <td>Un valor muy alto, tal vez el resultado de usar σₓ²+τₓᵧ² = 1600+100=1700, √1700≈41.2, no 316.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formula-box" style="background-color: #fce8e8; border-left-color: #e74c3c;">
+                    <p><strong>Error común:</strong> Olvidar elevar al cuadrado y sumar ambos términos, o confundir el esfuerzo cortante máximo con el esfuerzo cortante aplicado τₓᵧ. El radio siempre es mayor o igual que |τₓᵧ|.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">14.1 ksi (Opción B)</div>
+            <p>El esfuerzo cortante máximo en el plano es aproximadamente 14.1 ksi.</p>
+        </div>
+
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Círculo de Mohr para esfuerzo plano:</strong> Herramienta gráfica que representa todos los estados de esfuerzo posibles en un punto al rotar el elemento.</li>
+                <li><strong>Esfuerzo cortante máximo en el plano (τ<sub>máx</sub>):</strong> Es el radio del círculo de Mohr. Su valor es siempre \(\sqrt{((\sigma_x - \sigma_y)/2)^2 + \tau_{xy}^2}\).</li>
+                <li><strong>Esfuerzos principales:</strong> σ₁ = σ<sub>prom</sub> + R, σ₂ = σ<sub>prom</sub> – R. En este caso σ₁ = 30+14.1 = 44.1 ksi (opción C, que es uno de los distractores) y σ₂ = 30–14.1 = 15.9 ksi.</li>
+                <li><strong>Transformación de esfuerzos:</strong> Las ecuaciones de transformación permiten obtener esfuerzos en cualquier plano inclinado.</li>
+                <li><strong>Orientación del esfuerzo cortante máximo:</strong> Ocurre en planos a 45° de los planos principales.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de ejes y componentes sometidos a esfuerzos combinados:</strong> El criterio de falla de Tresca (máximo esfuerzo cortante) utiliza τ<sub>máx</sub> para predecir la fluencia en materiales dúctiles.</li>
+                <li><strong>Análisis de recipientes a presión:</strong> Los esfuerzos en las paredes se combinan y es necesario conocer τ<sub>máx</sub> para evaluar la seguridad.</li>
+                <li><strong>Uniones soldadas y atornilladas:</strong> La resistencia al corte suele ser crítica.</li>
+                <li><strong>Fatiga:</strong> Los esfuerzos cortantes alternantes contribuyen al inicio de grietas.</li>
+            </ul>
+            <div class="formula-box">
+                <div class="formula-title">📌 Fórmulas importantes</div>
+                <div class="formula">\(\sigma_{1,2} = \dfrac{\sigma_x + \sigma_y}{2} \pm \sqrt{\left(\dfrac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}\)</div>
+                <div class="formula">\(\tau_{\text{máx}} = \sqrt{\left(\dfrac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2} = \dfrac{\sigma_1 - \sigma_2}{2}\)</div>
+            </div>
+        </div>
+
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta corresponde a la sección de <em>Mechanics of Materials</em>, subsección <em>Stress transformations and Mohr's circle</em>. El manual incluye las ecuaciones de transformación de esfuerzos y la construcción del círculo de Mohr. También presenta ejemplos de cálculo del esfuerzo cortante máximo y los esfuerzos principales.</p>
+            <p><em>NCEES FE Reference Handbook, sección "Mechanics of Materials", subsección "Stress transformations and Mohr's circle".</em></p>
+        </div>
+
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

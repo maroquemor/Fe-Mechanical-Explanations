@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 32 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .diagram-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .fbd-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 32 del FE Mechanical</h1>
+            <p class="subtitle">Tensión en cables simétricos que soportan una masa</p>
+        </header>
+
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>32. The hoist shown is holding an engine with a mass of 100 kg. The tension in the left cable (N) is most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. 490 &nbsp; B. 566 &nbsp; C. 849 &nbsp; D. 981</p>
+                    <p>Respuesta correcta según el PDF: <strong>D (981 N)</strong></p>
+                </div>
+            </div>
+
+            <!-- Diagrama del polipasto / configuración de cables -->
+            <div class="diagram-section">
+                <div class="fbd-container">
+                    <svg width="350" height="220" viewBox="0 0 350 220">
+                        <!-- Gancho o punto de unión E -->
+                        <circle cx="175" cy="70" r="6" fill="#2c3e50" />
+                        <text x="180" y="55" font-size="12">E</text>
+                        <!-- Masa (motor) -->
+                        <rect x="155" y="130" width="40" height="30" fill="#e74c3c" opacity="0.8" stroke="#2c3e50" stroke-width="2"/>
+                        <text x="165" y="115" font-size="12">100 kg</text>
+                        <!-- Cables izquierdo y derecho -->
+                        <line x1="60" y1="20" x2="170" y2="65" stroke="#2c3e50" stroke-width="2.5"/>
+                        <line x1="290" y1="20" x2="180" y2="65" stroke="#2c3e50" stroke-width="2.5"/>
+                        <!-- Poleas superiores (representación) -->
+                        <circle cx="60" cy="20" r="8" fill="#bdc3c7" stroke="#2c3e50" stroke-width="1.5"/>
+                        <circle cx="290" cy="20" r="8" fill="#bdc3c7" stroke="#2c3e50" stroke-width="1.5"/>
+                        <!-- Ángulo de 30° -->
+                        <text x="90" y="40" font-size="12" fill="#e67e22">30°</text>
+                        <text x="220" y="40" font-size="12" fill="#e67e22">30°</text>
+                        <!-- Líneas de ángulo (opcional) -->
+                        <line x1="60" y1="20" x2="100" y2="20" stroke="#e67e22" stroke-width="1" stroke-dasharray="3"/>
+                        <line x1="60" y1="20" x2="60" y2="50" stroke="#e67e22" stroke-width="1" stroke-dasharray="3"/>
+                        <line x1="290" y1="20" x2="250" y2="20" stroke="#e67e22" stroke-width="1" stroke-dasharray="3"/>
+                        <line x1="290" y1="20" x2="290" y2="50" stroke="#e67e22" stroke-width="1" stroke-dasharray="3"/>
+                        <!-- Tensión izquierda T -->
+                        <text x="30" y="70" font-size="14" fill="#3498db">T</text>
+                        <!-- Tensión derecha T -->
+                        <text x="300" y="70" font-size="14" fill="#3498db">T</text>
+                        <!-- Peso W -->
+                        <text x="210" y="170" font-size="14" fill="#e74c3c">W = mg</text>
+                    </svg>
+                    <p style="margin-top: 10px; font-size: 14px; color: #555;">
+                        Configuración simétrica: dos cables forman 30° con la horizontal. El punto E es la unión.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Diagrama de cuerpo libre en el punto E</h3>
+                </div>
+                <p>El motor de masa \(m = 100\ \text{kg}\) genera una fuerza hacia abajo:</p>
+                <div class="formula">
+                    \(W = m \cdot g = 100 \times 9.81 = 981\ \text{N}\)
+                </div>
+                <p>En el punto E (unión de los cables), actúan tres fuerzas:</p>
+                <ul class="concept-list">
+                    <li>Peso del motor, \(W = 981\ \text{N}\), vertical hacia abajo.</li>
+                    <li>Tensión en el cable izquierdo, \(T\) (desconocida).</li>
+                    <li>Tensión en el cable derecho, \(T\) (por simetría, ambas tensiones son iguales).</li>
+                </ul>
+                <p>Los cables forman un ángulo de 30° con la horizontal (dato implícito en la figura).</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Descomposición de fuerzas</h3>
+                </div>
+                <p>La tensión en cada cable se descompone en componentes horizontal y vertical:</p>
+                <div class="formula">
+                    \(T_x = T \cos 30^\circ\)<br>
+                    \(T_y = T \sin 30^\circ\)
+                </div>
+                <p>Por simetría, las componentes horizontales se cancelan mutuamente. Las componentes verticales de ambos cables se suman para equilibrar el peso.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Ecuación de equilibrio vertical</h3>
+                </div>
+                <div class="formula">
+                    \(\sum F_y = 0 \quad \Rightarrow \quad 2\,T\sin 30^\circ = W\)
+                </div>
+                <p>Sustituimos \(W = 981\ \text{N}\) y \(\sin 30^\circ = 0.5\):</p>
+                <div class="calculation-steps">
+                    <p>\(2 \times T \times 0.5 = 981\)</p>
+                    <p>\(T = 981 \div (2 \times 0.5) = 981 \div 1\)</p>
+                    <p class="step-result">\(T = 981\ \text{N}\)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Interpretación del resultado</h3>
+                </div>
+                <p>La tensión en el cable izquierdo (y también en el derecho) es exactamente igual al peso del motor, debido al ángulo de 30° que produce \(\sin 30° = 0.5\) y por lo tanto el factor \(2\sin30° = 1\).</p>
+                <div class="formula-box">
+                    <div class="formula-title">✅ Observación</div>
+                    <p>Cuando el ángulo con la horizontal es 30°, \(\sin30° = 0.5\) y \(2\sin30° = 1\), por lo que \(T = W\).</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Comparación con las opciones</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Valor (N)</th>
+                            <th>¿Correcta?</th>
+                            <th>Observación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>A</td><td>490</td><td>No</td><td>Aproximadamente \(mg/2\) (usando \(g=9.8\) daría 490 N). Error común: dividir el peso entre 2.</td></tr>
+                        <tr><td>B</td><td>566</td><td>No</td><td>Podría obtenerse con \(g=9.81\) y \(\sin 60°\) u otra combinación.</td></tr>
+                        <tr><td>C</td><td>849</td><td>No</td><td>Valor cercano a \(100 \times 9.81 \times \cos30°\) o similar.</td></tr>
+                        <tr><td>D</td><td>981</td><td><strong>Sí</strong></td><td>Coincide con el cálculo exacto \(m g\).</td></tr>
+                    </tbody>
+                </table>
+                <div class="formula-box" style="background-color: #fce8e8; border-left-color: #e74c3c;">
+                    <p><strong>Error frecuente:</strong> Suponer que la tensión es la mitad del peso (\(mg/2\)) sin considerar el ángulo. La relación correcta es \(T = \dfrac{mg}{2\sin\theta}\).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">981 N (Opción D)</div>
+            <p>La tensión en el cable izquierdo es de 981 Newtons.</p>
+        </div>
+
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Equilibrio de partículas:</strong> La suma de fuerzas en cualquier dirección debe ser cero.</li>
+                <li><strong>Simetría:</strong> Cuando la geometría y las cargas son simétricas, las tensiones en elementos simétricos son iguales.</li>
+                <li><strong>Descomposición de fuerzas:</strong> Una fuerza puede reemplazarse por sus componentes ortogonales.</li>
+                <li><strong>Ángulos notables:</strong> \(\sin 30° = 0.5\), \(\cos 30° = 0.8660\), \(\tan 30° = 0.5774\).</li>
+                <li><strong>Peso:</strong> Fuerza gravitacional \(W = mg\). Aceleración gravitacional \(g = 9.81\ \text{m/s}^2\).</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de aparejos y grúas:</strong> Cálculo de tensiones en cables y eslingas.</li>
+                <li><strong>Elevación y transporte:</strong> Determinación de la capacidad de carga de elementos de izaje.</li>
+                <li><strong>Análisis de armaduras y estructuras:</strong> Uso del equilibrio de nudos.</li>
+                <li><strong>Selección de componentes:</strong> Los cables deben resistir la tensión calculada con un factor de seguridad adecuado.</li>
+            </ul>
+            <div class="formula-box">
+                <div class="formula-title">📌 Fórmula general para dos cables simétricos</div>
+                <div class="formula">\(T = \dfrac{W}{2\sin\theta}\)</div>
+                <p>Donde \(\theta\) es el ángulo que forma cada cable con la horizontal. Para \(\theta = 30°\), \(T = W\).</p>
+            </div>
+        </div>
+
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta corresponde a la sección de <em>Statics</em>, específicamente a <em>Resolution of a Force</em> y <em>Equilibrium of Particles</em>. La descomposición de fuerzas y las ecuaciones de equilibrio se tratan en el apartado de sistemas de fuerzas concurrentes.</p>
+            <p><em>NCEES FE Reference Handbook, sección "Statics", subsecciones "Resultants of force systems" y "Concurrent force systems".</em></p>
+        </div>
+
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

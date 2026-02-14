@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 31 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .figure-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .section-svg {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .dimension-line {
+            stroke: #2c3e50;
+            stroke-width: 1;
+            stroke-dasharray: 4;
+        }
+
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 31 del FE Mechanical</h1>
+            <p class="subtitle">Teorema de los Ejes Paralelos - Momento de Inercia de una Sección I</p>
+        </header>
+
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>31. The moment of inertia about the centroid axis (Y‑Y) of the figure below is 606 in⁴. The moment of inertia (in⁴) about a parallel axis (Y'‑Y') that is 1 in. higher is</strong></p>
+                <p style="margin-top: 10px;">(Ingrese su respuesta en el espacio provisto.)</p>
+                <p><strong>Respuesta correcta según el PDF:</strong> <span style="background-color: #2ecc71; color: white; padding: 3px 10px; border-radius: 5px;">648 in⁴</span></p>
+            </div>
+
+            <!-- Representación gráfica de la sección I -->
+            <div class="figure-section">
+                <div class="section-svg">
+                    <svg width="320" height="250" viewBox="0 0 320 250">
+                        <!-- Sección I (dimensiones en pulgadas) -->
+                        <rect x="100" y="30" width="90" height="20" fill="#a0c8f0" stroke="#2c3e50" stroke-width="2" />
+                        <rect x="100" y="50" width="90" height="60" fill="#a0c8f0" stroke="#2c3e50" stroke-width="2" />
+                        <rect x="100" y="110" width="90" height="20" fill="#a0c8f0" stroke="#2c3e50" stroke-width="2" />
+                        
+                        <!-- Eje centroidal Y-Y -->
+                        <line x1="145" y1="20" x2="145" y2="140" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,3" />
+                        <text x="150" y="15" font-size="12" fill="#e74c3c">Y</text>
+                        <text x="150" y="150" font-size="12" fill="#e74c3c">Y</text>
+                        
+                        <!-- Eje paralelo Y'-Y' (1 in más arriba) -->
+                        <line x1="145" y1="0" x2="145" y2="20" stroke="#f39c12" stroke-width="2" stroke-dasharray="5,3" />
+                        <text x="150" y="8" font-size="12" fill="#f39c12">Y'</text>
+                        <text x="150" y="35" font-size="12" fill="#f39c12">Y'</text>
+                        
+                        <!-- Flecha indicando distancia de 1 in -->
+                        <line x1="165" y1="50" x2="165" y2="30" stroke="#2c3e50" stroke-width="1.5" />
+                        <polygon points="163,34 165,24 167,34" fill="#2c3e50" />
+                        <text x="175" y="36" font-size="12">d = 1 in</text>
+                        
+                        <!-- Acotaciones -->
+                        <line x1="100" y1="140" x2="190" y2="140" stroke="#2c3e50" stroke-width="1.5" />
+                        <text x="140" y="155" font-size="12">9 in</text>
+                        
+                        <line x1="80" y1="30" x2="80" y2="50" stroke="#2c3e50" stroke-width="1.5" />
+                        <text x="60" y="38" font-size="12">2 in</text>
+                        
+                        <line x1="80" y1="50" x2="80" y2="110" stroke="#2c3e50" stroke-width="1.5" />
+                        <text x="55" y="78" font-size="12">6 in</text>
+                        
+                        <line x1="80" y1="110" x2="80" y2="130" stroke="#2c3e50" stroke-width="1.5" />
+                        <text x="60" y="118" font-size="12">2 in</text>
+                        
+                        <line x1="200" y1="50" x2="220" y2="50" stroke="#2c3e50" stroke-width="1.5" />
+                        <text x="225" y="54" font-size="12">1 in</text>
+                    </svg>
+                    <p style="font-size: 14px; color: #555;">Sección transversal (I) con dimensiones. El eje Y‑Y es centroidal horizontal; Y'‑Y' está 1 in por encima.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Teorema de los ejes paralelos</h3>
+                </div>
+                <p>El momento de inercia de un área con respecto a un eje paralelo a un eje que pasa por el centroide se calcula mediante:</p>
+                <div class="formula">
+                    \( I = I_c + A \cdot d^2 \)
+                </div>
+                <p>Donde:</p>
+                <ul class="concept-list">
+                    <li><strong>\(I_c\)</strong> = momento de inercia respecto al eje centroidal.</li>
+                    <li><strong>\(A\)</strong> = área total de la sección.</li>
+                    <li><strong>\(d\)</strong> = distancia perpendicular entre los dos ejes paralelos.</li>
+                </ul>
+                <div class="formula-box">
+                    <div class="formula-title">⚠️ Importante</div>
+                    <p>El teorema sólo es válido si uno de los ejes pasa por el centroide. En este caso, conocemos \(I_c\) y debemos hallar \(I\) para un eje paralelo desplazado.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Datos proporcionados</h3>
+                </div>
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Símbolo</th>
+                            <th>Valor</th>
+                            <th>Unidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Momento centroidal (Y‑Y)</td><td>\(I_c\)</td><td>606</td><td>in⁴</td></tr>
+                        <tr><td>Área de la sección</td><td>\(A\)</td><td>42</td><td>in²</td></tr>
+                        <tr><td>Distancia entre ejes</td><td>\(d\)</td><td>1</td><td>in</td></tr>
+                    </tbody>
+                </table>
+                <div class="calculation-steps">
+                    <p><strong>Cálculo del área (verificación):</strong></p>
+                    <p>La sección I se compone de tres rectángulos:</p>
+                    <p>Ala superior: \(9 \times 2 = 18\ \text{in}^2\)<br>
+                    Alma: \(1 \times 6 = 6\ \text{in}^2\)<br>
+                    Ala inferior: \(9 \times 2 = 18\ \text{in}^2\)</p>
+                    <p>Total: \(A = 18 + 6 + 18 = 42\ \text{in}^2\) ✓</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Aplicación del teorema</h3>
+                </div>
+                <p>Sustituimos los valores en la fórmula del teorema de los ejes paralelos:</p>
+                <div class="formula">
+                    \(I = 606\ \text{in}^4 + (42\ \text{in}^2) \cdot (1\ \text{in})^2\)
+                </div>
+                <div class="calculation-steps">
+                    <p>\(I = 606 + 42 \times 1\)</p>
+                    <p>\(I = 606 + 42\)</p>
+                    <p class="step-result">\(I = 648\ \text{in}^4\)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Interpretación del resultado</h3>
+                </div>
+                <p>El momento de inercia alrededor de un eje horizontal situado 1 pulgada por encima del centroide es <strong>648 in⁴</strong>. Este valor es mayor que el momento centroidal debido a que la distribución del área está más alejada del nuevo eje.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Respuesta final</h3>
+                </div>
+                <div class="answer-box" style="background-color: #2ecc71; color: white; margin-top: 0;">
+                    <div class="answer-title">Momento de inercia respecto a Y'‑Y'</div>
+                    <div class="answer-text">648 in⁴</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Momento de inercia de área (segundo momento):</strong> Propiedad geométrica que mide la resistencia a la flexión. Unidades: longitud⁴.</li>
+                <li><strong>Eje centroidal:</strong> Eje que pasa por el centroide del área. El momento de inercia respecto a este eje es el mínimo para cualquier dirección dada.</li>
+                <li><strong>Teorema de los ejes paralelos (Steiner):</strong> Permite calcular el momento de inercia respecto a cualquier eje paralelo a un eje centroidal.</li>
+                <li><strong>Sección I:</strong> Perfil estructural común; su momento de inercia puede calcularse como suma (o resta) de rectángulos.</li>
+                <li><strong>Aplicación en ingeniería:</strong> Diseño de vigas, columnas, ejes – la resistencia a la flexión es proporcional al momento de inercia.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de vigas:</strong> El momento de inercia determina la rigidez y las deflexiones bajo carga.</li>
+                <li><strong>Análisis de esfuerzos:</strong> El esfuerzo por flexión es \(\sigma = My/I\); conocer \(I\) es fundamental.</li>
+                <li><strong>Selección de perfiles:</strong> Catálogos de acero estructural proporcionan valores de \(I\) para ejes centroidales; a menudo es necesario transferir a otros ejes.</li>
+                <li><strong>Máquinas y mecanismos:</strong> Componentes como bielas, cigüeñales, estructuras de vehículos requieren conocer momentos de inercia para análisis dinámico.</li>
+                <li><strong>Ingeniería aeroespacial:</strong> Secciones de alas y fuselaje se modelan como áreas compuestas; el teorema de ejes paralelos es indispensable.</li>
+            </ul>
+            <div class="formula-box">
+                <div class="formula-title">📐 Fórmulas útiles para secciones comunes</div>
+                <p>Rectángulo (base b, altura h): \(I_x = \frac{bh^3}{12}\) (eje centroidal horizontal)</p>
+                <p>Círculo: \(I_x = \frac{\pi r^4}{4}\)</p>
+                <p>Sección I (simétrica): puede descomponerse en rectángulos y aplicar el teorema.</p>
+            </div>
+        </div>
+
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta corresponde a la sección de <em>Statics</em>, subsección <em>Moment of Inertia / Parallel Axis Theorem</em>. El manual incluye tablas de propiedades de áreas y la fórmula \(I = \bar{I} + Ad^2\). Números de página (dependiendo de la edición) en la sección de Mecánica de Materiales o Estática.</p>
+            <p><em>NCEES FE Reference Handbook, sección "Statics", subsección "Moments of Inertia of Areas".</em></p>
+        </div>
+
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

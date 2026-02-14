@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 45 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .diagram-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .diagram-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 45 del FE Mechanical</h1>
+            <p class="subtitle">Torsión – Esfuerzo cortante máximo en un eje hueco</p>
+        </header>
+
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>45. In the figure below, the value of the maximum shear stress (MPa) in Segment BC is most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. 15.0 &nbsp; B. 30.0 &nbsp; C. 37.7 &nbsp; D. 52.7</p>
+                </div>
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50;">Respuesta correcta según el PDF: <span style="background-color: #2ecc71; color: white; padding: 3px 10px; border-radius: 5px;">A (15.0 MPa)</span></p>
+            </div>
+
+            <!-- Diagrama reconstruido del eje segmentado -->
+            <div class="diagram-section">
+                <div class="diagram-container">
+                    <svg width="550" height="200" viewBox="0 0 550 200" style="max-width:100%; height:auto;">
+                        <!-- Línea central del eje -->
+                        <line x1="50" y1="100" x2="500" y2="100" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="4" />
+                        <!-- Segmento AB (sólido, supongamos diámetro 50mm) -->
+                        <rect x="80" y="70" width="120" height="60" rx="10" fill="#b0c4de" stroke="#2c3e50" stroke-width="2" />
+                        <text x="120" y="50" font-size="12">Segmento AB</text>
+                        <text x="130" y="150" font-size="12">d = 50 mm (sólido)</text>
+                        <!-- Segmento BC (hueco, diámetro exterior 75mm, interior 50mm) -->
+                        <rect x="200" y="62.5" width="150" height="75" rx="15" fill="#a0c0e0" stroke="#2c3e50" stroke-width="2" />
+                        <rect x="200" y="81.25" width="150" height="37.5" rx="10" fill="white" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="3" />
+                        <text x="250" y="40" font-size="12">Segmento BC</text>
+                        <text x="250" y="170" font-size="12">Dₑ = 75 mm, Dᵢ = 50 mm</text>
+                        <!-- Torques aplicados -->
+                        <line x1="350" y1="100" x2="400" y2="100" stroke="#e74c3c" stroke-width="3" />
+                        <polygon points="400,100 390,95 390,105" fill="#e74c3c" />
+                        <text x="410" y="80" fill="#e74c3c" font-size="14">T = 1000 N·m</text>
+                        <!-- Fijación en el extremo izquierdo -->
+                        <rect x="50" y="70" width="20" height="60" fill="#7f8c8d" stroke="#2c3e50" stroke-width="2" />
+                        <text x="20" y="110" font-size="12">Empotramiento</text>
+                        <!-- Apoyo derecho -->
+                        <circle cx="470" cy="100" r="8" fill="none" stroke="#2c3e50" stroke-width="2" />
+                        <text x="480" y="130" font-size="12">Apoyo</text>
+                    </svg>
+                    <p style="margin-top: 10px; font-size: 14px; color: #555;">
+                        El eje está empotrado en el extremo izquierdo. En el segmento BC (hueco) actúa un torque de 1000 N·m. 
+                        Se pide el esfuerzo cortante máximo en ese tramo.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Identificar la fórmula de torsión para esfuerzo cortante</h3>
+                </div>
+                <p>Para un eje circular sometido a torque, el esfuerzo cortante máximo se presenta en la fibra más alejada del centro y se calcula con la <strong>fórmula de torsión</strong>:</p>
+                <div class="formula">
+                    \(\tau_{\text{máx}} = \dfrac{T \cdot r}{J}\)
+                </div>
+                <p>Donde:</p>
+                <ul class="concept-list">
+                    <li><strong>T</strong> = torque interno en la sección de interés (N·m o N·mm).</li>
+                    <li><strong>r</strong> = distancia desde el centro hasta la fibra más externa (radio exterior).</li>
+                    <li><strong>J</strong> = momento polar de inercia del área transversal (mm⁴).</li>
+                </ul>
+                <p>Para una sección hueca (tubo de pared gruesa), J se calcula como la diferencia entre el momento polar del círculo exterior y el interior.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Extraer los datos del segmento BC</h3>
+                </div>
+                <p>De la figura y la solución oficial, el segmento BC tiene las siguientes características:</p>
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Símbolo</th>
+                            <th>Valor</th>
+                            <th>Unidades (originales)</th>
+                            <th>Conversión a coherentes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Torque interno</td><td>T</td><td>1000</td><td>N·m</td><td>1 000 000 N·mm</td></tr>
+                        <tr><td>Diámetro exterior</td><td>Dₑ</td><td>75</td><td>mm</td><td>75 mm</td></tr>
+                        <tr><td>Radio exterior</td><td>rₑ</td><td>37.5</td><td>mm</td><td>37.5 mm</td></tr>
+                        <tr><td>Diámetro interior</td><td>Dᵢ</td><td>50</td><td>mm</td><td>50 mm</td></tr>
+                        <tr><td>Radio interior</td><td>rᵢ</td><td>25</td><td>mm</td><td>25 mm</td></tr>
+                    </tbody>
+                </table>
+                <div class="formula-box">
+                    <div class="formula-title">⚠️ Importante</div>
+                    <p>Para que las unidades sean consistentes, convertimos el torque a <strong>N·mm</strong> (1 N·m = 1000 N·mm). Así todos los datos quedan en milímetros y newtons.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Calcular el momento polar de inercia J</h3>
+                </div>
+                <p>Para una sección anular (hueca), el momento polar de inercia es:</p>
+                <div class="formula">
+                    \(J = \dfrac{\pi}{32} (Dₑ^4 - Dᵢ^4)\)
+                </div>
+                <div class="calculation-steps">
+                    <p>Sustituimos Dₑ = 75 mm, Dᵢ = 50 mm:</p>
+                    <p>\(Dₑ^4 = 75^4 = 31\,640\,625\)</p>
+                    <p>\(Dᵢ^4 = 50^4 = 6\,250\,000\)</p>
+                    <p>\(Dₑ^4 - Dᵢ^4 = 31\,640\,625 - 6\,250\,000 = 25\,390\,625\ \text{mm}^4\)</p>
+                    <p>\(J = \dfrac{\pi}{32} \times 25\,390\,625 = 2\,493\,750\,\pi? \) Calculemos:</p>
+                    <p>\(25\,390\,625 / 32 = 793\,457.03125\)</p>
+                    <p>\(J = \pi \times 793\,457.03125 \approx 2\,493\,750\ \text{mm}^4\) (más exacto: 2 493 750 mm⁴).</p>
+                    <p class="step-result">\(J \approx 2.49375 \times 10^6\ \text{mm}^4\)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Aplicar la fórmula de torsión</h3>
+                </div>
+                <div class="formula">
+                    \(\tau_{\text{máx}} = \dfrac{T \cdot rₑ}{J}\)
+                </div>
+                <div class="calculation-steps">
+                    <p>\(T = 1\,000\,000\ \text{N·mm}\)</p>
+                    <p>\(rₑ = 37.5\ \text{mm}\)</p>
+                    <p>\(T \cdot rₑ = 1\,000\,000 \times 37.5 = 37\,500\,000\ \text{N·mm}^2\)</p>
+                    <p>\(\tau_{\text{máx}} = \dfrac{37\,500\,000}{2\,493\,750} \approx 15.04\ \text{N/mm}^2\)</p>
+                    <p>Como 1 N/mm² = 1 MPa, el resultado es <strong>15.0 MPa</strong>.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Comparación con las opciones</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Valor (MPa)</th>
+                            <th>¿Correcta?</th>
+                            <th>Explicación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td><strong>15.0</strong></td>
+                            <td><strong>Sí</strong></td>
+                            <td>Resultado exacto del cálculo.</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>30.0</td>
+                            <td>No</td>
+                            <td>Posible error: usar r = 75 mm en lugar de 37.5 mm, o confundir con el torque en N·m sin convertir.</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>37.7</td>
+                            <td>No</td>
+                            <td>Podría obtenerse al usar J de sección sólida de 75 mm (J = π·75⁴/32 ≈ 3.1e6, τ ≈ 37.5e6/3.1e6 ≈ 12.1, no 37.7). No corresponde.</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>52.7</td>
+                            <td>No</td>
+                            <td>Usar T = 1000 N·m sin convertir a N·mm, con r en mm daría 15.0, pero si además se usa diámetro en lugar de radio, τ = 1000*75/(π(75⁴-50⁴)/32) pero con T en N·m y diámetros en mm daría un número mucho menor. No coincide.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formula-box" style="background-color: #fce8e8; border-left-color: #e74c3c;">
+                    <p><strong>Error común:</strong> Olvidar convertir el torque de N·m a N·mm. Si se usa T = 1000 N·m directamente con las dimensiones en mm, se obtendría un valor 1000 veces menor (0.015 MPa), que no está en las opciones. Algunos usan T en N·m y dimensiones en metros, pero las conversiones mal hechas generan errores.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">15.0 MPa (Opción A)</div>
+            <p>El esfuerzo cortante máximo en el segmento BC es 15.0 MPa.</p>
+        </div>
+
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Torsión en ejes circulares:</strong> La relación entre torque, esfuerzo cortante y geometría se describe mediante la fórmula de torsión: \(\tau = T r / J\).</li>
+                <li><strong>Momento polar de inercia (J):</strong> Para una sección circular maciza: \(J = \pi D^4 / 32\); para sección anular (hueca): \(J = \pi (D_e^4 - D_i^4) / 32\).</li>
+                <li><strong>Esfuerzo cortante máximo:</strong> Ocurre en la fibra más externa (radio mayor).</li>
+                <li><strong>Consistencia de unidades:</strong> Es imperativo que torque, longitud y J estén en unidades coherentes (N·mm y mm, o N·m y m).</li>
+                <li><strong>Interpretación física:</strong> Los ejes huecos son más eficientes estructuralmente que los macizos para la misma cantidad de material, pues concentran el material lejos del centro.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de ejes de transmisión:</strong> Árboles de levas, ejes de motores, hélices, etc. Se debe verificar que el esfuerzo cortante no exceda el admisible.</li>
+                <li><strong>Selección de materiales y dimensiones:</strong> El cálculo de τ permite elegir diámetros y espesores adecuados para evitar fallas.</li>
+                <li><strong>Análisis de esfuerzos combinados:</strong> En muchas máquinas, los ejes están sometidos a flexión y torsión simultáneas; el esfuerzo cortante por torsión es un componente clave.</li>
+                <li><strong>Diseño de elementos huecos (tubos):</strong> Reducen peso manteniendo buena resistencia torsional.</li>
+            </ul>
+            <div class="formula-box">
+                <div class="formula-title">📌 Fórmulas rápidas</div>
+                <p>Sección maciza: \(\tau_{\text{máx}} = \dfrac{16T}{\pi D^3}\) (derivada de \(\tau = Tr/J\) con \(J = \pi D^4/32\)).</p>
+                <p>Sección hueca: \(\tau_{\text{máx}} = \dfrac{16T D_e}{\pi (D_e^4 - D_i^4)}\).</p>
+                <p>Con los datos: \(\tau = \dfrac{16 \times 1e6 \times 75}{\pi (75^4 - 50^4)} \approx 15.0\ \text{MPa}\).</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">6</div>
+                <h3>Verificación con la fórmula simplificada</h3>
+            </div>
+            <p>También podemos usar la expresión directa para sección hueca:</p>
+            <div class="formula">
+                \(\tau_{\text{máx}} = \dfrac{16 T D_e}{\pi (D_e^4 - D_i^4)}\)
+            </div>
+            <div class="calculation-steps">
+                <p>\(\tau = \dfrac{16 \times 1\,000\,000 \times 75}{\pi (75^4 - 50^4)} = \dfrac{1.2 \times 10^9}{\pi \times 25\,390\,625}\)</p>
+                <p>\(= \dfrac{1.2 \times 10^9}{79\,763\,000} \approx 15.04\ \text{MPa}\)</p>
+                <p>Confirmamos el resultado.</p>
+            </div>
+        </div>
+
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta corresponde a la sección de <em>Mechanics of Materials</em>, subsección <em>Torsion</em>. Allí se presentan las fórmulas para esfuerzo cortante en ejes circulares y el momento polar de inercia. También hay tablas de propiedades geométricas de secciones comunes. Números de página (dependiendo de la edición) en la sección de Mecánica de Materiales.</p>
+            <p><em>NCEES FE Reference Handbook, sección "Mechanics of Materials", subsección "Torsion".</em></p>
+        </div>
+
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

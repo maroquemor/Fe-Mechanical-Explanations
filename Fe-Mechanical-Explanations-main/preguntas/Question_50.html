@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 50 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .diagram-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .diagram-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 50 del FE Mechanical</h1>
+            <p class="subtitle">Esfuerzo Térmico en Barras con Extremos Fijos</p>
+        </header>
+
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>50. A 50‑m length of rail is installed in a railroad switching station during summer. It is rigidly attached at each end while the ambient temperature is 30°C. During winter, the ambient temperature at this section of track drops to −10°C. Based on the properties listed in the following table, the axial stress (MPa) in the section of track is most nearly:</strong></p>
+                <table style="width:100%; border-collapse: collapse; margin: 15px 0; background-color: white;">
+                    <thead>
+                        <tr style="background-color: #3498db; color: white;">
+                            <th style="padding: 10px; border: 1px solid #ddd;">Propiedad</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;">Densidad (mg/m³)</td><td style="padding: 8px; border: 1px solid #ddd;">7.85</td></tr>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;">Young's Modulus (GPa)</td><td style="padding: 8px; border: 1px solid #ddd;">200</td></tr>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;">Rigidity (GPa)</td><td style="padding: 8px; border: 1px solid #ddd;">75</td></tr>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;">Yield Strength (MPa)</td><td style="padding: 8px; border: 1px solid #ddd;">250</td></tr>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;">Ultimate Stress (MPa)</td><td style="padding: 8px; border: 1px solid #ddd;">400</td></tr>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;">Sample Elongation %</td><td style="padding: 8px; border: 1px solid #ddd;">30%</td></tr>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;">Poisson's Ratio</td><td style="padding: 8px; border: 1px solid #ddd;">0.32</td></tr>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;">Coefficient of Thermal Expansion (10⁻⁶/°C)</td><td style="padding: 8px; border: 1px solid #ddd;">12</td></tr>
+                    </tbody>
+                </table>
+                <div class="formula">
+                    <p>Opciones: A. 96 &nbsp; B. 72 &nbsp; C. 36 &nbsp; D. 29</p>
+                </div>
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50;">Respuesta correcta según el PDF: <span style="background-color: #2ecc71; color: white; padding: 3px 10px; border-radius: 5px;">A (96 MPa)</span></p>
+            </div>
+
+            <!-- Diagrama del riel fijo en ambos extremos -->
+            <div class="diagram-section">
+                <div class="diagram-container">
+                    <svg width="550" height="200" viewBox="0 0 550 200" style="max-width:100%; height:auto;">
+                        <!-- Riel (barra) -->
+                        <rect x="80" y="80" width="390" height="30" fill="#b0c4de" stroke="#2c3e50" stroke-width="2" />
+                        <!-- Apoyos fijos (empotramientos) -->
+                        <rect x="60" y="70" width="20" height="50" fill="#7f8c8d" stroke="#2c3e50" stroke-width="2" />
+                        <rect x="470" y="70" width="20" height="50" fill="#7f8c8d" stroke="#2c3e50" stroke-width="2" />
+                        <text x="45" y="55" font-size="12">Empotramiento</text>
+                        <text x="480" y="55" font-size="12">Empotramiento</text>
+                        <!-- Temperaturas -->
+                        <text x="250" y="40" font-size="14" fill="#e74c3c">Verano: 30°C</text>
+                        <text x="250" y="150" font-size="14" fill="#3498db">Invierno: -10°C</text>
+                        <!-- Deformación impedida (símbolo) -->
+                        <line x1="80" y1="120" x2="80" y2="140" stroke="#2c3e50" stroke-width="2" />
+                        <line x1="470" y1="120" x2="470" y2="140" stroke="#2c3e50" stroke-width="2" />
+                        <text x="260" y="180" font-size="12">La contracción térmica está totalmente restringida</text>
+                    </svg>
+                    <p style="margin-top: 10px; font-size: 14px; color: #555;">
+                        Riel de 50 m de longitud, rígidamente fijo en ambos extremos. Al descender la temperatura, se induce un esfuerzo de tracción por la restricción a la contracción.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Identificar el fenómeno físico</h3>
+                </div>
+                <p>Un cambio de temperatura en un material libre produce una deformación lineal proporcional al coeficiente de expansión térmica y al cambio de temperatura. Si el cuerpo está completamente restringido (no puede dilatarse ni contraerse), aparece un esfuerzo interno dado por la ley de Hooke.</p>
+                <div class="formula-box">
+                    <div class="formula-title">📌 Fórmula fundamental</div>
+                    <div class="formula">\(\sigma = E \cdot \alpha \cdot |\Delta T|\)</div>
+                    <p>donde \(E\) es el módulo de Young, \(\alpha\) el coeficiente de expansión térmica y \(\Delta T\) la variación de temperatura.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Extraer los datos relevantes de la tabla</h3>
+                </div>
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Símbolo</th>
+                            <th>Valor</th>
+                            <th>Unidades</th>
+                            <th>Conversión a coherentes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Módulo de Young</td>
+                            <td>\(E\)</td>
+                            <td>200</td>
+                            <td>GPa</td>
+                            <td>\(200 \times 10^3\ \text{MPa}\)</td>
+                        </tr>
+                        <tr>
+                            <td>Coef. expansión térmica</td>
+                            <td>\(\alpha\)</td>
+                            <td>12</td>
+                            <td>\(10^{-6}/°C\)</td>
+                            <td>\(12 \times 10^{-6}\ \text{°C}^{-1}\)</td>
+                        </tr>
+                        <tr>
+                            <td>Temperatura inicial</td>
+                            <td>\(T_0\)</td>
+                            <td>30</td>
+                            <td>°C</td>
+                            <td>–</td>
+                        </tr>
+                        <tr>
+                            <td>Temperatura final</td>
+                            <td>\(T_f\)</td>
+                            <td>−10</td>
+                            <td>°C</td>
+                            <td>–</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Nota: La longitud de 50 m no interviene en el cálculo del esfuerzo cuando la restricción es total; la tensión es independiente de la longitud.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Calcular el cambio de temperatura</h3>
+                </div>
+                <div class="formula">
+                    \(\Delta T = T_f - T_0 = (-10) - 30 = -40\ \text{°C}\)
+                </div>
+                <p>El signo negativo indica enfriamiento. Para el cálculo del esfuerzo solo interesa la magnitud absoluta, ya que la fórmula proporciona la magnitud del esfuerzo (tracción en este caso).</p>
+                <div class="calculation-steps">
+                    <p class="step-result">\(|\Delta T| = 40\ \text{°C}\)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Sustituir en la fórmula y obtener el esfuerzo</h3>
+                </div>
+                <div class="formula">
+                    \(\sigma = (200 \times 10^3\ \text{MPa}) \times (12 \times 10^{-6}\ \text{°C}^{-1}) \times 40\ \text{°C}\)
+                </div>
+                <div class="calculation-steps">
+                    <p>\(E \cdot \alpha = 200\,000 \times 12 \times 10^{-6} = 2.4\)</p>
+                    <p>\(\sigma = 2.4 \times 40 = 96\ \text{MPa}\)</p>
+                    <p class="step-result">\(\sigma = 96\ \text{MPa}\)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Interpretación del signo</h3>
+                </div>
+                <p>Como la temperatura disminuye, el material tiende a contraerse. Al estar impedida la contracción, el riel queda sometido a un <strong>esfuerzo de tracción</strong>. La magnitud calculada es positiva en la convención usual de tracción.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">6</div>
+                    <h3>Comparación con las opciones</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Valor (MPa)</th>
+                            <th>¿Correcta?</th>
+                            <th>Posible origen del error</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td><strong>96</strong></td>
+                            <td><strong>Sí</strong></td>
+                            <td>Cálculo exacto con los datos correctos.</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>72</td>
+                            <td>No</td>
+                            <td>Usar \(\Delta T = 30°C\) (omitir el signo, 30 - (-10)?) o \(\alpha = 9 \times 10^{-6}\).</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>36</td>
+                            <td>No</td>
+                            <td>Dividir el resultado por 2 o usar \(\Delta T = 15°C\).</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>29</td>
+                            <td>No</td>
+                            <td>Olvidar multiplicar por 40 o usar E = 200 GPa = 200 MPa (error de factor 1000).</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formula-box" style="background-color: #fce8e8; border-left-color: #e74c3c;">
+                    <p><strong>Error común:</strong> Usar la longitud del riel en la fórmula (no aplica). Otro error frecuente es calcular \(\Delta T = 30 - (-10) = 40\) bien, pero luego expresar E en GPa sin convertirlo a MPa (200 × 12e-6 × 40 = 0.096, olvidando el factor 1000). Al convertir correctamente: 200 GPa = 200 000 MPa.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">96 MPa (Opción A)</div>
+            <p>El esfuerzo axial en el riel debido al descenso de temperatura es 96 MPa (tracción).</p>
+        </div>
+
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Expansión térmica lineal:</strong> \(\Delta L = \alpha L \Delta T\).</li>
+                <li><strong>Restricción total:</strong> Si la deformación está impedida, aparece un esfuerzo \(\sigma = E \varepsilon = E \alpha |\Delta T|\).</li>
+                <li><strong>Módulo de Young (E):</strong> Relación esfuerzo/deformación en el rango elástico lineal.</li>
+                <li><strong>Coeficiente de expansión térmica (α):</strong> Cambio unitario de longitud por grado de temperatura.</li>
+                <li><strong>Esfuerzo térmico:</strong> Es independiente de la longitud del elemento; depende solo de las propiedades del material y del cambio de temperatura.</li>
+                <li><strong>Signo del esfuerzo:</strong> Enfriamiento → contracción impedida → tracción; calentamiento → expansión impedida → compresión.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Vías de ferrocarril:</strong> Los rieles se instalan con pretensión o juntas de dilatación para evitar esfuerzos excesivos.</li>
+                <li><strong>Puentes y estructuras:</strong> Apoyos móviles y juntas de expansión.</li>
+                <li><strong>Tuberías:</strong> Bucles de expansión y compensadores.</li>
+                <li><strong>Motores y turbinas:</strong> Holguras de montaje para compensar dilataciones.</li>
+                <li><strong>Circuitos electrónicos:</strong> Esfuerzos térmicos en soldaduras y encapsulados.</li>
+            </ul>
+            <div class="formula-box">
+                <div class="formula-title">📌 Fórmula resumen</div>
+                <div class="formula">\(\sigma = E\,\alpha\,|\Delta T|\) (restricción total uniaxial)</div>
+                <p>Además, la fuerza necesaria para impedir la deformación sería \(F = \sigma A\).</p>
+            </div>
+        </div>
+
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta corresponde a la sección de <em>Mechanics of Materials</em>, subsección <em>Stress and strain caused by temperature changes</em>. Allí se explica la relación entre el cambio de temperatura, la deformación y el esfuerzo bajo condiciones de restricción. También se presentan ejemplos de sistemas estáticamente indeterminados por temperatura.</p>
+            <p><em>NCEES FE Reference Handbook, sección "Mechanics of Materials", subsección "Stress and strain caused by temperature changes".</em></p>
+        </div>
+
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

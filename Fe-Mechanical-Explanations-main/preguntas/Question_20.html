@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 20 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .data-box {
+            background-color: #fff8e1;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #f39c12;
+        }
+        
+        .data-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+        
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        
+        .circuit-diagram {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .heater-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .heater-element {
+            width: 200px;
+            height: 100px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            border: 2px solid #e74c3c;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .heater-coil {
+            width: 80%;
+            height: 40px;
+            background: linear-gradient(to right, #f39c12, #e74c3c);
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .power-display {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .power-meter {
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            margin: 10px;
+            min-width: 150px;
+        }
+        
+        .meter-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+        
+        .warning-cell {
+            background-color: #e74c3c !important;
+            color: white !important;
+        }
+        
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .method-comparison {
+            background-color: #f4ecf7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #9b59b6;
+        }
+        
+        .method-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .data-box {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .warning-cell {
+                background-color: #e74c3c !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .calculation-steps {
+                background-color: #f9ebea !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .method-comparison {
+                background-color: #f4ecf7 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .note-box {
+            background-color: #ebf5fb;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+        
+        .warning-box {
+            background-color: #fff0f0;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+            color: #e74c3c;
+            border-left: 3px solid #e74c3c;
+        }
+        
+        .key-point {
+            background-color: #fffacd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+            color: #2c3e50;
+            border-left: 3px solid #f39c12;
+        }
+        
+        .circuit-elements {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .circuit-element {
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            margin: 10px;
+            min-width: 120px;
+        }
+        
+        .element-icon {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+        
+        .energy-flow {
+            width: 100%;
+            height: 80px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .energy-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, #3498db 0%, #2ecc71 50%, #3498db 100%);
+            animation: wave 3s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 20 del FE Mechanical</h1>
+            <p class="subtitle">Cálculo de la Potencia en un Calentador Eléctrico Resistivo</p>
+        </header>
+        
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>20. A 120-V heater is designed to use a 20-Ω resistor. The power (W) consumed by the heater when in use is</strong></p>
+                <div class="formula">
+                    <p>Ingrese su respuesta en el espacio en blanco.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Entender el problema y los datos</h3>
+                </div>
+                
+                <div class="data-box">
+                    <div class="data-title">Datos proporcionados:</div>
+                    <ul class="concept-list">
+                        <li><strong>Voltaje (V):</strong> 120 V (voltaje de alimentación)</li>
+                        <li><strong>Resistencia (R):</strong> 20 Ω (resistencia del calentador)</li>
+                        <li><strong>Tipo de circuito:</strong> Corriente continua (DC) o corriente alterna (AC) con carga resistiva pura</li>
+                        <li><strong>Objetivo:</strong> Calcular la potencia consumida (P) en vatios (W)</li>
+                    </ul>
+                </div>
+                
+                <p>Este es un problema básico de electricidad que involucra un calentador eléctrico resistivo. Los calentadores eléctricos funcionan mediante el <strong>efecto Joule</strong>, donde la energía eléctrica se convierte en calor cuando la corriente fluye a través de una resistencia.</p>
+                
+                <div class="heater-visual">
+                    <div class="heater-element">
+                        <div class="heater-coil"></div>
+                        <div style="font-weight: bold; color: #2c3e50;">Calentador</div>
+                        <div style="font-size: 12px; color: #7f8c8d;">R = 20 Ω</div>
+                    </div>
+                </div>
+                
+                <div class="circuit-diagram">
+                    <h4>Diagrama del Circuito</h4>
+                    <p>Fuente de 120 V → Resistencia de 20 Ω → Retorno</p>
+                    <p style="font-family: monospace; font-size: 16px; margin-top: 10px;">
+                        +----- 120V -----[20Ω]-----+
+                        |                          |
+                        +--------------------------+
+                    </p>
+                </div>
+                
+                <div class="key-point">
+                    <strong>Suposición importante:</strong> Dado que el problema no especifica si es AC o DC, y el calentador es una carga puramente resistiva, podemos usar las fórmulas básicas de potencia. Para una carga resistiva, las fórmulas son las mismas para AC (con valores RMS) y DC.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Método 1: Usar la fórmula P = V²/R</h3>
+                </div>
+                
+                <p>La forma más directa de calcular la potencia en una resistencia cuando conocemos el voltaje y la resistencia es usar la fórmula:</p>
+                
+                <div class="formula">
+                    P = V² / R
+                </div>
+                
+                <p>Donde:</p>
+                <ul class="concept-list">
+                    <li>P = Potencia en vatios (W)</li>
+                    <li>V = Voltaje en voltios (V)</li>
+                    <li>R = Resistencia en ohmios (Ω)</li>
+                </ul>
+                
+                <div class="calculation-steps">
+                    <p><strong>Cálculo:</strong></p>
+                    <p>P = (120 V)² / 20 Ω</p>
+                    <p>P = 14,400 V² / 20 Ω</p>
+                    <p>P = 720 W</p>
+                    <p class="step-result">La potencia consumida es de 720 vatios</p>
+                </div>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Derivación de la fórmula P = V²/R:</div>
+                    <p>Partiendo de la ley de Ohm: V = I × R</p>
+                    <p>Y la definición de potencia: P = V × I</p>
+                    <p>Sustituyendo I = V/R en P = V × I:</p>
+                    <div class="formula">
+                        P = V × (V/R) = V² / R
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Método 2: Calcular primero la corriente (I) y luego la potencia</h3>
+                </div>
+                
+                <p>Un método alternativo es calcular primero la corriente usando la ley de Ohm, y luego la potencia:</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Paso 1: Calcular la corriente (Ley de Ohm)</div>
+                    <div class="formula">
+                        I = V / R
+                    </div>
+                </div>
+                
+                <div class="calculation-steps">
+                    <p>I = 120 V / 20 Ω = 6 A</p>
+                    <p>La corriente que fluye a través del calentador es de 6 amperios.</p>
+                </div>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Paso 2: Calcular la potencia</div>
+                    <div class="formula">
+                        P = V × I
+                    </div>
+                </div>
+                
+                <div class="calculation-steps">
+                    <p>P = 120 V × 6 A = 720 W</p>
+                    <p class="step-result">Confirmamos el mismo resultado: 720 W</p>
+                </div>
+                
+                <div class="power-display">
+                    <div class="power-meter">
+                        <div class="meter-icon">V</div>
+                        <h4>Voltaje</h4>
+                        <p>120 V</p>
+                    </div>
+                    <div class="power-meter">
+                        <div class="meter-icon">I</div>
+                        <h4>Corriente</h4>
+                        <p>6 A</p>
+                    </div>
+                    <div class="power-meter">
+                        <div class="meter-icon">P</div>
+                        <h4>Potencia</h4>
+                        <p>720 W</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Método 3: Usar la fórmula P = I²R</h3>
+                </div>
+                
+                <p>Otra forma de calcular la potencia es usando la corriente y la resistencia:</p>
+                
+                <div class="formula">
+                    P = I² × R
+                </div>
+                
+                <div class="calculation-steps">
+                    <p>Del cálculo anterior: I = 6 A</p>
+                    <p>P = (6 A)² × 20 Ω</p>
+                    <p>P = 36 A² × 20 Ω</p>
+                    <p>P = 720 W</p>
+                    <p class="step-result">Todas las fórmulas dan el mismo resultado: 720 W</p>
+                </div>
+                
+                <div class="method-comparison">
+                    <div class="method-title">Resumen de las tres fórmulas de potencia para resistencias:</div>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Fórmula</th>
+                                <th>Se usa cuando se conocen</th>
+                                <th>Cálculo para este problema</th>
+                                <th>Resultado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>P = V² / R</td>
+                                <td>V y R</td>
+                                <td>120² / 20 = 14,400 / 20</td>
+                                <td class="highlight-cell">720 W</td>
+                            </tr>
+                            <tr>
+                                <td>P = V × I</td>
+                                <td>V e I</td>
+                                <td>120 × 6 = 720</td>
+                                <td class="highlight-cell">720 W</td>
+                            </tr>
+                            <tr>
+                                <td>P = I² × R</td>
+                                <td>I y R</td>
+                                <td>6² × 20 = 36 × 20</td>
+                                <td class="highlight-cell">720 W</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="note-box">
+                    <strong>Consistencia de unidades:</strong> 
+                    <ul class="concept-list">
+                        <li>Voltios (V) × Amperios (A) = Vatios (W)</li>
+                        <li>Voltios² (V²) / Ohmios (Ω) = Vatios (W)</li>
+                        <li>Amperios² (A²) × Ohmios (Ω) = Vatios (W)</li>
+                    </ul>
+                    Verificar las unidades ayuda a confirmar que se está usando la fórmula correcta.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Visualización del flujo de energía</h3>
+                </div>
+                
+                <div class="circuit-diagram">
+                    <h4>Conversión de Energía en el Calentador</h4>
+                    <div class="energy-flow">
+                        <div class="energy-wave"></div>
+                    </div>
+                    <p>Energía eléctrica (720 W) → Energía térmica (calor)</p>
+                </div>
+                
+                <div class="circuit-elements">
+                    <div class="circuit-element">
+                        <div class="element-icon">⚡</div>
+                        <h4>Energía Eléctrica</h4>
+                        <p>720 W</p>
+                        <p>120 V × 6 A</p>
+                    </div>
+                    <div class="circuit-element">
+                        <div class="element-icon">⇨</div>
+                        <h4>Conversión</h4>
+                        <p>Efecto Joule</p>
+                        <p>P = I²R</p>
+                    </div>
+                    <div class="circuit-element">
+                        <div class="element-icon">🔥</div>
+                        <h4>Energía Térmica</h4>
+                        <p>720 W</p>
+                        <p>Calor generado</p>
+                    </div>
+                </div>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Efecto Joule (Ley de Joule-Lenz):</div>
+                    <p>La cantidad de calor generado por segundo (tasa de generación de calor) en una resistencia es igual a la potencia eléctrica disipada:</p>
+                    <div class="formula">
+                        Q/t = P = I²R = V²/R = VI
+                    </div>
+                    <p>Donde Q es el calor en julios, y t es el tiempo en segundos.</p>
+                </div>
+                
+                <div class="note-box">
+                    <strong>Ejemplo:</strong> En 1 hora (3,600 segundos), el calentador generaría:
+                    Q = P × t = 720 W × 3,600 s = 2,592,000 J = 2.592 MJ
+                    Esto equivale a aproximadamente 618 kcal (kilocalorías), ya que 1 kcal = 4,184 J.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">6</div>
+                    <h3>Verificación de resultados razonables</h3>
+                </div>
+                
+                <p>Es importante verificar si el resultado de 720 W es razonable para un calentador doméstico:</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aparato Eléctrico</th>
+                            <th>Potencia Típica</th>
+                            <th>Corriente a 120V</th>
+                            <th>Comparación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Calentador de espacio pequeño</td>
+                            <td>500-1,500 W</td>
+                            <td>4.2-12.5 A</td>
+                            <td>720 W está en el rango</td>
+                        </tr>
+                        <tr>
+                            <td>Secador de pelo</td>
+                            <td>800-1,800 W</td>
+                            <td>6.7-15 A</td>
+                            <td>Similar</td>
+                        </tr>
+                        <tr>
+                            <td>Tostadora</td>
+                            <td>800-1,500 W</td>
+                            <td>6.7-12.5 A</td>
+                            <td>Similar</td>
+                        </tr>
+                        <tr>
+                            <td>Calentador de agua pequeño</td>
+                            <td>1,000-1,500 W</td>
+                            <td>8.3-12.5 A</td>
+                            <td>Un poco más bajo</td>
+                        </tr>
+                        <tr class="highlight-cell">
+                            <td><strong>Nuestro calentador</strong></td>
+                            <td><strong>720 W</strong></td>
+                            <td><strong>6 A</strong></td>
+                            <td><strong>Valor razonable</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="warning-box">
+                    <strong>¡Cuidado con errores comunes!</strong>
+                    <ul class="concept-list">
+                        <li><strong>Error 1:</strong> Usar P = V/R (sin elevar al cuadrado) → 120/20 = 6 W (incorrecto)</li>
+                        <li><strong>Error 2:</strong> Usar P = V × R → 120 × 20 = 2,400 W (incorrecto)</li>
+                        <li><strong>Error 3:</strong> Olvidar unidades o confundirlas</li>
+                        <li><strong>Error 4:</strong> No verificar si el resultado es razonable</li>
+                    </ul>
+                </div>
+                
+                <div class="key-point">
+                    <strong>Verificación rápida:</strong> Un calentador de 720 W a 120 V debe consumir 720/120 = 6 A, lo cual coincide con nuestro cálculo de corriente. Además, 6 A es un valor típico para circuitos domésticos de 15 A.
+                </div>
+            </div>
+        </div>
+        
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">720</div>
+            <p>El calentador consume 720 vatios de potencia cuando está en uso.</p>
+        </div>
+        
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Ley de Ohm:</strong> V = I × R, que relaciona voltaje, corriente y resistencia en un circuito eléctrico.</li>
+                <li><strong>Potencia Eléctrica (P):</strong> Tasa a la que se consume o genera energía eléctrica, medida en vatios (W). 1 vatio = 1 julio/segundo.</li>
+                <li><strong>Fórmulas de potencia para resistencias:</strong>
+                    <ul>
+                        <li>P = V × I (potencia = voltaje × corriente)</li>
+                        <li>P = V² / R (cuando se conoce voltaje y resistencia)</li>
+                        <li>P = I² × R (cuando se conoce corriente y resistencia)</li>
+                    </ul>
+                </li>
+                <li><strong>Efecto Joule:</strong> Conversión de energía eléctrica en energía térmica cuando la corriente fluye a través de una resistencia. La tasa de generación de calor es igual a la potencia disipada.</li>
+                <li><strong>Resistencia Eléctrica (R):</strong> Oposición al flujo de corriente eléctrica, medida en ohmios (Ω).</li>
+                <li><strong>Circuitos Resistivos Puros:</strong> Circuitos que contienen solo resistencias, donde el voltaje y la corriente están en fase (para AC) y no hay componentes reactivos.</li>
+                <li><strong>Conservación de Energía:</strong> La energía eléctrica consumida se convierte completamente en calor en un calentador resistivo ideal (sin pérdidas).</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de Sistemas de Calefacción:</strong> Cálculo de la potencia requerida para calentadores en procesos industriales, sistemas HVAC y aplicaciones domésticas.</li>
+                <li><strong>Selección de Elementos Calefactores:</strong> Determinación del tamaño y resistencia de elementos calefactores para hornos, secadoras y otros equipos.</li>
+                <li><strong>Análisis Térmico:</strong> Relación entre la potencia eléctrica de entrada y la generación de calor en sistemas mecánicos.</li>
+                <li><strong>Eficiencia Energética:</strong> Evaluación del consumo de energía de equipos eléctricos y optimización del diseño para reducir pérdidas.</li>
+                <li><strong>Protección de Circuitos:</strong> Cálculo de corrientes para seleccionar interruptores automáticos, fusibles y cables adecuados.</li>
+                <li><strong>Sistemas de Control de Temperatura:</strong> Diseño de controles para calentadores eléctricos basados en la potencia de entrada.</li>
+                <li><strong>Conversión de Energía:</strong> Estudio de la conversión de energía eléctrica a térmica en procesos de fabricación como soldadura, tratamiento térmico y moldeo.</li>
+                <li><strong>Análisis de Costos Operativos:</strong> Cálculo del costo de operación de equipos eléctricos basado en su consumo de potencia.</li>
+            </ul>
+            
+            <div class="formula-box">
+                <div class="formula-title">Relaciones importantes derivadas:</div>
+                <div class="formula">
+                    I = V / R = √(P / R) = P / V
+                </div>
+                <div class="formula">
+                    R = V / I = V² / P = P / I²
+                </div>
+                <div class="formula">
+                    V = I × R = P / I = √(P × R)
+                </div>
+                <p>Estas relaciones permiten calcular cualquier variable desconocida cuando se conocen dos de ellas.</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">7</div>
+                <h3>Variaciones y escenarios adicionales</h3>
+            </div>
+            
+            <div class="method-comparison">
+                <div class="method-title">Escenario 1: Calentador en un circuito de 240 V</div>
+                <p>Si el mismo calentador (20 Ω) se conectara a 240 V:</p>
+                <div class="calculation-steps">
+                    <p>P = V² / R = 240² / 20 = 57,600 / 20 = 2,880 W</p>
+                    <p>I = V / R = 240 / 20 = 12 A</p>
+                </div>
+                <p>¡La potencia se cuadruplica! (4× mayor porque 240V es el doble de 120V, y P ∝ V²)</p>
+            </div>
+            
+            <div class="method-comparison">
+                <div class="method-title">Escenario 2: Dos calentadores idénticos en serie</div>
+                <p>Si conectamos dos calentadores de 20 Ω en serie a 120 V:</p>
+                <div class="calculation-steps">
+                    <p>R<sub>total</sub> = 20 + 20 = 40 Ω</p>
+                    <p>I = V / R<sub>total</sub> = 120 / 40 = 3 A</p>
+                    <p>P<sub>total</sub> = V × I = 120 × 3 = 360 W</p>
+                    <p>P<sub>cada uno</sub> = I² × R = 3² × 20 = 9 × 20 = 180 W</p>
+                </div>
+                <p>Cada calentador produce solo 180 W (la cuarta parte de 720 W).</p>
+            </div>
+            
+            <div class="method-comparison">
+                <div class="method-title">Escenario 3: Dos calentadores idénticos en paralelo</div>
+                <p>Si conectamos dos calentadores de 20 Ω en paralelo a 120 V:</p>
+                <div class="calculation-steps">
+                    <p>R<sub>total</sub> = (20 × 20) / (20 + 20) = 400 / 40 = 10 Ω</p>
+                    <p>I<sub>total</sub> = V / R<sub>total</sub> = 120 / 10 = 12 A</p>
+                    <p>P<sub>total</sub> = V × I<sub>total</sub> = 120 × 12 = 1,440 W</p>
+                    <p>P<sub>cada uno</sub> = V² / R = 120² / 20 = 720 W</p>
+                </div>
+                <p>La potencia total es el doble (1,440 W), y cada calentador funciona a plena potencia (720 W).</p>
+            </div>
+            
+            <div class="method-comparison">
+                <div class="method-title">Escenario 4: Considerando eficiencia y pérdidas</div>
+                <p>En la realidad, no toda la potencia eléctrica se convierte en calor útil:</p>
+                <div class="calculation-steps">
+                    <p>Si la eficiencia es del 85%:</p>
+                    <p>Calor útil = 720 W × 0.85 = 612 W</p>
+                    <p>Pérdidas = 720 W × 0.15 = 108 W</p>
+                </div>
+                <p>Las pérdidas pueden ser por radiación, convección no deseada, o conducción a partes no deseadas.</p>
+            </div>
+        </div>
+        
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta se refiere a la sección de Electricity and Magnetism, específicamente a Electrical Fundamentals y DC Circuit Analysis. Las fórmulas para potencia y la ley de Ohm aparecen en el manual de referencia del examen FE.</p>
+            <p>En el examen FE real, es importante recordar las tres formas de calcular potencia eléctrica y saber cuál usar según los datos proporcionados.</p>
+            <p><strong>Ubicación en el FE Reference Handbook:</strong> Electrical and Computer Engineering → DC Circuit Analysis → Power Absorbed by a Resistive Element.</p>
+        </div>
+        
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        // Agregar funcionalidad adicional para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            // Resaltar elementos importantes
+            const importantElements = document.querySelectorAll('.formula, .calculation-steps, .method-comparison');
+            importantElements.forEach(element => {
+                element.setAttribute('data-print', 'important');
+            });
+        });
+        
+        // Función para imprimir
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 43 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .diagram-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .diagram-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 43 del FE Mechanical</h1>
+            <p class="subtitle">Deformación Axial – Alargamiento de una barra sometida a carga axial</p>
+        </header>
+
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>43. A 0.25‑m steel rod with a cross‑sectional area of 1,250 mm² and a modulus of elasticity E of 200 GPa is subjected to a 5,000‑N force as shown below. The elongation of the rod (μm) is most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. 2.4 &nbsp; B. 4.4 &nbsp; C. 5.0 &nbsp; D. 9.6</p>
+                </div>
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50;">Respuesta correcta según el PDF: <span style="background-color: #2ecc71; color: white; padding: 3px 10px; border-radius: 5px;">C (5.0 μm)</span></p>
+            </div>
+
+            <!-- Diagrama de la barra sometida a tracción -->
+            <div class="diagram-section">
+                <div class="diagram-container">
+                    <svg width="450" height="150" viewBox="0 0 450 150" style="max-width:100%; height:auto;">
+                        <!-- Barra prismática -->
+                        <rect x="100" y="60" width="200" height="30" fill="#b0c4de" stroke="#2c3e50" stroke-width="2" />
+                        <!-- Fuerza aplicada a la izquierda -->
+                        <line x1="70" y1="75" x2="100" y2="75" stroke="#e74c3c" stroke-width="3" />
+                        <polygon points="70,75 80,70 80,80" fill="#e74c3c" />
+                        <text x="40" y="60" fill="#e74c3c" font-size="14">P = 5 kN</text>
+                        <!-- Fuerza aplicada a la derecha -->
+                        <line x1="300" y1="75" x2="330" y2="75" stroke="#e74c3c" stroke-width="3" />
+                        <polygon points="330,75 320,70 320,80" fill="#e74c3c" />
+                        <text x="340" y="60" fill="#e74c3c" font-size="14">P = 5 kN</text>
+                        <!-- Anotación de longitud -->
+                        <line x1="100" y1="100" x2="300" y2="100" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="4" />
+                        <text x="180" y="120" font-size="14">L = 0.25 m</text>
+                        <!-- Anotación de área -->
+                        <text x="150" y="40" font-size="14">A = 1250 mm²</text>
+                        <text x="150" y="20" font-size="14">E = 200 GPa</text>
+                        <!-- Deformación indicada con línea punteada -->
+                        <line x1="300" y1="75" x2="310" y2="75" stroke="#2ecc71" stroke-width="2" stroke-dasharray="2" />
+                        <text x="310" y="55" font-size="12" fill="#2ecc71">δ = ?</text>
+                    </svg>
+                    <p style="margin-top: 10px; font-size: 14px; color: #555;">
+                        Barra de acero sometida a carga axial de 5000 N. Se pide el alargamiento total en micrómetros.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Identificar la fórmula de deformación axial</h3>
+                </div>
+                <p>Para una barra prismática de material homogéneo sometida a carga axial dentro del rango elástico lineal, la deformación total (alargamiento) se calcula mediante la <strong>ley de Hooke para esfuerzo normal</strong>:</p>
+                <div class="formula">
+                    \( \delta = \dfrac{P \cdot L}{A \cdot E} \)
+                </div>
+                <p>Donde:</p>
+                <ul class="concept-list">
+                    <li><strong>P</strong> = fuerza axial aplicada (N)</li>
+                    <li><strong>L</strong> = longitud original de la barra (m)</li>
+                    <li><strong>A</strong> = área de la sección transversal (m²)</li>
+                    <li><strong>E</strong> = módulo de elasticidad o módulo de Young (Pa)</li>
+                    <li><strong>δ</strong> = deformación total (m)</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Reunir los datos y convertir unidades</h3>
+                </div>
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Símbolo</th>
+                            <th>Valor dado</th>
+                            <th>Conversión a SI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Fuerza</td><td>P</td><td>5000 N</td><td>5000 N</td></tr>
+                        <tr><td>Longitud</td><td>L</td><td>0.25 m</td><td>0.25 m</td></tr>
+                        <tr><td>Área</td><td>A</td><td>1250 mm²</td><td>\(1250 \times 10^{-6} = 1.250 \times 10^{-3}\ \text{m}^2\)</td></tr>
+                        <tr><td>Módulo de elasticidad</td><td>E</td><td>200 GPa</td><td>\(200 \times 10^{9} = 2.00 \times 10^{11}\ \text{Pa}\)</td></tr>
+                    </tbody>
+                </table>
+                <div class="formula-box">
+                    <div class="formula-title">📌 Conversiones importantes</div>
+                    <p>1 mm² = 10⁻⁶ m²<br>1 GPa = 10⁹ Pa = 10⁹ N/m²</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Sustituir en la fórmula</h3>
+                </div>
+                <div class="formula">
+                    \( \delta = \dfrac{5000 \times 0.25}{(1.250 \times 10^{-3}) \times (200 \times 10^{9})} \)
+                </div>
+                <div class="calculation-steps">
+                    <p><strong>Numerador:</strong> \(P \cdot L = 5000 \times 0.25 = 1250\)</p>
+                    <p><strong>Denominador:</strong> \(A \cdot E = (1.250 \times 10^{-3}) \times (200 \times 10^{9}) = 1.250 \times 200 \times 10^{-3+9} = 250 \times 10^{6} = 2.50 \times 10^{8}\)</p>
+                    <p><strong>Cociente:</strong> \(\delta = \dfrac{1250}{2.50 \times 10^{8}} = 5.00 \times 10^{-6}\ \text{m}\)</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Convertir a micrómetros</h3>
+                </div>
+                <p>1 μm = 10⁻⁶ m, por lo tanto:</p>
+                <div class="formula">
+                    \( \delta = 5.00 \times 10^{-6}\ \text{m} = 5.00\ \mu\text{m} \)
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Comparación con las opciones</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Valor (μm)</th>
+                            <th>¿Correcta?</th>
+                            <th>Posible origen del error</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>2.4</td>
+                            <td>No</td>
+                            <td>Usar \(A = 1250\times10^{-3}\ \text{m}^2\) (error de factor 1000)</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>4.4</td>
+                            <td>No</td>
+                            <td>Podría ser 1250/ (200×1250×10⁻⁶)? No coincide exactamente</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td><strong>5.0</strong></td>
+                            <td><strong>Sí</strong></td>
+                            <td>Resultado exacto con conversiones correctas</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>9.6</td>
+                            <td>No</td>
+                            <td>Usar E = 200×10⁶ (confundir MPa con GPa) o área en cm²</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formula-box" style="background-color: #fce8e8; border-left-color: #e74c3c;">
+                    <p><strong>Error común:</strong> Olvidar convertir el área de mm² a m² (1250 mm² = 1250×10⁻⁶ m² = 0.00125 m²). Si se usa 1250 directamente, el resultado sería 5000·0.25/(1250·200e9) = 1250/(2.5e14) = 5e-12 m, completamente erróneo.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">5.0 μm (Opción C)</div>
+            <p>El alargamiento de la barra de acero es de 5.0 micrómetros.</p>
+        </div>
+
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Esfuerzo normal (σ):</strong> Fuerza por unidad de área, σ = P/A. En este caso, σ = 5000 N / 1.25e-3 m² = 4.0 MPa.</li>
+                <li><strong>Deformación unitaria normal (ε):</strong> Alargamiento por unidad de longitud, ε = δ/L. También ε = σ/E (ley de Hooke).</li>
+                <li><strong>Módulo de elasticidad (E):</strong> Propiedad del material que relaciona esfuerzo y deformación en el rango elástico lineal. Para el acero, E ≈ 200 GPa.</li>
+                <li><strong>Deformación total (δ):</strong> δ = ε·L = (σ/E)·L = (P/(A·E))·L.</li>
+                <li><strong>Unidades en el Sistema Internacional:</strong> Longitud en metros, fuerza en newtons, área en m², E en Pa (N/m²). Es <strong>obligatorio</strong> convertir unidades correctamente.</li>
+                <li><strong>Prefijos del SI:</strong> μ (micro) = 10⁻⁶, m (mili) = 10⁻³, G (giga) = 10⁹, etc.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de elementos estructurales:</strong> Vigas, columnas, pernos, tornillos – se deben limitar las deformaciones para garantizar funcionalidad y evitar fallas.</li>
+                <li><strong>Tolerancias de fabricación:</strong> El alargamiento bajo carga debe estar dentro de los límites permitidos por las especificaciones de ensamble.</li>
+                <li><strong>Análisis de sistemas hiperestáticos:</strong> Las deformaciones determinan las fuerzas internas en estructuras con restricciones redundantes.</li>
+                <li><strong>Materiales compuestos y polímeros:</strong> Con módulos de elasticidad mucho más bajos, las deformaciones son más críticas.</li>
+                <li><strong>Calibración de celdas de carga:</strong> Las deformaciones medidas por strain gauges se relacionan directamente con la fuerza aplicada.</li>
+            </ul>
+            <div class="formula-box">
+                <div class="formula-title">📌 Resumen de fórmulas</div>
+                <div class="formula">\( \sigma = \dfrac{P}{A} \)</div>
+                <div class="formula">\( \epsilon = \dfrac{\delta}{L} = \dfrac{\sigma}{E} \)</div>
+                <div class="formula">\( \delta = \dfrac{P L}{A E} \)</div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <div class="step-number">6</div>
+                <h3>Cálculo alternativo – mediante esfuerzo y deformación</h3>
+            </div>
+            <p>Primero se calcula el esfuerzo:</p>
+            <div class="formula">
+                \(\sigma = \dfrac{P}{A} = \dfrac{5000}{1.250\times10^{-3}} = 4.0\times10^{6}\ \text{Pa} = 4.0\ \text{MPa}\)
+            </div>
+            <p>Luego la deformación unitaria:</p>
+            <div class="formula">
+                \(\epsilon = \dfrac{\sigma}{E} = \dfrac{4.0\times10^{6}}{200\times10^{9}} = 2.0\times10^{-5}\)
+            </div>
+            <p>Finalmente el alargamiento:</p>
+            <div class="formula">
+                \(\delta = \epsilon \cdot L = (2.0\times10^{-5}) \times 0.25 = 5.0\times10^{-6}\ \text{m} = 5.0\ \mu\text{m}\)
+            </div>
+            <p>El mismo resultado confirma la respuesta.</p>
+        </div>
+
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta corresponde a la sección de <em>Mechanics of Materials</em>, subsección <em>Uniaxial Loading and Deformation</em>. La fórmula \(\delta = PL/AE\) se encuentra explícitamente en el manual, junto con las propiedades típicas de los materiales (acero estructural: E ≈ 200 GPa).</p>
+            <p><em>NCEES FE Reference Handbook, sección "Mechanics of Materials", subsección "Uniaxial Loading and Deformation".</em></p>
+        </div>
+
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

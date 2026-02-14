@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 51 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .diagram-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .diagram-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 51 del FE Mechanical</h1>
+            <p class="subtitle">Sistemas Axiales Estáticamente Indeterminados – Fuerza en Soporte</p>
+        </header>
+
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>51. A screw rod is fixed at its two ends, A and C, as shown in the figure. A nut initially in the center of the rod is supported by a spring. The spring constant k = 30 kN/cm and is initially in a neutral position. When the nut is screwed down 2 cm, the support force (kN) at the top point of A is most nearly:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. 0 &nbsp; B. 18 &nbsp; C. 42 &nbsp; D. 60</p>
+                </div>
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50;">Respuesta correcta según el PDF: <span style="background-color: #2ecc71; color: white; padding: 3px 10px; border-radius: 5px;">B (18 kN)</span></p>
+            </div>
+
+            <!-- Reconstrucción del diagrama del problema -->
+            <div class="diagram-section">
+                <div class="diagram-container">
+                    <svg width="550" height="200" viewBox="0 0 550 200" style="max-width:100%; height:auto;">
+                        <!-- Barra (rodillo) fijo en ambos extremos -->
+                        <rect x="80" y="80" width="390" height="20" fill="#b0c4de" stroke="#2c3e50" stroke-width="2" />
+                        <!-- Empotramiento izquierdo A -->
+                        <rect x="60" y="70" width="20" height="40" fill="#7f8c8d" stroke="#2c3e50" stroke-width="2" />
+                        <text x="45" y="60" font-size="12">A</text>
+                        <!-- Empotramiento derecho C -->
+                        <rect x="470" y="70" width="20" height="40" fill="#7f8c8d" stroke="#2c3e50" stroke-width="2" />
+                        <text x="490" y="60" font-size="12">C</text>
+                        <!-- Línea divisoria: punto de la tuerca (nut) -->
+                        <line x1="350" y1="70" x2="350" y2="110" stroke="#e67e22" stroke-width="2" stroke-dasharray="4" />
+                        <circle cx="350" cy="90" r="6" fill="#e67e22" />
+                        <text x="360" y="80" font-size="12">Nut</text>
+                        <!-- Resorte comprimido -->
+                        <path d="M350 90 L330 90 L325 75 L315 105 L305 75 L295 105 L285 75 L275 105 L265 75 L255 105 L245 90 L220 90" stroke="#2c3e50" stroke-width="2" fill="none" />
+                        <text x="270" y="70" font-size="12">k = 30 kN/cm</text>
+                        <!-- Longitudes: AB = 7, BC = 3 (total 10) -->
+                        <line x1="80" y1="110" x2="350" y2="110" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="4" />
+                        <text x="200" y="130" font-size="12">L_AB = 7</text>
+                        <line x1="350" y1="110" x2="470" y2="110" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="4" />
+                        <text x="380" y="130" font-size="12">L_BC = 3</text>
+                        <!-- Fuerza P del resorte sobre la tuerca -->
+                        <line x1="220" y1="90" x2="190" y2="90" stroke="#e74c3c" stroke-width="2.5" />
+                        <polygon points="190,90 200,85 200,95" fill="#e74c3c" />
+                        <text x="160" y="80" fill="#e74c3c" font-size="12">P = 60 kN</text>
+                        <!-- Reacciones en apoyos -->
+                        <line x1="60" y1="90" x2="30" y2="90" stroke="#9b59b6" stroke-width="2.5" />
+                        <polygon points="30,90 40,85 40,95" fill="#9b59b6" />
+                        <text x="15" y="80" fill="#9b59b6" font-size="12">F_A</text>
+                        <line x1="490" y1="90" x2="520" y2="90" stroke="#9b59b6" stroke-width="2.5" />
+                        <polygon points="520,90 510,85 510,95" fill="#9b59b6" />
+                        <text x="530" y="80" fill="#9b59b6" font-size="12">F_C</text>
+                    </svg>
+                    <p style="margin-top: 10px; font-size: 14px; color: #555;">
+                        Barra fija en A y C. La tuerca se encuentra a 7 unidades de A y 3 unidades de C. 
+                        Al girar la tuerca 2 cm, el resorte se comprime y ejerce una fuerza P = 60 kN sobre la tuerca.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Fuerza generada por el resorte</h3>
+                </div>
+                <p>El resorte tiene constante \(k = 30\ \text{kN/cm}\) y se comprime \(\Delta x = 2\ \text{cm}\). La fuerza ejercida es:</p>
+                <div class="formula">
+                    \(P = k \cdot \Delta x = 30 \times 2 = 60\ \text{kN}\)
+                </div>
+                <p>Esta fuerza actúa sobre la tuerca en dirección axial (hacia la izquierda en el diagrama).</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>Reconocer el sistema estáticamente indeterminado</h3>
+                </div>
+                <p>La barra está empotrada en ambos extremos (A y C). Al aplicar una fuerza axial interna en la tuerca, las reacciones \(F_A\) y \(F_C\) no pueden determinarse solo con la estática (una ecuación, dos incógnitas). Se requiere una ecuación de <strong>compatibilidad de desplazamientos</strong>.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Equilibrio de fuerzas en la tuerca</h3>
+                </div>
+                <p>Considerando la tuerca como punto de aplicación de la fuerza externa \(P\) y las fuerzas internas que ejercen los segmentos de barra sobre ella:</p>
+                <div class="formula">
+                    \(F_A + F_C = P\)   (1)
+                </div>
+                <p>\(F_A\) y \(F_C\) son las magnitudes de las fuerzas que los soportes ejercen sobre la barra; ambas actúan comprimiendo los respectivos segmentos (en este caso, ambas fuerzas se dirigen hacia la tuerca).</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Compatibilidad de desplazamientos</h3>
+                </div>
+                <p>Los extremos A y C son fijos, por lo que el desplazamiento de la tuerca debe ser el mismo cuando se calcula desde el lado izquierdo o desde el lado derecho. Usando la ley de Hooke (\(\delta = \frac{FL}{AE}\)) y considerando que el área transversal y el módulo de elasticidad son constantes en toda la barra:</p>
+                <div class="formula">
+                    \(\delta_{AB} = \delta_{BC}\)   (en magnitud y sentido)
+                </div>
+                <p>Tomando desplazamientos positivos hacia la derecha, la deformación del segmento AB es \(\delta_{AB} = \frac{F_A L_{AB}}{AE}\) (tracción positiva, compresión negativa). En este caso, como ambas fuerzas comprimen sus segmentos, el desplazamiento de la tuerca es hacia la izquierda, pero la igualdad de magnitudes conduce a:</p>
+                <div class="formula">
+                    \(\frac{F_A L_{AB}}{AE} = \frac{F_C L_{BC}}{AE} \quad\Rightarrow\quad F_A L_{AB} = F_C L_{BC}\)   (2)
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Datos geométricos (deducidos de la solución oficial)</h3>
+                </div>
+                <p>De la ecuación \(F_A = \frac{L_{BC}}{L_{AB}+L_{BC}}\,P\) y el resultado \(F_A = \frac{3}{10}\times 60 = 18\ \text{kN}\), se obtiene que la relación de longitudes es:</p>
+                <div class="formula">
+                    \(\frac{L_{BC}}{L_{AC}} = \frac{3}{10} \quad\Rightarrow\quad L_{BC}=3,\ L_{AB}=7,\ L_{AC}=10\)
+                </div>
+                <p>(Las unidades de longitud son consistentes; solo importa la proporción).</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">6</div>
+                    <h3>Solución del sistema de ecuaciones</h3>
+                </div>
+                <p>De (2) despejamos \(F_C = \frac{L_{AB}}{L_{BC}} F_A = \frac{7}{3} F_A\). Sustituyendo en (1):</p>
+                <div class="calculation-steps">
+                    <p>\(F_A + \frac{7}{3}F_A = 60\)</p>
+                    <p>\(\frac{10}{3}F_A = 60\)</p>
+                    <p class="step-result">\(F_A = 60 \times \frac{3}{10} = 18\ \text{kN}\)</p>
+                </div>
+                <p>Por lo tanto, la fuerza de soporte en el punto A es <strong>18 kN</strong>.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">7</div>
+                    <h3>Comparación con las opciones</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Valor (kN)</th>
+                            <th>¿Correcta?</th>
+                            <th>Explicación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>0</td>
+                            <td>No</td>
+                            <td>Solo ocurriría si la tuerca estuviese en un extremo o si el resorte no estuviera comprimido.</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td><strong>18</strong></td>
+                            <td><strong>Sí</strong></td>
+                            <td>Resultado del cálculo de compatibilidad y equilibrio.</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>42</td>
+                            <td>No</td>
+                            <td>Corresponde a \(F_C = \frac{L_{AB}}{L_{AC}}P = 42\ \text{kN}\) (fuerza en el extremo C).</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>60</td>
+                            <td>No</td>
+                            <td>Es la fuerza total del resorte, no la reacción en un apoyo.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="formula-box" style="background-color: #fce8e8; border-left-color: #e74c3c;">
+                    <p><strong>Error común:</strong> Suponer que la fuerza se distribuye por igual (30 kN cada apoyo) sin considerar la posición de la carga. En una barra empotrada‑empotrada, la reacción es mayor en el apoyo más cercano a la carga.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">18 kN (Opción B)</div>
+            <p>La fuerza de soporte en el extremo A es 18 kN.</p>
+        </div>
+
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Estáticamente indeterminado (hiperestático):</strong> Sistema donde las ecuaciones de equilibrio no son suficientes para determinar todas las reacciones; se necesita una ecuación de compatibilidad de deformaciones.</li>
+                <li><strong>Compatibilidad de desplazamientos:</strong> Para barras fijas en ambos extremos, el desplazamiento en el punto de carga debe ser el mismo calculado desde cualquier extremo.</li>
+                <li><strong>Ley de Hooke (axial):</strong> \(\delta = \frac{FL}{AE}\). Para el mismo material y sección transversal, las deformaciones son proporcionales a \(F \cdot L\).</li>
+                <li><strong>Fuerza en resortes:</strong> \(F = k \Delta x\).</li>
+                <li><strong>Distribución de reacciones:</strong> En una barra biempotrada, las reacciones son inversamente proporcionales a la distancia al punto de aplicación de la carga: \(F_A = \frac{L_{BC}}{L_{AC}}P\), \(F_C = \frac{L_{AB}}{L_{AC}}P\).</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Uniones atornilladas:</strong> Cálculo de fuerzas en pernos sometidos a precarga.</li>
+                <li><strong>Sistemas de resortes en serie/paralelo:</strong> Distribución de cargas en elementos elásticos.</li>
+                <li><strong>Montajes de maquinaria:</strong> Barras tensoras fijas en ambos extremos.</li>
+                <li><strong>Estructuras hiperestáticas:</strong> Puentes, torres, bastidores.</li>
+            </ul>
+            <div class="formula-box">
+                <div class="formula-title">📌 Fórmula resumen</div>
+                <div class="formula">\(F_A = \dfrac{L_{BC}}{L_{AB}+L_{BC}}\,P\)</div>
+                <p>Válida para una barra de sección y material uniforme, fija en ambos extremos, con carga axial puntual P.</p>
+            </div>
+        </div>
+
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta corresponde a la sección de <em>Mechanics of Materials</em>, subsección <em>Statically Indeterminate Systems</em> (barras axialmente cargadas). El manual presenta la metodología de equilibrio + compatibilidad y ejemplos similares. También se relaciona con <em>Mechanical Springs</em> para el cálculo de la fuerza del resorte.</p>
+            <p><em>NCEES FE Reference Handbook, sección "Mechanics of Materials", subsección "Statically indeterminate systems" y "Mechanical Springs".</em></p>
+        </div>
+
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

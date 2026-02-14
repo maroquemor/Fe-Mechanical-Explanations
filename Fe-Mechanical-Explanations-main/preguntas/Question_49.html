@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación Detallada Pregunta 49 - FE Mechanical</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .question-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .question-title {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .diagram-section {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .diagram-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .solution-section {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-title {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        .calculation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .calculation-table th, .calculation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .calculation-table th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calculation-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-cell {
+            background-color: #2ecc71 !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .answer-box {
+            background-color: #2ecc71;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .answer-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .answer-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .concept-section {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #f39c12;
+        }
+
+        .concept-title {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .concept-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .concept-list li {
+            margin-bottom: 10px;
+        }
+
+        .reference {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .formula-box {
+            background-color: #e8f6f3;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .formula-title {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .print-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background-color: #2980b9;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .calculation-steps {
+            background-color: #f9ebea;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .step-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 10px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .answer-box {
+                background-color: #2ecc71 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .solution-section {
+                background-color: #e8f4fc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .concept-section {
+                background-color: #fff8e1 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .formula-box {
+                background-color: #e8f6f3 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .highlight-cell {
+                background-color: #2ecc71 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Explicación Profunda - Pregunta 49 del FE Mechanical</h1>
+            <p class="subtitle">Fórmula de Euler para Columnas – Pandeo Elástico</p>
+        </header>
+
+        <div class="question-section">
+            <h2 class="question-title">Pregunta Original</h2>
+            <div class="question-text">
+                <p><strong>49. The Euler formula for columns deals with:</strong></p>
+                <div class="formula">
+                    <p>Opciones: A. relatively short columns &nbsp; B. shear stress &nbsp; C. tensile stress &nbsp; D. elastic buckling</p>
+                </div>
+                <p style="margin-top: 10px; font-weight: bold; color: #2c3e50;">Respuesta correcta según el PDF: <span style="background-color: #2ecc71; color: white; padding: 3px 10px; border-radius: 5px;">D (elastic buckling)</span></p>
+            </div>
+
+            <!-- Representación esquemática de una columna esbelta pandeada -->
+            <div class="diagram-section">
+                <div class="diagram-container">
+                    <svg width="300" height="250" viewBox="0 0 300 250" style="max-width:100%; height:auto;">
+                        <!-- Columna recta (antes del pandeo) -->
+                        <rect x="130" y="50" width="20" height="150" fill="#b0c4de" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="5 3" />
+                        <text x="155" y="120" font-size="12">inicial</text>
+                        <!-- Columna pandeada (modo fundamental) -->
+                        <path d="M140 50 Q 100 125, 140 200" fill="none" stroke="#e74c3c" stroke-width="3" />
+                        <path d="M140 50 Q 180 125, 140 200" fill="none" stroke="#e74c3c" stroke-width="3" />
+                        <text x="50" y="100" fill="#e74c3c" font-size="12">pandeo</text>
+                        <!-- Carga axial de compresión -->
+                        <line x1="140" y1="30" x2="140" y2="50" stroke="#2c3e50" stroke-width="2" />
+                        <polygon points="140,30 135,40 145,40" fill="#2c3e50" />
+                        <text x="150" y="25" font-size="12">P</text>
+                        <!-- Soporte articulado en la base -->
+                        <circle cx="140" cy="200" r="6" fill="#7f8c8d" />
+                        <line x1="120" y1="210" x2="160" y2="210" stroke="#7f8c8d" stroke-width="2" />
+                    </svg>
+                    <p style="margin-top: 10px; font-size: 14px; color: #555;">
+                        La fórmula de Euler predice la carga crítica de pandeo elástico en columnas esbeltas.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <h2 class="section-title">Solución Paso a Paso</h2>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">1</div>
+                    <h3>Contexto histórico y definición</h3>
+                </div>
+                <p>Leonhard Euler (1707‑1783) dedujo la expresión para la carga crítica de una columna ideal, perfectamente recta, de material homogéneo e isótropo, con extremos articulados, sometida a una carga axial de compresión. Esta carga representa el límite de estabilidad elástica: por debajo de ella la columna permanece recta; por encima, se pandea lateralmente.</p>
+                <div class="formula-box">
+                    <div class="formula-title">📌 Fórmula de Euler (caso articulado‑articulado)</div>
+                    <div class="formula">\(P_{cr} = \dfrac{\pi^2 EI}{L^2}\)</div>
+                    <p>donde \(E\) = módulo de elasticidad, \(I\) = momento de inercia mínimo de la sección, \(L\) = longitud de la columna.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">2</div>
+                    <h3>¿Qué representa físicamente la fórmula de Euler?</h3>
+                </div>
+                <p>La expresión de Euler cuantifica la <strong>carga crítica de pandeo elástico</strong>. El fenómeno del pandeo no es una falla por resistencia del material (fluencia o fractura), sino una <strong>inestabilidad elástica</strong>. La columna se desvía lateralmente de manera repentina cuando la carga alcanza el valor crítico, incluso si el esfuerzo de compresión es inferior al límite de proporcionalidad del material.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">3</div>
+                    <h3>Análisis de las opciones</h3>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Opción</th>
+                            <th>Afirmación</th>
+                            <th>¿Correcta?</th>
+                            <th>Fundamento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td>relatively short columns</td>
+                            <td>No</td>
+                            <td>Euler aplica a <strong>columnas esbeltas</strong> (largas). En columnas cortas predomina la falla por aplastamiento (fluencia).</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>shear stress</td>
+                            <td>No</td>
+                            <td>La fórmula de Euler involucra esfuerzos normales de compresión y rigidez a flexión (EI), no considera esfuerzos cortantes.</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>tensile stress</td>
+                            <td>No</td>
+                            <td>El pandeo ocurre bajo <strong>compresión</strong>; la fórmula no es aplicable a cargas de tracción.</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td><strong>elastic buckling</strong></td>
+                            <td><strong>Sí</strong></td>
+                            <td>Define precisamente el fenómeno que la fórmula de Euler modela: pandeo elástico.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">4</div>
+                    <h3>Extensión a otras condiciones de apoyo</h3>
+                </div>
+                <p>La fórmula generalizada incluye el factor de longitud efectiva \(K\):</p>
+                <div class="formula">\(P_{cr} = \dfrac{\pi^2 EI}{(KL)^2}\)</div>
+                <table class="calculation-table">
+                    <thead>
+                        <tr>
+                            <th>Condición de extremo</th>
+                            <th>Factor \(K\)</th>
+                            <th>Longitud efectiva \(KL\)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Articulado‑articulado</td><td>1.0</td><td>L</td></tr>
+                        <tr><td>Empotrado‑empotrado</td><td>0.5</td><td>0.5L</td></tr>
+                        <tr><td>Empotrado‑articulado</td><td>0.7</td><td>0.7L</td></tr>
+                        <tr><td>Empotrado‑libre</td><td>2.0</td><td>2.0L</td></tr>
+                    </tbody>
+                </table>
+                <p>En todos los casos, la fórmula sigue describiendo el <strong>pandeo elástico</strong>.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-title">
+                    <div class="step-number">5</div>
+                    <h3>Limitaciones y rango de validez</h3>
+                </div>
+                <ul class="concept-list">
+                    <li><strong>Solo para columnas esbeltas:</strong> La carga crítica de Euler debe ser menor que la carga que produciría fluencia. Se define la <strong>esbeltez</strong> \(\lambda = KL/r\) (r = radio de giro). La fórmula es válida cuando \(\lambda \ge \lambda_p\) (esbeltez límite superior del comportamiento elástico).</li>
+                    <li><strong>Material elástico lineal:</strong> Se asume que el material sigue la ley de Hooke (\(\sigma = E\varepsilon\)) hasta el pandeo.</li>
+                    <li><strong>Columna perfecta:</strong> No considera imperfecciones geométricas ni excentricidades de carga (pandeo real se aborda con fórmulas empíricas como la de Johnson).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <div class="answer-title">Respuesta Correcta</div>
+            <div class="answer-text">D. elastic buckling</div>
+            <p>La fórmula de Euler trata exclusivamente del pandeo elástico en columnas.</p>
+        </div>
+
+        <div class="concept-section">
+            <h2 class="concept-title">Conceptos Clave Involucrados</h2>
+            <ul class="concept-list">
+                <li><strong>Pandeo (buckling):</strong> Fenómeno de inestabilidad por compresión que provoca deflexiones laterales repentinas.</li>
+                <li><strong>Pandeo elástico:</strong> Ocurre cuando el esfuerzo crítico es inferior al límite de proporcionalidad del material. Se rige por la fórmula de Euler.</li>
+                <li><strong>Pandeo inelástico:</strong> Para esbelteces intermedias, el pandeo ocurre en el rango plástico; se utilizan fórmulas como la de Engesser‑Shanley o la parábola de Johnson.</li>
+                <li><strong>Carga crítica de Euler:</strong> \(P_{cr} = \pi^2EI/(KL)^2\).</li>
+                <li><strong>Esbeltez (\(\lambda\)):</strong> Relación entre la longitud efectiva y el radio de giro mínimo: \(\lambda = KL/r\).</li>
+                <li><strong>Radio de giro (\(r\)):</strong> \(r = \sqrt{I/A}\).</li>
+                <li><strong>Esbeltez límite (\(\lambda_p\)):</strong> Valor a partir del cual el pandeo es elástico: \(\lambda_p = \pi\sqrt{E/\sigma_y}\).</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: #2c3e50;">Aplicaciones en Ingeniería Mecánica</h3>
+            <ul class="concept-list">
+                <li><strong>Diseño de elementos estructurales esbeltos:</strong> Columnas de edificios, torres, puntales, miembros de armaduras.</li>
+                <li><strong>Árboles de transmisión:</strong> Ejes largos sometidos a compresión (por ejemplo, en tornos).</li>
+                <li><strong>Bielas y vástagos:</strong> Componentes de máquinas que trabajan a compresión.</li>
+                <li><strong>Robótica:</strong> Brazos robóticos esbeltos propensos a pandeo bajo cargas de compresión.</li>
+                <li><strong>Ingeniería aeroespacial:</strong> Largueros y costillas de alas.</li>
+            </ul>
+            <div class="formula-box">
+                <div class="formula-title">📌 Resumen de fórmulas</div>
+                <div class="formula">\(P_{cr} = \dfrac{\pi^2 EI}{(KL)^2}\)</div>
+                <div class="formula">\(\sigma_{cr} = \dfrac{P_{cr}}{A} = \dfrac{\pi^2 E}{(KL/r)^2} = \dfrac{\pi^2 E}{\lambda^2}\)</div>
+            </div>
+        </div>
+
+        <div class="reference">
+            <p><strong>Referencia al FE Reference Handbook:</strong> Esta pregunta corresponde a la sección de <em>Mechanics of Materials</em>, subsección <em>Column buckling</em>. El manual presenta la fórmula de Euler, la definición de esbeltez y las condiciones de frontera típicas. También incluye la curva de pandeo elástico y la transición a pandeo inelástico.</p>
+            <p><em>NCEES FE Reference Handbook, sección "Mechanics of Materials", subsección "Column buckling".</em></p>
+        </div>
+
+        <div class="button-container">
+            <button class="print-button" onclick="window.print()">Imprimir o Guardar como PDF</button>
+            <p class="no-print" style="margin-top: 10px; color: #7f8c8d;">Use este botón para imprimir o guardar esta explicación como PDF</p>
+        </div>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
